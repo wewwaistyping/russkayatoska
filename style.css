@@ -1360,6 +1360,9 @@ body::before {
         gap: 28px;
         transition: right 0.4s;
         border-left: 1px solid var(--gray);
+        will-change: right;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
     .nav-links.open { right: 0; }
     .nav-burger { display: flex; }

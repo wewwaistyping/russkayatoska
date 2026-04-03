@@ -127,7 +127,10 @@
       "Bash(ls /c/Users/HYPERPC/Desktop/hueta/*.html)",
       "Bash(py --version)",
       "Bash(node -e \"console.log\\(''node works''\\)\")",
-      "Bash(ls \"C:/Users/HYPERPC/Desktop/hueta/images/kukla\"*)"
+      "Bash(ls \"C:/Users/HYPERPC/Desktop/hueta/images/kukla\"*)",
+      "Bash(mkdir -p backup_v11)",
+      "Bash(cp generate-site.js style.css main.js index.html author.html au.html au-vampires.html au-pishcheblok.html characters.html map.html band.html locations-list.html backup_v11/)",
+      "Bash(cp -r characters locations backup_v11/)"
     ]
   }
 }

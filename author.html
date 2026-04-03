@@ -34,7 +34,7 @@
       <li><a href="author.html" class="active">Author</a></li>
     </ul>
     <button class="lang-toggle" id="langToggle">EN</button>
-    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+    <div class="nav-burger" onclick="var lang=document.documentElement.getAttribute('data-lang')||'ru';document.querySelector('.nav-links.lang-'+lang).classList.toggle('open')"><span></span><span></span><span></span></div>
   </div>
 </nav>
 <main class="page-content">

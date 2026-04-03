@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.glitch[data-text-ru]').forEach(el => {
             el.setAttribute('data-text', lang === 'ru' ? el.getAttribute('data-text-ru') : el.getAttribute('data-text-en'));
         });
+        document.querySelectorAll('.nav-links.open').forEach(el => el.classList.remove('open'));
         if (typeof loadFunFact === 'function') loadFunFact();
     }
 
