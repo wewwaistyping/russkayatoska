@@ -121,7 +121,9 @@
       "Bash(convert --version)",
       "Bash(node -e \"try{require\\(''sharp''\\);console.log\\(''SHARP_OK''\\)}catch\\(e\\){console.log\\(''NO_SHARP''\\)}\")",
       "Bash(npm install:*)",
-      "Bash(node compress-photos.js)"
+      "Bash(node compress-photos.js)",
+      "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|webp\\)$\")",
+      "Bash(ls \"C:/Users/HYPERPC/Desktop/hueta/photo/Ilya/Ilya profile pic\"*)"
     ]
   }
 }
