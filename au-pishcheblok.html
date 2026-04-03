@@ -19,7 +19,7 @@
       <li><a href="index.html">Главная</a></li>
       <li><a href="characters.html">Персонажи</a></li>
       <li><a href="locations-list.html">Локации</a></li>
-            <li><a href="map.html">Карта</a></li>
+      <li><a href="map.html">Карта</a></li>
       <li><a href="band.html">Группа</a></li>
       <li><a href="au.html" class="active">AU</a></li>
       <li><a href="author.html">Автор</a></li>
@@ -28,71 +28,71 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="characters.html">Characters</a></li>
       <li><a href="locations-list.html">Locations</a></li>
-            <li><a href="map.html">Map</a></li>
+      <li><a href="map.html">Map</a></li>
       <li><a href="band.html">Band</a></li>
       <li><a href="au.html" class="active">AU</a></li>
       <li><a href="author.html">Author</a></li>
     </ul>
     <button class="lang-toggle" id="langToggle">EN</button>
-    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+    <div class="nav-burger" onclick="var lang=document.documentElement.getAttribute('data-lang')||'ru';document.querySelector('.nav-links.lang-'+lang).classList.toggle('open')"><span></span><span></span><span></span></div>
   </div>
 </nav>
 <main class="page-content au-detail-page">
-  <div class="au-banner pishcheblok-banner"><img src="images/PISCHEBLOK banner.webp" alt="" loading="lazy"><div class="au-banner-overlay"><a href="au.html" class="back-link">&larr; Все AU</a><h1 class="page-title">Пищеблок <span>(1980)</span></h1><p class="au-banner-subtitle">Советский хоррор · Пионерлагерь «Буревестник» · Лето 1980</p></div></div>
+  <div class="au-banner pishcheblok-banner"><img src="images/PISCHEBLOK banner.webp" alt="" loading="lazy"><div class="au-banner-overlay"><a href="au.html" class="back-link"><span class="lang-ru">&larr; Все AU</span><span class="lang-en">&larr; All AUs</span></a><h1 class="page-title"><span class="lang-ru">Пищеблок <span>(1980)</span></span><span class="lang-en">Pishcheblok <span>(1980)</span></span></h1><p class="au-banner-subtitle"><span class="lang-ru">Советский хоррор · Пионерлагерь «Буревестник» · Лето 1980</span><span class="lang-en">Soviet horror · Pioneer camp «Burevestnik» · Summer 1980</span></p></div></div>
   <div class="section">
     <div class="au-info-grid">
       <div class="au-info-block">
-        <h2>Сеттинг</h2>
-        <p>СССР, лето 1980. Пионерлагерь «Буревестник» в сибирской тайге, 40 км от ближайшего города. Строгая дисциплина, утренние линейки, красные галстуки, бюст Ленина.</p>
-        <p>Технологии: дисковые телефоны, кассетные магнитофоны, плёночные камеры. Никакого интернета. Хронический дефицит. Эра позднего Брежнева.</p>
+        <h2><span class="lang-ru">Сеттинг</span><span class="lang-en">Setting</span></h2>
+        <p><span class="lang-ru">СССР, лето 1980. Пионерлагерь «Буревестник» в сибирской тайге, 40 км от ближайшего города. Строгая дисциплина, утренние линейки, красные галстуки, бюст Ленина.</span><span class="lang-en">USSR, summer 1980. Pioneer camp «Burevestnik» in the Siberian taiga, 40 km from the nearest city. Strict discipline, morning roll calls, red neckties, a bust of Lenin.</span></p>
+        <p><span class="lang-ru">Технологии: дисковые телефоны, кассетные магнитофоны, плёночные камеры. Никакого интернета. Хронический дефицит. Эра позднего Брежнева.</span><span class="lang-en">Technology: rotary phones, cassette players, film cameras. No internet. Chronic shortages. The late Brezhnev era.</span></p>
       </div>
       <div class="au-info-block">
-        <h2>Пиявцы</h2>
-        <p>Нежить-кровопийцы с холодной кожей и жалом под языком (не клыки). Красный галстук — «дыхательный узел»: снятие вызывает удушье. Быстрая регенерация.</p>
-        <p>Стратилат выбирает ровно 13 жертв за смену. В конце одного высасывает насухо. Остальные умирают в течение года.</p>
+        <h2><span class="lang-ru">Пиявцы</span><span class="lang-en">Piyavtsy (Leeches)</span></h2>
+        <p><span class="lang-ru">Нежить-кровопийцы с холодной кожей и жалом под языком (не клыки). Красный галстук — «дыхательный узел»: снятие вызывает удушье. Быстрая регенерация.</span><span class="lang-en">Undead bloodsuckers with cold skin and a stinger under the tongue (not fangs). The red necktie is a «breathing knot» — removing it causes suffocation. Rapid regeneration.</span></p>
+        <p><span class="lang-ru">Стратилат выбирает ровно 13 жертв за смену. В конце одного высасывает насухо. Остальные умирают в течение года.</span><span class="lang-en">The Stratilat selects exactly 13 victims per camp shift. At the end, one is drained dry. The rest die within a year.</span></p>
       </div>
     </div>
   </div>
   <div class="section">
-    <h2 class="section-title">Вожатые <span>лагеря</span></h2>
+    <h2 class="section-title"><span class="lang-ru">Вожатые <span>лагеря</span></span><span class="lang-en">Camp <span>counselors</span></span></h2>
     <div class="au-chars-grid">
       <div class="au-char-card">
-        <h3>Антон Погибельский</h3>
-        <p class="au-char-role">Старший вожатый, 20 лет</p>
-        <p>Отвечает за старший отряд (14-15 лет). Серьёзный, ответственный. Из рабочей семьи Красноярска-26. Студент кулинарного техникума.</p>
+        <h3><span class="lang-ru">Антон Погибельский</span><span class="lang-en">Anton Pogibelsky</span></h3>
+        <p class="au-char-role"><span class="lang-ru">Старший вожатый, 20 лет</span><span class="lang-en">Senior counselor, 20 y.o.</span></p>
+        <p><span class="lang-ru">Отвечает за старший отряд (14-15 лет). Серьёзный, ответственный. Из рабочей семьи Красноярска-26. Студент кулинарного техникума.</span><span class="lang-en">In charge of the senior squad (14-15 y.o.). Serious, responsible. From a working-class family in Krasnoyarsk-26. Culinary college student.</span></p>
       </div>
       <div class="au-char-card">
-        <h3>Денис Носков</h3>
-        <p class="au-char-role">Массовик-затейник, 20 лет</p>
-        <p>Культорг: линейки, концерты, костры, подпольные дискотеки. Ходячий хаос и душа компании. Друг детства Антона.</p>
+        <h3><span class="lang-ru">Денис Носков</span><span class="lang-en">Denis Noskov</span></h3>
+        <p class="au-char-role"><span class="lang-ru">Массовик-затейник, 20 лет</span><span class="lang-en">Entertainment director, 20 y.o.</span></p>
+        <p><span class="lang-ru">Культорг: линейки, концерты, костры, подпольные дискотеки. Ходячий хаос и душа компании. Друг детства Антона.</span><span class="lang-en">Cultural organizer: roll calls, concerts, bonfires, underground discos. Walking chaos and the life of the party. Anton's childhood friend.</span></p>
       </div>
       <div class="au-char-card">
-        <h3>Александр Колокольников</h3>
-        <p class="au-char-role">Физрук, 21 год</p>
-        <p>Единственный с высшим образованием (заочник педагогического). Гора мускулов, железная дисциплина, неожиданный защитный инстинкт.</p>
+        <h3><span class="lang-ru">Александр Колокольников</span><span class="lang-en">Alexander Kolokolnikov</span></h3>
+        <p class="au-char-role"><span class="lang-ru">Физрук, 21 год</span><span class="lang-en">PE instructor, 21 y.o.</span></p>
+        <p><span class="lang-ru">Единственный с высшим образованием (заочник педагогического). Гора мускулов, железная дисциплина, неожиданный защитный инстинкт.</span><span class="lang-en">The only one with higher education (correspondence student at a pedagogical institute). Mountain of muscle, iron discipline, unexpected protective instinct.</span></p>
       </div>
       <div class="au-char-card">
-        <h3>Всеволод Страхов</h3>
-        <p class="au-char-role">Трудовик, 20 лет</p>
-        <p>Ведёт кружок «Умелые руки». Патологический врун. Пытается быть круче, чем есть. Проваливается с блеском.</p>
+        <h3><span class="lang-ru">Всеволод Страхов</span><span class="lang-en">Vsevolod Strakhov</span></h3>
+        <p class="au-char-role"><span class="lang-ru">Трудовик, 20 лет</span><span class="lang-en">Shop teacher, 20 y.o.</span></p>
+        <p><span class="lang-ru">Ведёт кружок «Умелые руки». Патологический врун. Пытается быть круче, чем есть. Проваливается с блеском.</span><span class="lang-en">Runs the «Skillful Hands» workshop. Pathological liar. Tries to be cooler than he is. Fails spectacularly.</span></p>
       </div>
     </div>
   </div>
   <div class="section">
-    <h2 class="section-title">Персонал <span>лагеря</span></h2>
+    <h2 class="section-title"><span class="lang-ru">Персонал <span>лагеря</span></span><span class="lang-en">Camp <span>staff</span></span></h2>
     <div class="au-staff-grid">
-      <div class="au-staff-item"><strong>Виктор Корнеев</strong> (58) — директор, ветеран Афгана</div>
-      <div class="au-staff-item"><strong>Клавдия Мясищева</strong> (62) — главный повар, сообщница Стратилата</div>
-      <div class="au-staff-item"><strong>Валентина Железнова</strong> (45) — медсестра, топит совесть в спирте</div>
-      <div class="au-staff-item"><strong>Лев Вишнецкий</strong> (24) — завхоз, решает «сложные вопросы» <em class="au-staff-credit">by rakshakti</em></div>
-      <div class="au-staff-item"><strong>Фонарь Левин</strong> (21) — ночной сторож <em class="au-staff-credit">by KanonMama</em></div>
-      <div class="au-staff-item"><strong>Тротил Прохоров</strong> (19) — истопник, пироманьяк у котлов <em class="au-staff-credit">by KamiyaK</em></div>
-      <div class="au-staff-item"><strong>Стася Носкова</strong> (20) — старшая пионервожатая</div>
-      <div class="au-staff-item"><strong>Пашка Дробовиков</strong> (19) — вожатый с лицом громилы <em class="au-staff-credit">by rakshakti</em></div>
-      <div class="au-staff-item"><strong>Олеся Миролюбова</strong> (19) — вожатая-рассказчица <em class="au-staff-credit">by rakshakti</em></div>
-      <div class="au-staff-item"><strong>Анатолий Шулинс</strong> (19) — вожатый младшего отряда <em class="au-staff-credit">by agat</em></div>
-      <div class="au-staff-item"><strong>Архип Кротов</strong> (71) — сторож у ворот, 28 лет в лагере</div>
-      <div class="au-staff-item"><strong>Пётр Дубов</strong> (52) — участковый, два года до пенсии</div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Виктор Корнеев</span><span class="lang-en">Viktor Korneev</span></strong> (58) — <span class="lang-ru">директор, ветеран Афгана</span><span class="lang-en">director, Afghan war veteran</span></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Клавдия Мясищева</span><span class="lang-en">Klavdiya Myasishcheva</span></strong> (62) — <span class="lang-ru">главный повар, сообщница Стратилата</span><span class="lang-en">head cook, the Stratilat's accomplice</span></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Валентина Железнова</span><span class="lang-en">Valentina Zheleznova</span></strong> (45) — <span class="lang-ru">медсестра, топит совесть в спирте</span><span class="lang-en">nurse, drowns her conscience in rubbing alcohol</span></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Лев Вишнецкий</span><span class="lang-en">Lev Vishnetsky</span></strong> (24) — <span class="lang-ru">завхоз, решает «сложные вопросы»</span><span class="lang-en">supply manager, handles «difficult matters»</span> <em class="au-staff-credit">by rakshakti</em></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Фонарь Левин</span><span class="lang-en">Fonar Levin</span></strong> (21) — <span class="lang-ru">ночной сторож</span><span class="lang-en">night watchman</span> <em class="au-staff-credit">by KanonMama</em></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Тротил Прохоров</span><span class="lang-en">Trotil Prokhorov</span></strong> (19) — <span class="lang-ru">истопник, пироманьяк у котлов</span><span class="lang-en">stoker, pyromaniac at the boilers</span> <em class="au-staff-credit">by KamiyaK</em></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Стася Носкова</span><span class="lang-en">Stasya Noskova</span></strong> (20) — <span class="lang-ru">старшая пионервожатая</span><span class="lang-en">senior pioneer leader</span></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Пашка Дробовиков</span><span class="lang-en">Pashka Drobovikov</span></strong> (19) — <span class="lang-ru">вожатый с лицом громилы</span><span class="lang-en">counselor with a thug's face</span> <em class="au-staff-credit">by rakshakti</em></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Олеся Миролюбова</span><span class="lang-en">Olesya Mirolyubova</span></strong> (19) — <span class="lang-ru">вожатая-рассказчица</span><span class="lang-en">storyteller counselor</span> <em class="au-staff-credit">by rakshakti</em></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Анатолий Шулинс</span><span class="lang-en">Anatoly Shulins</span></strong> (19) — <span class="lang-ru">вожатый младшего отряда</span><span class="lang-en">junior squad counselor</span> <em class="au-staff-credit">by agat</em></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Архип Кротов</span><span class="lang-en">Arkhip Krotov</span></strong> (71) — <span class="lang-ru">сторож у ворот, 28 лет в лагере</span><span class="lang-en">gatekeeper, 28 years at the camp</span></div>
+      <div class="au-staff-item"><strong><span class="lang-ru">Пётр Дубов</span><span class="lang-en">Pyotr Dubov</span></strong> (52) — <span class="lang-ru">участковый, два года до пенсии</span><span class="lang-en">district officer, two years till retirement</span></div>
     </div>
   </div>
 </main>
