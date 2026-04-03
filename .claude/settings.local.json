@@ -123,7 +123,11 @@
       "Bash(npm install:*)",
       "Bash(node compress-photos.js)",
       "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|webp\\)$\")",
-      "Bash(ls \"C:/Users/HYPERPC/Desktop/hueta/photo/Ilya/Ilya profile pic\"*)"
+      "Bash(ls \"C:/Users/HYPERPC/Desktop/hueta/photo/Ilya/Ilya profile pic\"*)",
+      "Bash(ls /c/Users/HYPERPC/Desktop/hueta/*.html)",
+      "Bash(py --version)",
+      "Bash(node -e \"console.log\\(''node works''\\)\")",
+      "Bash(ls \"C:/Users/HYPERPC/Desktop/hueta/images/kukla\"*)"
     ]
   }
 }
