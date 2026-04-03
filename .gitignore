@@ -1,0 +1,15 @@
+# Backups
+backup_v*/
+
+# Source files (not for public)
+bio/
+generate-site.js
+node_modules/
+
+# Janitor/SillyTavern downloaded pages
+janitor*/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
