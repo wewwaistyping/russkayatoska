@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Звёздный — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content">
+  <div class="au-banner"><img src="../photo/Звёздный/iig_2026-04-03T16-10-50-345Z.jpeg" alt="Звёздный" loading="lazy"><div class="au-banner-overlay"><a href="trupovolkovo.html" class="back-link"><span class="lang-ru">&larr; Труповолково</span><span class="lang-en">&larr; Trupovolkovo</span></a><p class="section-label"><span class="lang-ru">район Труповолково</span><span class="lang-en">Trupovolkovo district</span></p><h1 class="page-title"><span class="lang-ru">Звёздный</span><span class="lang-en">Zvezdny</span></h1></div></div>
+  <div class="section"><p class="location-full-desc"><span class="lang-ru">Единственный район, который не гниёт. Кирпичные дома конца 90-х, работающие фонари, консьерж с орлиным взглядом.</span><span class="lang-en">The only district that isn't rotting. Late-90s brick houses, working streetlights, sharp-eyed concierge.</span></p></div>
+  <div class="section"><div class="masonry-gallery"><img src="../photo/Звёздный/iig_2026-04-03T16-04-56-919Z.jpeg" alt="" loading="lazy" onclick="openLocLb(0)"><img src="../photo/Звёздный/iig_2026-04-03T16-10-57-775Z.jpeg" alt="" loading="lazy" onclick="openLocLb(1)"><img src="../photo/Звёздный/iig_2026-04-03T16-13-27-568Z.jpeg" alt="" loading="lazy" onclick="openLocLb(2)"><img src="../photo/Звёздный/iig_2026-04-03T16-14-52-234Z.jpeg" alt="" loading="lazy" onclick="openLocLb(3)"></div></div>
+<div class="lightbox" id="locLb" onclick="closeLocLb()"><img id="locLbImg" src="" alt=""><button class="lightbox-close" onclick="closeLocLb()">&times;</button><button class="lightbox-prev" onclick="event.stopPropagation();locLbPrev()">&#8592;</button><button class="lightbox-next" onclick="event.stopPropagation();locLbNext()">&#8594;</button></div>
+<script>var locPhotos=["../photo/Звёздный/iig_2026-04-03T16-04-56-919Z.jpeg","../photo/Звёздный/iig_2026-04-03T16-10-57-775Z.jpeg","../photo/Звёздный/iig_2026-04-03T16-13-27-568Z.jpeg","../photo/Звёздный/iig_2026-04-03T16-14-52-234Z.jpeg"];var locIdx=0;function openLocLb(i){locIdx=i;document.getElementById('locLbImg').src=locPhotos[i];document.getElementById('locLb').classList.add('open');}function closeLocLb(){document.getElementById('locLb').classList.remove('open');}function locLbNext(){locIdx=(locIdx+1)%locPhotos.length;document.getElementById('locLbImg').src=locPhotos[locIdx];}function locLbPrev(){locIdx=(locIdx-1+locPhotos.length)%locPhotos.length;document.getElementById('locLbImg').src=locPhotos[locIdx];}</script>
+</main>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

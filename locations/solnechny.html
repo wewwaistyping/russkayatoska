@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Солнечный — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content">
+  <div class="au-banner"><img src="../photo/Солнечный/iig_2026-04-03T15-55-49-482Z.jpeg" alt="Солнечный" loading="lazy"><div class="au-banner-overlay"><a href="trupovolkovo.html" class="back-link"><span class="lang-ru">&larr; Труповолково</span><span class="lang-en">&larr; Trupovolkovo</span></a><p class="section-label"><span class="lang-ru">район Труповолково</span><span class="lang-en">Trupovolkovo district</span></p><h1 class="page-title"><span class="lang-ru">Солнечный</span><span class="lang-en">Solnechny</span></h1></div></div>
+  <div class="section"><p class="location-full-desc"><span class="lang-ru">Спальный район хрущёвок и 9-этажных панелек. Бедность, мелкая преступность, аптека с решётками. Сломанные качели, потрескавшийся асфальт, бабки на лавочках.</span><span class="lang-en">Dormitory district of Khrushchyovkas and 9-story panelkas. Poverty, petty crime, pharmacy with barred windows. Broken swings, cracked asphalt, grandmothers on benches.</span></p></div>
+  <div class="section"><div class="masonry-gallery"><img src="../photo/Солнечный/iig_2026-04-03T13-42-01-278Z.jpeg" alt="" loading="lazy" onclick="openLocLb(0)"><img src="../photo/Солнечный/iig_2026-04-03T15-40-00-669Z.jpeg" alt="" loading="lazy" onclick="openLocLb(1)"><img src="../photo/Солнечный/iig_2026-04-03T15-46-14-596Z.jpeg" alt="" loading="lazy" onclick="openLocLb(2)"><img src="../photo/Солнечный/iig_2026-04-03T15-58-44-727Z.jpeg" alt="" loading="lazy" onclick="openLocLb(3)"><img src="../photo/Солнечный/iig_2026-04-03T16-01-51-348Z.jpeg" alt="" loading="lazy" onclick="openLocLb(4)"></div></div>
+<div class="lightbox" id="locLb" onclick="closeLocLb()"><img id="locLbImg" src="" alt=""><button class="lightbox-close" onclick="closeLocLb()">&times;</button><button class="lightbox-prev" onclick="event.stopPropagation();locLbPrev()">&#8592;</button><button class="lightbox-next" onclick="event.stopPropagation();locLbNext()">&#8594;</button></div>
+<script>var locPhotos=["../photo/Солнечный/iig_2026-04-03T13-42-01-278Z.jpeg","../photo/Солнечный/iig_2026-04-03T15-40-00-669Z.jpeg","../photo/Солнечный/iig_2026-04-03T15-46-14-596Z.jpeg","../photo/Солнечный/iig_2026-04-03T15-58-44-727Z.jpeg","../photo/Солнечный/iig_2026-04-03T16-01-51-348Z.jpeg"];var locIdx=0;function openLocLb(i){locIdx=i;document.getElementById('locLbImg').src=locPhotos[i];document.getElementById('locLb').classList.add('open');}function closeLocLb(){document.getElementById('locLb').classList.remove('open');}function locLbNext(){locIdx=(locIdx+1)%locPhotos.length;document.getElementById('locLbImg').src=locPhotos[locIdx];}function locLbPrev(){locIdx=(locIdx-1+locPhotos.length)%locPhotos.length;document.getElementById('locLbImg').src=locPhotos[locIdx];}</script>
+</main>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

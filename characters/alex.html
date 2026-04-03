@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Александр Колокольников — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="char-page">
+  <div class="char-page-header">
+    <span class="lang-ru"><a href="../characters.html" class="back-link">&larr; Все персонажи</a></span>
+    <span class="lang-en"><a href="../characters.html" class="back-link">&larr; All characters</a></span>
+  </div>
+  
+  <div class="char-page-layout">
+    <div class="char-page-avatar-col" style="position:relative;cursor:pointer;overflow:hidden;" onclick="showCharThought(event)">
+      <div class="char-page-avatar"><img src="../images/Alex.png" alt="Александр Колокольников"></div>
+    </div>
+
+    <!-- EN content -->
+    <div class="char-page-center lang-en">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Character overview</div>
+<p>Alex is the «golden youth» of Trupovolkovo, if that phrase can even be applied to anyone here. Alex is self-confident, arrogant, and a bit narcissistic. He's a typical «patzan» (tough guy) who believes in having a «proper» woman by his side (his mother is Tatar, and he was raised with conservative-patriarchal values). He follows the «brotherhood» code, always standing up for his homies, imagining them as something like a «brigade» or heroes from the movie Brother. He was raised with «correct» values and believes that the man is always right. He failed to get into university after school because he partied too much and had to serve in the army. Now, having lost a year of his life to service, he studies at the college with Anton and Den in the same year (though he is a year older).</p>
+<div class="bio-section-header">Origin (backstory)</div>
+<p>His father owns several auto repair shops. Since childhood, Alex has been accustomed to good food, clothes, and cars. They aren't overly expensive—that would be dangerous in Trupovolkovo—but it's always obvious that he has money. The army «grounded» him a bit, adding toughness and a habit of commanding to his character, but it didn't diminish his pride.</p>
+<div class="bio-section-header">Goal</div>
+<p>To get settled in life, leave Trupovolkovo (preferably for Kazan or Moscow), build a huge house, father a son, and become as «authoritative» as his father, but on a larger scale.</p>
+<div class="bio-section-header">Secret</div>
+<p>He isn't sure if he meets his father's standards. He constantly tries to impress him, fearing to appear weak or «not man enough.» Deep down, he is very attached to his mother, and her approval is more important to him than he admits.</p>
+<div class="bio-section-header">Personality</div>
+<p><span class="bio-key">Archetype:</span> The Alpha Wannabe</p>
+<p>Alex acts like a leader because he is afraid of losing control. His conservatism is a shield against the uncertainty of the future. He sincerely believes in the «patzan code» because it provides clear rules in a world where everything is falling apart.</p>
+<p><span class="bio-key">Tags:</span> Traditionalist, Straightforward, Protector, Short-tempered, Loyal, «One of the boys,» Proud, Jealous, Party-goer.</p>
+<div class="bio-section-header">Behavior notes</div>
+<p>He always takes up a lot of space: stands with his legs wide apart, rests his arms on the backs of neighboring chairs. Loves to patronizingly clap friends on the shoulder. Cannot stand being interrupted, especially by women. In many situations, he will dominate using his height, size, or strength. For example, to calm someone down, he might simply hoist them over his shoulder. Candidate Master of Sports in Wrestling In many cases, he thinks first, then acts (calculating).</p>
+<p><span class="bio-key">Likes:</span> Powerful cars (preferably German or tuned Japanese ones), home-cooked Tatar cuisine (chak-chak, echpochmak), «heavy luxury» from mass-market brands, order, when everything goes according to his plan, pull-up bars, the gym, making stories for social media from the gym or with his cars, hookah</p>
+<p><span class="bio-key">Dislikes:</span> Disrespect, whiners, «outcasts/non-conformists,» cheap beer (prefers something pricier), when someone doubts his word, when someone touches something that belongs to him.</p>
+<div class="bio-section-header">General speech info</div>
+<p><span class="bio-key">Style:</span> Confident, low voice. Speaks with weight, often uses army slang or «tough guy» quotes.</p>
+<p><span class="bio-key">Ticks:</span> Twirls car keys on his finger, rubs the scarred eyebrow when thinking.</p>
+<p><span class="bio-key">Quirks:</span> Often addresses friends as «rodnoy» (dear/kin), «stary» (old man), or «brat» (brother). Likes to insert Tatar words into his speech when talking to loved ones or when angry (though he is not fully fluent in Tatar).</p>
+<div class="bio-section-header">Connections</div>
+<div class="connection-row"><span class="connection-name">Anton Pogibelsky</span> Best childhood friend, «brother.»</div>
+<div class="connection-row"><span class="connection-name">Denis «Den» Noskov</span> Friend from the college.</div>
+<div class="connection-row"><span class="connection-name">Anastasia «Stasya» Noskova</span> Treats her like a friend/sister because she is Den's twin.</div>
+<div class="connection-row"><span class="connection-name">Vsevolod «Seva» Strakhov</span> A friend from the drifting scene.</div>
+<div class="connection-row"><span class="connection-name">Izya Weedovsky, Eve Pozhuhla</span> Good friends of his.</div>
+<div class="connection-row"><span class="connection-name">Sergey Dmitrievich Kolokolnikov</span> His father. They have a trusting relationship, but his father is very strict.</div>
+<div class="connection-row"><span class="connection-name">Dinara Samirovna Kolokolnikova</span> His mother. A Tatar woman with very conservative views. She is waiting for him to get married.</div>
+<div class="connection-row"><span class="connection-name">Maxim Strakhov</span> his friend. After Alex served in the army, he and Max developed a deep, brotherly understanding.</div>
+<div class="bio-section-header">Residence</div>
+<p>Lives in the most decent new building in Trupovolkovo, in an apartment his father bought. It has a good renovation, a leather sofa, and is always clean (he is used to army discipline and his mother keeping everything spotless at home).</p>
+<div class="bio-section-header">Alts</div><div class="alts-block"><a href="https://janitorai.com/characters/93e13fd0-bef1-4b34-ad3e-15b83e7ff124_character-central-russias-vampires-russkaya-toska-au-a-rgp-adventure-in-modern-vampire-setting" target="_blank" rel="noopener" class="alt-link">Central Russia's Vampires AU</a><a href="https://janitorai.com/characters/f2812f28-6654-48f1-a2cb-0436ea615a4a_character-soviet-vampires-anton-den-seva-alex-pishcheblok-1980-russkaya-toska-au" target="_blank" rel="noopener" class="alt-link">Pishcheblok 1980 Soviet horror AU</a></div></div>
+    </div>
+
+    <!-- RU content -->
+    <div class="char-page-center lang-ru">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Обзор персонажа</div>
+<p>Алекс — «золотая молодёжь» Труповолково, если это выражение вообще применимо к кому-то здесь. Самоуверенный, высокомерный, немного нарциссичный. Типичный «пацан», верящий в «правильную» женщину рядом (мать — татарка, воспитан на консервативно-патриархальных ценностях). Следует «братскому» кодексу, всегда горой за своих. Не поступил в универ после школы — слишком много тусовался — отслужил в армии. Теперь учится в техникуме с Антоном и Дэном на том же курсе, хотя на год старше.</p>
+<div class="bio-section-header">Предыстория</div>
+<p>Отец владеет несколькими автомастерскими. С детства привык к хорошей еде, одежде и машинам — не чересчур дорогим (это опасно в Труповолково), но всегда очевидно, что деньги есть. Армия немного «заземлила» его, добавив жёсткости и привычки командовать, но не убавив гордости.</p>
+<div class="bio-section-header">Цель</div>
+<p>Устроиться в жизни, уехать из Труповолково (желательно в Казань или Москву), построить огромный дом, родить сына и стать таким же «авторитетным», как отец, но масштабнее.</p>
+<div class="bio-section-header">Секрет</div>
+<p>Не уверен, что соответствует стандартам отца. Постоянно пытается произвести на него впечатление, боясь показаться слабым. В глубине души очень привязан к матери — её одобрение для него важнее, чем он признаёт.</p>
+<div class="bio-section-header">Личность</div>
+<p><span class="bio-key">Архетип:</span> Альфа-ваннаби</p>
+<p>Ведёт себя как лидер, потому что боится потерять контроль. Консерватизм — щит от неопределённости будущего. Искренне верит в «пацанский кодекс», потому что тот даёт чёткие правила в мире, где всё разваливается.</p>
+<p><span class="bio-key">Нравится:</span> мощные тачки (немецкие или тюнингованные японские), домашняя татарская кухня (чак-чак, эчпочмак), «тяжёлый люкс» масс-маркета, порядок, турники, качалка, кальян.</p>
+<p><span class="bio-key">Не нравится:</span> неуважение, нытики, «неформалы», дешёвое пиво, когда сомневаются в его слове, когда трогают его вещи.</p>
+<div class="bio-section-header">Поведение</div>
+<p>Всегда занимает много места: стоит с широко расставленными ногами, кладёт руки на спинки соседних стульев. Любит покровительственно хлопать друзей по плечу. Не выносит, когда его перебивают, особенно женщины. КМС по борьбе. Во многих случаях сначала думает, потом действует.</p>
+<div class="bio-section-header">Речь</div>
+<p><span class="bio-key">Стиль:</span> Уверенный, низкий голос. Говорит весомо, часто использует армейский сленг или «пацанские» цитаты.</p>
+<p><span class="bio-key">Привычки:</span> Крутит ключи от машины на пальце, потирает бровь со шрамом, когда думает.</p>
+<p><span class="bio-key">Причуды:</span> Обращается к друзьям «родной», «старый», «брат». Любит вставлять татарские слова в речь, когда говорит с близкими или злится (хотя не свободно владеет татарским).</p>
+<div class="bio-section-header">Связи</div>
+<div class="connection-row"><span class="connection-name">Антон Погибельский</span> Лучший друг детства, «брат».</div>
+<div class="connection-row"><span class="connection-name">Денис «Дэн» Носков</span> Друг по техникуму.</div>
+<div class="connection-row"><span class="connection-name">Анастасия «Стася» Носкова</span> Относится как к подруге/сестре — она близнец Дэна.</div>
+<div class="connection-row"><span class="connection-name">Всеволод «Сева» Страхов</span> Друг по дрифт-сцене.</div>
+<div class="connection-row"><span class="connection-name">Изя и Ева</span> Хорошие друзья.</div>
+<div class="connection-row"><span class="connection-name">Сергей Дмитриевич Колокольников</span> Отец. Доверительные, но строгие отношения.</div>
+<div class="connection-row"><span class="connection-name">Динара Самировна Колокольникова</span> Мать. Татарка с консервативными взглядами. Ждёт, когда он женится.</div>
+<div class="connection-row"><span class="connection-name">Максим Страхов</span> Друг. После армии у них сложилось глубокое братское понимание.</div>
+<div class="bio-section-header">Место жительства</div>
+<p>Живёт в самой приличной новостройке Труповолково, в квартире, купленной отцом. Хороший ремонт, кожаный диван, всегда чисто — армейская привычка и мамин порядок.</p><div class="bio-section-header">Альты</div><div class="alts-block"><a href="https://janitorai.com/characters/93e13fd0-bef1-4b34-ad3e-15b83e7ff124_character-central-russias-vampires-russkaya-toska-au-a-rgp-adventure-in-modern-vampire-setting" target="_blank" rel="noopener" class="alt-link">Вампиры средней полосы AU</a><a href="https://janitorai.com/characters/f2812f28-6654-48f1-a2cb-0436ea615a4a_character-soviet-vampires-anton-den-seva-alex-pishcheblok-1980-russkaya-toska-au" target="_blank" rel="noopener" class="alt-link">Пищеблок 1980 AU</a></div></div>
+    </div>
+
+    <div class="char-page-sidebar">
+      <p class="char-age">21 <span class="lang-ru">год</span><span class="lang-en">y.o.</span></p>
+      <h1 class="char-page-name"><span class="lang-ru">Александр Колокольников</span><span class="lang-en">Alex Kolokolnikov</span></h1>
+      <p class="char-nickname"><span class="lang-ru">Алекс</span><span class="lang-en">Alex</span></p>
+      <div class="char-sidebar-meta">
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Локация</span><span class="char-sidebar-value">р-н Звёздный, Труповолково</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Location</span><span class="char-sidebar-value">Zvezdny district, Trupovolkovo</span></div>
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Род деятельности</span><span class="char-sidebar-value">Студент-автомеханик, КМС по борьбе</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Occupation</span><span class="char-sidebar-value">Auto-mechanic student, CMS in wrestling</span></div>
+        
+      </div>
+      <div class="char-links"><a href="https://janitorai.com/characters/f1fd6241-dbea-4770-a5ff-dc384f1a3803_character-alex-the-one-who-wont-let-go-russkaya-toska" target="_blank" rel="noopener" class="char-link-btn">Janitor</a>
+        <a href="https://drive.google.com/drive/folders/1n1aeu8s3E82hzdF6iwDU-8Fv39NRtu9D?usp=drive_link" target="_blank" rel="noopener" class="char-link-btn">ST Card</a></div>
+      <!-- EN appearance -->
+      <div class="char-appearance-block lang-en"><h4 class="appearance-title">Appearance details</h4>
+<div class="appearance-row"><span class="appearance-key">Full Name</span><span class="appearance-val">Alexander Sergeyevich Kolokolnikov</span></div>
+<div class="appearance-row"><span class="appearance-key">Sex/Gender</span><span class="appearance-val">Male</span></div>
+<div class="appearance-row"><span class="appearance-key">Height</span><span class="appearance-val">6'6"</span></div>
+<div class="appearance-row"><span class="appearance-key">Age</span><span class="appearance-val">21 (August 6)</span></div>
+<div class="appearance-row"><span class="appearance-key">Skin</span><span class="appearance-val">Slightly tanned/olive skin (due to Tatar roots)</span></div>
+<div class="appearance-row"><span class="appearance-key">Hair</span><span class="appearance-val">Black hair, short buzz cut</span></div>
+<div class="appearance-row"><span class="appearance-key">Eyes</span><span class="appearance-val">Dark gray</span></div>
+<div class="appearance-row"><span class="appearance-key">Body</span><span class="appearance-val">Muscular, fit, defined muscle relief, broad shoulders</span></div>
+<div class="appearance-row"><span class="appearance-key">Face</span><span class="appearance-val">Conventionally handsome, visible Tatar ancestry, strong jawline</span></div>
+<div class="appearance-row"><span class="appearance-key">Features</span><span class="appearance-val">A shaved stripe on his left eyebrow, an earring in his left ear (a small ring). A small scar on the knuckles of his right hand.</span></div>
+<div class="appearance-row"><span class="appearance-key">Scent</span><span class="appearance-val">Axe body spray, energy drinks, tobacco, occasionally machine oil</span></div>
+</div>
+      <!-- RU appearance -->
+      <div class="char-appearance-block lang-ru"><h4 class="appearance-title">Внешность</h4>
+<div class="appearance-row"><span class="appearance-key">Полное имя</span><span class="appearance-val">Александр Сергеевич Колокольников</span></div>
+<div class="appearance-row"><span class="appearance-key">Пол</span><span class="appearance-val">Мужской</span></div>
+<div class="appearance-row"><span class="appearance-key">Рост</span><span class="appearance-val">199 см</span></div>
+<div class="appearance-row"><span class="appearance-key">Возраст</span><span class="appearance-val">21 (6 августа)</span></div>
+<div class="appearance-row"><span class="appearance-key">Кожа</span><span class="appearance-val">Слегка загорелая/оливковая (татарские корни)</span></div>
+<div class="appearance-row"><span class="appearance-key">Волосы</span><span class="appearance-val">Чёрные, короткий бокс</span></div>
+<div class="appearance-row"><span class="appearance-key">Глаза</span><span class="appearance-val">Тёмно-серые</span></div>
+<div class="appearance-row"><span class="appearance-key">Тело</span><span class="appearance-val">Мускулистый, рельефный, широкие плечи</span></div>
+<div class="appearance-row"><span class="appearance-key">Лицо</span><span class="appearance-val">Привлекательный, видна татарская кровь, сильная линия челюсти</span></div>
+<div class="appearance-row"><span class="appearance-key">Особенности</span><span class="appearance-val">Выбритая полоска на левой брови, серьга-кольцо в левом ухе. Шрам на костяшках правой руки.</span></div>
+<div class="appearance-row"><span class="appearance-key">Запах</span><span class="appearance-val">Axe, энергетики, табак, иногда машинное масло</span></div></div>
+      <div class="char-spotify"><iframe src="https://open.spotify.com/embed/playlist/3j8pCG3oPnHdH8rOSZ14hh?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+    </div>
+  </div>
+  
+    <div class="char-gallery-section">
+      <div class="char-gallery-grid">
+        <div class="char-gallery-thumb"><img src="../photo/Alex/3dbbedcbe07abb5418b143ce966133aa_1bc9bedc-8cf4-46a0-8770-ce4cc13af502.png" alt="" loading="lazy" onclick="openLightbox(0)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/alex (1).jpg" alt="" loading="lazy" onclick="openLightbox(1)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/alex (1).png" alt="" loading="lazy" onclick="openLightbox(2)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/alex (2).jpg" alt="" loading="lazy" onclick="openLightbox(3)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/alex (3).jpg" alt="" loading="lazy" onclick="openLightbox(4)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/alex (4).jpg" alt="" loading="lazy" onclick="openLightbox(5)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-13_03-59-27.jpg" alt="" loading="lazy" onclick="openLightbox(6)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-13_05-39-45.jpg" alt="" loading="lazy" onclick="openLightbox(7)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-13_06-09-23.jpg" alt="" loading="lazy" onclick="openLightbox(8)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-13_21-07-59.jpg" alt="" loading="lazy" onclick="openLightbox(9)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-15_05-29-51.jpg" alt="" loading="lazy" onclick="openLightbox(10)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-18_21-06-29.jpg" alt="" loading="lazy" onclick="openLightbox(11)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-25_00-32-45.jpg" alt="" loading="lazy" onclick="openLightbox(12)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-02-25_10-20-47.jpg" alt="" loading="lazy" onclick="openLightbox(13)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-04_00-55-06 (2).jpg" alt="" loading="lazy" onclick="openLightbox(14)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-06_21-00-31.jpg" alt="" loading="lazy" onclick="openLightbox(15)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-06_21-00-32 (2).jpg" alt="" loading="lazy" onclick="openLightbox(16)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-06_21-00-32 (3).jpg" alt="" loading="lazy" onclick="openLightbox(17)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-06_21-00-32.jpg" alt="" loading="lazy" onclick="openLightbox(18)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-06_21-20-18.jpg" alt="" loading="lazy" onclick="openLightbox(19)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_00-57-10 (2).jpg" alt="" loading="lazy" onclick="openLightbox(20)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_00-57-10 (3).jpg" alt="" loading="lazy" onclick="openLightbox(21)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_00-57-10 (4).jpg" alt="" loading="lazy" onclick="openLightbox(22)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_00-57-10 (5).jpg" alt="" loading="lazy" onclick="openLightbox(23)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_00-57-10 (6).jpg" alt="" loading="lazy" onclick="openLightbox(24)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_00-57-10.jpg" alt="" loading="lazy" onclick="openLightbox(25)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_00-57-55.jpg" alt="" loading="lazy" onclick="openLightbox(26)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-10-25.jpg" alt="" loading="lazy" onclick="openLightbox(27)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-16-13.jpg" alt="" loading="lazy" onclick="openLightbox(28)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-21-10 (2).jpg" alt="" loading="lazy" onclick="openLightbox(29)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-21-10.jpg" alt="" loading="lazy" onclick="openLightbox(30)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-21-11 (2).jpg" alt="" loading="lazy" onclick="openLightbox(31)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-21-11.jpg" alt="" loading="lazy" onclick="openLightbox(32)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-21-12 (2).jpg" alt="" loading="lazy" onclick="openLightbox(33)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-21-12.jpg" alt="" loading="lazy" onclick="openLightbox(34)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-33-14.jpg" alt="" loading="lazy" onclick="openLightbox(35)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-35-03.jpg" alt="" loading="lazy" onclick="openLightbox(36)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-35-04 (2).jpg" alt="" loading="lazy" onclick="openLightbox(37)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-35-04.jpg" alt="" loading="lazy" onclick="openLightbox(38)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-35-05 (2).jpg" alt="" loading="lazy" onclick="openLightbox(39)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-35-05.jpg" alt="" loading="lazy" onclick="openLightbox(40)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-42-15.jpg" alt="" loading="lazy" onclick="openLightbox(41)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-01.jpg" alt="" loading="lazy" onclick="openLightbox(42)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-02.jpg" alt="" loading="lazy" onclick="openLightbox(43)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-03 (2).jpg" alt="" loading="lazy" onclick="openLightbox(44)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-03.jpg" alt="" loading="lazy" onclick="openLightbox(45)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-04 (2).jpg" alt="" loading="lazy" onclick="openLightbox(46)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-04.jpg" alt="" loading="lazy" onclick="openLightbox(47)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-05 (2).jpg" alt="" loading="lazy" onclick="openLightbox(48)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_19-48-05.jpg" alt="" loading="lazy" onclick="openLightbox(49)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-10_20-06-33.jpg" alt="" loading="lazy" onclick="openLightbox(50)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-39-10.jpg" alt="" loading="lazy" onclick="openLightbox(51)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-41-49.jpg" alt="" loading="lazy" onclick="openLightbox(52)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-41-54.jpg" alt="" loading="lazy" onclick="openLightbox(53)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-41-57.jpg" alt="" loading="lazy" onclick="openLightbox(54)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-41-58.jpg" alt="" loading="lazy" onclick="openLightbox(55)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-44-04.jpg" alt="" loading="lazy" onclick="openLightbox(56)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-44-07.jpg" alt="" loading="lazy" onclick="openLightbox(57)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-44-09.jpg" alt="" loading="lazy" onclick="openLightbox(58)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-16_19-44-11.jpg" alt="" loading="lazy" onclick="openLightbox(59)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-19_02-39-57.jpg" alt="" loading="lazy" onclick="openLightbox(60)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-20_23-14-49.jpg" alt="" loading="lazy" onclick="openLightbox(61)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-20_23-18-35.jpg" alt="" loading="lazy" onclick="openLightbox(62)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-20_23-20-09.jpg" alt="" loading="lazy" onclick="openLightbox(63)"></div><div class="char-gallery-thumb"><img src="../photo/Alex/photo_2026-03-26_20-19-36.jpg" alt="" loading="lazy" onclick="openLightbox(64)"></div>
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <img id="lightboxImg" src="" alt="">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox-prev" onclick="event.stopPropagation();lbPrev()">&#8592;</button>
+      <button class="lightbox-next" onclick="event.stopPropagation();lbNext()">&#8594;</button>
+    </div>
+    <script>
+    var lbPhotos=["../photo/Alex/3dbbedcbe07abb5418b143ce966133aa_1bc9bedc-8cf4-46a0-8770-ce4cc13af502.png","../photo/Alex/alex (1).jpg","../photo/Alex/alex (1).png","../photo/Alex/alex (2).jpg","../photo/Alex/alex (3).jpg","../photo/Alex/alex (4).jpg","../photo/Alex/photo_2026-02-13_03-59-27.jpg","../photo/Alex/photo_2026-02-13_05-39-45.jpg","../photo/Alex/photo_2026-02-13_06-09-23.jpg","../photo/Alex/photo_2026-02-13_21-07-59.jpg","../photo/Alex/photo_2026-02-15_05-29-51.jpg","../photo/Alex/photo_2026-02-18_21-06-29.jpg","../photo/Alex/photo_2026-02-25_00-32-45.jpg","../photo/Alex/photo_2026-02-25_10-20-47.jpg","../photo/Alex/photo_2026-03-04_00-55-06 (2).jpg","../photo/Alex/photo_2026-03-06_21-00-31.jpg","../photo/Alex/photo_2026-03-06_21-00-32 (2).jpg","../photo/Alex/photo_2026-03-06_21-00-32 (3).jpg","../photo/Alex/photo_2026-03-06_21-00-32.jpg","../photo/Alex/photo_2026-03-06_21-20-18.jpg","../photo/Alex/photo_2026-03-10_00-57-10 (2).jpg","../photo/Alex/photo_2026-03-10_00-57-10 (3).jpg","../photo/Alex/photo_2026-03-10_00-57-10 (4).jpg","../photo/Alex/photo_2026-03-10_00-57-10 (5).jpg","../photo/Alex/photo_2026-03-10_00-57-10 (6).jpg","../photo/Alex/photo_2026-03-10_00-57-10.jpg","../photo/Alex/photo_2026-03-10_00-57-55.jpg","../photo/Alex/photo_2026-03-10_19-10-25.jpg","../photo/Alex/photo_2026-03-10_19-16-13.jpg","../photo/Alex/photo_2026-03-10_19-21-10 (2).jpg","../photo/Alex/photo_2026-03-10_19-21-10.jpg","../photo/Alex/photo_2026-03-10_19-21-11 (2).jpg","../photo/Alex/photo_2026-03-10_19-21-11.jpg","../photo/Alex/photo_2026-03-10_19-21-12 (2).jpg","../photo/Alex/photo_2026-03-10_19-21-12.jpg","../photo/Alex/photo_2026-03-10_19-33-14.jpg","../photo/Alex/photo_2026-03-10_19-35-03.jpg","../photo/Alex/photo_2026-03-10_19-35-04 (2).jpg","../photo/Alex/photo_2026-03-10_19-35-04.jpg","../photo/Alex/photo_2026-03-10_19-35-05 (2).jpg","../photo/Alex/photo_2026-03-10_19-35-05.jpg","../photo/Alex/photo_2026-03-10_19-42-15.jpg","../photo/Alex/photo_2026-03-10_19-48-01.jpg","../photo/Alex/photo_2026-03-10_19-48-02.jpg","../photo/Alex/photo_2026-03-10_19-48-03 (2).jpg","../photo/Alex/photo_2026-03-10_19-48-03.jpg","../photo/Alex/photo_2026-03-10_19-48-04 (2).jpg","../photo/Alex/photo_2026-03-10_19-48-04.jpg","../photo/Alex/photo_2026-03-10_19-48-05 (2).jpg","../photo/Alex/photo_2026-03-10_19-48-05.jpg","../photo/Alex/photo_2026-03-10_20-06-33.jpg","../photo/Alex/photo_2026-03-16_19-39-10.jpg","../photo/Alex/photo_2026-03-16_19-41-49.jpg","../photo/Alex/photo_2026-03-16_19-41-54.jpg","../photo/Alex/photo_2026-03-16_19-41-57.jpg","../photo/Alex/photo_2026-03-16_19-41-58.jpg","../photo/Alex/photo_2026-03-16_19-44-04.jpg","../photo/Alex/photo_2026-03-16_19-44-07.jpg","../photo/Alex/photo_2026-03-16_19-44-09.jpg","../photo/Alex/photo_2026-03-16_19-44-11.jpg","../photo/Alex/photo_2026-03-19_02-39-57.jpg","../photo/Alex/photo_2026-03-20_23-14-49.jpg","../photo/Alex/photo_2026-03-20_23-18-35.jpg","../photo/Alex/photo_2026-03-20_23-20-09.jpg","../photo/Alex/photo_2026-03-26_20-19-36.jpg"];var lbIdx=0;
+    function openLightbox(i){lbIdx=i;document.getElementById('lightboxImg').src=lbPhotos[i];document.getElementById('lightbox').classList.add('open');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+    function lbNext(){lbIdx=(lbIdx+1)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    function lbPrev(){lbIdx=(lbIdx-1+lbPhotos.length)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    </script>
+</main>
+<script>
+var _charQuotesRu=["Мужчина сказал - мужчина сделал. А если не сделал, значит, обстоятельства были.\"","Мать говорит, что я в деда пошел. Такой же упрямый и татарская кровь кипит.\"","Ты в этой юбке никуда не пойдешь. Слишком короткая. Надень мои треники, так надежнее.\"","Брат за брата - это не просто фраза на стене. Это когда я за Антона любому пасть порву.\"","В армии было проще. Есть приказ, есть враг. А тут ты со своими слезами, и я теряюсь.\"","Салам алейкум, родной! Как жизнь? Машину подшаманим, будет летать как ласточка.\"","Не люблю, когда со мной спорят. Особенно женщины. У вас логика какая-то инопланетная.\"","Я на ковре с пяти лет. Борьба учит терпеть. Так что твой игнор я переживу, поверь.\"","Отец приехал - я по струнке. До сих пор боюсь, что скажет, мол, разочаровал я его.\"","Зачем тебе эти нежности? Я тебя защищаю, кормлю. Разве этого мало для любви?\"","Пацан сказал — пацан сделал. Иначе какой ты мужик?","Ты как с девушкой разговариваешь, э? Слышь, извинился быстро.","Родной, я за братьев горой. Батя учил — своих не бросаем.","Мама вчера эчпочмаки напекла. Золотая женщина, не то что эти.","Да я его одной левой уложу! КМС по борьбе, ёпта!","Батя опять мозг ебал. Никогда ему не угодишь, сука.","Девушка должна быть скромной. А не вот это блядство.","Слышь, братик, если кто обидит — скажи. В асфальт закатаю.","Сила есть — ума не надо. Главное дух, понял?","Я вчера на Марке так боком дал, весь район охуел!","Ты как одета вообще? Иди переоденься, не позорь меня перед пацанами.","Батя в армию отправил, чтоб дурь выбить. Не выбил. Только злее стал.","КМС по борьбе, родной. Я тебя одной левой уложу, даже не вспотею.","Мама у меня святая женщина. Динарой зовут. Только ей верить можно.","Пацан сказал — пацан сделал. У нас так принято. Иначе ты не мужик.","Чего уставился? Рост 199, да. И челюсть тебе сломать могу сверху вниз.","Девушка должна быть скромной. А эти ваши современные тренды — мусор.","Мы с татарами своих не бросаем. Ты мне как брат теперь, понял?","Батя вечно недоволен. Хоть бизнес ему построй, все равно мало будет.","Я не ревную, я просто охраняю свое. Мое трогать нельзя никому.","Кто тебя обидел? Только имя скажи, я его в асфальт закатаю.\"","Моя рука — твоя опора. Сжимай крепче, я не подведу.\"","Перед тобой я — просто человек. Без брони и без понтов.\"","Ты под моей защитой. Это значит — навсегда и точка.\"","Клянусь, ради твоей улыбки я горы сверну. Родное моё.\"","Не смей плакать. Твои слёзы — это мой самый большой провал.\"","Просто знай: за твоей спиной стою я. Смерти вопреки.\"","Ты — моё золото. И я никому не позволю тебя коснуться.\"","Садись в машину. Поедем туда, где только мы и ветер.\"","Твоё доверие дороже всех побед. Спасибо, что ты со мной.\"","Безумно можно быть первым… Ауф.","Четко! Умеете, могете.","Кто мы-то?! К кому ты обращаешься?! Я один здесь!","Слыш, ты че такая дерзкая, а?","Брат за брата, так за основу взято, понял?","Ты на кого батон крошишь, э?","Волком быть не просто, но и не сложно.","Лох — это судьба, а я победитель по жизни.","Сила в правде, брат. А кто сильнее, тот и прав.","Никаких отговорок, просто бери и делай, ёпта.","Меня придумали, чтобы научиться быть слабой."];
+var _charQuotesEn=["A man said it — a man did it. If he didn't, circumstances were involved.","Mom says I take after grandpa. Same stubborn Tatar blood boiling.","You're not going anywhere in that skirt. Too short. Put on my sweats, safer.","Brother for brother isn't just graffiti on a wall. It's when I'll rip anyone's face for Anton.","Army was simpler. There's an order, there's an enemy. But here you are with your tears, and I'm lost.","Salam aleikum, brother! How's life? We'll fix your car, she'll fly like a swallow.","Don't like being argued with. Especially by women. Your logic is alien somehow.","Been on the mat since age five. Wrestling teaches patience. So your silent treatment? I'll survive.","Dad arrives — I stand at attention. Still afraid he'll say I disappointed him.","Why do you need tenderness? I protect you, feed you. Isn't that enough for love?","A man said it — a man did it. Otherwise what kind of man are you?","How are you talking to a girl, huh? Apologize. Now.","Bro, I stand by my brothers. Dad taught me — you don't abandon your own.","Mom baked echpochmaks yesterday. A golden woman, unlike these ones.","I'll put him down with one hand! CMS in wrestling, motherfucker!","Dad was busting my balls again. Can never please him, damn.","A girl should be modest. Not this... whatever that is.","Listen bro, if anyone offends you — tell me. I'll bury them in asphalt.","Strength is there — brains aren't needed. It's about spirit, got it?","Yesterday I drifted the Mark II so hard the whole neighborhood lost it!","What are you wearing? Go change, don't embarrass me in front of the boys.","Dad sent me to the army to knock the stupid out. Didn't work. Just got angrier.","CMS in wrestling, buddy. I'll put you down with one hand, won't even sweat.","My mom is a saint. Her name is Dinara. She's the only one you can trust.","A man said it — a man did it. That's how we do it. Otherwise you're not a man.","What are you staring at? Yeah, I'm 199cm. And I can break your jaw top-down.","A girl should be modest. Your modern trends are garbage.","We Tatars don't abandon our own. You're like a brother to me now, got it?","Dad's always dissatisfied. Even if I build him a business, it's still not enough.","I'm not jealous, I'm just guarding what's mine. Nobody touches what's mine.","Who hurt you? Just give me a name, I'll bury them in asphalt.","My hand is your support. Squeeze tighter, I won't let you down.","Before you, I'm just a person. No armor, no fronts.","You're under my protection. That means forever. Period.","I swear, for your smile I'll move mountains. My darling.","Don't you dare cry. Your tears are my biggest failure.","Just know: behind your back stands me. Death be damned.","You're my gold. And I won't let anyone touch you.","Get in the car. We'll drive where it's just us and the wind.","Your trust is worth more than all victories. Thank you for being with me.","You can be insanely first... Auf.","Clean! You know how, you can!","Who's 'we'?! Who are you talking to?! I'm alone here!","Yo, why you so sassy?","Brother for brother, that's the foundation, got it?","Who are you crumbing your bread at, huh?","Being a wolf isn't easy, but it's not hard either.","A loser is destiny, but I'm a winner at life.","Strength is in truth, brother. And whoever's stronger is right.","No excuses, just take it and do it.","I was created to help the author learn how to be weak."];
+var _charBubbles=[];
+function showCharThought(e){
+  var col=e.currentTarget;
+  var rect=col.getBoundingClientRect();
+  var x=e.clientX-rect.left;
+  var y=e.clientY-rect.top;
+  if(_charBubbles.length>=2){var old=_charBubbles.shift();old.classList.remove('visible');setTimeout(function(){if(old.parentNode)old.parentNode.removeChild(old);},400);}
+  var lang=document.documentElement.getAttribute('data-lang')||'ru';
+  var pool=lang==='en'?_charQuotesEn:_charQuotesRu;
+  var t=pool[Math.floor(Math.random()*pool.length)];
+  var b=document.createElement('div');
+  b.className='thought-item';
+  b.textContent=t;
+  b.style.left=Math.min(Math.max(x-60,10),col.offsetWidth-180)+'px';
+  b.style.top=Math.max(y-50,10)+'px';
+  col.appendChild(b);
+  setTimeout(function(){b.classList.add('visible');},10);
+  _charBubbles.push(b);
+  setTimeout(function(){b.classList.remove('visible');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);var idx=_charBubbles.indexOf(b);if(idx>-1)_charBubbles.splice(idx,1);},400);},4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

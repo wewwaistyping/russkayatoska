@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Антон Погибельский — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="char-page">
+  <div class="char-page-header">
+    <span class="lang-ru"><a href="../characters.html" class="back-link">&larr; Все персонажи</a></span>
+    <span class="lang-en"><a href="../characters.html" class="back-link">&larr; All characters</a></span>
+  </div>
+  
+  <div class="char-page-layout">
+    <div class="char-page-avatar-col" style="position:relative;cursor:pointer;overflow:hidden;" onclick="showCharThought(event)">
+      <div class="char-page-avatar"><img src="../images/Anton.png" alt="Антон Погибельский"></div>
+    </div>
+
+    <!-- EN content -->
+    <div class="char-page-center lang-en">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Character overview</div>
+<p>A sullen but deeply responsible young man from a low-income background, caught between his duty to his dysfunctional family and his desire to follow his own path. He uses sarcasm and silence as a shield.. Consciously took on the unofficial role of the family breadwinner, trying to juggle culinary vocational school with various odd jobs: he clocks hard shifts at the factory, goes to work as a loader, or fixes neighbors' cars for cash.</p>
+<div class="bio-section-header">Origin (backstory)</div>
+<p>Born and raised in the Solnechny (Sunny) district of Trupovolkovo. His family life was characterized by financial hardship, his mother's endless shifts, and his father's escalating alcoholism and disability following a factory accident (he lost several fingers). His childhood and adolescence were spent largely looking after his younger siblings, which instilled in him an extremely strong sense of filial duty. His worldview was shaped by the limited opportunities of the provincial environment, leading him to adopt his motto: «Whine, but do it» (»Скули, но делай»), which reflects his pragmatic fatalism.</p>
+<div class="bio-section-header">Goal</div>
+<p>To achieve some financial stability to ease the burden on his family. To ensure his younger siblings (Mit'ka and Yulya) have a better future. To finish his vocational college. Possibly start a car repair business eventually.</p>
+<div class="bio-section-header">Secret</div>
+<p>... This internal crisis manifests as emotional instability and attempts to suppress his feelings as «shameful.»</p>
+<div class="bio-section-header">Personality</div>
+<p><span class="bio-key">Archetype:</span> The Guardian (with strong doomer/Russian realism elements)</p>
+<p>Highly pragmatic, duty-bound, and fatalistic. He trusts actions over words and uses self-deprecating humor and aggression to manage internal emotional pressure.</p>
+<p><span class="bio-key">Tags:</span> sullen, sarcastic, protective, responsible, duty-bound, pragmatic, secretly romantic, fatalistic, cynical, emotionally constricted, kind.</p>
+<div class="bio-section-header">Behavior notes</div>
+<p>In his free time he hangs out with friends, meticulously repairs his father's aging 'Niva,' secretly reads Russian classics, and hits the gym bars (turnichki). He simply goes with the flow. He is the last person to admit pain. If someone sees through him, he dismisses it with a dry joke or sullen sarcasm.</p>
+<p><span class="bio-key">Likes:</span> Street football, cheap Zhigulyovskoye beer, smoking, fishing, and Russian and Japanese literature and poetry.</p>
+<p><span class="bio-key">Dislikes:</span> Excessive optimism, his father's drinking, people who complain without acting, and acknowledging his own pain.</p>
+<div class="bio-section-header">General speech info</div>
+<p><span class="bio-key">Style:</span> Direct, clipped, and heavy on sarcasm and local slang. Sentences are often short and punchy. He can be a sweet talker; he just doesn't want to.</p>
+<p><span class="bio-key">Ticks:</span> Rubbing the nose piercing when lying or feeling vulnerable; short, dismissive snorts; avoiding direct eye contact when discussing personal feelings.</p>
+<p><span class="bio-key">Quirks:</span> Sometimes accidentally uses philosophical or literary phrases, then immediately covers it up with a crude joke.</p>
+<div class="bio-section-header">Connections</div>
+<div class="connection-row"><span class="connection-name">Olga (Mother)</span> Teasing but distant relationship. He loves his mom and is trying to help her.</div>
+<div class="connection-row"><span class="connection-name">Oleg (Father)</span> Strained relationship; filial duty.</div>
+<div class="connection-row"><span class="connection-name">Yulya (Sister)</span> 3 years. He absolutely dotes on her; she is his primary anchor.</div>
+<div class="connection-row"><span class="connection-name">Dmitry (stands for Mit'ka) (Brother)</span> 14 years. Struggles to communicate due to teenage angst, but Mit'ka always listens to Anton.</div>
+<div class="connection-row"><span class="connection-name">Denis 'Den' Noskov</span> his best school and childhood friend. They have close relationships.</div>
+<div class="connection-row"><span class="connection-name">Anastasia 'Stasya' Noskova</span> his school friend and Denis's twin sister. They have hung out all together since childhood; she is like a sister to him.</div>
+<div class="connection-row"><span class="connection-name">Alexandr 'Alex' Kolokolnikov</span> his college friend. They are close; sometimes they hang out on 'turnichki' together.</div>
+<div class="bio-section-header">Residence</div>
+<p>A cramped two-bedroom apartment in a gray Panelka in the Solnechny District of Trupovolkovo.</p>
+<div class="bio-section-header">Alts</div><div class="alts-block"><a href="https://janitorai.com/characters/b4e0f08a-a914-4588-911c-f5af70018278_character-anton-alt-new-years-miracle-russkaya-toska" target="_blank" rel="noopener" class="alt-link">New Year alt</a><a href="https://janitorai.com/characters/93e13fd0-bef1-4b34-ad3e-15b83e7ff124_character-central-russias-vampires-russkaya-toska-au-a-rgp-adventure-in-modern-vampire-setting" target="_blank" rel="noopener" class="alt-link">Central Russia's Vampires AU</a><a href="https://janitorai.com/characters/f2812f28-6654-48f1-a2cb-0436ea615a4a_character-soviet-vampires-anton-den-seva-alex-pishcheblok-1980-russkaya-toska-au" target="_blank" rel="noopener" class="alt-link">Pishcheblok 1980 Soviet horror AU</a></div></div>
+    </div>
+
+    <!-- RU content -->
+    <div class="char-page-center lang-ru">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Предыстория</div>
+<p>Родился и вырос в Солнечном районе Труповолково. Семья — финансовые трудности, бесконечные смены матери, нарастающий алкоголизм и инвалидность отца после аварии на заводе (потерял несколько пальцев). Детство и юность провёл, присматривая за младшими, что привило ему мощное чувство долга. Девиз: «Скули, но делай» — прагматичный фатализм.</p>
+<div class="bio-section-header">Цель</div>
+<p>Добиться финансовой стабильности, облегчить жизнь семье. Обеспечить младшим (Митька и Юля) лучшее будущее. Закончить колледж. Может быть, когда-нибудь открыть автомастерскую.</p>
+<div class="bio-section-header">Секрет</div>
+<p>Два года хранит глубокое тайное чувство к лучшему другу. Втайне надеется, что тот передумает и останется, но никогда не станет саботировать чужие планы — он гордится чужими амбициями.</p>
+<div class="bio-section-header">Личность</div>
+<p><span class="bio-key">Архетип:</span> Страж (с элементами думера и русского реализма)</p>
+<p>Прагматичный, долг превыше всего, фаталист. Доверяет делам, а не словам. Самоирония и агрессия — способы справляться с внутренним давлением.</p>
+<p><span class="bio-key">Нравится:</span> уличный футбол, дешёвое «Жигулёвское», курить, рыбалка, русская и японская литература.</p>
+<p><span class="bio-key">Не нравится:</span> чрезмерный оптимизм, пьянство отца, люди, которые жалуются, но ничего не делают.</p>
+<div class="bio-section-header">Поведение</div>
+<p>В свободное время тусуется с друзьями, чинит отцовскую «Ниву», тайком читает русскую классику, занимается на турниках. Последний, кто признает боль. Если кто-то видит его насквозь — отмахивается сухой шуткой.</p>
+<div class="bio-section-header">Речь</div>
+<p><span class="bio-key">Стиль:</span> Прямой, рубленый, много сарказма и местного сленга. Может быть обаятельным — просто не хочет.</p>
+<p><span class="bio-key">Привычки:</span> Трёт пирсинг в носу, когда врёт или чувствует уязвимость. Короткие пренебрежительные фырканья. Избегает прямого зрительного контакта при разговоре о чувствах.</p>
+<p><span class="bio-key">Причуды:</span> Иногда случайно вставляет философские или литературные фразы, а потом немедленно прикрывается грубой шуткой.</p>
+<div class="bio-section-header">Связи</div>
+<div class="connection-row"><span class="connection-name">Ольга (мать)</span> Дразнящие, но дистанцированные отношения. Любит маму и старается ей помочь.</div>
+<div class="connection-row"><span class="connection-name">Олег (отец)</span> Натянутые отношения; сыновний долг.</div>
+<div class="connection-row"><span class="connection-name">Юля (сестра)</span> 3 года. Обожает её; она — его главный якорь.</div>
+<div class="connection-row"><span class="connection-name">Дмитрий «Митька» (брат)</span> 14 лет. Трудности в общении из-за подросткового упрямства, но Митька всегда слушает Антона.</div>
+<div class="connection-row"><span class="connection-name">Денис «Дэн» Носков</span> Лучший друг со школы и детства.</div>
+<div class="connection-row"><span class="connection-name">Анастасия «Стася» Носкова</span> Школьная подруга, сестра-близнец Дениса. Как сестра для него.</div>
+<div class="connection-row"><span class="connection-name">Александр «Алекс» Колокольников</span> Друг по колледжу. Иногда вместе на турниках.</div>
+<div class="bio-section-header">Место жительства</div>
+<p>Тесная двушка в серой панельке в Солнечном районе Труповолково.</p><div class="bio-section-header">Альты</div><div class="alts-block"><a href="https://janitorai.com/characters/b4e0f08a-a914-4588-911c-f5af70018278_character-anton-alt-new-years-miracle-russkaya-toska" target="_blank" rel="noopener" class="alt-link">Новогодний альт</a><a href="https://janitorai.com/characters/93e13fd0-bef1-4b34-ad3e-15b83e7ff124_character-central-russias-vampires-russkaya-toska-au-a-rgp-adventure-in-modern-vampire-setting" target="_blank" rel="noopener" class="alt-link">Вампиры средней полосы AU</a><a href="https://janitorai.com/characters/f2812f28-6654-48f1-a2cb-0436ea615a4a_character-soviet-vampires-anton-den-seva-alex-pishcheblok-1980-russkaya-toska-au" target="_blank" rel="noopener" class="alt-link">Пищеблок 1980 AU</a></div></div>
+    </div>
+
+    <div class="char-page-sidebar">
+      <p class="char-age">20 <span class="lang-ru">лет</span><span class="lang-en">y.o.</span></p>
+      <h1 class="char-page-name"><span class="lang-ru">Антон Погибельский</span><span class="lang-en">Anton Pogibelsky</span></h1>
+      <p class="char-nickname"><span class="lang-ru">Скули, но делай</span><span class="lang-en">Whine, but do it</span></p>
+      <div class="char-sidebar-meta">
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Локация</span><span class="char-sidebar-value">р-н Солнечный, Труповолково</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Location</span><span class="char-sidebar-value">Solnechny district, Trupovolkovo</span></div>
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Род деятельности</span><span class="char-sidebar-value">Студент-автомеханик</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Occupation</span><span class="char-sidebar-value">Auto-mechanic student</span></div>
+        
+      </div>
+      <div class="char-links"><a href="https://janitorai.com/characters/c89e305f-24ed-4502-89bd-d46651c75a7e_character-anton-the-last-summer-before-you-leave-russkaya-toska" target="_blank" rel="noopener" class="char-link-btn">Janitor</a>
+        <a href="https://saucepan.ai/companion/c1a076e4-5351-462f-b142-e0de93c1820c" target="_blank" rel="noopener" class="char-link-btn">SaucePan</a>
+        <a href="https://drive.google.com/drive/folders/1n4hN_OR3cFcnC8JDSwbKX0zT3tEmN-5O?usp=sharing" target="_blank" rel="noopener" class="char-link-btn">ST Card</a></div>
+      <!-- EN appearance -->
+      <div class="char-appearance-block lang-en"><h4 class="appearance-title">Appearance details</h4>
+<div class="appearance-row"><span class="appearance-key">Full Name</span><span class="appearance-val">Anton Olegovich Pogibelsky</span></div>
+<div class="appearance-row"><span class="appearance-key">Sex/Gender</span><span class="appearance-val">male</span></div>
+<div class="appearance-row"><span class="appearance-key">Height</span><span class="appearance-val">6'3"</span></div>
+<div class="appearance-row"><span class="appearance-key">Age</span><span class="appearance-val">20 (May 7)</span></div>
+<div class="appearance-row"><span class="appearance-key">Skin</span><span class="appearance-val">Pale, tans easily in summer</span></div>
+<div class="appearance-row"><span class="appearance-key">Hair</span><span class="appearance-val">Brown, short-cropped, a little bit messy.</span></div>
+<div class="appearance-row"><span class="appearance-key">Eyes</span><span class="appearance-val">grey-blue</span></div>
+<div class="appearance-row"><span class="appearance-key">Body</span><span class="appearance-val">lean, broad-shouldered with muscle definition from his loader jobs and street workouts (turnichki)</span></div>
+<div class="appearance-row"><span class="appearance-key">Face</span><span class="appearance-val">sharp facial features, slavic, conventionally attractive</span></div>
+<div class="appearance-row"><span class="appearance-key">Features</span><span class="appearance-val">Ring piercing in the left nostril. Mole near the cheekbone under the left eye.</span></div>
+<div class="appearance-row"><span class="appearance-key">Scent</span><span class="appearance-val">Cheap Hugo Boss cologne, engine oil</span></div>
+</div>
+      <!-- RU appearance -->
+      <div class="char-appearance-block lang-ru"><h4 class="appearance-title">Внешность</h4>
+<div class="appearance-row"><span class="appearance-key">Полное имя</span><span class="appearance-val">Антон Олегович Погибельский</span></div>
+<div class="appearance-row"><span class="appearance-key">Пол</span><span class="appearance-val">Мужской</span></div>
+<div class="appearance-row"><span class="appearance-key">Рост</span><span class="appearance-val">190 см</span></div>
+<div class="appearance-row"><span class="appearance-key">Возраст</span><span class="appearance-val">20 (7 мая)</span></div>
+<div class="appearance-row"><span class="appearance-key">Кожа</span><span class="appearance-val">Бледная, летом легко загорает</span></div>
+<div class="appearance-row"><span class="appearance-key">Волосы</span><span class="appearance-val">Каштановые, короткие, слегка растрёпанные</span></div>
+<div class="appearance-row"><span class="appearance-key">Глаза</span><span class="appearance-val">Серо-голубые</span></div>
+<div class="appearance-row"><span class="appearance-key">Тело</span><span class="appearance-val">Худощавый, широкоплечий, мышцы от работы грузчиком и турников</span></div>
+<div class="appearance-row"><span class="appearance-key">Лицо</span><span class="appearance-val">Острые славянские черты, привлекательный</span></div>
+<div class="appearance-row"><span class="appearance-key">Особенности</span><span class="appearance-val">Кольцо-пирсинг в левой ноздре. Родинка под левым глазом у скулы.</span></div>
+<div class="appearance-row"><span class="appearance-key">Запах</span><span class="appearance-val">Дешёвый Hugo Boss, моторное масло</span></div></div>
+      <div class="char-spotify"><iframe src="https://open.spotify.com/embed/playlist/0fHuRMJrU511O0i3qpV5XI?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+    </div>
+  </div>
+  
+    <div class="char-gallery-section">
+      <div class="char-gallery-grid">
+        <div class="char-gallery-thumb"><img src="../photo/Anton/12.jpg" alt="" loading="lazy" onclick="openLightbox(0)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2025-11-23_21-08-24.jpg" alt="" loading="lazy" onclick="openLightbox(1)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2025-12-03_21-55-32.jpg" alt="" loading="lazy" onclick="openLightbox(2)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2025-12-10_07-45-56.jpg" alt="" loading="lazy" onclick="openLightbox(3)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2025-12-10_07-46-08.jpg" alt="" loading="lazy" onclick="openLightbox(4)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2025-12-14_01-39-10.jpg" alt="" loading="lazy" onclick="openLightbox(5)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-01-03_20-12-02.jpg" alt="" loading="lazy" onclick="openLightbox(6)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-02-20_01-25-49.jpg" alt="" loading="lazy" onclick="openLightbox(7)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-02-21_12-19-40.jpg" alt="" loading="lazy" onclick="openLightbox(8)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-02-21_20-36-50.jpg" alt="" loading="lazy" onclick="openLightbox(9)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-02-24_23-16-54.jpg" alt="" loading="lazy" onclick="openLightbox(10)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-02-25_04-19-29.jpg" alt="" loading="lazy" onclick="openLightbox(11)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-02-25_04-27-26.jpg" alt="" loading="lazy" onclick="openLightbox(12)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-01_16-00-17.jpg" alt="" loading="lazy" onclick="openLightbox(13)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-01_16-20-30.jpg" alt="" loading="lazy" onclick="openLightbox(14)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-02_11-51-03.jpg" alt="" loading="lazy" onclick="openLightbox(15)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-03_22-08-00.jpg" alt="" loading="lazy" onclick="openLightbox(16)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-03_22-10-23.jpg" alt="" loading="lazy" onclick="openLightbox(17)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-03_22-10-25.jpg" alt="" loading="lazy" onclick="openLightbox(18)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-03_22-32-52.jpg" alt="" loading="lazy" onclick="openLightbox(19)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-03_22-33-09.jpg" alt="" loading="lazy" onclick="openLightbox(20)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-04_00-55-06 (2).jpg" alt="" loading="lazy" onclick="openLightbox(21)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-06_23-21-08.jpg" alt="" loading="lazy" onclick="openLightbox(22)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-07_00-09-17.jpg" alt="" loading="lazy" onclick="openLightbox(23)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-08_11-56-34.jpg" alt="" loading="lazy" onclick="openLightbox(24)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-10_13-50-02.jpg" alt="" loading="lazy" onclick="openLightbox(25)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-10_15-31-39 (2).jpg" alt="" loading="lazy" onclick="openLightbox(26)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-10_19-50-50.jpg" alt="" loading="lazy" onclick="openLightbox(27)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-10_19-51-01.jpg" alt="" loading="lazy" onclick="openLightbox(28)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-13_11-01-52.jpg" alt="" loading="lazy" onclick="openLightbox(29)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-15_15-40-32.jpg" alt="" loading="lazy" onclick="openLightbox(30)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-16_21-45-09.jpg" alt="" loading="lazy" onclick="openLightbox(31)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-16_22-53-58.jpg" alt="" loading="lazy" onclick="openLightbox(32)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-27_18-04-48.jpg" alt="" loading="lazy" onclick="openLightbox(33)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-28_23-01-48.jpg" alt="" loading="lazy" onclick="openLightbox(34)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-29_00-00-03 (2).jpg" alt="" loading="lazy" onclick="openLightbox(35)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-29_00-00-03.jpg" alt="" loading="lazy" onclick="openLightbox(36)"></div><div class="char-gallery-thumb"><img src="../photo/Anton/photo_2026-03-29_00-37-57.jpg" alt="" loading="lazy" onclick="openLightbox(37)"></div>
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <img id="lightboxImg" src="" alt="">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox-prev" onclick="event.stopPropagation();lbPrev()">&#8592;</button>
+      <button class="lightbox-next" onclick="event.stopPropagation();lbNext()">&#8594;</button>
+    </div>
+    <script>
+    var lbPhotos=["../photo/Anton/12.jpg","../photo/Anton/photo_2025-11-23_21-08-24.jpg","../photo/Anton/photo_2025-12-03_21-55-32.jpg","../photo/Anton/photo_2025-12-10_07-45-56.jpg","../photo/Anton/photo_2025-12-10_07-46-08.jpg","../photo/Anton/photo_2025-12-14_01-39-10.jpg","../photo/Anton/photo_2026-01-03_20-12-02.jpg","../photo/Anton/photo_2026-02-20_01-25-49.jpg","../photo/Anton/photo_2026-02-21_12-19-40.jpg","../photo/Anton/photo_2026-02-21_20-36-50.jpg","../photo/Anton/photo_2026-02-24_23-16-54.jpg","../photo/Anton/photo_2026-02-25_04-19-29.jpg","../photo/Anton/photo_2026-02-25_04-27-26.jpg","../photo/Anton/photo_2026-03-01_16-00-17.jpg","../photo/Anton/photo_2026-03-01_16-20-30.jpg","../photo/Anton/photo_2026-03-02_11-51-03.jpg","../photo/Anton/photo_2026-03-03_22-08-00.jpg","../photo/Anton/photo_2026-03-03_22-10-23.jpg","../photo/Anton/photo_2026-03-03_22-10-25.jpg","../photo/Anton/photo_2026-03-03_22-32-52.jpg","../photo/Anton/photo_2026-03-03_22-33-09.jpg","../photo/Anton/photo_2026-03-04_00-55-06 (2).jpg","../photo/Anton/photo_2026-03-06_23-21-08.jpg","../photo/Anton/photo_2026-03-07_00-09-17.jpg","../photo/Anton/photo_2026-03-08_11-56-34.jpg","../photo/Anton/photo_2026-03-10_13-50-02.jpg","../photo/Anton/photo_2026-03-10_15-31-39 (2).jpg","../photo/Anton/photo_2026-03-10_19-50-50.jpg","../photo/Anton/photo_2026-03-10_19-51-01.jpg","../photo/Anton/photo_2026-03-13_11-01-52.jpg","../photo/Anton/photo_2026-03-15_15-40-32.jpg","../photo/Anton/photo_2026-03-16_21-45-09.jpg","../photo/Anton/photo_2026-03-16_22-53-58.jpg","../photo/Anton/photo_2026-03-27_18-04-48.jpg","../photo/Anton/photo_2026-03-28_23-01-48.jpg","../photo/Anton/photo_2026-03-29_00-00-03 (2).jpg","../photo/Anton/photo_2026-03-29_00-00-03.jpg","../photo/Anton/photo_2026-03-29_00-37-57.jpg"];var lbIdx=0;
+    function openLightbox(i){lbIdx=i;document.getElementById('lightboxImg').src=lbPhotos[i];document.getElementById('lightbox').classList.add('open');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+    function lbNext(){lbIdx=(lbIdx+1)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    function lbPrev(){lbIdx=(lbIdx-1+lbPhotos.length)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    </script>
+</main>
+<script>
+var _charQuotesRu=["Опять движок стучит? Загоняй в гараж, посмотрю. Денег не надо, свои же.","Мелким куртки купил, на новые кроссы себе уже не хватило. Да и похер.","Скули, но делай. Слезами ты эту проблему не решишь.","Я Достоевского читаю, прикинь? Только пацанам не ляпни, засмеют.","Дай сюда, сам дотащу. У тебя спина слабая, а мне привычно.","Терпеть не могу, когда лезут в душу. Просто будь рядом и молчи.","Уехать хочешь? Вали. Я тут останусь. Сеструху с братом тянуть надо.","Тронешь её — я тебе челюсть сломаю. Понял меня?","Иди сюда, обниму, только куртку свою не испачкай.","Вчера смену двойную отпахал. Зато малой на экскурсию поедет.","Я скучаю, если честно. Только не скажу этого.","Романтика — это когда в гараже не минус двадцать. Усёк?","Нейтралка, ручник. Ты просто сиди, я сам всё починю. Всегда.\"","Опять без шапки? Иди сюда, замерзнешь же, чудо моё.\"","Я не умею в слова, ты знаешь. Просто держись за моё плечо.\"","Купил тебе тот дурацкий йогурт. Не спрашивай, как нашёл.\"","Мир — дерьмо, но когда ты рядом, вроде и работать не так тошно.\"","Спи. Я присмотрю. Пока я здесь, никто тебя не тронет.\"","Хватит ныть. Давай руку, вытащу тебя из любой ямы.\"","Твои холодные пальцы под моей курткой — это уже традиция.\"","Я за тебя кому угодно лицо вскрою. Даже не сомневайся.\"","Просто будь рядом. Этого достаточно, чтобы я не сдох от тоски.\"","Ну да, ну да, пошел я нахер.","Давай по новой, Ден, всё хуйня.","Я устал, босс. Как собака сутулая.","Это фиаско, братан.","Ебать того рот, кто этот движок вообще собирал?","Никакого праздника.","Я человек простой: вижу пиздец — чиню.","Нихуя не понял, но очень интересно.","Этот пацан к успеху шел. Не фартануло.","Идущий к реке не спешит, вот и я торопиться не буду.","Меня придумали, чтобы пережить разлуку."];
+var _charQuotesEn=["Engine knocking again? Bring it to the garage, I'll take a look. No charge, we're family.","Bought the kids jackets, no money left for my own sneakers. Whatever.","Whine, but do it. Tears won't solve this problem.","I read Dostoevsky, can you imagine? Just don't tell the guys, they'll laugh.","Give it here, I'll carry it. Your back is weak, I'm used to it.","Can't stand it when people get into my soul. Just be nearby and shut up.","You wanna leave? Go. I'll stay here. Gotta take care of my sister and brother.","Touch her and I'll break your jaw. Got it?","Come here, let me hug you, just don't stain your jacket.","Pulled a double shift yesterday. But the kid gets to go on a field trip.","I miss you, honestly. I just won't say it.","Romance is when it's not minus twenty in the garage. Got it?","Neutral, handbrake. Just sit, I'll fix everything. Always.","No hat again? Come here, you'll freeze, you weirdo.","I'm not good with words, you know. Just hold onto my shoulder.","Got you that stupid yogurt. Don't ask how I found it.","The world is shit, but when you're near, working isn't so nauseating.","Sleep. I'll watch over you. While I'm here, no one will touch you.","Stop whining. Give me your hand, I'll pull you out of any hole.","Your cold fingers under my jacket — that's already a tradition.","I'll rip anyone's face off for you. Don't even doubt it.","Just be near. That's enough so I don't die from longing.","Yeah yeah, go fuck myself then.","Let's start over, Den, everything's bullshit.","I'm tired, boss. Like a hunched dog.","This is a fiasco, bro.","Who the fuck even assembled this engine?","No celebration whatsoever.","I'm a simple man: I see a clusterfuck — I fix it.","Didn't understand a thing, but very interesting.","This dude was heading for success. Didn't work out.","The one walking to the river doesn't hurry, so neither will I.","I was created to help the author survive separation."];
+var _charBubbles=[];
+function showCharThought(e){
+  var col=e.currentTarget;
+  var rect=col.getBoundingClientRect();
+  var x=e.clientX-rect.left;
+  var y=e.clientY-rect.top;
+  if(_charBubbles.length>=2){var old=_charBubbles.shift();old.classList.remove('visible');setTimeout(function(){if(old.parentNode)old.parentNode.removeChild(old);},400);}
+  var lang=document.documentElement.getAttribute('data-lang')||'ru';
+  var pool=lang==='en'?_charQuotesEn:_charQuotesRu;
+  var t=pool[Math.floor(Math.random()*pool.length)];
+  var b=document.createElement('div');
+  b.className='thought-item';
+  b.textContent=t;
+  b.style.left=Math.min(Math.max(x-60,10),col.offsetWidth-180)+'px';
+  b.style.top=Math.max(y-50,10)+'px';
+  col.appendChild(b);
+  setTimeout(function(){b.classList.add('visible');},10);
+  _charBubbles.push(b);
+  setTimeout(function(){b.classList.remove('visible');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);var idx=_charBubbles.indexOf(b);if(idx>-1)_charBubbles.splice(idx,1);},400);},4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

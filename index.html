@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РУССКАЯ ТОСКА — Труповолково и окрестности</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ═══ INDEX-SPECIFIC STYLES ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(138,69,19,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(74,63,107,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(10,10,10,0.8) 0%, var(--black) 100%);
+        }
+        .hero-grid {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-vhs-rec {
+            position: absolute;
+            top: 80px; left: 32px;
+            z-index: 3;
+            font-family: var(--font-pixel);
+            font-size: 10px;
+            color: var(--acid-pink);
+            opacity: 0.4;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: recBlink 2s steps(1) infinite;
+        }
+        .hero-vhs-rec::before {
+            content: '';
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--acid-pink);
+        }
+        @keyframes recBlink { 0%,70% { opacity: 0.4; } 71%,100% { opacity: 0; } }
+        .hero-vhs-timestamp {
+            position: absolute;
+            top: 80px; right: 32px;
+            z-index: 3;
+            font-family: var(--font-pixel);
+            font-size: 10px;
+            color: var(--white);
+            opacity: 0.2;
+            text-shadow: 2px 0 var(--acid-pink), -2px 0 var(--acid-blue);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero-subtitle-top {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            margin-bottom: 24px;
+            opacity: 0; animation: fadeUp 1s ease 0.3s forwards;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 10vw, 140px);
+            line-height: 0.85;
+            text-transform: uppercase;
+            opacity: 0; animation: fadeUp 1.2s ease 0.5s forwards;
+        }
+        .hero-title .line-1 {
+            display: block;
+            color: var(--cream);
+            text-shadow: 3px 0 rgba(255,45,107,0.3), -3px 0 rgba(0,212,255,0.3);
+        }
+        .hero-title .line-2 {
+            display: block;
+            color: var(--acid-green);
+            font-size: 0.6em;
+            letter-spacing: 0.2em;
+        }
+        .hero-dash {
+            display: block;
+            width: 80px; height: 2px;
+            background: var(--acid-pink);
+            margin: 32px auto;
+            opacity: 0; animation: fadeUp 1s ease 0.8s forwards;
+        }
+        .hero-tagline {
+            font-family: var(--font-handwritten);
+            font-size: clamp(18px, 3vw, 28px);
+            color: var(--cream);
+            opacity: 0; animation: fadeUp 1s ease 1s forwards;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-era {
+            margin-top: 48px;
+            font-family: var(--font-heading);
+            font-size: 11px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+            opacity: 0; animation: fadeUp 1s ease 1.3s forwards;
+        }
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0; animation: fadeUp 1s ease 1.6s forwards;
+        }
+        .hero-scroll span {
+            font-family: var(--font-heading);
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+        }
+        .hero-scroll-line {
+            width: 1px; height: 40px;
+            background: var(--gray-mid);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-scroll-line::after {
+            content: '';
+            position: absolute;
+            top: -100%; left: 0;
+            width: 100%; height: 100%;
+            background: var(--acid-green);
+            animation: scrollPulse 2s ease infinite;
+        }
+        .hero-quote {
+            position: absolute;
+            font-family: var(--font-handwritten);
+            color: var(--gray-mid);
+            opacity: 0.12;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .hero-quote.q1 { top: 15%; left: 5%; font-size: 20px; transform: rotate(-8deg); }
+        .hero-quote.q2 { top: 25%; right: 8%; font-size: 16px; transform: rotate(5deg); }
+        .hero-quote.q3 { bottom: 20%; left: 10%; font-size: 18px; }
+        .hero-quote.q4 { bottom: 30%; right: 5%; font-size: 14px; transform: rotate(-4deg); }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+        .about-text {
+            font-size: 20px;
+            color: var(--cream);
+            line-height: 1.7;
+        }
+        .about-text p + p { margin-top: 24px; }
+        .about-text strong { color: var(--acid-green); font-weight: 400; }
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .stat-card {
+            background: var(--gray-dark);
+            border: 1px solid var(--gray);
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        .stat-card:hover { border-color: var(--acid-green); transform: translateY(-4px); }
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 36px;
+            color: var(--acid-green);
+        }
+        .stat-label {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            margin-top: 8px;
+        }
+
+        /* Graffiti divider */
+        .graffiti-divider {
+            padding: 28px 0;
+            background: var(--dark);
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
+            overflow: hidden;
+        }
+        .graffiti-track {
+            display: flex;
+            gap: 80px;
+            animation: marquee 80s linear infinite;
+            white-space: nowrap;
+        }
+        .graffiti-item {
+            font-family: var(--font-handwritten);
+            font-size: clamp(14px, 2vw, 22px);
+            color: rgba(255,255,255,0.07);
+            flex-shrink: 0;
+            transition: color 0.4s;
+            cursor: default;
+        }
+        .graffiti-item:hover {
+            color: rgba(255,255,255,0.25);
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 120px 32px;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(74,63,107,0.08) 0%, transparent 70%), var(--black);
+            border-top: 1px solid var(--gray);
+        }
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 6vw, 64px);
+            color: var(--white);
+            margin-bottom: 24px;
+            text-shadow: 3px 0 rgba(255,45,107,0.15), -3px 0 rgba(0,212,255,0.15);
+        }
+        .cta-subtitle {
+            font-family: var(--font-handwritten);
+            font-size: 22px;
+            color: var(--cream);
+            margin-bottom: 48px;
+            opacity: 0.6;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .cta-btn {
+            font-family: var(--font-heading);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 14px 32px;
+            border: 1px solid var(--gray-mid);
+            color: var(--white);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            transition: left 0.4s;
+            z-index: -1;
+        }
+        .cta-btn:hover { color: var(--black); border-color: var(--acid-green); }
+        .cta-btn:hover::before { left: 0; background: var(--acid-green); }
+        .cta-btn.pink:hover::before { background: var(--acid-pink); }
+        .cta-btn.pink:hover { border-color: var(--acid-pink); }
+
+        /* Era grid */
+        .era-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+        .era-category h3 {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--acid-green);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--gray);
+        }
+        .era-category ul { list-style: none; }
+        .era-category li {
+            font-size: 16px;
+            color: var(--cream);
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .era-category li::before {
+            content: '— ';
+            color: var(--gray-mid);
+        }
+
+        /* Quick links grid */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .quick-link {
+            display: block;
+            background: var(--gray-dark);
+            border: 1px solid var(--gray);
+            padding: 28px 24px;
+            transition: all 0.4s;
+        }
+        .quick-link:hover { border-color: var(--acid-green); transform: translateY(-4px); }
+        .quick-link h3 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            color: var(--acid-green);
+            margin-bottom: 8px;
+        }
+        .quick-link p {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.4;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scrollPulse { 0% { top: -100%; } 100% { top: 200%; } }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .era-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero-quote { display: none; }
+            .about-stats { grid-template-columns: 1fr; }
+            .era-grid { grid-template-columns: 1fr; gap: 32px; }
+            .hero-vhs-rec, .hero-vhs-timestamp { font-size: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- DISCLAIMER OVERLAY -->
+<style>
+.disclaimer-overlay { position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.96);z-index:10000;display:flex;justify-content:center;align-items:center;padding:20px; }
+.disclaimer-box { max-width:560px;text-align:center;font-family:var(--font-body);color:var(--cream); }
+.disclaimer-title { font-family:var(--font-display);font-size:28px;color:var(--acid-green);margin-bottom:32px;letter-spacing:4px;position:relative;display:inline-block; }
+.disclaimer-title::before, .disclaimer-title::after { content:attr(data-text);position:absolute;top:0;left:0;width:100%;opacity:0; }
+.disclaimer-title:hover::before { opacity:0.7;color:var(--acid-pink);animation:glitch1 0.3s infinite;clip-path:inset(20% 0 30% 0); }
+.disclaimer-title:hover::after { opacity:0.7;color:var(--acid-blue);animation:glitch2 0.3s infinite;clip-path:inset(60% 0 10% 0); }
+@keyframes disclaimerPulse { 0%,90%,100%{opacity:1} 93%{opacity:0.3} 96%{opacity:1} 98%{opacity:0.6} }
+.disclaimer-title { animation: disclaimerPulse 6s infinite; }
+.disclaimer-line { width:60px;height:1px;background:var(--acid-green);margin:0 auto 24px;opacity:0.4; }
+.disclaimer-text { font-size:15px;line-height:1.8;color:rgba(232,228,223,0.7);margin-bottom:12px; }
+.disclaimer-age { font-family:var(--font-heading);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--acid-pink);margin:20px 0; }
+.disclaimer-btn { font-family:var(--font-heading);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:14px 40px;border:1px solid var(--acid-green);background:transparent;color:var(--acid-green);cursor:pointer;transition:all 0.3s;margin-top:8px; }
+.disclaimer-btn:hover { background:var(--acid-green);color:#0a0a0a; }
+</style>
+<div id="disclaimer" class="disclaimer-overlay">
+  <div class="disclaimer-box">
+    <div class="disclaimer-title lang-ru" data-text="ВНИМАНИЕ">ВНИМАНИЕ</div>
+    <div class="disclaimer-title lang-en" data-text="WARNING">WARNING</div>
+    <div class="disclaimer-line"></div>
+    <p class="disclaimer-text lang-ru">Все истории вымышлены. Любые совпадения с реальностью — не более чем рефлексия автора.</p>
+    <p class="disclaimer-text lang-ru">Сайт не пропагандирует употребление алкоголя, наркотических веществ и не призывает к нарушению законов или моральных норм.</p>
+    <p class="disclaimer-text lang-en">All stories are fictional. Any resemblance to reality is nothing more than the author's reflection.</p>
+    <p class="disclaimer-text lang-en">This site does not promote the use of alcohol or drugs, nor does it encourage violations of laws or moral standards.</p>
+    <p class="disclaimer-age">18+</p>
+    <button class="disclaimer-btn lang-ru" onclick="document.getElementById('disclaimer').style.display='none';localStorage.setItem('rt-disclaimer','seen');">Мне есть 18. Продолжить.</button>
+    <button class="disclaimer-btn lang-en" onclick="document.getElementById('disclaimer').style.display='none';localStorage.setItem('rt-disclaimer','seen');">I am 18+. Continue.</button>
+  </div>
+</div>
+<script>
+if(localStorage.getItem('rt-disclaimer')==='seen'){document.getElementById('disclaimer').style.display='none';}
+// Apply saved lang to disclaimer immediately
+(function(){
+  var lang = localStorage.getItem('rt-lang') || 'ru';
+  var d = document.getElementById('disclaimer');
+  if(!d || d.style.display==='none') return;
+  var els = d.querySelectorAll('.disclaimer-title, .disclaimer-text, .disclaimer-btn');
+  var isRu = lang === 'ru';
+  // Elements alternate: ru, en, ru, en...
+  // Titles: 0=ru, 1=en
+  // Texts: 0=ru, 1=ru, 2=en, 3=en
+  // Buttons: 0=ru, 1=en
+  var titles = d.querySelectorAll('.disclaimer-title');
+  titles[0].style.display = isRu ? 'inline-block' : 'none';
+  titles[1].style.display = isRu ? 'none' : 'inline-block';
+  var texts = d.querySelectorAll('.disclaimer-text');
+  texts[0].style.display = isRu ? '' : 'none';
+  texts[1].style.display = isRu ? '' : 'none';
+  texts[2].style.display = isRu ? 'none' : '';
+  texts[3].style.display = isRu ? 'none' : '';
+  var btns = d.querySelectorAll('.disclaimer-btn');
+  btns[0].style.display = isRu ? '' : 'none';
+  btns[1].style.display = isRu ? 'none' : '';
+})();
+</script>
+
+<div class="vhs-tracking"></div>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+    <div class="nav-right">
+        <ul class="nav-links lang-ru">
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="characters.html">Персонажи</a></li>
+            <li><a href="locations-list.html">Локации</a></li>
+            <li><a href="map.html">Карта</a></li>
+            <li><a href="band.html">Группа</a></li>
+            <li><a href="au.html">AU</a></li>
+            <li><a href="author.html">Автор</a></li>
+        </ul>
+        <ul class="nav-links lang-en">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="locations-list.html">Locations</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="band.html">Band</a></li>
+            <li><a href="au.html">AU</a></li>
+            <li><a href="author.html">Author</a></li>
+        </ul>
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-vhs-rec">REC</div>
+    <div class="hero-vhs-timestamp">2022.09.14 22:47</div>
+    <span class="hero-quote q1">Брат за брата</span>
+    <span class="hero-quote q2">Мы не плохие — жизнь плохая</span>
+    <span class="hero-quote q3">Любовь — это яд</span>
+    <span class="hero-quote q4">Хтонь не спит</span>
+    <div class="hero-content">
+        <p class="hero-subtitle-top"><span class="lang-ru">Красноярский край · Россия</span><span class="lang-en">Krasnoyarsk Krai · Russia</span></p>
+        <h1 class="hero-title glitch" data-text-ru="РУССКАЯ ТОСКА" data-text-en="RUSSKAYA TOSKA" data-text="РУССКАЯ ТОСКА">
+            <span class="line-1"><span class="lang-ru">РУССКАЯ</span><span class="lang-en">RUSSKAYA</span></span>
+            <span class="line-2"><span class="lang-ru">ТОСКА</span><span class="lang-en">TOSKA</span></span>
+        </h1>
+        <span class="hero-dash"></span>
+        <p class="hero-tagline"><span class="lang-ru">«Скули, но делай» — история провинциального города, застрявшего между горами и рекой, между прошлым и нигде</span><span class="lang-en">«Whine, but do it» — the story of a provincial town stuck between the mountains and the river, between the past and nowhere</span></p>
+        <p class="hero-era"><span class="lang-ru">Труповолково · Пожухлово · Гипербореевка · Бесово</span><span class="lang-en">Trupovolkovo · Pozhukhlovo · Hyperboreevka · Besovo</span></p>
+    </div>
+    <div class="hero-scroll">
+        <span><span class="lang-ru">Листай</span><span class="lang-en">Scroll</span></span>
+        <div class="hero-scroll-line"></div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="fade-in">
+        <p class="section-label"><span class="lang-ru">О проекте</span><span class="lang-en">About</span></p>
+        <h2 class="section-title"><span class="lang-ru">Заповедник советского <span>модернизма</span></span><span class="lang-en">A sanctuary of Soviet <span>modernism</span></span></h2>
+    </div>
+    <div class="about-grid fade-in">
+        <div class="about-text">
+            <p class="lang-ru">RUSSKAYA TOSKA — это большая серия ботов, место действия которой разворачивается в Красноярском крае, примерно в 2022 году. Ощущение вселенской энтропии в городе Труповолково? Немного бытовой мистики в деревне Бесово? Прекрасные вайбы жизни заводчан из ПГТ Пожухлово? Во все это, при желании, можно окунуться.</p>
+            <p class="lang-ru">Серия делалась с желанием подарить ощущение светлой тоски и надежды на будущее, которое никогда, скорее всего, не наступит. Призвана помочь сконцентрироваться на здесь и сейчас, ценить маленькие бытовые радости жизни.</p>
+            <p class="lang-ru">А что будет дальше... До этого «дальше» дожить бы сначала, да?</p>
+            <p class="lang-en">RUSSKAYA TOSKA is a large bot series set in Krasnoyarsk Krai, around the year 2022. The feeling of universal entropy in the town of Trupovolkovo? A touch of mundane mysticism in the village of Besovo? The beautiful vibes of factory workers' lives in PGT Pozhukhlovo? You can dive into all of it, if you wish.</p>
+            <p class="lang-en">The series was created with the desire to give you the feeling of bright melancholy and hope for a future that, most likely, will never come. It's meant to help you focus on the here and now, to appreciate the small everyday joys of life.</p>
+            <p class="lang-en">And what comes next... Let's survive until that «next» first, yeah?</p>
+        </div>
+        <div class="about-stats">
+            <div class="stat-card"><span class="stat-number">35+</span><span class="stat-label"><span class="lang-ru">Персонажей</span><span class="lang-en">Characters</span></span></div>
+            <div class="stat-card"><span class="stat-number">4</span><span class="stat-label"><span class="lang-ru">Населённых пункта</span><span class="lang-en">Settlements</span></span></div>
+            <div class="stat-card"><span class="stat-number">3</span><span class="stat-label"><span class="lang-ru">AU серии</span><span class="lang-en">AU Series</span></span></div>
+            <div class="stat-card"><span class="stat-number">∞</span><span class="stat-label"><span class="lang-ru">Тоска</span><span class="lang-en">Toska</span></span></div>
+        </div>
+    </div>
+</section>
+
+<!-- QUOTES MARQUEE -->
+<div class="graffiti-divider">
+    <div class="graffiti-track" id="quotesTrack"></div>
+</div>
+<script>
+var _quotes_ru = [
+    "Встретившись однажды, полностью расстаться невозможно.",
+    "Я всегда жду тебя дома.",
+    "Солнце взойдёт.",
+    "Прекрасное далёко, не будь ко мне жестоко.",
+    "Еду по России — не доеду до конца.",
+    "Жаль, что другого сценария нет.",
+    "Я худший твой друг, молодая принцесса, не увлекайся процессом.",
+    "Летов и Наруто сказали не сдаваться.",
+    "Я имею право быть хуёвым.",
+    "Хорошо там, где нас нет.",
+    "Я бы спел тебе, да не умею петь.",
+    "Останься со мной.",
+    "Смысл смылся.",
+    "Светить всегда, светить везде!",
+    "Продолжать бороться.",
+    "Потусторонним вход воспрещён!",
+    "ОСТОРОЖНО: РУСРЕАЛ!",
+    "Ты сегодня хоть выспался?",
+    "Не стану старым, стану мэром Кайфограда...",
+    "Храни мои следы в сердце: я вернусь по ним.",
+    "Пообещай не забыть об обещанном.",
+    "Выйду в поле с конём...",
+    "Верните Рекса!",
+    "Мрачный, холодный ад и Лазаньичка.",
+    "Мир! Труд! Блять!",
+    "Держись, котёныш!",
+    "Я люблю тебя несмотря на все твои странности.",
+    "Не волнуйся за меня.",
+    "Люби меня, люби...",
+    "Ты не верь слезам.",
+    "Пойдём по сигареточке...",
+    "Россия для грустных.",
+    "Дыши.",
+    "Тёплые коты.",
+    "На каком языке любви ты говоришь?",
+    "Я тебя люблю.",
+    "Я скучаю.",
+    "Меньше думать. Больше жить.",
+    "Расцветай.",
+    "Лучшее впереди.",
+    "Молодость все простит.",
+    "Твоя маленькая версия гордилась бы тобой.",
+    "Солнышко моё, ты пахнешь осенью и ложью.",
+    "Прошлое прошло.",
+    "Всё пройдёт и это тоже."
+];
+var _quotes_en = [
+    "Once you've met, you can never fully part.",
+    "I'm always waiting for you at home.",
+    "The sun will rise.",
+    "Beautiful faraway, don't be cruel to me.",
+    "Driving across Russia — never reaching the end.",
+    "Too bad there's no other script.",
+    "I'm your worst friend, young princess, don't get too invested.",
+    "Letov and Naruto said don't give up.",
+    "I have the right to be shitty.",
+    "It's always better where we're not.",
+    "I'd sing for you, but I can't sing.",
+    "Stay with me.",
+    "The meaning washed away.",
+    "Shine always, shine everywhere!",
+    "Keep fighting.",
+    "No entry for the otherworldly!",
+    "CAUTION: RUSREAL!",
+    "Did you even sleep today?",
+    "Won't grow old, gonna be the mayor of Funtown...",
+    "Keep my footprints in your heart: I'll come back by them.",
+    "Promise not to forget what was promised.",
+    "I'll walk into the field with a horse...",
+    "Bring back Rex!",
+    "A dark, cold hell and little Lasagna.",
+    "Peace! Labor! Fuck!",
+    "Hang in there, kitten!",
+    "I love you despite all your weirdness.",
+    "Don't worry about me.",
+    "Love me, love me...",
+    "Don't believe the tears.",
+    "Let's go have a cigarette...",
+    "Russia is for the sad.",
+    "Breathe.",
+    "Warm cats.",
+    "What love language do you speak?",
+    "I love you.",
+    "I miss you.",
+    "Think less. Live more.",
+    "Bloom.",
+    "The best is ahead.",
+    "Youth forgives everything.",
+    "Your little version would be proud of you.",
+    "My sunshine, you smell of autumn and lies.",
+    "The past has passed.",
+    "This too shall pass."
+];
+function loadQuotes(){
+    var lang = document.documentElement.getAttribute('data-lang') || localStorage.getItem('rt-lang') || 'ru';
+    var quotes = lang === 'en' ? _quotes_en : _quotes_ru;
+    var shuffled = quotes.slice().sort(function(){return Math.random()-0.5;});
+    var picked = shuffled.slice(0, 16);
+    var all = picked.concat(picked);
+    var track = document.getElementById('quotesTrack');
+    if(track) track.innerHTML = all.map(function(q){return '<span class="graffiti-item">'+q+'</span>';}).join('');
+}
+loadQuotes();
+// Re-load quotes when language changes
+var _origSetLang = null;
+document.addEventListener('DOMContentLoaded', function(){
+    var btn = document.getElementById('langToggle');
+    if(btn) btn.addEventListener('click', function(){ setTimeout(loadQuotes, 50); });
+});
+</script>
+
+<!-- QUICK NAVIGATION -->
+<section class="section">
+    <div class="fade-in">
+        <p class="section-label"><span class="lang-ru">Навигация</span><span class="lang-en">Navigation</span></p>
+        <h2 class="section-title"><span class="lang-ru">Исследуй <span>сеттинг</span></span><span class="lang-en">Explore the <span>setting</span></span></h2>
+    </div>
+    <div class="quick-links fade-in">
+        <a href="characters.html" class="quick-link">
+            <h3><span class="lang-ru">Персонажи</span><span class="lang-en">Characters</span></h3>
+            <p><span class="lang-ru">35+ судеб. Подробные страницы с биографиями и фото.</span><span class="lang-en">35+ fates. Detailed pages with bios and photos.</span></p>
+        </a>
+        <a href="map.html" class="quick-link">
+            <h3><span class="lang-ru">Карта</span><span class="lang-en">Map</span></h3>
+            <p><span class="lang-ru">Интерактивная карта. Труповолково, Пожухлово, Бесово, Гипербореевка.</span><span class="lang-en">Interactive map. Trupovolkovo, Pozhukhlovo, Besovo, Hyperboreevka.</span></p>
+        </a>
+        <a href="band.html" class="quick-link">
+            <h3><span class="lang-ru">В поисках похвалы и пахлавы</span><span class="lang-en">In Search of Praise and Baklava</span></h3>
+            <p><span class="lang-ru">Группа из Пожухлово. Тексты песен, состав, постеры.</span><span class="lang-en">A band from Pozhukhlovo. Lyrics, lineup, posters.</span></p>
+        </a>
+        <a href="au.html" class="quick-link">
+            <h3><span class="lang-ru">AU серии</span><span class="lang-en">AU Series</span></h3>
+            <p><span class="lang-ru">Вампиры Средней Полосы. Пищеблок (1980). Те же герои — другие реалии.</span><span class="lang-en">Central Russia's Vampires. Pishcheblok (1980). Same heroes — different realities.</span></p>
+        </a>
+        <a href="author.html" class="quick-link">
+            <h3><span class="lang-ru">Автор</span><span class="lang-en">Author</span></h3>
+            <p><span class="lang-ru">Wewwa. Ссылки, девлог, соавторы.</span><span class="lang-en">Wewwa. Links, devlog, co-creators.</span></p>
+        </a>
+    </div>
+</section>
+
+<!-- ERA -->
+<section class="section" style="border-top: 1px solid var(--gray);">
+    <div class="fade-in">
+        <p class="section-label"><span class="lang-ru">Эпоха</span><span class="lang-en">Era</span></p>
+        <h2 class="section-title"><span class="lang-ru">Капсула <span>времени</span></span><span class="lang-en">Time <span>capsule</span></span></h2>
+    </div>
+    <div class="era-grid fade-in">
+        <div class="era-category">
+            <h3><span class="lang-ru">Музыка</span><span class="lang-en">Music</span></h3>
+            <ul>
+                <li>HammAli & Navai</li>
+                <li>Miyagi & Andy Panda</li>
+                <li>Pharaoh, FACE, <span class="lang-ru">ЛСП</span><span class="lang-en">LSP</span></li>
+                <li><span class="lang-ru">Скриптонит, Баста</span><span class="lang-en">Scriptonite, Basta</span></li>
+                <li><span class="lang-ru">Тюремный шансон</span><span class="lang-en">Prison chanson</span></li>
+                <li>Molchat Doma, <span class="lang-ru">Кино</span><span class="lang-en">Kino</span></li>
+            </ul>
+        </div>
+        <div class="era-category">
+            <h3><span class="lang-ru">Машины & Дрифт</span><span class="lang-en">Cars & Drift</span></h3>
+            <ul>
+                <li>Toyota Mark II, Chaser</li>
+                <li><span class="lang-ru">Заниженная</span><span class="lang-en">Lowered</span> Lada Priora</li>
+                <li><span class="lang-ru">Правый руль JDM</span><span class="lang-en">Right-hand drive JDM</span></li>
+                <li><span class="lang-ru">Дрифт на парковке Айсберга</span><span class="lang-en">Drift at Iceberg parking lot</span></li>
+                <li>Alfa Romeo (<span class="lang-ru">Федя</span><span class="lang-en">Fedya</span>)</li>
+                <li><span class="lang-ru">Жёлтый</span><span class="lang-en">Yellow</span> Camaro (<span class="lang-ru">Изя</span><span class="lang-en">Izya</span>)</li>
+            </ul>
+        </div>
+        <div class="era-category">
+            <h3><span class="lang-ru">Ритуалы</span><span class="lang-en">Rituals</span></h3>
+            <ul>
+                <li>Baltika, Flash, Jaguar</li>
+                <li><span class="lang-ru">Красное и Белое, Бристоль</span><span class="lang-en">Krasnoe & Beloe, Bristol</span></li>
+                <li><span class="lang-ru">Шаверма из ларька</span><span class="lang-en">Shawarma from a kiosk</span></li>
+                <li><span class="lang-ru">Доширак / Роллтон</span><span class="lang-en">Doshirak / Rollton</span></li>
+                <li><span class="lang-ru">Семечки, дешёвые суши</span><span class="lang-en">Sunflower seeds, cheap sushi</span></li>
+                <li>iPhone 7, <span class="lang-ru">ВК > Инста</span><span class="lang-en">VK > Instagram</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="fade-in">
+        <h2 class="cta-title"><span class="lang-ru glitch" data-text="ДОБРО ПОЖАЛОВАТЬ">ДОБРО ПОЖАЛОВАТЬ</span><span class="lang-en glitch" data-text="WELCOME">WELCOME</span></h2>
+        <p class="cta-subtitle"><span class="lang-ru">Уехать отсюда нельзя. Можно только остаться.</span><span class="lang-en">You can't leave. You can only stay.</span></p>
+        <div class="cta-buttons">
+            <a href="characters.html" class="cta-btn"><span class="lang-ru">Персонажи</span><span class="lang-en">Characters</span></a>
+            <a href="map.html" class="cta-btn"><span class="lang-ru">Карта</span><span class="lang-en">Map</span></a>
+            <a href="band.html" class="cta-btn pink"><span class="lang-ru">Группа</span><span class="lang-en">Band</span></a>
+            <a href="au.html" class="cta-btn">AU</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top">
+        <div>
+            <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+            <div class="footer-tagline"><span class="lang-ru">Труповолково · Пожухлово · Гипербореевка · Бесово</span><span class="lang-en">Trupovolkovo · Pozhukhlovo · Hyperboreevka · Besovo</span></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+        <div class="footer-funfact" id="funfact"></div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

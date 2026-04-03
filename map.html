@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карта — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="characters.html">Персонажи</a></li>
+      <li><a href="locations-list.html">Локации</a></li>
+      <li><a href="map.html" class="active">Карта</a></li>
+      <li><a href="band.html">Группа</a></li>
+      <li><a href="au.html">AU</a></li>
+      <li><a href="author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="locations-list.html">Locations</a></li>
+      <li><a href="map.html" class="active">Map</a></li>
+      <li><a href="band.html">Band</a></li>
+      <li><a href="au.html">AU</a></li>
+      <li><a href="author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content">
+  <div class="page-hero">
+    <p class="section-label"><span class="lang-ru">Карта</span><span class="lang-en">Map</span></p>
+    <h1 class="page-title"><span class="lang-ru">Три точки на карте, <span>ни одного выхода</span></span><span class="lang-en">Three dots on the map, <span>no way out</span></span></h1>
+  </div>
+  <div class="map-container section">
+    <div class="map-canvas">
+      <svg class="map-grid" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line x1="30" y1="55" x2="50" y2="35" stroke="rgba(184,242,39,0.15)" stroke-width="0.3"/>
+        <line x1="50" y1="35" x2="70" y2="75" stroke="rgba(184,242,39,0.15)" stroke-width="0.3"/>
+        <line x1="30" y1="55" x2="50" y2="72" stroke="rgba(184,242,39,0.1)" stroke-width="0.2" stroke-dasharray="1,1"/>
+        <line x1="50" y1="72" x2="70" y2="75" stroke="rgba(184,242,39,0.1)" stroke-width="0.2" stroke-dasharray="1,1"/>
+      </svg>
+      <div class="map-point" style="left:50%;top:35%" onclick="showMapPanel('trupovolkovo')"><div class="map-point-pulse"></div><div class="map-point-label"><span class="lang-ru">Труповолково</span><span class="lang-en">Trupovolkovo</span></div></div><div class="map-point" style="left:30%;top:55%" onclick="showMapPanel('pozhukhlovo')"><div class="map-point-pulse"></div><div class="map-point-label"><span class="lang-ru">ПГТ Пожухлово</span><span class="lang-en">PGT Pozhukhlovo</span></div></div><div class="map-point" style="left:50%;top:72%" onclick="showMapPanel('giperboreevka')"><div class="map-point-pulse"></div><div class="map-point-label"><span class="lang-ru">Гипербореевка</span><span class="lang-en">Hyperboreevka</span></div></div><div class="map-point" style="left:70%;top:75%" onclick="showMapPanel('besovo')"><div class="map-point-pulse"></div><div class="map-point-label"><span class="lang-ru">Бесово</span><span class="lang-en">Besovo</span></div></div>
+    </div>
+    
+  <div class="map-panel" id="panel-trupovolkovo">
+    <button class="map-panel-close" onclick="hideMapPanel()">&times;</button>
+    <h2 class="map-panel-title"><span class="lang-ru">Труповолково</span><span class="lang-en">Trupovolkovo</span></h2>
+    <p class="map-panel-type"><span class="lang-ru">город</span><span class="lang-en">city</span></p>
+    <p class="map-panel-desc"><span class="lang-ru">Провинциальный город на границе Урала. Красный кирпич, серые панельки, кислотный сайдинг.</span><span class="lang-en">A provincial city on the edge of the Urals. Red brick, gray panelkas, acid siding.</span></p>
+    <a href="locations/trupovolkovo.html" class="map-panel-link"><span class="lang-ru">Труповолково &rarr;</span><span class="lang-en">Trupovolkovo &rarr;</span></a>
+    <h3 class="map-panel-subtitle lang-ru">Локации</h3><div class="map-locs-row lang-ru"><a href="locations/solnechny.html" class="map-loc-link">Солнечный</a><a href="locations/zvezdny.html" class="map-loc-link">Звёздный</a><a href="locations/iceberg.html" class="map-loc-link">ТЦ Айсберг</a><a href="locations/bunker.html" class="map-loc-link">БУНКЕР</a><a href="locations/betonka.html" class="map-loc-link">Бетонка</a><a href="locations/sputnik.html" class="map-loc-link">Спутник</a><a href="locations/joyboobs.html" class="map-loc-link">Радость и Сиськи</a></div><h3 class="map-panel-subtitle lang-en">Locations</h3><div class="map-locs-row lang-en"><a href="locations/solnechny.html" class="map-loc-link">Solnechny</a><a href="locations/zvezdny.html" class="map-loc-link">Zvezdny</a><a href="locations/iceberg.html" class="map-loc-link">Iceberg Mall</a><a href="locations/bunker.html" class="map-loc-link">BUNKER</a><a href="locations/betonka.html" class="map-loc-link">Betonka</a><a href="locations/sputnik.html" class="map-loc-link">Sputnik</a><a href="locations/joyboobs.html" class="map-loc-link">Joy and Boobs</a></div>
+    <h3 class="map-panel-subtitle lang-ru">Персонажи</h3><div class="map-chars-grid lang-ru"><a href="characters/anton.html" class="map-char-link">Антон Погибельский</a><a href="characters/denis.html" class="map-char-link">Денис Носков</a><a href="characters/alex.html" class="map-char-link">Александр Колокольников</a><a href="characters/seva.html" class="map-char-link">Всеволод Страхов</a><a href="characters/dana.html" class="map-char-link">Дана Островская</a><a href="characters/stasya.html" class="map-char-link">Анастасия Носкова</a><a href="characters/vova.html" class="map-char-link">Владимир Белов</a><a href="characters/fonar.html" class="map-char-link">Максимиллиан Левин</a><a href="characters/lev.html" class="map-char-link">Лев Вишнецкий</a><a href="characters/trofim.html" class="map-char-link">Трофим Прохоров</a><a href="characters/vlad.html" class="map-char-link">Влад Барсов</a></div><h3 class="map-panel-subtitle lang-en">Characters</h3><div class="map-chars-grid lang-en"><a href="characters/anton.html" class="map-char-link">Anton Pogibelsky</a><a href="characters/denis.html" class="map-char-link">Denis Noskov</a><a href="characters/alex.html" class="map-char-link">Alex Kolokolnikov</a><a href="characters/seva.html" class="map-char-link">Vsevolod Strakhov</a><a href="characters/dana.html" class="map-char-link">Dana Ostrovskaya</a><a href="characters/stasya.html" class="map-char-link">Anastasia Noskova</a><a href="characters/vova.html" class="map-char-link">Vladimir Belov</a><a href="characters/fonar.html" class="map-char-link">Maximilian Levin</a><a href="characters/lev.html" class="map-char-link">Lev Vishnetsky</a><a href="characters/trofim.html" class="map-char-link">Trofim Prokhorov</a><a href="characters/vlad.html" class="map-char-link">Vlad Barsov</a></div>
+    <p class="map-npc-note lang-ru">Местные: Ева Пожухла, Изя Видовский, Изамбард Разумовский, Александр Морозов, Алиса Орехова, Фёдор Шляпа, Даша Вишневская, Ксюша, Артём «Призрак» Сидоров</p><p class="map-npc-note lang-en">Locals: Eva Pozhukhla, Izya Weedovsky, Izambard Razumovsky, Alexander Morozov, Alisa Orekhova, Fyodor Shlyapa, Dasha Vishnevskaya, Ksyusha, Artem «Ghost» Sidorov</p>
+  </div>
+  <div class="map-panel" id="panel-pozhukhlovo">
+    <button class="map-panel-close" onclick="hideMapPanel()">&times;</button>
+    <h2 class="map-panel-title"><span class="lang-ru">ПГТ Пожухлово</span><span class="lang-en">PGT Pozhukhlovo</span></h2>
+    <p class="map-panel-type"><span class="lang-ru">посёлок городского типа</span><span class="lang-en">urban-type settlement</span></p>
+    <p class="map-panel-desc"><span class="lang-ru">Забытый транзитный пункт. Ни энергии города, ни шарма деревни.</span><span class="lang-en">A forgotten transit point. Neither the energy of a city nor the charm of a village.</span></p>
+    <a href="locations/pozhukhlovo.html" class="map-panel-link"><span class="lang-ru">ПГТ Пожухлово &rarr;</span><span class="lang-en">PGT Pozhukhlovo &rarr;</span></a>
+    <h3 class="map-panel-subtitle lang-ru">Локации</h3><div class="map-locs-row lang-ru"><a href="locations/pilorama.html" class="map-loc-link">Пилорама</a></div><h3 class="map-panel-subtitle lang-en">Locations</h3><div class="map-locs-row lang-en"><a href="locations/pilorama.html" class="map-loc-link">Sawmill</a></div>
+    <h3 class="map-panel-subtitle lang-ru">Персонажи</h3><div class="map-chars-grid lang-ru"><a href="characters/stepan.html" class="map-char-link">Степан Облаков</a><a href="characters/kesha.html" class="map-char-link">Иннокентий Туманов</a><a href="characters/pasha.html" class="map-char-link">Павел Хмуров</a><a href="characters/vika.html" class="map-char-link">Виктория Рябинина</a><a href="characters/gena.html" class="map-char-link">Геннадий Кайманов</a><a href="characters/ilya.html" class="map-char-link">Илья Живой</a></div><h3 class="map-panel-subtitle lang-en">Characters</h3><div class="map-chars-grid lang-en"><a href="characters/stepan.html" class="map-char-link">Stepan Oblakov</a><a href="characters/kesha.html" class="map-char-link">Innokenty Tumanov</a><a href="characters/pasha.html" class="map-char-link">Pavel Khmurov</a><a href="characters/vika.html" class="map-char-link">Viktoria Ryabinina</a><a href="characters/gena.html" class="map-char-link">Gennady Kaymanov</a><a href="characters/ilya.html" class="map-char-link">Ilya Zhivoy</a></div>
+    
+  </div>
+  <div class="map-panel" id="panel-giperboreevka">
+    <button class="map-panel-close" onclick="hideMapPanel()">&times;</button>
+    <h2 class="map-panel-title"><span class="lang-ru">Гипербореевка</span><span class="lang-en">Hyperboreevka</span></h2>
+    <p class="map-panel-type"><span class="lang-ru">коммуна</span><span class="lang-en">commune</span></p>
+    <p class="map-panel-desc"><span class="lang-ru">Хиппи-коммуна. Сюда приходят за просветлением, эзотерикой и жизнью в общине.</span><span class="lang-en">A hippie commune. People come here for enlightenment, esotericism, and communal life.</span></p>
+    <a href="locations/giperboreevka.html" class="map-panel-link"><span class="lang-ru">Гипербореевка &rarr;</span><span class="lang-en">Hyperboreevka &rarr;</span></a>
+    
+    
+    
+  </div>
+  <div class="map-panel" id="panel-besovo">
+    <button class="map-panel-close" onclick="hideMapPanel()">&times;</button>
+    <h2 class="map-panel-title"><span class="lang-ru">Бесово</span><span class="lang-en">Besovo</span></h2>
+    <p class="map-panel-type"><span class="lang-ru">деревня</span><span class="lang-en">village</span></p>
+    <p class="map-panel-desc"><span class="lang-ru">Деревня с дачами, ручьями от Енисея и хтонью.</span><span class="lang-en">A village with dachas, streams from the Yenisei, and khton.</span></p>
+    <a href="locations/besovo.html" class="map-panel-link"><span class="lang-ru">Бесово &rarr;</span><span class="lang-en">Besovo &rarr;</span></a>
+    
+    <h3 class="map-panel-subtitle lang-ru">Персонажи</h3><div class="map-chars-grid lang-ru"><a href="characters/kostya.html" class="map-char-link">Константин Поддубный</a><a href="characters/marat.html" class="map-char-link">Марат Сафин</a></div><h3 class="map-panel-subtitle lang-en">Characters</h3><div class="map-chars-grid lang-en"><a href="characters/kostya.html" class="map-char-link">Konstantin Poddubny</a><a href="characters/marat.html" class="map-char-link">Marat Safin</a></div>
+    
+  </div>
+  </div>
+</main>
+<script>
+function showMapPanel(id){
+  var el=document.getElementById('panel-'+id);
+  if(el && el.classList.contains('open')){el.classList.remove('open');return;}
+  document.querySelectorAll('.map-panel').forEach(p=>p.classList.remove('open'));
+  if(el)el.classList.add('open');
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.map-panel')&&!e.target.closest('.map-point')){
+    document.querySelectorAll('.map-panel').forEach(p=>p.classList.remove('open'));
+  }
+});
+function hideMapPanel(){document.querySelectorAll('.map-panel').forEach(p=>p.classList.remove('open'));}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body></html>

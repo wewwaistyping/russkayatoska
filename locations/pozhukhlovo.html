@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПГТ Пожухлово — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content">
+  <div class="page-hero">
+    <a href="../locations-list.html" class="back-link"><span class="lang-ru">&larr; Все локации</span><span class="lang-en">&larr; All locations</span></a>
+    <p class="section-label"><span class="lang-ru">посёлок городского типа</span><span class="lang-en">urban-type settlement</span></p>
+    <h1 class="page-title"><span class="lang-ru">ПГТ Пожухлово</span><span class="lang-en">PGT Pozhukhlovo</span></h1>
+    <p class="page-subtitle"><span class="lang-ru">Забытый транзитный пункт — ни город, ни деревня. Все знают дядю Толю и расписание автобуса наизусть. Единственный работодатель — пилорама «ЛесПромСервис».</span><span class="lang-en">A forgotten transit point — neither city nor village. Everyone knows Uncle Tolya and the bus schedule by heart. The only employer is the sawmill «LesPromServis».</span></p>
+  </div>
+  <div class="section">
+    <img src="../images/PGT Pozhukhlovo.png" alt="ПГТ Пожухлово" class="location-photo">
+    <div class="masonry-gallery"><img src="../photo/PGT Pozhukhlovo/eve_enviroment_covered_in_flowers_moscow_institute_moscow_rus_e6ae9904-27c1-4497-821f-7a36ca323986_3.png" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(0)"><img src="../photo/PGT Pozhukhlovo/eve_russian_village_farm_animals_sunflowers_summer_day_enviro_e588f06a-5092-4307-82fe-ed1b88cf5c64_0.png" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(1)"><img src="../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-28-306Z.jpeg" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(2)"><img src="../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-36-359Z.jpeg" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(3)"><img src="../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-40-177Z.jpeg" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(4)"><img src="../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-52-913Z.jpeg" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(5)"><img src="../photo/PGT Pozhukhlovo/iig_2026-04-03T14-14-29-136Z.jpeg" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(6)"><img src="../photo/PGT Pozhukhlovo/iig_2026-04-03T14-14-36-062Z.jpeg" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(7)"><img src="../photo/PGT Pozhukhlovo/iig_2026-04-03T14-14-43-091Z.jpeg" alt="ПГТ Пожухлово" loading="lazy" onclick="openSettLb(8)"></div>
+<div class="lightbox" id="settLb" onclick="closeSettLb()"><img id="settLbImg" src="" alt=""><button class="lightbox-close" onclick="closeSettLb()">&times;</button><button class="lightbox-prev" onclick="event.stopPropagation();settLbPrev()">&#8592;</button><button class="lightbox-next" onclick="event.stopPropagation();settLbNext()">&#8594;</button></div>
+<script>var settPhotos=["../photo/PGT Pozhukhlovo/eve_enviroment_covered_in_flowers_moscow_institute_moscow_rus_e6ae9904-27c1-4497-821f-7a36ca323986_3.png","../photo/PGT Pozhukhlovo/eve_russian_village_farm_animals_sunflowers_summer_day_enviro_e588f06a-5092-4307-82fe-ed1b88cf5c64_0.png","../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-28-306Z.jpeg","../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-36-359Z.jpeg","../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-40-177Z.jpeg","../photo/PGT Pozhukhlovo/iig_2026-04-03T14-11-52-913Z.jpeg","../photo/PGT Pozhukhlovo/iig_2026-04-03T14-14-29-136Z.jpeg","../photo/PGT Pozhukhlovo/iig_2026-04-03T14-14-36-062Z.jpeg","../photo/PGT Pozhukhlovo/iig_2026-04-03T14-14-43-091Z.jpeg"];var settIdx=0;function openSettLb(i){settIdx=i;document.getElementById('settLbImg').src=settPhotos[i];document.getElementById('settLb').classList.add('open');}function closeSettLb(){document.getElementById('settLb').classList.remove('open');}function settLbNext(){settIdx=(settIdx+1)%settPhotos.length;document.getElementById('settLbImg').src=settPhotos[settIdx];}function settLbPrev(){settIdx=(settIdx-1+settPhotos.length)%settPhotos.length;document.getElementById('settLbImg').src=settPhotos[settIdx];}</script>
+  </div>
+  <div class="section"><h2 class="section-title"><span class="lang-ru"><span>Локации</span></span><span class="lang-en"><span>Locations</span></span></h2><div class="location-links-grid"><a href="pilorama.html" class="location-link-card"><h3><span class="lang-ru">Пилорама</span><span class="lang-en">Sawmill</span></h3></a></div></div>
+  <div class="section"><h2 class="section-title"><span class="lang-ru"><span>Персонажи</span></span><span class="lang-en"><span>Characters</span></span></h2><div class="char-grid"><a href="../characters/stepan.html" class="char-card-link"><div class="char-card"><div class="char-card-thumb"><img src="../images/Stepan.png" alt="Степан Облаков" loading="lazy"></div><div class="char-card-text"><span class="lang-ru"><p class="char-age">25 лет</p><h3 class="char-name">Степан Облаков</h3><p class="char-nickname">Чебурашка</p></span><span class="lang-en"><p class="char-age">25 y.o.</p><h3 class="char-name">Stepan Oblakov</h3><p class="char-nickname">Cheburashka</p></span></div></div></a>
+<a href="../characters/kesha.html" class="char-card-link"><div class="char-card"><div class="char-card-thumb"><img src="../images/Kesha.png" alt="Иннокентий Туманов" loading="lazy"></div><div class="char-card-text"><span class="lang-ru"><p class="char-age">23 года</p><h3 class="char-name">Иннокентий Туманов</h3><p class="char-nickname">Кеша</p></span><span class="lang-en"><p class="char-age">23 y.o.</p><h3 class="char-name">Innokenty Tumanov</h3><p class="char-nickname">Kesha</p></span></div></div></a>
+<a href="../characters/pasha.html" class="char-card-link"><div class="char-card"><div class="char-card-thumb"><img src="../images/Pasha.png" alt="Павел Хмуров" loading="lazy"></div><div class="char-card-text"><span class="lang-ru"><p class="char-age">24 года</p><h3 class="char-name">Павел Хмуров</h3><p class="char-nickname">Паша</p></span><span class="lang-en"><p class="char-age">24 y.o.</p><h3 class="char-name">Pavel Khmurov</h3><p class="char-nickname">Pasha</p></span></div></div></a>
+<a href="../characters/vika.html" class="char-card-link"><div class="char-card"><div class="char-card-thumb"><img src="../images/vika.png" alt="Виктория Рябинина" loading="lazy"></div><div class="char-card-text"><span class="lang-ru"><p class="char-age">22 года</p><h3 class="char-name">Виктория Рябинина</h3><p class="char-nickname">Вика</p></span><span class="lang-en"><p class="char-age">22 y.o.</p><h3 class="char-name">Viktoria Ryabinina</h3><p class="char-nickname">Vika</p></span></div></div></a>
+<a href="../characters/gena.html" class="char-card-link"><div class="char-card"><div class="char-card-thumb"><img src="../images/Gennadiy.png" alt="Геннадий Кайманов" loading="lazy"></div><div class="char-card-text"><span class="lang-ru"><p class="char-age">29 лет</p><h3 class="char-name">Геннадий Кайманов</h3><p class="char-nickname">Гена</p></span><span class="lang-en"><p class="char-age">29 y.o.</p><h3 class="char-name">Gennady Kaymanov</h3><p class="char-nickname">Gena</p></span></div></div></a>
+<a href="../characters/ilya.html" class="char-card-link"><div class="char-card"><div class="char-card-thumb"><img src="../photo/Ilya/Ilya profile pic.png" alt="Илья Живой" loading="lazy"></div><div class="char-card-text"><span class="lang-ru"><p class="char-age">25 лет</p><h3 class="char-name">Илья Живой</h3><p class="char-nickname">Мёртв</p></span><span class="lang-en"><p class="char-age">25 y.o.</p><h3 class="char-name">Ilya Zhivoy</h3><p class="char-nickname">Dead</p></span></div></div></a></div><div class="lang-ru"><h3 class="char-group-title" style="margin-top:32px">Местные</h3><div class="residents-grid"><div class="resident-card"><h3 class="resident-name">Дядя Толя</h3><p class="resident-desc">Местный алкоголик-достопримечательность</p></div></div></div><div class="lang-en"><h3 class="char-group-title" style="margin-top:32px">Locals</h3><div class="residents-grid"><div class="resident-card"><h3 class="resident-name">Uncle Tolya</h3><p class="resident-desc">Local alcoholic landmark</p></div></div></div></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

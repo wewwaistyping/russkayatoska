@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Автор — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="characters.html">Персонажи</a></li>
+      <li><a href="locations-list.html">Локации</a></li>
+      <li><a href="map.html">Карта</a></li>
+      <li><a href="band.html">Группа</a></li>
+      <li><a href="au.html">AU</a></li>
+      <li><a href="author.html" class="active">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="locations-list.html">Locations</a></li>
+      <li><a href="map.html">Map</a></li>
+      <li><a href="band.html">Band</a></li>
+      <li><a href="au.html">AU</a></li>
+      <li><a href="author.html" class="active">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content">
+  <div class="au-banner author-banner"><img src="images/newnew banner wewwa.jpg" alt="Wewwa" loading="lazy"><div class="au-banner-overlay"><p class="section-label"><span class="lang-ru">Автор</span><span class="lang-en">Author</span></p><h1 class="page-title">Wewwa</h1></div></div>
+  <div class="section author-section">
+    <div class="author-grid">
+      <div class="author-avatar" style="align-self:stretch;position:relative;cursor:pointer;overflow:hidden;" onclick="showThought(event)">
+        <img src="images/wewwa new image.jpg" alt="Wewwa" class="author-avatar-img" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
+      </div>
+      <div class="author-info">
+        <h2>Wewwa</h2>
+        <p class="author-bio"><em>IT IS WHAT IT IS</em></p>
+        <p class="author-bio lang-ru">Геймдизайнер, создатель ботов, собачья мама. Начала делать ботов случайно — тестировала персонажей будущей игры. Оказалось, что это затягивает.</p>
+        <p class="author-bio lang-en">Game designer, bot creator, dog mom. Started making bots by chance — was testing characters for a future game. Turns out, it's addictive.</p>
+        <p class="author-bio lang-ru">Прикол зашел слишком далеко, теперь я директор пранков и амбассадор русской тоски.</p>
+        <p class="author-bio lang-en">The joke went too far, now I'm the director of pranks and the ambassador of Russian toska.</p>
+        <p class="author-bio-quote lang-ru">«Мой запах — это стопроцентный кортизол, я прячу чувства за клоунской маской, лол.» — Монеточка</p>
+        <p class="author-bio-quote lang-en">«My scent is one hundred percent cortisol. I'm hiding my feelings behind a clown mask, lol.» — Monetochka</p>
+        <div class="author-links">
+          <a href="https://t.me/wewwajai" target="_blank" rel="noopener" class="author-link-btn">Telegram</a>
+          <a href="https://janitorai.com/profiles/26ad05f6-ae20-4d5e-b4f8-5d23b78fd243_profile-of-wewwa" target="_blank" rel="noopener" class="author-link-btn">Janitor AI</a>
+          <a href="https://saucepan.ai/u/wewwa" target="_blank" rel="noopener" class="author-link-btn">SaucePan</a>
+          <a href="https://drive.google.com/drive/folders/1wRYsda6fS_QiHezJltOidLamrKi-BkOK?usp=sharing" target="_blank" rel="noopener" class="author-link-btn">ST Cards</a>
+          <a href="https://discord.gg/cQgPDxzncg" target="_blank" rel="noopener" class="author-link-btn">Discord</a>
+          <a href="https://boosty.to/wewwa" target="_blank" rel="noopener" class="author-link-btn">Boosty</a>
+          <a href="https://www.tiktok.com/@wewwaistyping" target="_blank" rel="noopener" class="author-link-btn">TikTok</a>
+          <a href="https://forms.gle/L4mtaiCqF7izCQcB8" target="_blank" rel="noopener" class="author-link-btn"><span class="lang-ru">Реквесты / альты</span><span class="lang-en">Requests / alts</span></a>
+        </div>
+        <div class="author-playlist">
+          <h3><span class="lang-ru">Плейлист с вайбами Wewwa</span><span class="lang-en">Wewwa's vibe playlist</span></h3>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2dRHi9gTLXLYKMS9rgrr7U?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="devlog-box">
+          <h3><span class="lang-ru">Девлог</span><span class="lang-en">Devlog</span></h3>
+          <div class="devlog-scroll">
+            <div class="devlog-entry"><span class="devlog-date">Coming soon</span><p><span class="lang-ru">Глава 3 — Бесово и Ведьмак AU.</span><span class="lang-en">Chapter 3 — Besovo and The Witcher AU.</span></p></div>
+            <div class="devlog-entry"><span class="devlog-date">2026</span><p><span class="lang-ru">Глава 2 — Кеша, Гена, Степан, Паша, Вика, Илья. ПГТ Пожухлово. AU: Вампиры Средней Полосы, Пищеблок.</span><span class="lang-en">Chapter 2 — Kesha, Gena, Stepan, Pasha, Vika, Ilya. PGT Pozhukhlovo. AU: Central Russia's Vampires, Pishcheblok.</span></p></div>
+            <div class="devlog-entry"><span class="devlog-date">2025</span><p><span class="lang-ru">Глава 1 — Антон, Денис, Алекс, Сева. Труповолково. Начало проекта.</span><span class="lang-en">Chapter 1 — Anton, Denis, Alex, Seva. Trupovolkovo. Project launch.</span></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="section-title"><span class="lang-ru">Соавторы <span>персонажей</span></span><span class="lang-en">Character <span>co-creators</span></span></h2>
+    <div class="residents-grid lang-ru">
+      
+      <div class="resident-card">
+        <h3 class="resident-name">KanonMama</h3>
+        <p class="resident-desc"><a href="characters/fonar.html" class="coauthor-char-link">Максимиллиан «Фонарь» Левин</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">wvenusss</h3>
+        <p class="resident-desc"><a href="characters/vlad.html" class="coauthor-char-link">Влад «Барс» Барсов</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">aceenvw</h3>
+        <p class="resident-desc"><a href="characters/vova.html" class="coauthor-char-link">Владимир «Снеговик» Белов</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">Rakshakti</h3>
+        <p class="resident-desc"><a href="characters/lev.html" class="coauthor-char-link">Лев Вишнецкий</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">Mairon</h3>
+        <p class="resident-desc">Изамбард «Иззи» Разумовский</p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">KamiyaK</h3>
+        <p class="resident-desc"><a href="characters/trofim.html" class="coauthor-char-link">Трофим «Тротил» Прохоров</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">HoneydEw</h3>
+        <p class="resident-desc"><a href="characters/kostya.html" class="coauthor-char-link">Константин «Кучер» Поддубный</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">Heatri</h3>
+        <p class="resident-desc"><a href="characters/marat.html" class="coauthor-char-link">Марат «Мишарин» Сафин</a></p>
+      </div>
+    </div>
+    <div class="residents-grid lang-en">
+      
+      <div class="resident-card">
+        <h3 class="resident-name">KanonMama</h3>
+        <p class="resident-desc"><a href="characters/fonar.html" class="coauthor-char-link">Maximilian «Fonar» Levin</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">wvenusss</h3>
+        <p class="resident-desc"><a href="characters/vlad.html" class="coauthor-char-link">Vlad «Bars» Barsov</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">aceenvw</h3>
+        <p class="resident-desc"><a href="characters/vova.html" class="coauthor-char-link">Vladimir «Snegovik» Belov</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">Rakshakti</h3>
+        <p class="resident-desc"><a href="characters/lev.html" class="coauthor-char-link">Lev Vishnetsky</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">Mairon</h3>
+        <p class="resident-desc">Izambard «Izzy» Razumovsky</p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">KamiyaK</h3>
+        <p class="resident-desc"><a href="characters/trofim.html" class="coauthor-char-link">Trofim «Trotil» Prokhorov</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">HoneydEw</h3>
+        <p class="resident-desc"><a href="characters/kostya.html" class="coauthor-char-link">Konstantin «Kucher» Poddubny</a></p>
+      </div>
+
+      <div class="resident-card">
+        <h3 class="resident-name">Heatri</h3>
+        <p class="resident-desc"><a href="characters/marat.html" class="coauthor-char-link">Marat «Misharin» Safin</a></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+.kukla-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 100; text-align: center; }
+.kukla {
+    width: 110px; height: 110px;
+    opacity: 0.5;
+    cursor: pointer;
+    animation: kuklaFloat 6s ease-in-out infinite;
+    transition: opacity 0.3s;
+}
+.kukla:hover { opacity: 0.85; }
+.kukla-text {
+    font-family: var(--font-handwritten);
+    font-size: 12px;
+    color: rgba(255,255,255,0);
+    transition: color 0.4s;
+    margin-top: 4px;
+}
+.kukla-wrap:hover .kukla-text { color: rgba(255,255,255,0.4); }
+@keyframes kuklaFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    75% { transform: translateY(5px) rotate(-1deg); }
+}
+@media (max-width: 768px) { .kukla { width: 70px; height: 70px; } .kukla-wrap { bottom: 16px; right: 16px; } }
+</style>
+<div class="kukla-wrap">
+  <img src="images/kukla.png" alt="" class="kukla">
+  <p class="kukla-text"><span class="lang-ru">Я всегда буду тебя любить</span><span class="lang-en">I will always love you</span></p>
+</div>
+
+<script>
+var _thoughts = [
+    "А я закрыла дверь?",
+    "Есть хочется.",
+    "Интересно, как там в Калифорнии сейчас...",
+    "Скорее бы лето.",
+    "Что бы сейчас мне сказала маленькая я? А что сказала бы ей я?",
+    "Как ты там, Лазанья?",
+    "Скоро запахнет сиренью.",
+    "Все пройдёт и это тоже.",
+    "Хочется быть мэром кайфограда, а не это вот всё.",
+    "Никакого смута в моём доме.",
+    "Барни опять уснул на коленях. Подъём из-за стола отменяется.",
+    "Я до сих пор не выкинула ёлку. Она задаёт тон комнате.",
+    "У меня всё ещё лежит билет на Twenty One Pilots на 2020 год...",
+    "Летов и Наруто сказали не сдаваться.",
+    "У вил мана бесконечная.",
+    "Ну как там? Ебашит андеграунд?",
+    "Ландан из зе кэпитал оф... Труповолково.",
+    "Жабы мои жабы.",
+    "Ну ты и душнила.",
+    "Жизнь была бы проще, если бы все друг от друга отъебались.",
+    "Солнце взойдёт.",
+    "Иногда я вспоминаю сколько мне лет и истерично хихикаю.",
+    "Батя спросил, как я монетизирую нейронки. Я сказала, что не слежу за курсом дофамина к лайкам.",
+    "Будущая легенда Triple-F игр.",
+    "Поздравляю, ты нашел пасхалку.",
+    "Качай вартандер по ссылке в описании и получай приятные бонусы.",
+    "Пирожок с ничем.",
+    "Now playing Oasis – Wonderwall.",
+    "Будь что будет – и хуй с ним.",
+    "За всё с нами и хуй с ними.",
+    "По-моему эта пустота вообще ничем не заполняется. Ну и хуй с ней.",
+    "Лазанья запылилась, надо протереть.",
+    "Долго еще кликать будешь?",
+    "Могут ли камни платить налоги...",
+    "Мемная фраза. Ой, это еще одна пасхалка.",
+    "Че зыришь?",
+    "Like a shooting star that brings no luck.",
+    "Весь список цитат вышел думерским, упс.",
+    "Заебався.",
+    "Таксы стоят в вечной планке.",
+    "Тыгыдык-тыгыдык.",
+    "Дрифтуй! Входи в поворот!",
+    "Я бы сейчас заточила ченить вкусненькое.",
+    "Хочется просто выйти в поле и поорать. И обнять берёзку.",
+    "Мой любимый интернет-герой: пепе. Серьезно, этот чувак – это я.",
+    "Пока интернет сходит с ума от длинных тире, нам снимали три балла за отсутствие этих сраных тире.",
+    "Каким голосом ты это читаешь?",
+    "Я бы сняла сериал по Русской тоске.",
+    "Никогда не задумывались, что там у других в голове?",
+    "Клодик такое солнышко.",
+    "В детстве я мечтала быть волчонком.",
+    "Кчау.",
+    "Бебебебе.",
+    "Возраст – это просто цифра. Ну, в моем случае, еще и больные колени.",
+    "Прекрасное далёко пиздец, как жестоко.",
+    "Диплом я получала в платье из мусорного мешка и с клоунским носом.",
+    "Если честно, я до сих пор не понимаю, зачем вы тут.",
+    "Фанфакт: я умею твёркать. Мне это еще ни разу не пригодилось, правда."
+];
+var _thoughts_en = [
+    "Did I lock the door?",
+    "I'm hungry.",
+    "I wonder what California is like right now...",
+    "Can't wait for summer.",
+    "What would little me say to me now? And what would I say to her?",
+    "How are you doing, Lasagna?",
+    "Soon it'll smell like lilac.",
+    "This too shall pass.",
+    "I wanna be the mayor of Funtown, not... whatever this is.",
+    "No Smuta in my house.",
+    "Barney fell asleep on my lap again. Getting up is cancelled.",
+    "I still haven't thrown out the Christmas tree. It sets the room's vibe.",
+    "I still have a ticket to Twenty One Pilots from 2020...",
+    "Letov and Naruto said don't give up.",
+    "Veal has infinite mana.",
+    "So? Is the underground bumping?",
+    "London is the capital of... Trupovolkovo.",
+    "My toads, my precious toads.",
+    "You're such a buzzkill.",
+    "Life would be easier if everyone just left each other alone.",
+    "The sun will rise.",
+    "Sometimes I remember how old I am and giggle hysterically.",
+    "Dad asked how I monetize neural networks. I said I don't track the dopamine-to-likes exchange rate.",
+    "Future legend of Triple-F games.",
+    "Congrats, you found an easter egg.",
+    "Download War Thunder using the link in the description for sweet bonuses.",
+    "A pie with nothing.",
+    "Now playing Oasis – Wonderwall.",
+    "Whatever happens – fuck it.",
+    "For everything with us and fuck them.",
+    "I think this void can't be filled with anything. Oh well.",
+    "Lasagna got dusty, gotta wipe her off.",
+    "How long are you gonna keep clicking?",
+    "Can rocks pay taxes...",
+    "A meme phrase. Oops, that's another easter egg.",
+    "What are you staring at?",
+    "Like a shooting star that brings no luck.",
+    "The whole quote list turned out doomer-ish, oops.",
+    "I'm exhausted.",
+    "Dachshunds are in a permanent plank position.",
+    "Clip-clop-clip-clop.",
+    "Drift! Take the turn!",
+    "I could really go for something tasty right now.",
+    "I just wanna walk into a field and scream. And hug a birch tree.",
+    "My favorite internet hero: Pepe. Seriously, that dude is me.",
+    "While the internet loses its mind over em dashes, we used to get three points deducted for missing them.",
+    "What voice are you reading this in?",
+    "I'd make a TV series based on Russkaya Toska.",
+    "Ever wondered what's going on in other people's heads?",
+    "Claude is such a sunshine.",
+    "As a kid, I dreamed of being a wolf cub.",
+    "Kchau.",
+    "Bebebebe.",
+    "Age is just a number. Well, in my case, also bad knees.",
+    "The beautiful faraway is cruel as fuck.",
+    "I got my diploma wearing a trash bag dress and a clown nose.",
+    "Honestly, I still don't understand why you're here.",
+    "Fun fact: I can twerk. It has never been useful though."
+];
+var _activeBubbles = [];
+function showThought(e) {
+    var avatar = e.currentTarget;
+    var rect = avatar.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    // If already 2 bubbles, remove the oldest
+    if (_activeBubbles.length >= 2) {
+        var old = _activeBubbles.shift();
+        old.classList.remove('visible');
+        setTimeout(function(){ if(old.parentNode) old.parentNode.removeChild(old); }, 400);
+    }
+    var lang = document.documentElement.getAttribute('data-lang') || 'ru';
+    var pool = lang === 'en' ? _thoughts_en : _thoughts;
+    var t = pool[Math.floor(Math.random() * pool.length)];
+    var bubble = document.createElement('div');
+    bubble.className = 'thought-item';
+    bubble.textContent = t;
+    // Position near click, but keep within bounds
+    var bx = Math.min(Math.max(x - 60, 10), avatar.offsetWidth - 180);
+    var by = Math.max(y - 50, 10);
+    bubble.style.left = bx + 'px';
+    bubble.style.top = by + 'px';
+    avatar.appendChild(bubble);
+    setTimeout(function(){ bubble.classList.add('visible'); }, 10);
+    _activeBubbles.push(bubble);
+    // Auto-fade after 4s
+    setTimeout(function(){
+        bubble.classList.remove('visible');
+        setTimeout(function(){
+            if(bubble.parentNode) bubble.parentNode.removeChild(bubble);
+            var idx = _activeBubbles.indexOf(bubble);
+            if(idx > -1) _activeBubbles.splice(idx, 1);
+        }, 400);
+    }, 4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body></html>

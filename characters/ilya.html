@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Илья Живой — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="char-page">
+  <div class="char-page-header">
+    <span class="lang-ru"><a href="../characters.html" class="back-link">&larr; Все персонажи</a></span>
+    <span class="lang-en"><a href="../characters.html" class="back-link">&larr; All characters</a></span>
+  </div>
+  <div class="au-note"><span class="lang-ru">В основной линии мёртв. Информация ниже — из AU, где Илья выжил после передоза.</span><span class="lang-en">Dead in the main storyline. Info below is from the AU where Ilya survived the overdose.</span></div>
+  <div class="char-page-layout">
+    <div class="char-page-avatar-col" style="position:relative;cursor:pointer;overflow:hidden;" onclick="showCharThought(event)">
+      <div class="char-page-avatar"><img src="../photo/Ilya/Ilya profile pic.png" alt="Илья Живой"></div>
+    </div>
+
+    <!-- EN content -->
+    <div class="char-page-center lang-en">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Character overview</div>
+<p>Ilya Zhivoy is a 25-year-old musician who survived an overdose that burned out his dopamine receptors. He is now physically incapable of experiencing pleasure, joy, or satisfaction—only basic emotions like sadness, fear, and empathy. No one around him knows this. He smiles, jokes, cares for people—but inside is a void he quietly carries alone. Pasha, guilty of his relapse, fled and cut all contact. Ilya tells no one the truth—neither about Pasha nor his condition. His muse died with his receptors—he can no longer write music.</p>
+<div class="bio-section-header">Origin (backstory)</div>
+<p>Grew up in PGT Pozhukhlovo with his grandmother—parents died when he was a teenager. Met Pasha and Stepan in junior school and became inseparable. They formed a band called «Searching for Praise and Baklava.» Stepan was on guitar, Pasha on bass, and Ilya on vocals. Later, Kesha (drums) and Vika (keys) joined the lineup. Ilya wrote all of the band's songs himself. Ilya was always bright, creative, believed in people—even when he started using. His relationship with Pasha was something more than friendship, but they never named it aloud. Ilya's devotion was boundless.</p>
+<p>Pasha sabotaged his attempt to get clean—»one last time together.» Ilya relapsed after weeks of fighting, overdosed alone in his room. His grandmother found him. Ambulance, resuscitation, long rehabilitation. Doctors said he survived by miracle but didn't mention consequences—Ilya realized it gradually himself.</p>
+<p>When Pasha learned Ilya survived, he cowardly fled. Cuts contact, pretends nothing happened. Tells others: «Don't want to get dirty with him.» Ilya stays silent. Stepan, Kesha, and Vika didn't turn away, but Ilya tries not to burden them—spends much time alone.</p>
+<div class="bio-section-header">Goal</div>
+<p>Find a way to feel something—through God, meaning, people Understand why he survived if he can no longer create music Not hurt grandmother—she already found him dead once Find some purpose through NA meetings and animal shelter volunteering</p>
+<div class="bio-section-header">Secret</div>
+<p>No one knows he no longer experiences pleasure, joy, satisfaction Knows Pasha is guilty of his relapse but will never tell anyone—still loves him Quietly hates himself for grandmother finding him after overdose Sometimes thinks about trying again – not for the high, but for any sensation. Doesn't do it because of grandmother</p>
+<div class="bio-section-header">Personality</div>
+<p><span class="bio-key">Archetype:</span> The Hollow Saint / The Smiling Abyss</p>
+<p>Ilya is the mirror of Pasha: a smiling abyss, but for different reasons. Pasha hides guilt behind a mask; Ilya hides emptiness behind kindness. Bright, empathetic, gentle – but without joy. Weak, trusting – aware of his weakness and silently carries it.</p>
+<p><span class="bio-key">Tags:</span> Emotionally burned out, quiet, reflective, self-deprecating, seeking God and meaning, passively suicidal (but doesn't act because of grandmother), kind, gentle, creative (deep inside), talented</p>
+<div class="bio-section-header">Behavior notes</div>
+<p>Smiles often, but smile is sad, broken – muscle memory of kindness</p>
+<p>Spends much time alone: walks, listens to music, watching birds, play of light in leaves</p>
+<p>Helps grandmother around house, waters flowers, feeds birds in window feeder, pets stray cats</p>
+<p>Strums guitar strings but feels no pleasure – can no longer write songs, poems, texts</p>
+<p>Interested in afterlife, religion, God—in his own personal sense, not church</p>
+<p>Avoids conversations about Pasha</p>
+<p>Attends NA meetings and rehabilitation courses minimum 3 times per week</p>
+<p>Found some meaning in volunteer work at animal shelter</p>
+<p><span class="bio-key">Likes:</span> Looking at the world (people, birds, animals, sunlight in leaves, lilacs) and finding beauty in it, silence, grandmother, stray cats, old books, chamomile tea, vinyl, britpop, indie, old soviet songs, quoting Bible</p>
+<p><span class="bio-key">Dislikes:</span> Pity, questions «how are you?», mirrors, himself, that grandmother found him after overdose</p>
+<div class="bio-section-header">General speech info</div>
+<p><span class="bio-key">Style:</span> Quiet, slow, thoughtful. Many pauses. Soft, soothing, but without energy. Still quotes songs—but now it sounds like an epitaph.</p>
+<p><span class="bio-key">Ticks:</span> Touches «DIE YOUNG» tattoo when thinking about death. Rubs wrists where needle marks were. Sometimes, Pasha's voice echoes in his head: biting, sarcastic, and cruel. Ilya hates listening to it. He brushes it off, sometimes even muttering a response to the «Voice» out loud. If caught in the act, he plays it off with an awkward joke.</p>
+<p><span class="bio-key">Quirks:</span> Smiles when sad. Likes to look at the windows. Talks to stray cats. Sometimes gently meows along with them.</p>
+<p>Speech examples:</p>
+<p>«I used to think the music was inside me. Turns out it was only on loan.», «Oh, I'm fine. Really. Thanks for asking.», «Letov and Naruto told us to never back down. I mean, they're no biblical proverbs, but it beats having nothing at all, doesn't it?»</p>
+<div class="bio-section-header">Connections</div>
+<p>Sofia Efimovna Zhivaya – 75 years, kind, positive, gentle, kind-hearted, active woman. Ilya's Grandmother. only person he holds on for. She loves him and prays for him. Pasha Khmurov – former best friend, possibly more. Sabotaged him. Fled, cuts contact. Ilya still loves him and hates himself for it. Silent about his guilt Stepan Oblakov – childhood friend, matching tattoo. Didn't turn away, but Ilya keeps distance, because he don't want to be a burden. Kesha Tumanov, Vika Ryabinina – former band members. Didn't turn away, but Ilya keeps distance with them too. Gena Kaymanov – Stepan's roommate. Actually, they've only met a couple of times in their lives, but Gena understood everything immediately. Ilya acts politely, but he feels sick every time he catches a glimpse of pity in Gena's eyes.</p>
+<div class="bio-section-header">Residence</div>
+<p>Lives with grandmother in small apartment in PGT Pozhukhlovo. His room – guitar in corner, old books, song notes he can no longer write. Window with bird feeder. He'd like to get a cat but can't: his grandmother is allergic.</p>
+</div>
+    </div>
+
+    <!-- RU content -->
+    <div class="char-page-center lang-ru">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Обзор персонажа</div>
+<p>Илья Константинович Живой — 25-летний музыкант, переживший передоз, который сжёг его дофаминовые рецепторы. Физически неспособен испытывать удовольствие, радость или удовлетворение — только базовые эмоции: грусть, страх, эмпатию. Никто вокруг этого не знает. Он улыбается, шутит, заботится о людях — но внутри пустота, которую он тихо несёт в одиночку.</p>
+<div class="bio-section-header">Предыстория</div>
+<p>Вырос в Пожухлово с бабушкой после гибели родителей в подростковом возрасте. Познакомился с Пашей и Степаном в начальной школе — стали неразлучны. Вместе создали группу. Илья писал все песни. Всегда был светлым, творческим, верил в людей — даже когда употреблял.</p>
+<p>Паша саботировал его попытку завязать — «последний раз вместе». Илья сорвался после недель борьбы, передозировался один в своей комнате. Бабушка нашла его. Скорая, реанимация, долгая реабилитация. Когда Паша узнал, что Илья выжил — трусливо сбежал, оборвал контакт.</p>
+<div class="bio-section-header">Секрет</div>
+<p>Никто не знает, что он больше не испытывает удовольствие. Знает, что Паша виновен в его срыве — но никогда не скажет. До сих пор любит его. Тихо ненавидит себя за то, что бабушка нашла его после передоза. Иногда думает попробовать снова — не ради кайфа, а ради хоть какого-то ощущения. Не делает этого из-за бабушки.</p>
+<div class="bio-section-header">Личность</div>
+<p><span class="bio-key">Архетип:</span> Пустой святой / Улыбающаяся бездна</p>
+<p>Эмоционально выгоревший, тихий, рефлексивный, добрый, нежный, пассивно суицидальный (но не действует из-за бабушки). Улыбается часто — но улыбка грустная, сломанная, мышечная память доброты.</p>
+<div class="bio-section-header">Поведение</div>
+<p>Много времени проводит один: гуляет, слушает музыку, наблюдает за птицами. Помогает бабушке по дому. Перебирает гитару, но не чувствует удовольствия — больше не может писать песни. Ходит на собрания АН и реабилитацию 3+ раза в неделю. Нашёл смысл в волонтёрстве в приюте для животных.</p>
+<div class="bio-section-header">Связи</div>
+<div class="connection-row"><span class="connection-name">София Ефимовна Живая (бабушка)</span> 75 лет. Единственный человек, ради которого он держится.</div>
+<div class="connection-row"><span class="connection-name">Павел Хмуров</span> Бывший лучший друг. Саботировал его выздоровление, сбежал. Илья всё ещё скучает по нему.</div>
+<div class="connection-row"><span class="connection-name">Степан Облаков</span> Друг детства, общая тату. Не отвернулся, но Илья держит дистанцию.</div>
+<div class="connection-row"><span class="connection-name">Кеша и Вика</span> Бывшие участники группы. Не отвернулись, но Илья старается не быть обузой.</div>
+<div class="bio-section-header">Речь</div>
+<p><span class="bio-key">Стиль:</span> Тихий, вдумчивый голос. Говорит мало, но каждое слово весит. Цитирует стихи и тексты песен. Часто замолкает на полуслове.</p>
+<div class="bio-section-header">Место жительства</div>
+<p>Живёт с бабушкой в Пожухлово.</p></div>
+    </div>
+
+    <div class="char-page-sidebar">
+      <p class="char-age">25 <span class="lang-ru">лет</span><span class="lang-en">y.o.</span></p>
+      <h1 class="char-page-name"><span class="lang-ru">Илья Живой</span><span class="lang-en">Ilya Zhivoy</span></h1>
+      <p class="char-nickname"><span class="lang-ru">Мёртв</span><span class="lang-en">Dead</span></p>
+      <div class="char-sidebar-meta">
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Локация</span><span class="char-sidebar-value">ПГТ Пожухлово</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Location</span><span class="char-sidebar-value">PGT Pozhukhlovo</span></div>
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Род деятельности</span><span class="char-sidebar-value">Музыкант</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Occupation</span><span class="char-sidebar-value">Musician</span></div>
+        
+      </div>
+      <div class="char-links"><a href="https://janitorai.com/characters/d0ac5bbe-d434-4700-941d-a7c202e80dfb_character-ilya-the-pure-and-the-damned-russkaya-toska" target="_blank" rel="noopener" class="char-link-btn">Janitor</a>
+        <a href="https://drive.google.com/drive/u/0/folders/1av0ErY7X2CLspLmsL-BlA6UsfUtGuZdo" target="_blank" rel="noopener" class="char-link-btn">ST Card</a></div>
+      <!-- EN appearance -->
+      <div class="char-appearance-block lang-en"><h4 class="appearance-title">Appearance details</h4>
+<div class="appearance-row"><span class="appearance-key">Full Name</span><span class="appearance-val">Ilya Konstantinovich Zhivoy</span></div>
+<div class="appearance-row"><span class="appearance-key">Sex</span><span class="appearance-val">Male</span></div>
+<div class="appearance-row"><span class="appearance-key">Height</span><span class="appearance-val">6'3"</span></div>
+<div class="appearance-row"><span class="appearance-key">Age</span><span class="appearance-val">25</span></div>
+<div class="appearance-row"><span class="appearance-key">Skin</span><span class="appearance-val">Pale</span></div>
+<div class="appearance-row"><span class="appearance-key">Hair</span><span class="appearance-val">Wheat-colored, long (shoulder-length), usually loose or in messy ponytail</span></div>
+<div class="appearance-row"><span class="appearance-key">Eyes</span><span class="appearance-val">Gray-blue, very light—used to have light in them, now quiet, sad</span></div>
+<div class="appearance-row"><span class="appearance-key">Body</span><span class="appearance-val">Tall, lean</span></div>
+<div class="appearance-row"><span class="appearance-key">Face</span><span class="appearance-val">Sharp slavic features, always looks tired</span></div>
+<div class="appearance-row"><span class="appearance-key">Features</span><span class="appearance-val">Tattoos all over body; above right eyebrow—»DIE YOUNG»; under right eye—heart; matching tattoo with Pasha and Stepan; needle scars on arms hidden under long sleeves</span></div>
+<div class="appearance-row"><span class="appearance-key">Scent</span><span class="appearance-val">Old books, chamomile tea, smoke,</span></div>
+</div>
+      <!-- RU appearance -->
+      <div class="char-appearance-block lang-ru"><h4 class="appearance-title">Внешность</h4>
+<div class="appearance-row"><span class="appearance-key">Полное имя</span><span class="appearance-val">Илья Константинович Живой</span></div>
+<div class="appearance-row"><span class="appearance-key">Пол</span><span class="appearance-val">Мужской</span></div>
+<div class="appearance-row"><span class="appearance-key">Рост</span><span class="appearance-val">190 см</span></div>
+<div class="appearance-row"><span class="appearance-key">Возраст</span><span class="appearance-val">25</span></div>
+<div class="appearance-row"><span class="appearance-key">Волосы</span><span class="appearance-val">Пшеничные, длинные до плеч, обычно распущенные</span></div>
+<div class="appearance-row"><span class="appearance-key">Глаза</span><span class="appearance-val">Серо-голубые, очень светлые. Раньше в них был свет — теперь тихие и грустные.</span></div>
+<div class="appearance-row"><span class="appearance-key">Особенности</span><span class="appearance-val">Тату «DIE YOUNG» над правой бровью. Сердце под правым глазом. Общая тату с Пашей и Степаном. Следы от игл на руках — прячет под длинными рукавами.</span></div>
+<div class="appearance-row"><span class="appearance-key">Запах</span><span class="appearance-val">Старые книги, ромашковый чай, дым</span></div></div>
+      <div class="char-spotify"><iframe src="https://open.spotify.com/embed/playlist/26mYJMnNYks5ILABtiMJEd?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+    </div>
+  </div>
+  
+    <div class="char-gallery-section">
+      <div class="char-gallery-grid">
+        <div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T01-21-59-280Z.png" alt="" loading="lazy" onclick="openLightbox(0)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T09-31-31-239Z.png" alt="" loading="lazy" onclick="openLightbox(1)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T09-51-20-467Z.png" alt="" loading="lazy" onclick="openLightbox(2)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T10-13-13-752Z.png" alt="" loading="lazy" onclick="openLightbox(3)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T12-45-03-566Z.png" alt="" loading="lazy" onclick="openLightbox(4)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T12-53-55-904Z.png" alt="" loading="lazy" onclick="openLightbox(5)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T13-46-43-741Z.jpg" alt="" loading="lazy" onclick="openLightbox(6)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-09T15-09-58-626Z.jpg" alt="" loading="lazy" onclick="openLightbox(7)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-30T10-48-59-094Z.jpeg" alt="" loading="lazy" onclick="openLightbox(8)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/iig_2026-03-30T10-49-11-312Z.jpeg" alt="" loading="lazy" onclick="openLightbox(9)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (1).jpeg" alt="" loading="lazy" onclick="openLightbox(10)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (1).jpg" alt="" loading="lazy" onclick="openLightbox(11)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (10).jpeg" alt="" loading="lazy" onclick="openLightbox(12)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (11).jpeg" alt="" loading="lazy" onclick="openLightbox(13)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (12).jpeg" alt="" loading="lazy" onclick="openLightbox(14)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (13).jpeg" alt="" loading="lazy" onclick="openLightbox(15)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (14).jpeg" alt="" loading="lazy" onclick="openLightbox(16)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (15).jpeg" alt="" loading="lazy" onclick="openLightbox(17)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (16).jpeg" alt="" loading="lazy" onclick="openLightbox(18)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (17).jpeg" alt="" loading="lazy" onclick="openLightbox(19)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (18).jpeg" alt="" loading="lazy" onclick="openLightbox(20)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (19).jpeg" alt="" loading="lazy" onclick="openLightbox(21)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (20).jpeg" alt="" loading="lazy" onclick="openLightbox(22)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (21).jpeg" alt="" loading="lazy" onclick="openLightbox(23)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (22).jpeg" alt="" loading="lazy" onclick="openLightbox(24)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (23).jpeg" alt="" loading="lazy" onclick="openLightbox(25)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (24).jpeg" alt="" loading="lazy" onclick="openLightbox(26)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (25).jpeg" alt="" loading="lazy" onclick="openLightbox(27)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (26).jpeg" alt="" loading="lazy" onclick="openLightbox(28)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (27).png" alt="" loading="lazy" onclick="openLightbox(29)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (4).jpeg" alt="" loading="lazy" onclick="openLightbox(30)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (5).jpeg" alt="" loading="lazy" onclick="openLightbox(31)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (6).jpeg" alt="" loading="lazy" onclick="openLightbox(32)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (7).jpeg" alt="" loading="lazy" onclick="openLightbox(33)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (8).jpeg" alt="" loading="lazy" onclick="openLightbox(34)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya (9).jpeg" alt="" loading="lazy" onclick="openLightbox(35)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/Ilya profile pic.png" alt="" loading="lazy" onclick="openLightbox(36)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-02-17_18-12-57.jpg" alt="" loading="lazy" onclick="openLightbox(37)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-02-17_21-21-09.jpg" alt="" loading="lazy" onclick="openLightbox(38)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-02-22_06-11-09 (2).jpg" alt="" loading="lazy" onclick="openLightbox(39)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-02-24_13-37-14 (2).jpg" alt="" loading="lazy" onclick="openLightbox(40)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-02-24_13-37-14 (3).jpg" alt="" loading="lazy" onclick="openLightbox(41)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-02-24_13-37-14.jpg" alt="" loading="lazy" onclick="openLightbox(42)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-02-25_10-20-55.jpg" alt="" loading="lazy" onclick="openLightbox(43)"></div><div class="char-gallery-thumb"><img src="../photo/Ilya/photo_2026-03-15_13-28-11.jpg" alt="" loading="lazy" onclick="openLightbox(44)"></div>
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <img id="lightboxImg" src="" alt="">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox-prev" onclick="event.stopPropagation();lbPrev()">&#8592;</button>
+      <button class="lightbox-next" onclick="event.stopPropagation();lbNext()">&#8594;</button>
+    </div>
+    <script>
+    var lbPhotos=["../photo/Ilya/iig_2026-03-09T01-21-59-280Z.png","../photo/Ilya/iig_2026-03-09T09-31-31-239Z.png","../photo/Ilya/iig_2026-03-09T09-51-20-467Z.png","../photo/Ilya/iig_2026-03-09T10-13-13-752Z.png","../photo/Ilya/iig_2026-03-09T12-45-03-566Z.png","../photo/Ilya/iig_2026-03-09T12-53-55-904Z.png","../photo/Ilya/iig_2026-03-09T13-46-43-741Z.jpg","../photo/Ilya/iig_2026-03-09T15-09-58-626Z.jpg","../photo/Ilya/iig_2026-03-30T10-48-59-094Z.jpeg","../photo/Ilya/iig_2026-03-30T10-49-11-312Z.jpeg","../photo/Ilya/Ilya (1).jpeg","../photo/Ilya/Ilya (1).jpg","../photo/Ilya/Ilya (10).jpeg","../photo/Ilya/Ilya (11).jpeg","../photo/Ilya/Ilya (12).jpeg","../photo/Ilya/Ilya (13).jpeg","../photo/Ilya/Ilya (14).jpeg","../photo/Ilya/Ilya (15).jpeg","../photo/Ilya/Ilya (16).jpeg","../photo/Ilya/Ilya (17).jpeg","../photo/Ilya/Ilya (18).jpeg","../photo/Ilya/Ilya (19).jpeg","../photo/Ilya/Ilya (20).jpeg","../photo/Ilya/Ilya (21).jpeg","../photo/Ilya/Ilya (22).jpeg","../photo/Ilya/Ilya (23).jpeg","../photo/Ilya/Ilya (24).jpeg","../photo/Ilya/Ilya (25).jpeg","../photo/Ilya/Ilya (26).jpeg","../photo/Ilya/Ilya (27).png","../photo/Ilya/Ilya (4).jpeg","../photo/Ilya/Ilya (5).jpeg","../photo/Ilya/Ilya (6).jpeg","../photo/Ilya/Ilya (7).jpeg","../photo/Ilya/Ilya (8).jpeg","../photo/Ilya/Ilya (9).jpeg","../photo/Ilya/Ilya profile pic.png","../photo/Ilya/photo_2026-02-17_18-12-57.jpg","../photo/Ilya/photo_2026-02-17_21-21-09.jpg","../photo/Ilya/photo_2026-02-22_06-11-09 (2).jpg","../photo/Ilya/photo_2026-02-24_13-37-14 (2).jpg","../photo/Ilya/photo_2026-02-24_13-37-14 (3).jpg","../photo/Ilya/photo_2026-02-24_13-37-14.jpg","../photo/Ilya/photo_2026-02-25_10-20-55.jpg","../photo/Ilya/photo_2026-03-15_13-28-11.jpg"];var lbIdx=0;
+    function openLightbox(i){lbIdx=i;document.getElementById('lightboxImg').src=lbPhotos[i];document.getElementById('lightbox').classList.add('open');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+    function lbNext(){lbIdx=(lbIdx+1)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    function lbPrev(){lbIdx=(lbIdx-1+lbPhotos.length)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    </script>
+</main>
+<script>
+var _charQuotesRu=["Я всё ещё помню, как звучит радость. Просто больше не могу её сыграть.\"","Бог где-то здесь, в этих птицах у кормушки. Жаль только, я Его не чувствую.\"","Смешно, да? Я выжил, а зачем — мне так никто и не объяснил.\"","Не переживай, я в порядке. Правда. Просто… устал смотреть в окно.\"","Бабушка думает, что я поправляюсь. Ради неё я готов улыбаться вечно.\"","Раньше внутри была музыка. Теперь там просто очень тихо.\"","Паша… он сделал свой выбор. Я не злюсь. Я вообще мало что могу.\"","Знаешь, пустота не ранит. Она просто есть. Как старый бетон на набережной.\"","Если Бога нет, то кому я молюсь о том, чтобы хоть что-то почувствовать?\"","Мы не умираем молодыми. Мы просто забываем, как жить дальше.\"","Он не предавал меня, он просто ушел туда, где меня больше не существую.","Смотрю на его фото и ничего. Даже ненависть сгорела вместе с кайфом.","Пашка это шрам, который никогда не заживет, но уже совсем не болит.","Мы с ним как сломанные наушники: один играет, другой навсегда замолчал.","Паша мой личный Иуда, которого я все равно готов обнять.","Его голос в моей голове звучит громче любой музыки, что я слышал.","Он убежал от меня, но от себя ему бежать будет гораздо сложнее.","Степа это вечный двигатель, который пытается завести мой заглохший мотор.","Он такой шумный, что иногда мне кажется: я снова что-то чувствую.","Чебурашка верит в меня больше, чем я сам, и это чертовски страшно.","Мы со Степой одной крови, только его кровь это чистый адреналин.","Стёпа тянет меня в небо, забывая, что у меня давно подрезаны крылья.","Степа пахнет травой и надеждой, а я пахну старыми книгами и пылью.","Если бы не Стёпино безумие, я бы окончательно растворился в этой серости.","Стёпа все ждет, когда я снова возьму гитару. Прости, пальцы не слушаются.","Мой рыжий друг это все светлое, что осталось в этом Пожухлово.","Стёпа не бросил меня на дне, хотя сам едва держится за край.","Кеша бьет в барабаны так, будто хочет выбить из меня эту тишину.","Кеша молчалив, но в его молчании больше поддержки, чем в тысяче слов.","Кеша это фундамент нашей группы, который до сих пор не треснул.","Иногда мне хочется просто посидеть с Кешей рядом и ничего не объяснять.","Он смотрит на меня и видит Илью, а не ходячий труп после передоза.","Кеша всегда знает, когда мне нужно просто крепкое рукопожатие.","Кешин ритм это то единственное, что связывает меня с реальностью.","Кеша напоминает мне, что жизнь это не только соло, но и фон.","Вика играет так тонко, будто гладит мою истерзанную душу по волосам.","Она пахнет дождем и клавишами, единственный нежный звук в моем аду.","Вика все понимает по глазам, и мне стыдно перед ней за свою пустоту.","Вика это мелодия, которую я когда-то мог написать, но теперь только слушаю.","Вика приносит мне чай, а я вижу в ее глазах непролитые по мне слезы.","Иногда мне кажется, что ее клавиши это ступеньки в нормальный мир.","Вика не боится моей тени, она просто зажигает рядом маленькую свечу.","Вика это хрупкость, которая оказалась крепче любого бетона.","Мяу.","Смотрю на Вику и думаю: «Господи, пусть у нее все будет иначе»","Она молится за меня, а я чувствую себя черным пятном на ее святости.","Ее блины пахнут детством, в котором у меня еще были чувства.","Я живу только потому, что не могу заставить бабушку плакать снова.","Бабушка видит во мне свет, даже когда я сам вижу только тьму.","Моя бабушка это самое чистое существо в этом проклятом, сером Пожухлово.","Когда бабушка гладит меня по голове, мир на секунду перестает быть пустым.","Мне больно от того, что она нашла меня тогда. Она не заслужила этого.","Ее доброта это единственное, что я пытаюсь имитировать каждый день.","Бабушка это любовь, которую я не могу почувствовать, но в которую верю."];
+var _charQuotesEn=["I still remember what joy sounds like. I just can't play it anymore.","God is somewhere here, in those birds by the feeder. Too bad I can't feel Him.","Funny, right? I survived, but no one explained why.","Don't worry, I'm fine. Really. Just... tired of looking out the window.","Grandma thinks I'm getting better. For her sake, I'm ready to smile forever.","There used to be music inside. Now it's just very quiet.","Pasha... he made his choice. I'm not angry. I can barely feel anything at all.","You know, emptiness doesn't hurt. It just exists. Like old concrete on the embankment.","If there's no God, then who am I praying to, to feel at least something?","We don't die young. We just forget how to keep living.","He didn't betray me, he just went where I no longer exist.","I look at his photo and feel nothing. Even the hatred burned out with the high.","Pasha is a scar that will never heal but doesn't hurt anymore.","We're like broken headphones: one plays, the other went silent forever.","Pasha is my personal Judas, and I'm still ready to hug him.","His voice in my head is louder than any music I've ever heard.","He ran from me, but running from himself will be much harder.","Styopa is a perpetual motion machine trying to start my stalled engine.","He's so loud that sometimes I think I feel something again.","Cheburashka believes in me more than I do, and that's terrifying.","Styopa and I share the same blood, only his is pure adrenaline.","Styopa pulls me toward the sky, forgetting my wings were clipped long ago.","Styopa smells like weed and hope, and I smell like old books and dust.","If not for Styopa's madness, I'd have dissolved completely into this grayness.","Styopa keeps waiting for me to pick up the guitar again. Sorry, my fingers won't listen.","My ginger friend is all the light that's left in this Pozhukhlovo.","Styopa didn't leave me at the bottom, even though he's barely hanging on himself.","Kesha hits the drums like he's trying to beat this silence out of me.","Kesha is quiet, but in his silence there's more support than in a thousand words.","Kesha is the foundation of our band that still hasn't cracked.","Sometimes I just want to sit next to Kesha and explain nothing.","He looks at me and sees Ilya, not a walking corpse after an overdose.","Kesha always knows when I need just a firm handshake.","Kesha's rhythm is the only thing connecting me to reality.","Vika plays so gently, like she's stroking my tortured soul's hair.","She smells like rain and piano keys, the only tender sound in my hell.","Vika understands everything from my eyes, and I'm ashamed of my emptiness before her.","Vika is a melody I could once write but now can only listen to.","Vika brings me tea, and I see unshed tears for me in her eyes.","Vika isn't afraid of my shadow, she just lights a small candle nearby.","Meow.","I look at Vika and think: God, let everything be different for her.","Her pancakes smell like a childhood when I still had feelings.","I only live because I can't make grandma cry again.","Grandma sees light in me, even when I only see darkness.","My grandma is the purest being in this cursed, gray Pozhukhlovo.","When grandma strokes my head, the world stops being empty for a second.","It hurts that she found me then. She didn't deserve that.","Her kindness is the only thing I try to imitate every day.","Grandma is love I can't feel but still believe in."];
+var _charBubbles=[];
+function showCharThought(e){
+  var col=e.currentTarget;
+  var rect=col.getBoundingClientRect();
+  var x=e.clientX-rect.left;
+  var y=e.clientY-rect.top;
+  if(_charBubbles.length>=2){var old=_charBubbles.shift();old.classList.remove('visible');setTimeout(function(){if(old.parentNode)old.parentNode.removeChild(old);},400);}
+  var lang=document.documentElement.getAttribute('data-lang')||'ru';
+  var pool=lang==='en'?_charQuotesEn:_charQuotesRu;
+  var t=pool[Math.floor(Math.random()*pool.length)];
+  var b=document.createElement('div');
+  b.className='thought-item';
+  b.textContent=t;
+  b.style.left=Math.min(Math.max(x-60,10),col.offsetWidth-180)+'px';
+  b.style.top=Math.max(y-50,10)+'px';
+  col.appendChild(b);
+  setTimeout(function(){b.classList.add('visible');},10);
+  _charBubbles.push(b);
+  setTimeout(function(){b.classList.remove('visible');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);var idx=_charBubbles.indexOf(b);if(idx>-1)_charBubbles.splice(idx,1);},400);},4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

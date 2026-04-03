@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бетонка — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content">
+  <div class="au-banner"><img src="../photo/Бетонка/iig_2026-04-03T13-48-16-945Z.jpeg" alt="Бетонка" loading="lazy"><div class="au-banner-overlay"><a href="trupovolkovo.html" class="back-link"><span class="lang-ru">&larr; Труповолково</span><span class="lang-en">&larr; Trupovolkovo</span></a><p class="section-label"><span class="lang-ru">набережная Енисея</span><span class="lang-en">Yenisei embankment</span></p><h1 class="page-title"><span class="lang-ru">Бетонка</span><span class="lang-en">Betonka</span></h1></div></div>
+  <div class="section"><p class="location-full-desc"><span class="lang-ru">Бетонный спуск к тёмной реке. Место свиданий и стрелок. Граффити 2016 года. Ветер продувает до костей.</span><span class="lang-en">Concrete slope to the dark river. Place for dates and criminal showdowns. 2016-era graffiti. Wind cuts to the bone.</span></p></div>
+  <div class="section"><div class="masonry-gallery"><img src="../photo/Бетонка/iig_2026-04-03T19-10-12-620Z.jpeg" alt="" loading="lazy" onclick="openLocLb(0)"><img src="../photo/Бетонка/iig_2026-04-03T19-10-13-952Z.jpeg" alt="" loading="lazy" onclick="openLocLb(1)"><img src="../photo/Бетонка/iig_2026-04-03T19-10-21-512Z.jpeg" alt="" loading="lazy" onclick="openLocLb(2)"><img src="../photo/Бетонка/iig_2026-04-03T19-10-26-407Z.jpeg" alt="" loading="lazy" onclick="openLocLb(3)"><img src="../photo/Бетонка/iig_2026-04-03T19-10-37-679Z.jpeg" alt="" loading="lazy" onclick="openLocLb(4)"><img src="../photo/Бетонка/iig_2026-04-03T19-11-07-365Z.jpeg" alt="" loading="lazy" onclick="openLocLb(5)"></div></div>
+<div class="lightbox" id="locLb" onclick="closeLocLb()"><img id="locLbImg" src="" alt=""><button class="lightbox-close" onclick="closeLocLb()">&times;</button><button class="lightbox-prev" onclick="event.stopPropagation();locLbPrev()">&#8592;</button><button class="lightbox-next" onclick="event.stopPropagation();locLbNext()">&#8594;</button></div>
+<script>var locPhotos=["../photo/Бетонка/iig_2026-04-03T19-10-12-620Z.jpeg","../photo/Бетонка/iig_2026-04-03T19-10-13-952Z.jpeg","../photo/Бетонка/iig_2026-04-03T19-10-21-512Z.jpeg","../photo/Бетонка/iig_2026-04-03T19-10-26-407Z.jpeg","../photo/Бетонка/iig_2026-04-03T19-10-37-679Z.jpeg","../photo/Бетонка/iig_2026-04-03T19-11-07-365Z.jpeg"];var locIdx=0;function openLocLb(i){locIdx=i;document.getElementById('locLbImg').src=locPhotos[i];document.getElementById('locLb').classList.add('open');}function closeLocLb(){document.getElementById('locLb').classList.remove('open');}function locLbNext(){locIdx=(locIdx+1)%locPhotos.length;document.getElementById('locLbImg').src=locPhotos[locIdx];}function locLbPrev(){locIdx=(locIdx-1+locPhotos.length)%locPhotos.length;document.getElementById('locLbImg').src=locPhotos[locIdx];}</script>
+</main>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

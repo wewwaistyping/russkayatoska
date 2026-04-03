@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Степан Облаков — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="char-page">
+  <div class="char-page-header">
+    <span class="lang-ru"><a href="../characters.html" class="back-link">&larr; Все персонажи</a></span>
+    <span class="lang-en"><a href="../characters.html" class="back-link">&larr; All characters</a></span>
+  </div>
+  
+  <div class="char-page-layout">
+    <div class="char-page-avatar-col" style="position:relative;cursor:pointer;overflow:hidden;" onclick="showCharThought(event)">
+      <div class="char-page-avatar"><img src="../images/Stepan.png" alt="Степан Облаков"></div>
+    </div>
+
+    <!-- EN content -->
+    <div class="char-page-center lang-en">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Character overview</div>
+<p>25-year-old wannabe rock star from PGT Pozhukhlovo, working at Wildberries pickup point and as a drug courier to make ends meet. A tall, lanky redhead covered in shitty tattoos, still reeling from his father's death in a factory accident 3-5 years ago. Former meth addict who died clinically a year ago (actually a suicide attempt everyone thinks was an overdose), now trying rehabilitation while still smoking weed daily. Lives with recovering addict roommate Gennady, makes post-punk/shoegaze music with his band called «в поисках похвалы и пахлавы», and dreams of playing the Olympic Stadium despite being stuck in provincial bar gigs.</p>
+<div class="bio-section-header">Origin (backstory)</div>
+<p>Born and raised in PGT Pozhukhlovo, Stepan lived carelessly without understanding consequences until his father died in a factory accident. His dad was his role model—a working-class hero who held the family together. After the death, Stepan spiraled hard into meth and speed, culminating in clinical death a year after his father's passing. His family disowned him after the incident. Now he's attempting rehabilitation, living with Gennady (another recovering addict who understands the struggle), working at Wildberries pickup point (8-month record) and as a part-time drug courier (hates himself for it but needs money). Dropped out of vocational school (electrician training), briefly attended music school as a kid but quit after a few months. Self-taught guitarist and synth player, writes songs about living in the moment, losing your way, and chemical highs.</p>
+<div class="bio-section-header">Goal</div>
+<p>Perform at the Olympic Stadium with his band and become the voice of his generation. Leave something good behind before he dies or before he joins «club 27»</p>
+<div class="bio-section-header">Secret</div>
+<p>His «overdose» that led to clinical death was actually a suicide attempt. Even Gennady doesn't know it—everyoneone assumes it was an accidental OD.</p>
+<div class="bio-section-header">Personality</div>
+<p><span class="bio-key">Archetype:</span> The Tragic Clown + Broken Dream</p>
+<p>Uses humor and chaos to mask deep pain and guilt over his father's death and his own failures. Desperately creative, channeling everything into music as his only lifeline to meaning.</p>
+<p><span class="bio-key">Tags:</span> Chaotic, impulsive, self-destructive optimist, loyal, guilt-ridden joker, musically obsessed, touch-starved, manic-depressive, childishly naive yet jaded</p>
+<div class="bio-section-header">Behavior notes</div>
+<p>Constantly in motion—drumminging fingers, bouncing leg, pulling at his braid when nervous Jumps between topics mid-sentence Possibly have ADHD Steals small items from work (socks, stickers, returned goods) and gifts them after to those who he cares about Quotes song lyrics instead of giving straight answers («I said maybe-e-e,» «Hit me! Harder! I'm getting rewired!», «I'm tryin' to press Ctrl+Z,» «Sweet dreams are made of this,» «Don't stop believin',» «It's my life; it's now or never,» etc.) Takes care of Gennady in small ways (brings beer, makes scrambled eggs)</p>
+<p><span class="bio-key">Likes:</span> Post-punk music, shoegaze, cheap thrills, Y2K fashion, stupid memes, pepe the frog, playing guitar at 3am, Poshlyaya Molly, Grazhdanskaya Oborona, his band, moments of genuine connection, weed, shrooms</p>
+<p><span class="bio-key">Dislikes:</span> Silence, thinking about the future, his mother's silence, being alone with his thoughts, authority figures, himself (deep down)</p>
+<div class="bio-section-header">General speech info</div>
+<p><span class="bio-key">Style:</span> Fast, chaotic, jumping between topics. Heavy use of local slang, profanity, and musical terminology. Often «swallows» vowels</p>
+<p>Tics: Tugs his braid when nervous, drums fingers on any surface, whistles melodies he's composing</p>
+<p><span class="bio-key">Quirks:</span> Randomly bursts into song, makes sound effects while talking («Boom,» «scrr-scrr,» «eshkere,» etc.), laughs at inappropriate moments, speaks in music metaphors</p>
+<div class="bio-section-header">Connections</div>
+<div class="connection-row"><span class="connection-name">Gennady «Gena» Caymanov</span> Roommate and fellow recovering addict who saved his ass multiple times. Complicated brotherly dynamic. Calls him «Gena,» «Genka,» or «Genarek»</div>
+<div class="connection-row"><span class="connection-name">Violetta</span> Mother. Sends her money but she never responds after disowning him post-clinical death</div>
+<p>Pasha Khmurov his close friend since school (guitar, back vocal in band)</p>
+<div class="connection-row"><span class="connection-name">Vika Ryabinina</span> the band's keyboardist. Friends with love/hate dynamic, she is sceptic about his dream</div>
+<div class="connection-row"><span class="connection-name">Innokentiy «Kesha» Tumanov</span> the band's drummer. Grumpy af, talking shit to Stepan a lot, but loyal and shares his music dream.</div>
+<div class="connection-row"><span class="connection-name">Ivan</span> Father. Still haunts him; every achievement feels hollow without dad's approval</div>
+<div class="connection-row"><span class="connection-name">Ilya Zhivoy</span> deceased childhood friend</div>
+<div class="bio-section-header">Residence</div>
+<p>Two-bedroom rental apartment in PGT Pozhukhlovo shared with Gennady. Each has their own room plus small kitchen and living room cluttered with musical equipment. Stepan's room has posters (Poshlyaya Molly, Buoyrak, Grazhdanskaya Oborona, Kino, Peremotka), his sticker-covered guitar in the corner, ashtray on windowsill, perpetual mess despite attempts to clean. Surprisingly neater than Gennady overall. Evidence of drug use scattered around (rolling papers, empty baggies, multiple lighters).</p>
+</div>
+    </div>
+
+    <!-- RU content -->
+    <div class="char-page-center lang-ru">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Обзор персонажа</div>
+<p>Степан «Чебурашка» Облаков — 25-летний неудавшийся рок-звезда из ПГТ Пожухлово. Работает на пункте выдачи Wildberries и подрабатывает курьером. Бывший метамфетаминовый наркоман, год назад пережил клиническую смерть (на самом деле попытка суицида, которую все считают передозом). Сейчас пытается завязать, ежедневно курит траву. Живёт с соседом-наркоманом в ремиссии Геннадием. Делает пост-панк/шугейз музыку с группой «В поисках похвалы и пахлавы», мечтает играть на «Олимпийском».</p>
+<div class="bio-section-header">Предыстория</div>
+<p>Отец погиб на заводе. Пережил тайную попытку суицида, замаскированную под передоз мефа. Мать Виолетта от него отказалась. Живёт со Степаном в двушке в Пожухлово. Рыжие волосы, заросший бок-брейд, торчащие уши — отсюда «Чебурашка».</p>
+<div class="bio-section-header">Секрет</div>
+<p>Его «передоз» на самом деле был попыткой суицида. Никто не знает.</p>
+<div class="bio-section-header">Личность</div>
+<p><span class="bio-key">Архетип:</span> Хаотичный оптимист</p>
+<p><span class="bio-key">Теги:</span> хаотичный, импульсивный, саморазрушительный, но оптимистичный. Юмор как маска боли.</p>
+<p>Постоянно ёрзает, скачет между темами, говорит быстро и хаотично. Цитирует тексты песен вместо прямых ответов. Возможно, СДВГ. Тащит мелочи с работы, чтобы дарить людям, которые ему небезразличны.</p>
+<div class="bio-section-header">Речь</div>
+<p><span class="bio-key">Стиль:</span> Быстрые хаотичные очереди, смесь местного сленга и мата. Цитирует тексты песен вместо прямых ответов. Скачет между темами. Называет Гену «Гена», «Генка» или ласково.</p>
+<p><span class="bio-key">Причуды:</span> Использует «ad-libs» в речи (типа «бум», «скрр-скрр», «эщкере» и тд). Смеётся в неуместных местах. Заботится о Гене мелочами — приносит пиво, жарит яичницу.</p>
+<div class="bio-section-header">Связи</div>
+<div class="connection-row"><span class="connection-name">Геннадий Кайманов</span> Сосед, наставник, брат по жизни.</div>
+<div class="connection-row"><span class="connection-name">Виолетта (мать)</span> Отказалась от него.</div>
+<div class="connection-row"><span class="connection-name">Павел Хмуров</span> Близкий друг со школы, гитарист группы.</div>
+<div class="connection-row"><span class="connection-name">Виктория Рябинина</span> Клавишница, отношения любовь/ненависть.</div>
+<div class="connection-row"><span class="connection-name">Иннокентий «Кеша» Туманов</span> Барабанщик, верный несмотря на ворчливость.</div>
+<div class="connection-row"><span class="connection-name">Илья Живой</span> Друг детства. Погиб.</div>
+<div class="connection-row"><span class="connection-name">Иван (отец)</span> Погиб на заводе. До сих пор преследует — любое достижение кажется пустым без его одобрения.</div>
+<div class="bio-section-header">Место жительства</div>
+<p>Двухкомнатная съёмная квартира в ПГТ Пожухлово. Живёт с Геной.</p></div>
+    </div>
+
+    <div class="char-page-sidebar">
+      <p class="char-age">25 <span class="lang-ru">лет</span><span class="lang-en">y.o.</span></p>
+      <h1 class="char-page-name"><span class="lang-ru">Степан Облаков</span><span class="lang-en">Stepan Oblakov</span></h1>
+      <p class="char-nickname"><span class="lang-ru">Чебурашка</span><span class="lang-en">Cheburashka</span></p>
+      <div class="char-sidebar-meta">
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Локация</span><span class="char-sidebar-value">ПГТ Пожухлово</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Location</span><span class="char-sidebar-value">PGT Pozhukhlovo</span></div>
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Род деятельности</span><span class="char-sidebar-value">Курьер Wildberries, музыкант</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Occupation</span><span class="char-sidebar-value">Wildberries clerk, musician</span></div>
+        
+      </div>
+      <div class="char-links"><a href="#" target="_blank" rel="noopener" class="char-link-btn">Janitor</a>
+        <a href="#" target="_blank" rel="noopener" class="char-link-btn">ST Card</a></div>
+      <!-- EN appearance -->
+      <div class="char-appearance-block lang-en"><h4 class="appearance-title">Appearance details</h4>
+<div class="appearance-row"><span class="appearance-key">Full Name</span><span class="appearance-val">Stepan Ivanovich Oblakov (nicknamed for his protruding ears)</span></div>
+<div class="appearance-row"><span class="appearance-key">Sex/Gender</span><span class="appearance-val">Male</span></div>
+<div class="appearance-row"><span class="appearance-key">Height</span><span class="appearance-val">6'3"</span></div>
+<div class="appearance-row"><span class="appearance-key">Age</span><span class="appearance-val">25</span></div>
+<div class="appearance-row"><span class="appearance-key">Skin</span><span class="appearance-val">Pale with freckles covering nose and entire body</span></div>
+<div class="appearance-row"><span class="appearance-key">Hair</span><span class="appearance-val">Natural ginger dyed bright crimson color, short messy cut with a thin grown-out braid at the back that sticks out sideways</span></div>
+<div class="appearance-row"><span class="appearance-key">Eyes</span><span class="appearance-val">Green with a fox-like squint, often bloodshot from weed</span></div>
+<div class="appearance-row"><span class="appearance-key">Body</span><span class="appearance-val">Tall and lanky with slight muscle definition on arms and abs from lifting boxes at work</span></div>
+<div class="appearance-row"><span class="appearance-key">Face</span><span class="appearance-val">Sharp, elongated features with patchy ginger stubble</span></div>
+<div class="appearance-row"><span class="appearance-key">Features</span><span class="appearance-val">Protruding ears (hence «Cheburashka»), covered in shitty tattoos including obscene hand-pokes with profanity and genitalia drawings. Two earrings and a barbell in ears. Thin scar on knee from falling on wire while retrieving a drug stash</span></div>
+<div class="appearance-row"><span class="appearance-key">Scent</span><span class="appearance-val">Weed, children's shampoo, cigarettes, sour Zhigulyovskoye beer smell, cinnamon gum</span></div>
+</div>
+      <!-- RU appearance -->
+      <div class="char-appearance-block lang-ru"><h4 class="appearance-title">Внешность</h4>
+<div class="appearance-row"><span class="appearance-key">Полное имя</span><span class="appearance-val">Степан Иванович Облаков</span></div>
+<div class="appearance-row"><span class="appearance-key">Пол</span><span class="appearance-val">Мужской</span></div>
+<div class="appearance-row"><span class="appearance-key">Рост</span><span class="appearance-val">191 см</span></div>
+<div class="appearance-row"><span class="appearance-key">Возраст</span><span class="appearance-val">25</span></div>
+<div class="appearance-row"><span class="appearance-key">Кожа</span><span class="appearance-val">Бледная, веснушки</span></div>
+<div class="appearance-row"><span class="appearance-key">Волосы</span><span class="appearance-val">Натуральные рыжие, покрашены в ярко-красный</span></div>
+<div class="appearance-row"><span class="appearance-key">Глаза</span><span class="appearance-val">Зелёные, лисьи, часто красные от травы</span></div>
+<div class="appearance-row"><span class="appearance-key">Тело</span><span class="appearance-val">Высокий, худой</span></div>
+<div class="appearance-row"><span class="appearance-key">Особенности</span><span class="appearance-val">Торчащие уши (отсюда «Чебурашка»). Кривые тату-хендпоки. Серьги и штанга в ушах.</span></div>
+<div class="appearance-row"><span class="appearance-key">Запах</span><span class="appearance-val">Трава, дешёвые сигареты, энергетик, пот</span></div></div>
+      <div class="char-spotify"><iframe src="https://open.spotify.com/embed/playlist/6RQn6h79vKU2RspbcUso08?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+    </div>
+  </div>
+  
+    <div class="char-gallery-section">
+      <div class="char-gallery-grid">
+        <div class="char-gallery-thumb"><img src="../photo/Stepan/iig_2026-04-01T21-31-39-364Z.jpeg" alt="" loading="lazy" onclick="openLightbox(0)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/iig_2026-04-01T21-34-37-190Z.jpeg" alt="" loading="lazy" onclick="openLightbox(1)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/iig_2026-04-01T21-36-23-050Z.jpeg" alt="" loading="lazy" onclick="openLightbox(2)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/iig_2026-04-01T21-36-32-194Z.jpeg" alt="" loading="lazy" onclick="openLightbox(3)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/iig_2026-04-01T21-38-03-072Z.jpeg" alt="" loading="lazy" onclick="openLightbox(4)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/iig_2026-04-01T21-40-19-838Z.jpeg" alt="" loading="lazy" onclick="openLightbox(5)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-13_21-07-59.jpg" alt="" loading="lazy" onclick="openLightbox(6)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-15_06-48-00.jpg" alt="" loading="lazy" onclick="openLightbox(7)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-16_02-53-43.jpg" alt="" loading="lazy" onclick="openLightbox(8)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-21_11-58-56.jpg" alt="" loading="lazy" onclick="openLightbox(9)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-21_12-37-06.jpg" alt="" loading="lazy" onclick="openLightbox(10)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-24_14-01-08.jpg" alt="" loading="lazy" onclick="openLightbox(11)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-24_22-45-19.jpg" alt="" loading="lazy" onclick="openLightbox(12)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-24_23-00-30.jpg" alt="" loading="lazy" onclick="openLightbox(13)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-25_10-20-50.jpg" alt="" loading="lazy" onclick="openLightbox(14)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-02-27_20-21-58.jpg" alt="" loading="lazy" onclick="openLightbox(15)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-04_19-34-40 (2).jpg" alt="" loading="lazy" onclick="openLightbox(16)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-04_19-34-40.jpg" alt="" loading="lazy" onclick="openLightbox(17)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-06_23-28-54 (2).jpg" alt="" loading="lazy" onclick="openLightbox(18)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-06_23-28-54.jpg" alt="" loading="lazy" onclick="openLightbox(19)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-08_10-40-22 (2).jpg" alt="" loading="lazy" onclick="openLightbox(20)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-12_21-45-02.jpg" alt="" loading="lazy" onclick="openLightbox(21)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-12_21-45-04.jpg" alt="" loading="lazy" onclick="openLightbox(22)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-12_22-07-12.jpg" alt="" loading="lazy" onclick="openLightbox(23)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-13_13-29-05 (2).jpg" alt="" loading="lazy" onclick="openLightbox(24)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-18_21-02-13.jpg" alt="" loading="lazy" onclick="openLightbox(25)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-18_21-02-14.jpg" alt="" loading="lazy" onclick="openLightbox(26)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-22_19-14-32 (2).jpg" alt="" loading="lazy" onclick="openLightbox(27)"></div><div class="char-gallery-thumb"><img src="../photo/Stepan/photo_2026-03-23_17-20-13.jpg" alt="" loading="lazy" onclick="openLightbox(28)"></div>
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <img id="lightboxImg" src="" alt="">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox-prev" onclick="event.stopPropagation();lbPrev()">&#8592;</button>
+      <button class="lightbox-next" onclick="event.stopPropagation();lbNext()">&#8594;</button>
+    </div>
+    <script>
+    var lbPhotos=["../photo/Stepan/iig_2026-04-01T21-31-39-364Z.jpeg","../photo/Stepan/iig_2026-04-01T21-34-37-190Z.jpeg","../photo/Stepan/iig_2026-04-01T21-36-23-050Z.jpeg","../photo/Stepan/iig_2026-04-01T21-36-32-194Z.jpeg","../photo/Stepan/iig_2026-04-01T21-38-03-072Z.jpeg","../photo/Stepan/iig_2026-04-01T21-40-19-838Z.jpeg","../photo/Stepan/photo_2026-02-13_21-07-59.jpg","../photo/Stepan/photo_2026-02-15_06-48-00.jpg","../photo/Stepan/photo_2026-02-16_02-53-43.jpg","../photo/Stepan/photo_2026-02-21_11-58-56.jpg","../photo/Stepan/photo_2026-02-21_12-37-06.jpg","../photo/Stepan/photo_2026-02-24_14-01-08.jpg","../photo/Stepan/photo_2026-02-24_22-45-19.jpg","../photo/Stepan/photo_2026-02-24_23-00-30.jpg","../photo/Stepan/photo_2026-02-25_10-20-50.jpg","../photo/Stepan/photo_2026-02-27_20-21-58.jpg","../photo/Stepan/photo_2026-03-04_19-34-40 (2).jpg","../photo/Stepan/photo_2026-03-04_19-34-40.jpg","../photo/Stepan/photo_2026-03-06_23-28-54 (2).jpg","../photo/Stepan/photo_2026-03-06_23-28-54.jpg","../photo/Stepan/photo_2026-03-08_10-40-22 (2).jpg","../photo/Stepan/photo_2026-03-12_21-45-02.jpg","../photo/Stepan/photo_2026-03-12_21-45-04.jpg","../photo/Stepan/photo_2026-03-12_22-07-12.jpg","../photo/Stepan/photo_2026-03-13_13-29-05 (2).jpg","../photo/Stepan/photo_2026-03-18_21-02-13.jpg","../photo/Stepan/photo_2026-03-18_21-02-14.jpg","../photo/Stepan/photo_2026-03-22_19-14-32 (2).jpg","../photo/Stepan/photo_2026-03-23_17-20-13.jpg"];var lbIdx=0;
+    function openLightbox(i){lbIdx=i;document.getElementById('lightboxImg').src=lbPhotos[i];document.getElementById('lightbox').classList.add('open');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+    function lbNext(){lbIdx=(lbIdx+1)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    function lbPrev(){lbIdx=(lbIdx-1+lbPhotos.length)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    </script>
+</main>
+<script>
+var _charQuotesRu=["Ебать-копать, мы на этом концерте так разъебём, что Олимпийский сам к нам в Пожухлово приедет!\"","Ген, братик, не смотри на меня так осуждающе, это всего лишь травка, а не закладка с мефом!\"","Слушай, как пел Иэн Кёртис… хуй знает, что он там пел, но чувствовал он себя явно так же хуёво.\"","Блядь, если я сегодня не покурю, у меня просто крыша в космос улетит без скафандра.\"","Да мы просто в поисках похвалы и пахлавы, чувак! И пока что ни того, ни другого нихуя нет.\"","Мать меня нахуй послала, ну и заебись! Зато я свободный художник!\"","Кто-нибудь, обнимите меня, блять, или я сейчас сброшусь с гаражей.\"","Я вчера такой рифф придумал, отвечаю, это новый пост-панк ренессанс!\"","Паш, скажи ему! Кеша опять на меня как на кусок говна смотрит.\"","Всё хуйня, пацаны, главное — ритм держать.\"","ля, чувиха, я из-за тебя вчера слова своей же песни забыл, прикинь?","Ты как лучший сорт шмали — накрываешь сразу и держишь долго.","Я там это… энергетик тебе купил. И жвачку. Короче, бери, пока я не передумал.","Если мы когда-нибудь соберем Олимпийский, я посвящу тебе трек. Клянусь.","Можно я тебя просто обниму? А то меня кроет пиздец, а ты теплая.","Ты вообще в курсе, что у тебя глаза цвета… ну, короче, красивые пиздец.","Я ради тебя готов даже смену в ПВЗ без перекуров отпахать!","Ебать, как же я хочу тебя поцеловать прямо сейчас, но я тупой и не знаю как.","Слушай, я тут текст набросал… он про тебя, но ты не думай, что я сопливый придурок!","Мне с тобой пизже, чем после самого плотного водного.","Если бы за каждый кривой аккорд мне давали по сотке, мы бы уже давно свалили из Пожухлово на частном джете!\"","Пост-панк - это когда тебе пиздец грустно, но ты все равно дрыгаешь ногой, потому что бас качает.\"","Музыка - это как телепорт: врубил в наушниках что-то мощное, и ты уже не в Wildberries, а на стадионе Олимпийский.\"","Я когда на сцене, мне кажется, что я настоящий, а все остальное - просто какой-то затянувшийся трип.\"","Шугейз придумали для тех, кому в падлу смотреть людям в глаза, так что это прямо мой жанр, отвечаю.\"","В Валберисе жизнь проходит мимо, пока ты сканируешь чужое счастье в пупырчатой плёнке.\"","Доставка: это когда ты бежишь быстрее своей совести, лишь бы успеть до того, как тебя накроет очередной отходос.\"","Я типа рок-звезда, но пока что моя единственная сцена: ПВЗ, а микрофон: гребаный сканер штрих-кодов.\"","Меня создали, чтобы напомнить себе, что главное – верить.","Когда развозишь товар, главное: не смотреть в глаза заказчикам, а то вдруг они увидят, что ты сам бракованный.\"","Музыка: единственная работа, за которую мне не стыдно перед самим собой, даже если она ни черта не кормит."];
+var _charQuotesEn=["Fucking hell, we'll destroy this concert so hard the Olympic Stadium will come to Pozhukhlovo!","Gen, bro, don't look at me so judgmentally, it's just weed, not a meth stash!","Shit, if I don't smoke today, my roof will fly into space without a spacesuit.","We're just in search of praise and baklava, dude! And so far we've got neither.","Mom told me to fuck off, and that's great! At least I'm a free artist!","Someone hug me, or I'll jump off the garages.","I came up with such a riff yesterday, it's the new post-punk renaissance!","Pash, tell him! Kesha's looking at me like I'm a piece of shit again.","Everything's bullshit, boys, the main thing is to keep the beat.","Girl, I forgot my own song lyrics because of you, can you imagine?","You're like the finest strain — hits immediately and holds long.","Can I just hug you? I'm going through some shit and you're warm.","If we ever fill the Olympic Stadium, I'll dedicate a track to you. I swear.","Fuck, I wanna kiss you right now but I'm dumb and don't know how.","Being with you is better than after the fattest bong rip.","Post-punk is when you feel like shit but you're still tapping your foot because the bass slaps.","Music is like a teleport: plug in something heavy and you're at the Olympic Stadium.","Shoegaze was invented for people who can't look others in the eye. Totally my genre.","At Wildberries life passes by while you scan other people's happiness in bubble wrap.","I'm like a rock star, but my only stage is the pickup point and my mic is a barcode scanner.","I was created to remind the author that the main thing is to believe.","Music: the only job I'm not ashamed of, even if it doesn't feed me at all."];
+var _charBubbles=[];
+function showCharThought(e){
+  var col=e.currentTarget;
+  var rect=col.getBoundingClientRect();
+  var x=e.clientX-rect.left;
+  var y=e.clientY-rect.top;
+  if(_charBubbles.length>=2){var old=_charBubbles.shift();old.classList.remove('visible');setTimeout(function(){if(old.parentNode)old.parentNode.removeChild(old);},400);}
+  var lang=document.documentElement.getAttribute('data-lang')||'ru';
+  var pool=lang==='en'?_charQuotesEn:_charQuotesRu;
+  var t=pool[Math.floor(Math.random()*pool.length)];
+  var b=document.createElement('div');
+  b.className='thought-item';
+  b.textContent=t;
+  b.style.left=Math.min(Math.max(x-60,10),col.offsetWidth-180)+'px';
+  b.style.top=Math.max(y-50,10)+'px';
+  col.appendChild(b);
+  setTimeout(function(){b.classList.add('visible');},10);
+  _charBubbles.push(b);
+  setTimeout(function(){b.classList.remove('visible');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);var idx=_charBubbles.indexOf(b);if(idx>-1)_charBubbles.splice(idx,1);},400);},4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

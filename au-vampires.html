@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вампиры Средней Полосы — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.vamp-page { --vamp-red: #8b2020; --vamp-dark-red: #4a1010; --vamp-blood: #c41e1e; --vamp-glow: rgba(196,30,30,0.15); }
+.vamp-page .page-hero { background: radial-gradient(ellipse at center, var(--vamp-glow) 0%, transparent 60%); }
+.vamp-page .bio-section-header { background: var(--vamp-blood); }
+/* Title: main text white, highlighted words red */
+.vamp-page .section-title { color: var(--white); }
+.vamp-page .section-title span { color: var(--vamp-blood); }
+.vamp-page .page-title { color: var(--white) !important; }
+.vamp-page .page-title span { color: var(--white) !important; }
+.vamp-page .page-title .vamp-red { color: #c41e1e !important; }
+.vamp-red { color: #c41e1e !important; font-style: normal; }
+/* Override ALL green/pink elements to red/white on this page */
+.vamp-page .section-label { color: var(--vamp-blood); }
+.vamp-page .section-label::after { background: linear-gradient(to right, var(--vamp-blood), transparent); }
+.vamp-page .back-link { color: var(--white); }
+.vamp-page .char-age { color: var(--vamp-blood); }
+.vamp-page .char-nickname { color: var(--vamp-blood); }
+.vamp-page .page-title span { color: var(--vamp-blood); }
+/* Nav, footer, scrollbar — ALL red via .vamp-body on <body> */
+.vamp-body .nav-logo { color: #c41e1e !important; }
+.vamp-body .nav-links a:hover,
+.vamp-body .nav-links a.active { color: #c41e1e !important; text-shadow: 0 0 20px rgba(196,30,30,0.3) !important; }
+.vamp-body .nav-links a::after { background: #c41e1e !important; }
+.vamp-body .lang-toggle { border-color: #c41e1e !important; color: #c41e1e !important; }
+.vamp-body .lang-toggle:hover { background: #c41e1e !important; color: #fff !important; }
+.vamp-body .footer-brand { color: #c41e1e !important; }
+.vamp-body .nav-burger span { background: #c41e1e !important; }
+.vamp-body .nav { border-bottom-color: rgba(196,30,30,0.15) !important; }
+/* Scrollbar */
+.vamp-body { scrollbar-color: #c41e1e #111 !important; }
+.vamp-body::-webkit-scrollbar-thumb { background: #c41e1e !important; }
+/* Credits inline */
+.vamp-credits-inline { text-align: center; font-size: 13px; color: var(--gray-light); line-height: 1.8; margin-top: 24px; }
+.vamp-credits-inline .credit-name { color: var(--vamp-blood); font-weight: 700; }
+.vamp-credits-inline .credit-char { color: var(--white); }
+/* Intro block */
+.vamp-intro { max-width: 800px; margin: 0 auto 32px; text-align: center; }
+.vamp-intro p { font-size: 16px; color: var(--cream); line-height: 1.6; margin-bottom: 12px; }
+.vamp-tabs { display: flex; gap: 4px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+.vamp-tab { font-family: var(--font-heading); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 10px 24px; border: 1px solid var(--gray); background: transparent; color: var(--gray-light); cursor: pointer; transition: all 0.3s; }
+.vamp-tab:hover, .vamp-tab.active { border-color: var(--vamp-blood); color: var(--vamp-blood); background: rgba(139,32,32,0.1); }
+.vamp-section { display: none; }
+.vamp-section.active { display: block; }
+.lore-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.lore-card { background: var(--gray-dark); border: 1px solid var(--gray); padding: 20px; border-left: 3px solid var(--vamp-red); }
+.lore-card h3 { font-family: var(--font-display); font-size: 14px; color: var(--vamp-blood); margin-bottom: 8px; }
+.lore-card p { font-size: 14px; color: var(--cream); line-height: 1.5; }
+.loc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; margin-top: 16px; }
+.loc-card { background: var(--gray-dark); border: 1px solid var(--gray); padding: 16px; transition: border-color 0.3s; }
+.loc-card:hover { border-color: var(--vamp-red); }
+.loc-card h4 { font-family: var(--font-display); font-size: 13px; color: var(--white); margin-bottom: 6px; }
+.loc-card p { font-size: 13px; color: var(--gray-light); line-height: 1.4; }
+.clan-desc { font-size: 16px; color: var(--cream); line-height: 1.6; max-width: 800px; }
+.clan-desc p { margin-bottom: 14px; }
+.clan-members { margin-top: 16px; font-size: 14px; color: var(--gray-light); }
+.clan-members strong { color: var(--vamp-blood); }
+.vamp-carousel { position: relative; max-width: 1000px; margin: 32px auto 0; background: var(--dark); border: 1px solid var(--gray); overflow: hidden; }
+.vamp-carousel-track { display: flex; transition: transform 0.4s ease; }
+.vamp-carousel-slide { min-width: 100%; }
+.vamp-carousel-slide img { width: 100%; display: block; }
+.vamp-carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(10,10,10,0.7); border: 1px solid var(--gray); color: var(--vamp-blood); font-size: 20px; padding: 12px 16px; cursor: pointer; z-index: 5; transition: all 0.3s; }
+.vamp-carousel-btn:hover { background: var(--vamp-blood); color: var(--white); }
+.vamp-carousel-prev { left: 8px; }
+.vamp-carousel-next { right: 8px; }
+.vamp-carousel-counter { text-align: center; padding: 10px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 2px; color: var(--gray-light); }
+.vamp-credits { margin-top: 32px; padding: 20px; background: var(--gray-dark); border: 1px solid var(--gray); font-size: 13px; color: var(--gray-light); line-height: 1.6; }
+.vamp-credits strong { color: var(--cream); }
+@media (max-width: 768px) { .lore-grid { grid-template-columns: 1fr; } .vamp-tab { font-size: 9px; padding: 8px 14px; } }
+</style>
+</head>
+<body class="vamp-body">
+<div class="vhs-tracking"></div>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru"><li><a href="index.html">Главная</a></li><li><a href="characters.html">Персонажи</a></li><li><a href="locations-list.html">Локации</a></li>
+            <li><a href="map.html">Карта</a></li><li><a href="band.html">Группа</a></li><li><a href="au.html" class="active">AU</a></li><li><a href="author.html">Автор</a></li></ul>
+    <ul class="nav-links lang-en"><li><a href="index.html">Home</a></li><li><a href="characters.html">Characters</a></li><li><a href="locations-list.html">Locations</a></li>
+            <li><a href="map.html">Map</a></li><li><a href="band.html">Band</a></li><li><a href="au.html" class="active">AU</a></li><li><a href="author.html">Author</a></li></ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content vamp-page">
+  <div class="au-banner"><img src="photo/CANTRAL RUSSIA VAMPIRES/banner.png" alt="" loading="lazy"><div class="au-banner-overlay"><a href="au.html" class="back-link"><span class="lang-ru">&larr; Все AU</span><span class="lang-en">&larr; All AU</span></a><h1 class="page-title"><span class="lang-ru"><em class="vamp-red">Вампиры</em> Средней Полосы</span><span class="lang-en">Central Russia's <em class="vamp-red">Vampires</em></span></h1><p class="au-banner-subtitle"><span class="lang-ru">Бытовое фэнтези</span><span class="lang-en">Mundane Fantasy</span></p></div></div>
+  <div class="section">
+    <div class="vamp-intro">
+      <p class="lang-en">Vampires exist — but they are almost no different from ordinary people. They aren't afraid of the sun. They work wherever they can, pay taxes, complain about potholes, and follow the latest trends. Sure, they feed on blood and each one has a unique superpower. But so what?</p>
+      <p class="lang-en">Welcome to the world of mundane mysticism. A setting inspired by the TV series «Central Russia's Vampires.» Two clans. One Treaty. And a town that has no idea.</p>
+      <p class="lang-ru">Вампиры существуют — но они почти ничем не отличаются от обычных людей. Не боятся солнца. Работают, платят налоги, ругаются на дороги и следят за трендами. Да, питаются кровью. Да, у каждого есть суперспособность. Ну и что?</p>
+      <p class="lang-ru">Добро пожаловать в мир бытовой мистики. Сеттинг по мотивам сериала «Вампиры средней полосы». Два клана. Один Договор. И город, который ни о чём не подозревает.</p>
+      <div class="vamp-credits-inline">
+        <span class="lang-ru">Соавторы:</span><span class="lang-en">Co-creators:</span>
+        <span class="credit-name">KanonMama</span> <span class="credit-char">— Fonar</span> ·
+        <span class="credit-name">wvenusss</span> <span class="credit-char">— Vlad</span> ·
+        <span class="credit-name">aceenvw</span> <span class="credit-char">— Vova</span> ·
+        <span class="credit-name">Rakshakti</span> <span class="credit-char">— Lev, Albert</span> ·
+        <span class="credit-name">Mairon</span> <span class="credit-char">— Izzy</span> ·
+        <span class="credit-name">KamiyaK</span> <span class="credit-char">— Trotil, Kirill</span>
+      </div>
+    </div>
+    <div class="vamp-tabs">
+      <button class="vamp-tab active" onclick="showVS('world',this)"><span class="lang-ru">Мир</span><span class="lang-en">World</span></button>
+      <button class="vamp-tab" onclick="showVS('locations',this)"><span class="lang-ru">Локации</span><span class="lang-en">Locations</span></button>
+      <button class="vamp-tab" onclick="showVS('eva',this)"><span class="lang-ru">Клан Евы</span><span class="lang-en">Eva's Clan</span></button>
+      <button class="vamp-tab" onclick="showVS('lev',this)"><span class="lang-ru">Клан Льва</span><span class="lang-en">Lev's Clan</span></button>
+    </div>
+    <div class="vamp-section active" id="vs-world">
+      <h2 class="section-title"><span class="lang-ru">Мир <span>вампиров</span></span><span class="lang-en">Vampire <span>World</span></span></h2>
+      <div class="lore-grid">
+        <div class="lore-card"><h3><span class="lang-ru">Хранители</span><span class="lang-en">The Keepers</span></h3><p class="lang-en">The only humans who know vampires exist. Small hereditary order. Duties: tracking vampires, enforcing the Treaty, forging identities, mediating conflicts.</p><p class="lang-ru">Единственные люди, знающие о вампирах. Наследственный орден. Обязанности: отслеживание вампиров, соблюдение Договора, подделка документов, урегулирование конфликтов.</p></div>
+        <div class="lore-card"><h3><span class="lang-ru">Семьи (кланы)</span><span class="lang-en">Families (Clans)</span></h3><p class="lang-en">Vampires live in Families — one Patriarch/Matriarch and those they've turned. These units become genuine families over time. Patriarch's word is law.</p><p class="lang-ru">Вампиры живут Семьями — Патриарх/Матриарх и обращённые им. Со временем становятся настоящими семьями. Слово Патриарха — закон.</p></div>
+        <div class="lore-card"><h3><span class="lang-ru">Обращение</span><span class="lang-en">Turning</span></h3><p class="lang-en">Human must be near death and drink vampire blood. Process is nearly instant. New vampires require mentorship and bureaucratic hell with the Keepers.</p><p class="lang-ru">Человек должен быть при смерти и выпить кровь вампира. Процесс почти мгновенный. Новым вампирам нужно наставничество и бюрократический ад с Хранителями.</p></div>
+        <div class="lore-card"><h3><span class="lang-ru">Адаптация</span><span class="lang-en">Adaptation</span></h3><p class="lang-en">Learning to control thirst, strength, unstable abilities. NOT feral monsters — but a responsibility. Mentor teaches feeding etiquette and ability development.</p><p class="lang-ru">Учиться контролировать жажду, силу, нестабильные способности. НЕ дикие монстры — но ответственность. Наставник учит этикету охоты и развитию способностей.</p></div>
+        <div class="lore-card"><h3><span class="lang-ru">Питание</span><span class="lang-en">Feeding</span></h3><p class="lang-en">~300ml to satiate — bite does NOT kill. Victims forget the past couple hours. CAN drain to death, but «civilized» vampires don't.</p><p class="lang-ru">~300 мл для насыщения — укус НЕ убивает. Жертвы забывают пару часов. МОГУТ высосать насмерть, но «цивилизованные» вампиры так не делают.</p></div>
+        <div class="lore-card"><h3><span class="lang-ru">Истинная форма</span><span class="lang-en">True Form</span></h3><p class="lang-en">Only Firstborn possess a True Form: twisted, bestial, like a gargoyle. Regular vampires do NOT have this. Extreme adrenaline can trigger it.</p><p class="lang-ru">Только Первородные обладают Истинной Формой: искажённой, звериной, как горгулья. Обычные вампиры ею НЕ обладают. Экстремальный адреналин может активировать.</p></div>
+        <div class="lore-card"><h3><span class="lang-ru">Два клана</span><span class="lang-en">Two Clans</span></h3><p class="lang-en">Eva's Family and Lev's Family — formal neutrality. Not friends, not enemies. Eva holds Hyperboreevka and rural zone, Lev holds the city.</p><p class="lang-ru">Семья Евы и Семья Льва — формальный нейтралитет. Не друзья, не враги. Ева — Гипербореевка и село, Лев — город.</p></div>
+        <div class="lore-card"><h3><span class="lang-ru">Мифы</span><span class="lang-en">Myths</span></h3><p class="lang-en">ALL classical myths are LIES. Sunlight, garlic, stakes — USELESS. Only way to kill: decapitation + burning.</p><p class="lang-ru">ВСЕ классические мифы — ЛОЖЬ. Солнце, чеснок, колья — БЕСПОЛЕЗНЫ. Единственный способ убить: обезглавить + сжечь.</p></div>
+      </div>
+    </div>
+    <div class="vamp-section" id="vs-locations">
+      <h2 class="section-title"><span class="lang-ru"><em class="vamp-red">Локации</em></span><span class="lang-en"><em class="vamp-red">Locations</em></span></h2>
+      <div class="loc-grid">
+        <div class="loc-card"><h4><span class="lang-en">Solnechny</span><span class="lang-ru">Солнечный</span></h4><p class="lang-en">Dormitory district. Poverty, perfect hunting ground — dark alleys, few streetlights.</p><p class="lang-ru">Спальный район. Бедность, идеальные охотничьи угодья — тёмные переулки, мало фонарей.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">Zvezdny</span><span class="lang-ru">Звёздный</span></h4><p class="lang-en">The only district not rotting. NO-HUNT ZONE — too many important humans.</p><p class="lang-ru">Единственный район, который не гниёт. ЗОНА БЕЗ ОХОТЫ — слишком много важных людей.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">BUNKER</span><span class="lang-ru">БУНКЕР</span></h4><p class="lang-en">Basement computer club. Neutral ground — vampires and humans play CS:GO side by side.</p><p class="lang-ru">Подвальный компьютерный клуб. Нейтральная территория — вампиры и люди играют в CS:GO бок о бок.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">Betonka</span><span class="lang-ru">Бетонка</span></h4><p class="lang-en">Concrete embankment. Criminal showdowns, vampire feeding ground after dark.</p><p class="lang-ru">Бетонная набережная. Стрелки, охотничьи угодья вампиров после заката.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">Besovo</span><span class="lang-ru">Бесово</span></h4><p class="lang-en">Village with domestic spirits. Vampires STAY AWAY — ancient mutual avoidance pact with khton.</p><p class="lang-ru">Деревня с хтонью. Вампиры ИЗБЕГАЮТ — древний пакт взаимного избегания.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">Hyperboreevka</span><span class="lang-ru">Гипербореевка</span></h4><p class="lang-en">Eva's commune. ~50 humans have no idea their founder is a 3000-year-old apex predator.</p><p class="lang-ru">Коммуна Евы. ~50 людей не подозревают, что основательница — 3000-летний хищник.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">Lev's Building</span><span class="lang-ru">Дом Льва</span></h4><p class="lang-en">Nine-story panelka fortress. Lev owns the whole building. Humans on ground floors — cover.</p><p class="lang-ru">Девятиэтажная панелька-крепость. Лев владеет всем зданием. Люди внизу — прикрытие.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">Joy and Boobs</span><span class="lang-ru">Радость и Сиськи</span></h4><p class="lang-en">Strip club owned by Keeper Kabanchik. Neutral ground for monitoring vampire nightlife.</p><p class="lang-ru">Стрип-клуб Хранителя Кабанчика. Нейтральная территория для мониторинга ночной жизни.</p></div>
+        <div class="loc-card"><h4><span class="lang-en">Slaughterhouse</span><span class="lang-ru">Скотобойня</span></h4><p class="lang-en">Meat processing plant. Officially supplies stores. Actually — animal blood for vampires. Managed by Gena.</p><p class="lang-ru">Мясокомбинат. Официально снабжает магазины. На деле — кровь для вампиров. Управляет Гена.</p></div>
+      </div>
+    </div>
+    <div class="vamp-section" id="vs-eva">
+      <h2 class="section-title"><span class="lang-ru">Клан <span>Евы</span></span><span class="lang-en">Eva's <span>Clan</span></span></h2>
+      <div class="clan-desc">
+        <p class="lang-en">Hyperboreevka is a hippie commune masquerading as an eco-village. It's a «warm madhouse,» a found family, and a place of flying dogs. The matriarch is a three-thousand-year-old redhead on a pink Harley.</p>
+        <p class="lang-en">The clan runs an eco-farm — perfect cover for obtaining blood. The commune attracts esotericists, hippies, and «blessed» souls seeking enlightenment.</p>
+        <p class="lang-en">Social structure is that of a family. Eva strives to consider all members' interests. Core creed: human life is precious.</p>
+        <p class="lang-en">Lasagna and Bonya are Eva's dogs, turned into vampires. Their levitation is explained as a miracle of God.</p>
+        <p class="lang-ru">Хиппи-коммуна под видом эко-деревни. Тёплый дурдом, приобретённая семья, летающие собаки. Матриарх — трёхтысячелетняя рыжая на розовом Харлее.</p>
+        <p class="lang-ru">Держат эко-ферму — прикрытие для крови. К коммуне стекаются эзотерики, хиппи и блаженные, ищущие просветления.</p>
+        <p class="lang-ru">Структура клана — семья. Ева старается учитывать интересы всех. Кредо: человеческая жизнь ценна.</p>
+        <p class="lang-ru">Лазанья и Боня — собаки-вампиры. Их левитацию Ева объясняет чудом Божьим.</p>
+      </div>
+      <p class="clan-members"><span class="lang-ru"><strong>Члены клана:</strong> Ева, Изя, Антон, Денис, Стася, Алекс, Степан, Паша, Сева, Максим Страхов, Кирилл Соколов, Боня, Лазанья.</span><span class="lang-en"><strong>Members:</strong> Eva, Izya, Anton, Denis, Stasya, Alex, Stepan, Pasha, Seva, Maxim Strakhov, Kirill Sokolov, Bonya, Lasagna.</span></p>
+      <div class="vamp-carousel lang-en" id="carousel-eva-en"><div class="vamp-carousel-track" id="track-eva-en"><div class="vamp-carousel-slide"><img src="au-vampires-img/HKu5WIDn7eCAU-R3TFksg.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/eOPJuC7gtXf-jL7Aee2Xb.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/zwUyA9H5UygP8JQLyV3OI.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/yrj89JxarkV_FQEcKJcDh.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/6s8kYU5Dw9B8ENetuQTaG.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/euWOVJIW7H2N6D5Rw72uo.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/7UKP-d5e8FV2H5o68RNu0.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/4EGYZQh_O80uDzAN8JOh7.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/kdG0K7kGyPo53S5WndRdv.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/o3wIm8mUTpM3vbT0MrtyV.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/uOfZi08XfTk3T741QyCB3.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/esxNtNt2Mhq7DgbyIQZ6j.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/SHnY3y6cZxl4gk_q9sBR7.webp" alt="" loading="lazy"></div></div><button class="vamp-carousel-btn vamp-carousel-prev" onclick="vampSlide('eva-en',-1)">&#8592;</button><button class="vamp-carousel-btn vamp-carousel-next" onclick="vampSlide('eva-en',1)">&#8594;</button><div class="vamp-carousel-counter"><span id="cnt-eva-en">1</span> / 13</div></div>
+      <div class="vamp-carousel lang-ru" id="carousel-eva-ru"><div class="vamp-carousel-track" id="track-eva-ru"><div class="vamp-carousel-slide"><img src="au-vampires-img/draApyip3jGnaOVVd5nFP.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/SV86c_7crhGLaE3g9MFKj.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/XC8be74b5Ka71FFfC5H2_.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/HDmyLLps-3Lb_Kf5vlA69.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/Hw_-iXLd-HFG7sn9VzmV_.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/rUM17J0l-ASbC9cNDYQ00.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/mqc9neQ2H_Qtkt5AyUQ4g.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/ujtn_NLNyUo36joozeFcr.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/EKxecGI-8fj4zxQYPabtA.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/GUB4lEqNjC4b5usYBTuD6.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/OacGkaHODSFRuX3eB8IxN.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/GBJcD_vCH34HxxsFsure4.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/5itrickNkn906aHVSGnTg.webp" alt="" loading="lazy"></div></div><button class="vamp-carousel-btn vamp-carousel-prev" onclick="vampSlide('eva-ru',-1)">&#8592;</button><button class="vamp-carousel-btn vamp-carousel-next" onclick="vampSlide('eva-ru',1)">&#8594;</button><div class="vamp-carousel-counter"><span id="cnt-eva-ru">1</span> / 13</div></div>
+    </div>
+    <div class="vamp-section" id="vs-lev">
+      <h2 class="section-title"><span class="lang-ru">Клан <span>Льва</span></span><span class="lang-en">Lev's <span>Clan</span></span></h2>
+      <div class="clan-desc">
+        <p class="lang-en">A nine-story prefabricated apartment block turned into a fortress. Cold hierarchy, sharp urban grit. The patriarch is a three-thousand-year-old vampire whose voice is the law (literally).</p>
+        <p class="lang-en">Despite the strictness, clan members live as a family — strange, detached, but a family. Lev resolves conflicts with a firm but fair hand.</p>
+        <p class="lang-en">Most of Lev's people work in the city, close to seedy spots. Their nine-story block resembles a massive communal apartment with very strange neighbors.</p>
+        <p class="lang-ru">Девятиэтажная панелька-крепость. Холодная иерархия, городская хватка. Патриарх — трёхтысячелетний вампир, чей голос — закон.</p>
+        <p class="lang-ru">Несмотря на строгость, члены клана живут семьёй. Странной, отстранённой, но семьёй. Лев решает конфликты строго, но справедливо.</p>
+        <p class="lang-ru">Большая часть людей Льва работает в городе. Их дом похож на огромную коммуналку с очень странными соседями.</p>
+      </div>
+      <p class="clan-members"><span class="lang-ru"><strong>Члены клана:</strong> Лев, Фонарь, Гена, Иззи, Морс, Лиса, Тротил, Влад Барсов, Николай Барсов, Вова, Федя, Альби, кот Огурчик.</span><span class="lang-en"><strong>Members:</strong> Lev, Fonar, Gena, Izzy, Morse, Fox, Trotil, Vlad Barsov, Nikolai Barsov, Vova, Fedya, Albi, cat Ogurchik.</span></p>
+      <div class="vamp-carousel lang-en" id="carousel-lev-en"><div class="vamp-carousel-track" id="track-lev-en"><div class="vamp-carousel-slide"><img src="au-vampires-img/vG0JyS4PHRDgUG8ntobUD.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/syl5M_zftbronNtUeC-Tm.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/xvRs7Ejsf4JywW4ehMlhH.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/nhVCmBwV-RByE7lmQHMUU.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/CzEkMKzumM9e8AdkSD8q2.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/Rm1AKO7zNvMeWlMODFASY.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/_IbZs0YBL5F6xhd_qLSnb.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/qDLLZ0wfH7sCrNh10RiKv.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/W3rzH19gyIgRrrtJT8j5r.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/rBKsBmQKexZzX8RiR70f2.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/BZLIwLXmUgh_6R9PoO-cK.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/TbEyMI6lIClb2MH309SR7.webp" alt="" loading="lazy"></div></div><button class="vamp-carousel-btn vamp-carousel-prev" onclick="vampSlide('lev-en',-1)">&#8592;</button><button class="vamp-carousel-btn vamp-carousel-next" onclick="vampSlide('lev-en',1)">&#8594;</button><div class="vamp-carousel-counter"><span id="cnt-lev-en">1</span> / 12</div></div>
+      <div class="vamp-carousel lang-ru" id="carousel-lev-ru"><div class="vamp-carousel-track" id="track-lev-ru"><div class="vamp-carousel-slide"><img src="au-vampires-img/hwQRIWOg-k4Ta_Wov6ka9.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/1kiDNdHiTLYiqLpDZr82U.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/T1JJc2sSoqN_GLpgePl9X.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/uUjogEyxg2KOKziPIp_cd.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/Bs9u50NAoMAcRgMYWVCgV.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/sEdWqnhrnyNzbLMmAW_r0.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/8R4H-tbXgMeg86oCxx4kX.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/Di3WB8aqNb0y_KpOzAfQi.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/U_Hbg3yfeP03Gq1PIUfib.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/SmgQEyFbYgWHWOQ2w1u_D.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/ZJYaEMneM3PRVjjeVHPlv.webp" alt="" loading="lazy"></div><div class="vamp-carousel-slide"><img src="au-vampires-img/4ueFWhlTktqW8WoPyd78k.webp" alt="" loading="lazy"></div></div><button class="vamp-carousel-btn vamp-carousel-prev" onclick="vampSlide('lev-ru',-1)">&#8592;</button><button class="vamp-carousel-btn vamp-carousel-next" onclick="vampSlide('lev-ru',1)">&#8594;</button><div class="vamp-carousel-counter"><span id="cnt-lev-ru">1</span> / 12</div></div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <div><div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div><span class="footer-quote">(c) Wewwa, 2025-2026</span></div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+<script>
+function showVS(id,btn){document.querySelectorAll('.vamp-section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.vamp-tab').forEach(t=>t.classList.remove('active'));var el=document.getElementById('vs-'+id);if(el)el.classList.add('active');if(btn)btn.classList.add('active');}
+var vampIdx={'eva-en':0,'eva-ru':0,'lev-en':0,'lev-ru':0};
+function vampSlide(id,dir){var track=document.getElementById('track-'+id);var slides=track.querySelectorAll('.vamp-carousel-slide');var total=slides.length;vampIdx[id]=(vampIdx[id]+dir+total)%total;track.style.transform='translateX(-'+(vampIdx[id]*100)+'%)';document.getElementById('cnt-'+id).textContent=vampIdx[id]+1;}
+</script>
+</body>
+</html>

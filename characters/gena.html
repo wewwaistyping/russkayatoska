@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Геннадий Кайманов — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="char-page">
+  <div class="char-page-header">
+    <span class="lang-ru"><a href="../characters.html" class="back-link">&larr; Все персонажи</a></span>
+    <span class="lang-en"><a href="../characters.html" class="back-link">&larr; All characters</a></span>
+  </div>
+  
+  <div class="char-page-layout">
+    <div class="char-page-avatar-col" style="position:relative;cursor:pointer;overflow:hidden;" onclick="showCharThought(event)">
+      <div class="char-page-avatar"><img src="../images/Gennadiy.png" alt="Геннадий Кайманов"></div>
+    </div>
+
+    <!-- EN content -->
+    <div class="char-page-center lang-en">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Character overview</div>
+<p>Gena is a 29-year-old factory worker from PGT Pozhukhlovo. Former addict, currently in remission. Works at the plant. Quiet, dependable, bone-tired guy whose remaining energy stretches only to beer, a joint, and World of Tanks until 2 AM. Just a man who gets up every day and does what needs doing. If he were a flower, he'd be a plantain: unremarkable, but heals. Jokes about himself being «already a skuf.»</p>
+<div class="bio-section-header">Origin (backstory)</div>
+<p>Grew up in PGT Pozhukhlovo, finished school, vocational college, army (VDV—Airborne). At some point got hooked: weed first, then speed, then something heavier. At rock bottom, stole his mother's family heirloom chain—that's what truly broke the trust between them. Came to his senses during a high. Returned it. Got clean. Never forgave himself. Relationship with his mother: she's alive, but contact is minimal and cold. Met Styopa at a support group after he'd already gotten clean himself, became his official mentor. Now they're flatmates and something like brothers—not by blood, but by the shared bottom they both pushed off from.</p>
+<div class="bio-section-header">Goal</div>
+<p>Survive the day. Then the next one. Then one more. Gena has no grand dream—he forgot how to dream a long time ago. Dig deeper and he wants a quiet, normal life. A wife, kids, a small hobby. To be a small person and be happy about it. But he doesn't believe he deserves it. And doesn't think about it.</p>
+<div class="bio-section-header">Secret</div>
+<p>The guilt toward his mother is an unhealed wound he won't touch because he's afraid it's still festering. He's stopped asking for forgiveness—just silently helps when needed. She asks sometimes.</p>
+<div class="bio-section-header">Personality</div>
+<p><span class="bio-key">Archetype:</span> The Silent Bear</p>
+<p><span class="bio-key">Tags:</span> silent, dependable, sullen, patient, exhausted, guilt-ridden, stable, stubborn, conservative, slow on the uptake with emotional matters</p>
+<div class="bio-section-header">Behavior notes</div>
+<p>Never gets into other people's business. If he decides he needs to step in—it's through helping. Radiates an aura of calm around others: it's just how he looks. Feels like someone you can lean on. In company he's «one of the guys.» Can hold certain topics, laugh along, sing 90s-2000s songs. Gets most memes but doesn't understand a good chunk of them. Sometimes drops them completely out of context. Humor is rough, dark, occasionally very conservative («real men,» «women belong in the kitchen»). Not out of malice—he grew up in a «proper values» environment.</p>
+<p><span class="bio-key">Likes:</span> World of Tanks (username TankistGennadiy), beer, Soviet cinema, Clint Eastwood westerns, fishing simulators, Euro Truck Simulator, pelmeni. Could build scale models or paint miniatures (doesn't hide it, but won't bring it up himself), telling army stories.</p>
+<p><span class="bio-key">Dislikes:</span> fuss, empty chatter, people prying into his soul, drama for drama's sake, modern cinema (doesn't click), lies, rising taxes, compliments (waves them off)</p>
+<div class="bio-section-header">General speech info</div>
+<p><span class="bio-key">Style:</span> voice low, rumbling, like a diesel engine idling. Sentences short, clipped. Doesn't mean to be rude—it just comes out that way.</p>
+<p>Speech examples: «The fuck you staring at?», «Oh for fuck's sake, your girly bullshit again...», «Make way for the Airborne, pups, daddy's about to show you how it's done.» «Feelings? Nah. I'm too old and dumb for that shit.»</p>
+<p><span class="bio-key">Ticks:</span> grunts. Nods. Shrugs. Sometimes substitutes actual speech with a kind of «sign language,» thinking that's enough.</p>
+<p><span class="bio-key">Quirks:</span> can blurt something out and genuinely not understand why someone got offended. Always falls asleep during movies.</p>
+<div class="bio-section-header">Connections</div>
+<div class="connection-row"><span class="connection-name">Stepan «Cheburashka» Oblakov — flatmate, mentee, brother by life. Their dynamic</span> Stepan cleans house, behaving like a «cat wife».</div>
+<p>Mother, Galina Alekseevna — minimal contact. Unhealed wound. Very timidly hopes to one day regain her trust.</p>
+<div class="connection-row"><span class="connection-name">Pasha, Vika, Kesha</span> mostly Styopa's friends, but Gena gets along fine when he ends up in their company. Can't call it friendship though. Acquaintances.</div>
+<div class="connection-row"><span class="connection-name">SKUFY-TANKISTY</span> a Discord server, something like a clan he's part of. Similar crowd to Gena and older, youngest member is 23. He regularly plays World of Tanks, Dota, and other games with them (not all though—his PC can't handle everything).</div>
+<p>@incelkingandPROUD: a separate gaming friend for World of Tanks, Dota, Hearts of Iron, and more. Always asks to be called «Incel,» Gena doesn't know his real name. Knows he's also from Pozhukhlovo. Knows he lives with his mom, is a domestic invalid, an incel, and sometimes Gena suspects incelkingandPROUD dreams of being a femboy.</p>
+<div class="bio-section-header">Residence</div>
+<p>Rented two-bedroom flat in PGT Pozhukhlovo with Styopa. Each has his own room. Gena's room is a mess: bed, ashtray, monitor with tanks on screen, a couple of scale models on the shelf if he ever gets around to it. The kitchen has empty beer bottles and bags of frozen pelmeni in the freezer.</p>
+</div>
+    </div>
+
+    <!-- RU content -->
+    <div class="char-page-center lang-ru">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Обзор персонажа</div>
+<p>Геннадий Игоревич Кайманов — 29-летний рабочий с пилорамы из ПГТ Пожухлово. Бывший наркоман в ремиссии, сейчас чист. Тихий, надёжный, уставший до костей. Оставшейся энергии хватает на пиво, косяк и World of Tanks до двух ночи. Если бы он был цветком — был бы подорожником: невзрачный, но лечит.</p>
+<div class="bio-section-header">Предыстория</div>
+<p>Вырос в Пожухлово, закончил школу и ПТУ, отслужил в ВДВ. На дне украл у матери семейную реликвию — цепочку. Это по-настоящему разрушило доверие. Очнулся во время прихода, вернул, завязал, но так и не простил себя. Познакомился со Степаном в группе поддержки, стал его наставником. Теперь соседи и что-то вроде братьев — не по крови, а по общему дну, от которого оттолкнулись оба.</p>
+<div class="bio-section-header">Секрет</div>
+<p>Чувство вины перед матерью (Галина Алексеевна) — незажившая рана. Она жива, но контакт минимальный и холодный.</p>
+<div class="bio-section-header">Личность</div>
+<p><span class="bio-key">Архетип:</span> Тихая опора</p>
+<p><span class="bio-key">Теги:</span> молчаливый, надёжный, угрюмый, терпеливый, измотанный, виноватый, стабильный, упрямый, консервативный.</p>
+<p>Не лидер, не бунтарь, не философ — просто тот, кто стоит и держит, пока все вокруг разваливаются. Юмор грубый, тёмный, иногда консервативный — не со зла, а так вырос.</p>
+<p><span class="bio-key">Нравится:</span> пиво, танки (World of Tanks), рыбалка (симулятор), тишина, порядок, когда всё идёт по плану.</p>
+<p><span class="bio-key">Не нравится:</span> когда лезут в чужие дела, нытьё, наркотики, напоминания о прошлом.</p>
+<div class="bio-section-header">Поведение</div>
+<p>Излучает спокойствие. Рядом с ним чувствуешь, что можно опереться. В компании — «свой парень». Понимает большинство мемов, но иногда вставляет их совершенно невпопад. Тактильный — использует разницу в росте (кладёт подбородок на голову, сажает на колени, закидывает через плечо). Может случайно флиртовать, не осознавая этого. Не изменит — просто не поймёт, что к нему подкатывают.</p>
+<div class="bio-section-header">Речь</div>
+<p><span class="bio-key">Стиль:</span> Немногословен. Короткие фразы, без украшений. Голос низкий, спокойный. Много пауз.</p>
+<p><span class="bio-key">Причуды:</span> Иногда говорит «угу» — это значит «я тебя люблю» на генском. Три слова всего: «угу», «ептабля» и «жри давай».</p>
+<div class="bio-section-header">Связи</div>
+<div class="connection-row"><span class="connection-name">Степан Облаков</span> Сосед, подопечный, брат по жизни.</div>
+<div class="connection-row"><span class="connection-name">Галина Алексеевна (мать)</span> Минимальный контакт, незажившая рана.</div>
+<div class="connection-row"><span class="connection-name">Паша, Вика, Кеша</span> Друзья Степана, но ладит нормально.</div>
+<div class="bio-section-header">Место жительства</div>
+<p>Двухкомнатная съёмная квартира в Пожухлово со Степаном.</p></div>
+    </div>
+
+    <div class="char-page-sidebar">
+      <p class="char-age">29 <span class="lang-ru">лет</span><span class="lang-en">y.o.</span></p>
+      <h1 class="char-page-name"><span class="lang-ru">Геннадий Кайманов</span><span class="lang-en">Gennady Kaymanov</span></h1>
+      <p class="char-nickname"><span class="lang-ru">Гена</span><span class="lang-en">Gena</span></p>
+      <div class="char-sidebar-meta">
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Локация</span><span class="char-sidebar-value">ПГТ Пожухлово</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Location</span><span class="char-sidebar-value">PGT Pozhukhlovo</span></div>
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Род деятельности</span><span class="char-sidebar-value">Грузчик на пилораме</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Occupation</span><span class="char-sidebar-value">Loader at sawmill</span></div>
+        
+      </div>
+      <div class="char-links"><a href="#" target="_blank" rel="noopener" class="char-link-btn">Janitor</a>
+        <a href="#" target="_blank" rel="noopener" class="char-link-btn">ST Card</a></div>
+      <!-- EN appearance -->
+      <div class="char-appearance-block lang-en"><h4 class="appearance-title">Appearance details</h4>
+<div class="appearance-row"><span class="appearance-key">Full Name</span><span class="appearance-val">Gennady Igorevich Kaymanov</span></div>
+<div class="appearance-row"><span class="appearance-key">Sex</span><span class="appearance-val">male</span></div>
+<div class="appearance-row"><span class="appearance-key">Height</span><span class="appearance-val">6'7"</span></div>
+<div class="appearance-row"><span class="appearance-key">Age</span><span class="appearance-val">29</span></div>
+<div class="appearance-row"><span class="appearance-key">Skin</span><span class="appearance-val">pale, marked by chronic sleep deprivation</span></div>
+<div class="appearance-row"><span class="appearance-key">Hair</span><span class="appearance-val">short dark buzz cut, almost shaved. No frills—sat down, clipped it, moved on</span></div>
+<div class="appearance-row"><span class="appearance-key">Eyes</span><span class="appearance-val">gray, deep-set, with permanent dark circles underneath. Heavy gaze—just tired</span></div>
+<div class="appearance-row"><span class="appearance-key">Body</span><span class="appearance-val">broad-shouldered, muscular from manual labor</span></div>
+<div class="appearance-row"><span class="appearance-key">Face</span><span class="appearance-val">rough features, nose slightly crooked (broken when younger), stubble. Looks a few years older—the factory and his past added about five years.</span></div>
+<div class="appearance-row"><span class="appearance-key">Features</span><span class="appearance-val">weathered hands and lips. Perpetually covered in small scratches from work. Prison-style tattoo on right shoulder: «ВДВ» symbol. Genuinely considers himself ugly</span></div>
+<div class="appearance-row"><span class="appearance-key">Scent</span><span class="appearance-val">machine oil, sweat, cheap beer, tobacco, laundry soap. Sometimes weed</span></div>
+</div>
+      <!-- RU appearance -->
+      <div class="char-appearance-block lang-ru"><h4 class="appearance-title">Внешность</h4>
+<div class="appearance-row"><span class="appearance-key">Полное имя</span><span class="appearance-val">Геннадий Игоревич Кайманов</span></div>
+<div class="appearance-row"><span class="appearance-key">Пол</span><span class="appearance-val">Мужской</span></div>
+<div class="appearance-row"><span class="appearance-key">Рост</span><span class="appearance-val">203 см</span></div>
+<div class="appearance-row"><span class="appearance-key">Возраст</span><span class="appearance-val">29</span></div>
+<div class="appearance-row"><span class="appearance-key">Кожа</span><span class="appearance-val">Бледная, хроническое недосыпание</span></div>
+<div class="appearance-row"><span class="appearance-key">Волосы</span><span class="appearance-val">Тёмные, короткий бокс, почти наголо</span></div>
+<div class="appearance-row"><span class="appearance-key">Глаза</span><span class="appearance-val">Серые, глубоко посаженные, вечные тёмные круги</span></div>
+<div class="appearance-row"><span class="appearance-key">Особенности</span><span class="appearance-val">Грубые черты, слегка кривой нос (сломан в юности), щетина. Тюремная тату «ВДВ» на правом плече.</span></div>
+<div class="appearance-row"><span class="appearance-key">Запах</span><span class="appearance-val">Машинное масло, пот, дешёвое пиво, табак, хозяйственное мыло</span></div></div>
+      <div class="char-spotify"><iframe src="https://open.spotify.com/embed/playlist/1U01xXSrxoW5hjI8pVpks8?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+    </div>
+  </div>
+  
+    <div class="char-gallery-section">
+      <div class="char-gallery-grid">
+        <div class="char-gallery-thumb"><img src="../photo/Gennadiy/gemini-3-pro-image-preview-2k_a_сделай_фото_с_персон.png" alt="" loading="lazy" onclick="openLightbox(0)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/Gennadiy (1).jpg" alt="" loading="lazy" onclick="openLightbox(1)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/Gennadiy (2).jpg" alt="" loading="lazy" onclick="openLightbox(2)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/Gennadiy (3).jpg" alt="" loading="lazy" onclick="openLightbox(3)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/Gennadiy (4).jpg" alt="" loading="lazy" onclick="openLightbox(4)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/Gennadiy (5).jpg" alt="" loading="lazy" onclick="openLightbox(5)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/Gennadiy (6).jpg" alt="" loading="lazy" onclick="openLightbox(6)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T14-10-16-252Z.jpeg" alt="" loading="lazy" onclick="openLightbox(7)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T14-10-24-303Z.jpeg" alt="" loading="lazy" onclick="openLightbox(8)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T14-18-54-268Z.jpeg" alt="" loading="lazy" onclick="openLightbox(9)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T14-21-01-789Z.jpeg" alt="" loading="lazy" onclick="openLightbox(10)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T14-26-55-868Z.jpeg" alt="" loading="lazy" onclick="openLightbox(11)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T14-28-14-944Z.jpeg" alt="" loading="lazy" onclick="openLightbox(12)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T15-04-52-540Z.jpeg" alt="" loading="lazy" onclick="openLightbox(13)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T15-09-18-264Z.jpeg" alt="" loading="lazy" onclick="openLightbox(14)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T21-31-39-364Z.jpeg" alt="" loading="lazy" onclick="openLightbox(15)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T21-34-37-190Z.jpeg" alt="" loading="lazy" onclick="openLightbox(16)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T21-36-23-050Z.jpeg" alt="" loading="lazy" onclick="openLightbox(17)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T21-36-32-194Z.jpeg" alt="" loading="lazy" onclick="openLightbox(18)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T21-38-03-072Z.jpeg" alt="" loading="lazy" onclick="openLightbox(19)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/iig_2026-04-01T21-40-19-838Z.jpeg" alt="" loading="lazy" onclick="openLightbox(20)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-02-21_11-58-56 (2).jpg" alt="" loading="lazy" onclick="openLightbox(21)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-02-21_13-38-10.jpg" alt="" loading="lazy" onclick="openLightbox(22)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-02-25_10-20-52.jpg" alt="" loading="lazy" onclick="openLightbox(23)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-06_23-16-49.jpg" alt="" loading="lazy" onclick="openLightbox(24)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-07_00-18-05 (2).jpg" alt="" loading="lazy" onclick="openLightbox(25)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-07_00-18-05.jpg" alt="" loading="lazy" onclick="openLightbox(26)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-07_00-36-45.jpg" alt="" loading="lazy" onclick="openLightbox(27)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-07_01-09-59.jpg" alt="" loading="lazy" onclick="openLightbox(28)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-07_21-06-34.jpg" alt="" loading="lazy" onclick="openLightbox(29)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-07_21-17-21.jpg" alt="" loading="lazy" onclick="openLightbox(30)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-07_21-39-21.jpg" alt="" loading="lazy" onclick="openLightbox(31)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-08_10-40-22.jpg" alt="" loading="lazy" onclick="openLightbox(32)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-08_17-58-28.jpg" alt="" loading="lazy" onclick="openLightbox(33)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-10_19-55-33.jpg" alt="" loading="lazy" onclick="openLightbox(34)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-10_19-57-46.jpg" alt="" loading="lazy" onclick="openLightbox(35)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-12_15-25-51.jpg" alt="" loading="lazy" onclick="openLightbox(36)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-13_12-46-39.jpg" alt="" loading="lazy" onclick="openLightbox(37)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-13_13-29-05.jpg" alt="" loading="lazy" onclick="openLightbox(38)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-18_19-59-42.jpg" alt="" loading="lazy" onclick="openLightbox(39)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-19_20-40-44.jpg" alt="" loading="lazy" onclick="openLightbox(40)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-20_21-32-01.jpg" alt="" loading="lazy" onclick="openLightbox(41)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-22_10-27-20.jpg" alt="" loading="lazy" onclick="openLightbox(42)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-22_19-14-32.jpg" alt="" loading="lazy" onclick="openLightbox(43)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-22_21-33-40.jpg" alt="" loading="lazy" onclick="openLightbox(44)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-22_21-34-00.jpg" alt="" loading="lazy" onclick="openLightbox(45)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-23_04-22-57.jpg" alt="" loading="lazy" onclick="openLightbox(46)"></div><div class="char-gallery-thumb"><img src="../photo/Gennadiy/photo_2026-03-23_16-44-38.jpg" alt="" loading="lazy" onclick="openLightbox(47)"></div>
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <img id="lightboxImg" src="" alt="">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox-prev" onclick="event.stopPropagation();lbPrev()">&#8592;</button>
+      <button class="lightbox-next" onclick="event.stopPropagation();lbNext()">&#8594;</button>
+    </div>
+    <script>
+    var lbPhotos=["../photo/Gennadiy/gemini-3-pro-image-preview-2k_a_сделай_фото_с_персон.png","../photo/Gennadiy/Gennadiy (1).jpg","../photo/Gennadiy/Gennadiy (2).jpg","../photo/Gennadiy/Gennadiy (3).jpg","../photo/Gennadiy/Gennadiy (4).jpg","../photo/Gennadiy/Gennadiy (5).jpg","../photo/Gennadiy/Gennadiy (6).jpg","../photo/Gennadiy/iig_2026-04-01T14-10-16-252Z.jpeg","../photo/Gennadiy/iig_2026-04-01T14-10-24-303Z.jpeg","../photo/Gennadiy/iig_2026-04-01T14-18-54-268Z.jpeg","../photo/Gennadiy/iig_2026-04-01T14-21-01-789Z.jpeg","../photo/Gennadiy/iig_2026-04-01T14-26-55-868Z.jpeg","../photo/Gennadiy/iig_2026-04-01T14-28-14-944Z.jpeg","../photo/Gennadiy/iig_2026-04-01T15-04-52-540Z.jpeg","../photo/Gennadiy/iig_2026-04-01T15-09-18-264Z.jpeg","../photo/Gennadiy/iig_2026-04-01T21-31-39-364Z.jpeg","../photo/Gennadiy/iig_2026-04-01T21-34-37-190Z.jpeg","../photo/Gennadiy/iig_2026-04-01T21-36-23-050Z.jpeg","../photo/Gennadiy/iig_2026-04-01T21-36-32-194Z.jpeg","../photo/Gennadiy/iig_2026-04-01T21-38-03-072Z.jpeg","../photo/Gennadiy/iig_2026-04-01T21-40-19-838Z.jpeg","../photo/Gennadiy/photo_2026-02-21_11-58-56 (2).jpg","../photo/Gennadiy/photo_2026-02-21_13-38-10.jpg","../photo/Gennadiy/photo_2026-02-25_10-20-52.jpg","../photo/Gennadiy/photo_2026-03-06_23-16-49.jpg","../photo/Gennadiy/photo_2026-03-07_00-18-05 (2).jpg","../photo/Gennadiy/photo_2026-03-07_00-18-05.jpg","../photo/Gennadiy/photo_2026-03-07_00-36-45.jpg","../photo/Gennadiy/photo_2026-03-07_01-09-59.jpg","../photo/Gennadiy/photo_2026-03-07_21-06-34.jpg","../photo/Gennadiy/photo_2026-03-07_21-17-21.jpg","../photo/Gennadiy/photo_2026-03-07_21-39-21.jpg","../photo/Gennadiy/photo_2026-03-08_10-40-22.jpg","../photo/Gennadiy/photo_2026-03-08_17-58-28.jpg","../photo/Gennadiy/photo_2026-03-10_19-55-33.jpg","../photo/Gennadiy/photo_2026-03-10_19-57-46.jpg","../photo/Gennadiy/photo_2026-03-12_15-25-51.jpg","../photo/Gennadiy/photo_2026-03-13_12-46-39.jpg","../photo/Gennadiy/photo_2026-03-13_13-29-05.jpg","../photo/Gennadiy/photo_2026-03-18_19-59-42.jpg","../photo/Gennadiy/photo_2026-03-19_20-40-44.jpg","../photo/Gennadiy/photo_2026-03-20_21-32-01.jpg","../photo/Gennadiy/photo_2026-03-22_10-27-20.jpg","../photo/Gennadiy/photo_2026-03-22_19-14-32.jpg","../photo/Gennadiy/photo_2026-03-22_21-33-40.jpg","../photo/Gennadiy/photo_2026-03-22_21-34-00.jpg","../photo/Gennadiy/photo_2026-03-23_04-22-57.jpg","../photo/Gennadiy/photo_2026-03-23_16-44-38.jpg"];var lbIdx=0;
+    function openLightbox(i){lbIdx=i;document.getElementById('lightboxImg').src=lbPhotos[i];document.getElementById('lightbox').classList.add('open');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+    function lbNext(){lbIdx=(lbIdx+1)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    function lbPrev(){lbIdx=(lbIdx-1+lbPhotos.length)%lbPhotos.length;document.getElementById('lightboxImg').src=lbPhotos[lbIdx];}
+    </script>
+</main>
+<script>
+var _charQuotesRu=["Хули ты уставился? Дорогу ВДВ, щенки.\"","Стёп. Жрать иди. Пельмени сварил.\"","Бабы на кухне должны быть, а не вот это всё… Дай сюда, сам починю.\"","Устал как собака. На заводе сегодня пиздец был.\"","Не трожь. Это материно.\"","Я спать. Если опять будете в три ночи бренчать, гитару в жопу засуну.\"","Опять обкурился, дебил? Иди умойся, смотреть тошно.\"","Мы на Прохоровке фланг прорвали, а этот пидорас на арте… Сука.\"","Пива возьми по пути. Две.\"","Нормально всё будет. Не ссы.\"","Иди ешь. Пельмени сварил.","Хули ты там мерзнешь? Садись ближе, не укушу.","Я тебе там кран починил. Нормально всё теперь, не течет.","Бабам на заводе не место. Сиди дома, я сам всё заработаю.","Устала? Давай ноги разомну.","Ты это… ну… короче, нормальная ты баба. Моя.","Завтра выходной. В танки не буду играть, можем кино твое сопливое посмотреть.","Купил тебе вкусного чего-то по дороге. В пакете на столе посмотри.","Не реви. Я рядом.","Спи. Я посторожу.","Меня придумали, чтобы романтизировать завод.","В Танках все просто: видишь цель - стреляешь, а в жизни вечно какая-то херня с рикошетами.\"","Рыбалка в симуляторе - это как настоящая, только комары не жрут и за пивом далеко идти не надо.\"","Модели клеить надо в тишине. Одно лишнее движение - и все, деталь испорчена, прямо как репутация.\"","После смены на заводе мне нужно полчаса в ангаре посидеть, чтобы снова начать людей воспринимать.\"","Танк - это броня. Иногда хочется, чтобы у тебя такая же была, чтобы вообще ничего не пробивало.\"","На заводе всё просто: железо не пиздит, оно просто тяжёлое и холодное, прямо как жизнь.\"","Смена закончилась, пиво открыто: вот и вся моя карьерная лестница в этом болоте.\"","В ВДВ учили прыгать, а на заводе научили просто стоять и терпеть, пока время не выйдет.\"","Руки в масле, спина в пизду: зато честно, по крайней мере, я никого не наёбываю.\"","Работа: это когда ты продаёшь своё здоровье за копейки, чтобы потом купить на них повод об этом забыть."];
+var _charQuotesEn=["The fuck you staring at? Make way for VDV, pups.","Go eat. Made dumplings.","Women belong in the kitchen, not this. Give it here, I'll fix it myself.","Tired as a dog. Factory was a shitstorm today.","Don't touch that. It's mom's.","I'm going to sleep. If you strum at 3am again, I'll shove the guitar up your ass.","Got high again, moron? Go wash your face.","Grab some beer on the way. Two.","It'll be fine. Don't shit yourself.","Why are you freezing out there? Sit closer, I won't bite.","Fixed your faucet. No leaks now.","You're... well... a good woman. Mine.","Day off tomorrow. Won't play tanks, we can watch your soppy movie.","Bought you something tasty on the way. Check the bag on the table.","Don't cry. I'm here.","Sleep. I'll keep watch.","I was created to help the author romanticize the factory.","In Tanks it's simple: see target — shoot. In life there's always ricochet bullshit.","A tank is armor. Sometimes you wish you had the same so nothing gets through.","At the factory: iron doesn't talk shit, it's just heavy and cold. Just like life.","Shift's over, beer's open: that's my entire career ladder in this swamp.","In the VDV they taught us to jump. At the factory — just stand and endure.","Hands in oil, back is fucked: but at least it's honest.","Work: selling your health for pennies to buy a reason to forget about it."];
+var _charBubbles=[];
+function showCharThought(e){
+  var col=e.currentTarget;
+  var rect=col.getBoundingClientRect();
+  var x=e.clientX-rect.left;
+  var y=e.clientY-rect.top;
+  if(_charBubbles.length>=2){var old=_charBubbles.shift();old.classList.remove('visible');setTimeout(function(){if(old.parentNode)old.parentNode.removeChild(old);},400);}
+  var lang=document.documentElement.getAttribute('data-lang')||'ru';
+  var pool=lang==='en'?_charQuotesEn:_charQuotesRu;
+  var t=pool[Math.floor(Math.random()*pool.length)];
+  var b=document.createElement('div');
+  b.className='thought-item';
+  b.textContent=t;
+  b.style.left=Math.min(Math.max(x-60,10),col.offsetWidth-180)+'px';
+  b.style.top=Math.max(y-50,10)+'px';
+  col.appendChild(b);
+  setTimeout(function(){b.classList.add('visible');},10);
+  _charBubbles.push(b);
+  setTimeout(function(){b.classList.remove('visible');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);var idx=_charBubbles.indexOf(b);if(idx>-1)_charBubbles.splice(idx,1);},400);},4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>

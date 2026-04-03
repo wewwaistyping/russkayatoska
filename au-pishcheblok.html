@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пищеблок (1980) — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="characters.html">Персонажи</a></li>
+      <li><a href="locations-list.html">Локации</a></li>
+            <li><a href="map.html">Карта</a></li>
+      <li><a href="band.html">Группа</a></li>
+      <li><a href="au.html" class="active">AU</a></li>
+      <li><a href="author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="locations-list.html">Locations</a></li>
+            <li><a href="map.html">Map</a></li>
+      <li><a href="band.html">Band</a></li>
+      <li><a href="au.html" class="active">AU</a></li>
+      <li><a href="author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="page-content au-detail-page">
+  <div class="au-banner pishcheblok-banner"><img src="images/PISCHEBLOK banner.webp" alt="" loading="lazy"><div class="au-banner-overlay"><a href="au.html" class="back-link">&larr; Все AU</a><h1 class="page-title">Пищеблок <span>(1980)</span></h1><p class="au-banner-subtitle">Советский хоррор · Пионерлагерь «Буревестник» · Лето 1980</p></div></div>
+  <div class="section">
+    <div class="au-info-grid">
+      <div class="au-info-block">
+        <h2>Сеттинг</h2>
+        <p>СССР, лето 1980. Пионерлагерь «Буревестник» в сибирской тайге, 40 км от ближайшего города. Строгая дисциплина, утренние линейки, красные галстуки, бюст Ленина.</p>
+        <p>Технологии: дисковые телефоны, кассетные магнитофоны, плёночные камеры. Никакого интернета. Хронический дефицит. Эра позднего Брежнева.</p>
+      </div>
+      <div class="au-info-block">
+        <h2>Пиявцы</h2>
+        <p>Нежить-кровопийцы с холодной кожей и жалом под языком (не клыки). Красный галстук — «дыхательный узел»: снятие вызывает удушье. Быстрая регенерация.</p>
+        <p>Стратилат выбирает ровно 13 жертв за смену. В конце одного высасывает насухо. Остальные умирают в течение года.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="section-title">Вожатые <span>лагеря</span></h2>
+    <div class="au-chars-grid">
+      <div class="au-char-card">
+        <h3>Антон Погибельский</h3>
+        <p class="au-char-role">Старший вожатый, 20 лет</p>
+        <p>Отвечает за старший отряд (14-15 лет). Серьёзный, ответственный. Из рабочей семьи Красноярска-26. Студент кулинарного техникума.</p>
+      </div>
+      <div class="au-char-card">
+        <h3>Денис Носков</h3>
+        <p class="au-char-role">Массовик-затейник, 20 лет</p>
+        <p>Культорг: линейки, концерты, костры, подпольные дискотеки. Ходячий хаос и душа компании. Друг детства Антона.</p>
+      </div>
+      <div class="au-char-card">
+        <h3>Александр Колокольников</h3>
+        <p class="au-char-role">Физрук, 21 год</p>
+        <p>Единственный с высшим образованием (заочник педагогического). Гора мускулов, железная дисциплина, неожиданный защитный инстинкт.</p>
+      </div>
+      <div class="au-char-card">
+        <h3>Всеволод Страхов</h3>
+        <p class="au-char-role">Трудовик, 20 лет</p>
+        <p>Ведёт кружок «Умелые руки». Патологический врун. Пытается быть круче, чем есть. Проваливается с блеском.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="section-title">Персонал <span>лагеря</span></h2>
+    <div class="au-staff-grid">
+      <div class="au-staff-item"><strong>Виктор Корнеев</strong> (58) — директор, ветеран Афгана</div>
+      <div class="au-staff-item"><strong>Клавдия Мясищева</strong> (62) — главный повар, сообщница Стратилата</div>
+      <div class="au-staff-item"><strong>Валентина Железнова</strong> (45) — медсестра, топит совесть в спирте</div>
+      <div class="au-staff-item"><strong>Лев Вишнецкий</strong> (24) — завхоз, решает «сложные вопросы» <em class="au-staff-credit">by rakshakti</em></div>
+      <div class="au-staff-item"><strong>Фонарь Левин</strong> (21) — ночной сторож <em class="au-staff-credit">by KanonMama</em></div>
+      <div class="au-staff-item"><strong>Тротил Прохоров</strong> (19) — истопник, пироманьяк у котлов <em class="au-staff-credit">by KamiyaK</em></div>
+      <div class="au-staff-item"><strong>Стася Носкова</strong> (20) — старшая пионервожатая</div>
+      <div class="au-staff-item"><strong>Пашка Дробовиков</strong> (19) — вожатый с лицом громилы <em class="au-staff-credit">by rakshakti</em></div>
+      <div class="au-staff-item"><strong>Олеся Миролюбова</strong> (19) — вожатая-рассказчица <em class="au-staff-credit">by rakshakti</em></div>
+      <div class="au-staff-item"><strong>Анатолий Шулинс</strong> (19) — вожатый младшего отряда <em class="au-staff-credit">by agat</em></div>
+      <div class="au-staff-item"><strong>Архип Кротов</strong> (71) — сторож у ворот, 28 лет в лагере</div>
+      <div class="au-staff-item"><strong>Пётр Дубов</strong> (52) — участковый, два года до пенсии</div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body></html>
