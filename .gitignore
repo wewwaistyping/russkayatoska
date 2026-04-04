@@ -7,7 +7,18 @@ generate-site.js
 node_modules/
 
 # Janitor/SillyTavern downloaded pages
-janitor*/
+janitor*
+*janitor*
+*Scripts*
+
+# Build tools
+compress-photos.js
+*.json
+!package.json
+!package-lock.json
+
+# Claude config
+.claude//
 
 # System files
 .DS_Store
