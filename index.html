@@ -1,468 +1,729 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>СВАГОСЛАВІЯ — Сказание о Дрипе Предвечном</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Jost:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
---pink:#FF2D8A;--rose:#E8A0BF;--magenta:#8B1A4A;--gold:#FFD700;
---black:#0A0A0A;--white:#FFF5F9;--grey:#888;
-}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--black);color:var(--white);font-family:'Jost',sans-serif;overflow-x:hidden;
-cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='8' fill='%23FF2D8A' opacity='.7'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23FFD700'/%3E%3C/svg%3E") 12 12,auto}
-#sparkle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
-.neon{text-shadow:0 0 10px var(--pink),0 0 40px var(--pink),0 0 80px var(--pink)}
-.gold-glow{text-shadow:0 0 10px var(--gold),0 0 30px var(--gold),0 0 60px #daa520}
-.gem{display:inline-block;width:12px;height:12px;background:radial-gradient(circle at 30% 30%,#fff,var(--pink) 40%,var(--magenta));border-radius:50%;box-shadow:0 0 6px var(--pink);animation:pgem 2s ease-in-out infinite alternate}
-.gem.gold{background:radial-gradient(circle at 30% 30%,#fff,var(--gold) 40%,#b8860b);box-shadow:0 0 6px var(--gold)}
-@keyframes pgem{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.3);opacity:1}}
-/* LEOPARD OVERLAY on body */
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.03;
-background-image:radial-gradient(ellipse 28px 22px at 30% 30%,transparent 38%,var(--gold) 39%,var(--gold) 55%,transparent 56%),radial-gradient(ellipse 22px 28px at 70% 65%,transparent 38%,var(--gold) 39%,var(--gold) 55%,transparent 56%),radial-gradient(ellipse 24px 18px at 50% 50%,transparent 38%,var(--pink) 39%,var(--pink) 55%,transparent 56%);background-size:80px 80px}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РУССКАЯ ТОСКА — Труповолково и окрестности</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ═══ INDEX-SPECIFIC STYLES ═══ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(138,69,19,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(74,63,107,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(10,10,10,0.8) 0%, var(--black) 100%);
+        }
+        .hero-grid {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-vhs-rec {
+            position: absolute;
+            top: 80px; left: 32px;
+            z-index: 3;
+            font-family: var(--font-pixel);
+            font-size: 10px;
+            color: var(--acid-pink);
+            opacity: 0.4;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: recBlink 2s steps(1) infinite;
+        }
+        .hero-vhs-rec::before {
+            content: '';
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--acid-pink);
+        }
+        @keyframes recBlink { 0%,70% { opacity: 0.4; } 71%,100% { opacity: 0; } }
+        .hero-vhs-timestamp {
+            position: absolute;
+            top: 80px; right: 32px;
+            z-index: 3;
+            font-family: var(--font-pixel);
+            font-size: 10px;
+            color: var(--white);
+            opacity: 0.2;
+            text-shadow: 2px 0 var(--acid-pink), -2px 0 var(--acid-blue);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero-subtitle-top {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            margin-bottom: 24px;
+            opacity: 0; animation: fadeUp 1s ease 0.3s forwards;
+        }
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 10vw, 140px);
+            line-height: 0.85;
+            text-transform: uppercase;
+            opacity: 0; animation: fadeUp 1.2s ease 0.5s forwards;
+        }
+        .hero-title .line-1 {
+            display: block;
+            color: var(--cream);
+            text-shadow: 3px 0 rgba(255,45,107,0.3), -3px 0 rgba(0,212,255,0.3);
+        }
+        .hero-title .line-2 {
+            display: block;
+            color: var(--acid-green);
+            font-size: 0.6em;
+            letter-spacing: 0.2em;
+        }
+        .hero-dash {
+            display: block;
+            width: 80px; height: 2px;
+            background: var(--acid-pink);
+            margin: 32px auto;
+            opacity: 0; animation: fadeUp 1s ease 0.8s forwards;
+        }
+        .hero-tagline {
+            font-family: var(--font-handwritten);
+            font-size: clamp(18px, 3vw, 28px);
+            color: var(--cream);
+            opacity: 0; animation: fadeUp 1s ease 1s forwards;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-era {
+            margin-top: 48px;
+            font-family: var(--font-heading);
+            font-size: 11px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+            opacity: 0; animation: fadeUp 1s ease 1.3s forwards;
+        }
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0; animation: fadeUp 1s ease 1.6s forwards;
+        }
+        .hero-scroll span {
+            font-family: var(--font-heading);
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+        }
+        .hero-scroll-line {
+            width: 1px; height: 40px;
+            background: var(--gray-mid);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-scroll-line::after {
+            content: '';
+            position: absolute;
+            top: -100%; left: 0;
+            width: 100%; height: 100%;
+            background: var(--acid-green);
+            animation: scrollPulse 2s ease infinite;
+        }
+        .hero-quote {
+            position: absolute;
+            font-family: var(--font-handwritten);
+            color: var(--gray-mid);
+            opacity: 0.12;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .hero-quote.q1 { top: 15%; left: 5%; font-size: 20px; transform: rotate(-8deg); }
+        .hero-quote.q2 { top: 25%; right: 8%; font-size: 16px; transform: rotate(5deg); }
+        .hero-quote.q3 { bottom: 20%; left: 10%; font-size: 18px; }
+        .hero-quote.q4 { bottom: 30%; right: 5%; font-size: 14px; transform: rotate(-4deg); }
 
-/* GOLD CHAIN DIVIDERS */
-.chain-divider{height:8px;background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 10px,var(--gold) 10px 16px,var(--magenta) 16px 18px);opacity:.6;margin:0}
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+        .about-text {
+            font-size: 20px;
+            color: var(--cream);
+            line-height: 1.7;
+        }
+        .about-text p + p { margin-top: 24px; }
+        .about-text strong { color: var(--acid-green); font-weight: 400; }
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .stat-card {
+            background: var(--gray-dark);
+            border: 1px solid var(--gray);
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        .stat-card:hover { border-color: var(--acid-green); transform: translateY(-4px); }
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 36px;
+            color: var(--acid-green);
+        }
+        .stat-label {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            margin-top: 8px;
+        }
 
-/* GLITTER RAIN canvas */
-#glitter-rain{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+        /* Graffiti divider */
+        .graffiti-divider {
+            padding: 28px 0;
+            background: var(--dark);
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
+            overflow: hidden;
+        }
+        .graffiti-track {
+            display: flex;
+            gap: 80px;
+            animation: marquee 80s linear infinite;
+            white-space: nowrap;
+        }
+        .graffiti-item {
+            font-family: var(--font-handwritten);
+            font-size: clamp(14px, 2vw, 22px);
+            color: rgba(255,255,255,0.07);
+            flex-shrink: 0;
+            transition: color 0.4s;
+            cursor: default;
+        }
+        .graffiti-item:hover {
+            color: rgba(255,255,255,0.25);
+        }
 
-section{padding:5rem 2rem;position:relative;z-index:2}
-.section-title{font-family:'Abril Fatface',serif;font-size:clamp(2.2rem,6vw,4rem);text-align:center;margin-bottom:2.5rem}
-.section-title::after{content:'';display:block;width:240px;height:4px;margin:1rem auto 0;background:linear-gradient(90deg,transparent,var(--gold),var(--pink),var(--gold),transparent);animation:shimmer-bar 3s ease infinite;background-size:200% 100%}
-@keyframes shimmer-bar{0%{background-position:0% 0}50%{background-position:100% 0}100%{background-position:0% 0}}
+        /* CTA */
+        .cta-section {
+            padding: 120px 32px;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(74,63,107,0.08) 0%, transparent 70%), var(--black);
+            border-top: 1px solid var(--gray);
+        }
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 6vw, 64px);
+            color: var(--white);
+            margin-bottom: 24px;
+            text-shadow: 3px 0 rgba(255,45,107,0.15), -3px 0 rgba(0,212,255,0.15);
+        }
+        .cta-subtitle {
+            font-family: var(--font-handwritten);
+            font-size: 22px;
+            color: var(--cream);
+            margin-bottom: 48px;
+            opacity: 0.6;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .cta-btn {
+            font-family: var(--font-heading);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 14px 32px;
+            border: 1px solid var(--gray-mid);
+            color: var(--white);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            transition: left 0.4s;
+            z-index: -1;
+        }
+        .cta-btn:hover { color: var(--black); border-color: var(--acid-green); }
+        .cta-btn:hover::before { left: 0; background: var(--acid-green); }
+        .cta-btn.pink:hover::before { background: var(--acid-pink); }
+        .cta-btn.pink:hover { border-color: var(--acid-pink); }
 
-/* LANG TOGGLE */
-.lang-toggle{position:fixed;top:1rem;right:1rem;z-index:10000;display:flex;gap:0;border-radius:30px;overflow:hidden;border:2px solid var(--gold);background:rgba(10,10,10,.9)}
-.lang-btn{padding:.5rem 1rem;font-family:'Jost',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--gold);letter-spacing:.1em;transition:.3s}
-.lang-btn.active{background:var(--gold);color:var(--black)}
+        /* Era grid */
+        .era-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+        .era-category h3 {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--acid-green);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--gray);
+        }
+        .era-category ul { list-style: none; }
+        .era-category li {
+            font-size: 16px;
+            color: var(--cream);
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .era-category li::before {
+            content: '— ';
+            color: var(--gray-mid);
+        }
 
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(135deg,var(--magenta) 0%,#2a0520 25%,var(--black) 50%,#2a0520 75%,var(--magenta) 100%);background-size:400% 400%;animation:hero-gradient 12s ease infinite;overflow:hidden;text-align:center;padding:2rem}
-@keyframes hero-gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.hero::before{content:'';position:absolute;inset:0;opacity:.1;background-image:radial-gradient(ellipse 30px 24px at 30% 30%,transparent 38%,var(--gold) 39%,var(--gold) 55%,transparent 56%),radial-gradient(ellipse 26px 20px at 70% 65%,transparent 38%,var(--gold) 39%,var(--gold) 55%,transparent 56%),radial-gradient(ellipse 22px 28px at 50% 80%,transparent 38%,var(--pink) 39%,var(--pink) 55%,transparent 56%);background-size:90px 90px}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent 30%,rgba(10,10,10,.6));pointer-events:none}
-.hero-title{font-family:'Abril Fatface',serif;font-size:clamp(3.5rem,12vw,10rem);background:linear-gradient(135deg,var(--gold),#fff,var(--pink),#fff,var(--gold),var(--rose),var(--gold));background-size:400% 400%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease infinite;filter:drop-shadow(0 0 40px rgba(255,215,0,.6)) drop-shadow(0 0 80px rgba(255,45,138,.3));letter-spacing:.08em;line-height:1.1;position:relative;z-index:3}
-@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.hero-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,3vw,1.8rem);color:var(--rose);margin-top:1.5rem;letter-spacing:.15em;z-index:2;position:relative}
-.hero-tagline{font-size:clamp(.8rem,2vw,1.1rem);color:var(--gold);margin-top:1.5rem;font-weight:300;letter-spacing:.3em;text-transform:uppercase;z-index:2;position:relative}
-.hero-gems{position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none;z-index:1}
-.hero-gems .gem{position:absolute;animation:fgem 6s ease-in-out infinite}
-@keyframes fgem{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.2)}}
-.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--rose);font-size:.85rem;letter-spacing:.2em;animation:bob 2s ease-in-out infinite;z-index:2}
-@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+        /* Quick links grid */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .quick-link {
+            display: block;
+            background: var(--gray-dark);
+            border: 1px solid var(--gray);
+            padding: 28px 24px;
+            transition: all 0.4s;
+        }
+        .quick-link:hover { border-color: var(--acid-green); transform: translateY(-4px); }
+        .quick-link h3 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            color: var(--acid-green);
+            margin-bottom: 8px;
+        }
+        .quick-link p {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.4;
+        }
 
-/* GRID CARDS */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-.card{background:linear-gradient(145deg,rgba(139,26,74,.2),rgba(10,10,10,.9));border:2px solid rgba(255,215,0,.3);border-radius:14px;padding:1.8rem;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.34,1.56,.64,1)}
-.card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 0 40px rgba(255,45,138,.5),0 0 80px rgba(255,215,0,.3);border-color:var(--pink)}
-.card .icon{font-size:2.5rem;margin-bottom:.8rem;display:block}
-.card .name{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin-bottom:.3rem}
-.card .subtitle{font-size:.8rem;color:var(--rose);font-style:italic;margin-bottom:.6rem;letter-spacing:.08em}
-.card .desc{font-size:.85rem;color:rgba(255,245,249,.7);line-height:1.6}
-.card .quote{font-family:'Playfair Display',serif;font-style:italic;font-size:.8rem;color:var(--rose);margin-top:.8rem;padding-top:.6rem;border-top:1px solid rgba(255,215,0,.15)}
-.card.dark{background:linear-gradient(145deg,rgba(50,50,50,.4),rgba(10,10,10,.95));border-color:rgba(128,128,128,.3)}
-.card.dark:hover{border-color:var(--grey);box-shadow:0 0 20px rgba(128,128,128,.2)}
-.card.dark .name{color:var(--grey)}
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scrollPulse { 0% { top: -100%; } 100% { top: 200%; } }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* TAG */
-.tag{display:inline-block;padding:.15rem .6rem;border-radius:16px;font-size:.7rem;background:var(--pink);color:#fff;margin-bottom:.8rem;letter-spacing:.08em;font-weight:600}
-.tag.leo{background:linear-gradient(135deg,#c48938,#8B4513)}
-.tag.grey{background:#555}
-.tag.green{background:#2a6b3f}
-.tag.blue{background:#2a4a8b}
-
-/* DRIPOSIL — TREE + FLIP LABELS */
-.driposil{background:linear-gradient(180deg,var(--black),#1a0520,var(--black));overflow:hidden}
-.tree-wrap{position:relative;max-width:900px;margin:0 auto;min-height:600px}
-/* Trunk */
-.trunk{position:absolute;left:50%;top:20px;bottom:20px;width:6px;transform:translateX(-50%);background:linear-gradient(180deg,var(--gold),#fff8,var(--gold));border-radius:3px;box-shadow:0 0 20px var(--gold),0 0 40px rgba(255,215,0,.3)}
-/* Crown glow */
-.trunk::before{content:'';position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:180px;height:100px;background:radial-gradient(ellipse,rgba(255,45,138,.25),transparent 70%);border-radius:50%}
-/* Branch */
-.branch{position:absolute;height:2px;background:linear-gradient(90deg,var(--gold),rgba(255,215,0,.2));box-shadow:0 0 6px rgba(255,215,0,.4)}
-.branch.left{right:50%}
-.branch.right{left:50%}
-/* World label — flip card on branch */
-.wlabel{position:absolute;cursor:pointer;perspective:600px;width:170px}
-.wlabel-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
-.wlabel.flipped .wlabel-inner{transform:rotateY(180deg)}
-.wlabel-front,.wlabel-back{backface-visibility:hidden;border-radius:20px;padding:.4rem .8rem;text-align:center;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:600;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:.3rem}
-.wlabel-front{background:rgba(255,45,138,.12);border:1px solid var(--pink)}
-.wlabel-back{position:absolute;inset:0;transform:rotateY(180deg);background:rgba(10,10,10,.95);border:1px solid var(--gold);box-shadow:0 0 15px rgba(255,215,0,.2);white-space:normal;font-weight:400;font-size:.7rem;line-height:1.4;padding:.6rem .8rem;color:rgba(255,245,249,.8);min-height:80px;border-radius:12px}
-.wlabel.upper .wlabel-front{border-color:var(--gold);background:rgba(255,215,0,.08);color:var(--gold)}
-.wlabel.lower .wlabel-front{border-color:var(--grey);background:rgba(128,128,128,.08);color:var(--grey)}
-.wlabel:hover .wlabel-front{box-shadow:0 0 15px rgba(255,215,0,.2)}
-
-/* SECTION BGs — ANIMATED */
-.s-dark{background:linear-gradient(180deg,var(--black),#200a1a,#2a0520,#200a1a,var(--black));background-size:100% 300%;animation:sec-breathe 8s ease-in-out infinite}
-.s-deep{background:linear-gradient(180deg,var(--black),#1a0520,#2a0a30,#1a0520,var(--black));background-size:100% 300%;animation:sec-breathe 10s ease-in-out infinite}
-.s-grey{background:linear-gradient(180deg,var(--black),#1a1a1a,#252525,#1a1a1a,var(--black));background-size:100% 300%;animation:sec-breathe 12s ease-in-out infinite}
-@keyframes sec-breathe{0%,100%{background-position:0% 0%}50%{background-position:0% 100%}}
-
-/* VS */
-.vs-container{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;max-width:900px;margin:0 auto}
-.vs-side{flex:1;min-width:250px;padding:1.5rem;text-align:center}
-.vs-side h3{font-family:'Abril Fatface',serif;font-size:1.8rem;margin-bottom:.8rem}
-.vs-divider{font-family:'Abril Fatface',serif;font-size:2.5rem;background:linear-gradient(180deg,var(--grey),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-
-/* CTA */
-.cta{text-align:center;padding:6rem 2rem;background:linear-gradient(180deg,var(--black),var(--magenta),var(--black))}
-.cta-btn{display:inline-block;padding:1.2rem 3rem;font-family:'Abril Fatface',serif;font-size:1.5rem;color:var(--black);background:linear-gradient(135deg,var(--gold),#fff,var(--pink),#fff,var(--gold));background-size:300% 300%;border:none;border-radius:60px;cursor:pointer;text-decoration:none;box-shadow:0 0 30px rgba(255,215,0,.4),0 0 60px rgba(255,45,138,.2);transition:.3s;animation:pbtn 2s ease-in-out infinite,shimmer 3s ease infinite;letter-spacing:.12em;position:relative;overflow:hidden}
-.cta-btn::before{content:'✨';position:absolute;left:10%;top:50%;transform:translateY(-50%);font-size:1.5rem;animation:bob 1.5s ease-in-out infinite}
-.cta-btn::after{content:'✨';position:absolute;right:10%;top:50%;transform:translateY(-50%);font-size:1.5rem;animation:bob 1.5s ease-in-out infinite reverse}
-.cta-btn:hover{transform:scale(1.12);box-shadow:0 0 60px var(--gold),0 0 120px var(--pink),0 0 180px rgba(255,45,138,.2)}
-@keyframes pbtn{0%,100%{box-shadow:0 0 30px rgba(255,215,0,.4)}50%{box-shadow:0 0 50px rgba(255,215,0,.6),0 0 80px rgba(255,45,138,.3)}}
-footer{text-align:center;padding:2.5rem;background:var(--black);border-top:2px solid rgba(255,215,0,.2);font-size:.8rem;color:var(--grey);letter-spacing:.1em}
-footer span{color:var(--pink)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.16,1,.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:9998;padding:.8rem 2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;background:rgba(10,10,10,.92);border-bottom:1px solid rgba(255,215,0,.1);transform:translateY(-100%);transition:transform .3s}
-nav.show{transform:translateY(0)}
-nav a{color:var(--rose);text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;transition:.3s;padding:.3rem .6rem;border-radius:4px;position:relative}
-nav a:hover{color:var(--gold);background:rgba(255,215,0,.15);text-shadow:0 0 10px var(--gold)}
-nav a::after{content:'✦';position:absolute;right:-2px;top:-2px;font-size:.4rem;color:var(--gold);opacity:0;transition:.3s}
-nav a:hover::after{opacity:1}
-
-@media(max-width:768px){
-.card-grid{grid-template-columns:1fr}
-.worlds-grid{grid-template-columns:1fr}
-.vs-container{flex-direction:column;gap:1rem}
-section{padding:3rem 1.2rem}
-nav{display:none}
-}
-</style>
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .era-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero-quote { display: none; }
+            .about-stats { grid-template-columns: 1fr; }
+            .era-grid { grid-template-columns: 1fr; gap: 32px; }
+            .hero-vhs-rec, .hero-vhs-timestamp { font-size: 8px; }
+        }
+    </style>
 </head>
 <body>
 
-<canvas id="sparkle-canvas"></canvas>
-<canvas id="glitter-rain"></canvas>
-
-<!-- LANG TOGGLE -->
-<div class="lang-toggle">
-<button class="lang-btn active" onclick="setLang('ru')">RU</button>
-<button class="lang-btn" onclick="setLang('en')">EN</button>
+<!-- DISCLAIMER OVERLAY -->
+<style>
+.disclaimer-overlay { position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.96);z-index:10000;display:flex;justify-content:center;align-items:center;padding:20px; }
+.disclaimer-box { max-width:560px;text-align:center;font-family:var(--font-body);color:var(--cream); }
+.disclaimer-title { font-family:var(--font-display);font-size:28px;color:var(--acid-green);margin-bottom:32px;letter-spacing:4px;position:relative;display:inline-block; }
+.disclaimer-title::before, .disclaimer-title::after { content:attr(data-text);position:absolute;top:0;left:0;width:100%;opacity:0; }
+.disclaimer-title:hover::before { opacity:0.7;color:var(--acid-pink);animation:glitch1 0.3s infinite;clip-path:inset(20% 0 30% 0); }
+.disclaimer-title:hover::after { opacity:0.7;color:var(--acid-blue);animation:glitch2 0.3s infinite;clip-path:inset(60% 0 10% 0); }
+@keyframes disclaimerPulse { 0%,90%,100%{opacity:1} 93%{opacity:0.3} 96%{opacity:1} 98%{opacity:0.6} }
+.disclaimer-title { animation: disclaimerPulse 6s infinite; }
+.disclaimer-line { width:60px;height:1px;background:var(--acid-green);margin:0 auto 24px;opacity:0.4; }
+.disclaimer-text { font-size:15px;line-height:1.8;color:rgba(232,228,223,0.7);margin-bottom:12px; }
+.disclaimer-age { font-family:var(--font-heading);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--acid-pink);margin:20px 0; }
+.disclaimer-btn { font-family:var(--font-heading);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:14px 40px;border:1px solid var(--acid-green);background:transparent;color:var(--acid-green);cursor:pointer;transition:all 0.3s;margin-top:8px; }
+.disclaimer-btn:hover { background:var(--acid-green);color:#0a0a0a; }
+</style>
+<div id="disclaimer" class="disclaimer-overlay">
+  <div class="disclaimer-box">
+    <div class="disclaimer-title lang-ru" data-text="ВНИМАНИЕ">ВНИМАНИЕ</div>
+    <div class="disclaimer-title lang-en" data-text="WARNING">WARNING</div>
+    <div class="disclaimer-line"></div>
+    <p class="disclaimer-text lang-ru">Все истории вымышлены. Любые совпадения с реальностью — не более чем рефлексия автора.</p>
+    <p class="disclaimer-text lang-ru">Сайт не пропагандирует употребление алкоголя, наркотических веществ и не призывает к нарушению законов или моральных норм.</p>
+    <p class="disclaimer-text lang-en">All stories are fictional. Any resemblance to reality is nothing more than the author's reflection.</p>
+    <p class="disclaimer-text lang-en">This site does not promote the use of alcohol or drugs, nor does it encourage violations of laws or moral standards.</p>
+    <p class="disclaimer-age">18+</p>
+    <button class="disclaimer-btn lang-ru" onclick="document.getElementById('disclaimer').style.display='none';localStorage.setItem('rt-disclaimer','seen');">Мне есть 18. Продолжить.</button>
+    <button class="disclaimer-btn lang-en" onclick="document.getElementById('disclaimer').style.display='none';localStorage.setItem('rt-disclaimer','seen');">I am 18+. Continue.</button>
+  </div>
 </div>
+<script>
+if(localStorage.getItem('rt-disclaimer')==='seen'){document.getElementById('disclaimer').style.display='none';}
+// Apply saved lang to disclaimer immediately
+(function(){
+  var lang = localStorage.getItem('rt-lang') || 'ru';
+  var d = document.getElementById('disclaimer');
+  if(!d || d.style.display==='none') return;
+  var els = d.querySelectorAll('.disclaimer-title, .disclaimer-text, .disclaimer-btn');
+  var isRu = lang === 'ru';
+  // Elements alternate: ru, en, ru, en...
+  // Titles: 0=ru, 1=en
+  // Texts: 0=ru, 1=ru, 2=en, 3=en
+  // Buttons: 0=ru, 1=en
+  var titles = d.querySelectorAll('.disclaimer-title');
+  titles[0].style.display = isRu ? 'inline-block' : 'none';
+  titles[1].style.display = isRu ? 'none' : 'inline-block';
+  var texts = d.querySelectorAll('.disclaimer-text');
+  texts[0].style.display = isRu ? '' : 'none';
+  texts[1].style.display = isRu ? '' : 'none';
+  texts[2].style.display = isRu ? 'none' : '';
+  texts[3].style.display = isRu ? 'none' : '';
+  var btns = d.querySelectorAll('.disclaimer-btn');
+  btns[0].style.display = isRu ? '' : 'none';
+  btns[1].style.display = isRu ? 'none' : '';
+})();
+</script>
+
+<div class="vhs-tracking"></div>
 
 <!-- NAV -->
-<nav id="navbar">
-<a href="#driposil">Дрипосиль</a>
-<a href="#magic">Друпны</a>
-<a href="#gods">Пантеон</a>
-<a href="#races">Народы</a>
-<a href="#heroes">Герои</a>
-<a href="#bestiary">Бестиарий</a>
-<a href="#locations">Карта</a>
-<a href="#artifacts">Артефакты</a>
-<a href="#afterlife">Загробье</a>
-<a href="#svagnarok">Свагнарёкъ</a>
+<nav class="nav">
+    <a href="index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+    <div class="nav-right">
+        <ul class="nav-links lang-ru">
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="characters.html">Персонажи</a></li>
+            <li><a href="locations-list.html">Локации</a></li>
+            <li><a href="map.html">Карта</a></li>
+            <li><a href="band.html">Группа</a></li>
+            <li><a href="au.html">AU</a></li>
+            <li><a href="author.html">Автор</a></li>
+        </ul>
+        <ul class="nav-links lang-en">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="locations-list.html">Locations</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="band.html">Band</a></li>
+            <li><a href="au.html">AU</a></li>
+            <li><a href="author.html">Author</a></li>
+        </ul>
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <div class="nav-burger" onclick="document.querySelectorAll('.nav-links').forEach(u=>u.classList.toggle('open'))"><span></span><span></span><span></span></div>
+    </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="hero">
-<div class="hero-gems" id="hero-gems"></div>
-<h1 class="hero-title">СВАГОСЛАВІЯ</h1>
-<p class="hero-sub" data-ru="Сказание о Дрипе Предвечном" data-en="The Saga of Primordial Drip">Сказание о Дрипе Предвечном</p>
-<p class="hero-tagline" data-ru="✦ Скрестим наши сваги — не ради отваги ✦" data-en="✦ Cross our swegs — not for valor, but for BEAUTY ✦">✦ Скрестим наши сваги — не ради отваги ✦</p>
-<div class="scroll-hint" data-ru="↓ ДРИПНИ ВНИЗ ↓" data-en="↓ DRIP DOWN ↓">↓ ДРИПНИ ВНИЗ ↓</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ DRIPOSIL — CLICKABLE WORLDS ═══ -->
-<section class="driposil" id="driposil">
-<h2 class="section-title gold-glow reveal" data-ru="🌳 ДРИПОСИЛЬ — Мировое Древо" data-en="🌳 DRIPOSIL — The World Tree">🌳 ДРИПОСИЛЬ — Мировое Древо</h2>
-<p style="text-align:center;color:var(--rose);max-width:600px;margin:0 auto 2rem;font-style:italic;font-family:'Playfair Display',serif" class="reveal rd1" data-ru="Берёза в стразах. Корни в девяти мирах. В сердце — Пламя Вечного Дрипа." data-en="A birch in rhinestones. Roots in nine worlds. At its heart — the Flame of Eternal Drip.">Берёза в стразах. Корни в девяти мирах. В сердце — Пламя Вечного Дрипа.</p>
-<div class="tree-wrap reveal rd2">
-<div class="trunk"></div>
-<!-- UPPER — Крона -->
-<div class="branch left" style="width:130px;top:50px;left:calc(50% - 133px)"></div>
-<div class="wlabel upper" style="top:38px;left:calc(50% - 310px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">✨ СВАГИРІЙ</div>
-<div class="wlabel-back" data-ru="Обитель богов. Вечный золотой час, терема из зеркального дерева. Вечный фестиваль." data-en="Realm of gods. Eternal golden hour, mirror-wood palaces. Eternal festival.">Обитель богов. Вечный золотой час, терема из зеркального дерева. Вечный фестиваль.</div>
-</div></div>
-
-<div class="branch right" style="width:110px;top:90px;left:calc(50% + 3px)"></div>
-<div class="wlabel upper" style="top:78px;left:calc(50% + 120px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">🏛 СВАГХАЛЛА</div>
-<div class="wlabel-back" data-ru="Пир стильных павших. Утро — луки, день — бои-дефиле, вечер — мёд комплимента." data-en="Feast of stylish fallen. Morning — outfits, day — battle-runway, evening — mead.">Пир стильных павших. Утро — луки, день — бои-дефиле, вечер — мёд комплимента.</div>
-</div></div>
-
-<div class="branch left" style="width:90px;top:140px;left:calc(50% - 93px)"></div>
-<div class="wlabel upper" style="top:128px;left:calc(50% - 270px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">🔭 ГЛЯНЦЕГРАДЪ</div>
-<div class="wlabel-back" data-ru="Башня Глянцемира. Отсюда следит за мирами. Начало Радужного Подиума." data-en="Glyantsmir's tower. Watches all worlds. Start of Rainbow Podium.">Башня Глянцемира. Отсюда следит за мирами. Начало Радужного Подиума.</div>
-</div></div>
-
-<!-- MIDDLE — Ствол -->
-<div class="branch right" style="width:140px;top:220px;left:calc(50% + 3px)"></div>
-<div class="wlabel" style="top:208px;left:calc(50% + 150px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">🌍 СРИГАРДЪ</div>
-<div class="wlabel-back" data-ru="Мир людей. Яркие деревни, резные наличники, ленты на деревьях. СВЭГ надо заслужить." data-en="Mortal world. Bright villages, carved ornaments, ribbons. SWEG must be EARNED.">Мир людей. Яркие деревни, резные наличники, ленты на деревьях. СВЭГ надо заслужить.</div>
-</div></div>
-
-<div class="branch left" style="width:120px;top:270px;left:calc(50% - 123px)"></div>
-<div class="wlabel" style="top:258px;left:calc(50% - 300px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">🍂 ЗЛАТОЛЕСЬЕ</div>
-<div class="wlabel-back" data-ru="Лес вечной осени — золото, багрянец, медь. Каждый лист — искусство. Дом берегламов." data-en="Eternal autumn forest — gold, crimson, copper. Every leaf is art. Home of bereglamy.">Лес вечной осени — золото, багрянец, медь. Каждый лист — искусство. Дом берегламов.</div>
-</div></div>
-
-<div class="branch right" style="width:100px;top:320px;left:calc(50% + 3px)"></div>
-<div class="wlabel" style="top:308px;left:calc(50% + 110px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">💰 ТОРЖИЩЕ</div>
-<div class="wlabel-back" data-ru="Рынок Златоуса. Все расы торгуют тканями, друпнами. Валюта — комплименты." data-en="Zlatoust's market. All races trade fabrics, drupny. Currency is compliments.">Рынок Златоуса. Все расы торгуют тканями, друпнами. Валюта — комплименты.</div>
-</div></div>
-
-<!-- LOWER — Корни -->
-<div class="branch left" style="width:130px;top:410px;left:calc(50% - 133px)"></div>
-<div class="wlabel lower" style="top:398px;left:calc(50% - 310px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">💀 КРИНЖЕЛХЕЙМЪ</div>
-<div class="wlabel-back" data-ru="Царство Хейти. Вечный серый ноябрь. Души молчат. Не больно, не радостно. НИКАК." data-en="Heit's realm. Eternal grey November. Souls sit silent. Not painful, not joyful. NOTHING.">Царство Хейти. Вечный серый ноябрь. Души молчат. Не больно, не радостно. НИКАК.</div>
-</div></div>
-
-<div class="branch right" style="width:110px;top:460px;left:calc(50% + 3px)"></div>
-<div class="wlabel lower" style="top:448px;left:calc(50% + 120px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">🐍 ТОКСИБЕЗДНА</div>
-<div class="wlabel-back" data-ru="Болото Токсигада. Сомнения, шёпоты, агрессия. Змей опоясывает мир отсюда." data-en="Toksigad's swamp. Doubts, whispers, aggression. Serpent encircles world from here.">Болото Токсигада. Сомнения, шёпоты, агрессия. Змей опоясывает мир отсюда.</div>
-</div></div>
-
-<div class="branch left" style="width:80px;top:510px;left:calc(50% - 83px)"></div>
-<div class="wlabel lower" style="top:498px;left:calc(50% - 260px)" onclick="this.classList.toggle('flipped')"><div class="wlabel-inner">
-<div class="wlabel-front">🕳 ПУСТОГРЯДЬ</div>
-<div class="wlabel-back" data-ru="Самое дно. Ни серости, ни цвета. Кринжволк заключён. Абсолютный ноль." data-en="Rock bottom. No grey, no color. Krinzhvolk chained. Absolute zero.">Самое дно. Ни серости, ни цвета. Кринжволк заключён. Абсолютный ноль.</div>
-</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ MAGIC SYSTEM ═══ -->
-<section class="s-dark" id="magic">
-<h2 class="section-title neon reveal" data-ru="✨ СИСТЕМА МАГИИ ДРУПНЪ" data-en="✨ DRUPNA MAGIC SYSTEM">✨ СИСТЕМА МАГИИ ДРУПНЪ</h2>
-<p style="text-align:center;color:var(--rose);max-width:700px;margin:0 auto 2rem;font-style:italic;font-family:'Playfair Display',serif" class="reveal rd1" data-ru="«Не руками вышиваешь — душой. И если нить легла криво — значит, ты сам кривой внутри.»" data-en="'You don't embroider with hands — with soul. If the thread lies crooked — you yourself are crooked inside.'">«Не руками вышиваешь — душой. И если нить легла криво — значит, ты сам кривой внутри.»</p>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">📜</span><div class="name" data-ru="Три Закона" data-en="Three Laws">Три Закона</div><div class="desc" data-ru="1) РЕЗОНАНС — друпна работает только если аутфит с душой. 2) ИСКРЕННОСТЬ — друпна ради понтов выгорает. 3) ЭХО — комплименты = топливо. Больше комплиментов луку = сильнее друпны." data-en="1) RESONANCE — drupna works only if outfit assembled with soul. 2) SINCERITY — drupna for clout burns out. 3) ECHO — compliments = fuel. More compliments to the look = stronger drupny.">1) РЕЗОНАНС — друпна работает только если аутфит с душой. 2) ИСКРЕННОСТЬ — друпна ради понтов выгорает. 3) ЭХО — комплименты = топливо. Больше комплиментов луку = сильнее друпны.</div></div>
-<div class="card reveal rd2"><span class="icon">🔴</span><div class="name" data-ru="Друпны Пламени" data-en="Flame Drupny">Друпны Пламени</div><div class="subtitle" data-ru="Атакующие • красная/золотая нить" data-en="Attack • red/gold thread">Атакующие • красная/золотая нить</div><div class="desc" data-ru="СИЯТЬ (блеск при ударе), ПОЦЕЛУЙЧИКЪ (поцелуй = ударная волна), ПОДМИГЪ (очарование), ДЕРЗНУТЬ (крит при позе), ЯРБЛЕСКЪ (глиттер-взрыв)." data-en="SIYAT (flash on strike), POTSELUJCHIK (kiss = shockwave), PODMIG (charm), DERZNUT (crit if you pose), YARBLESK (glitter blast AoE).">СИЯТЬ (блеск при ударе), ПОЦЕЛУЙЧИКЪ (поцелуй = ударная волна), ПОДМИГЪ (очарование), ДЕРЗНУТЬ (крит при позе), ЯРБЛЕСКЪ (глиттер-взрыв).</div></div>
-<div class="card reveal rd3"><span class="icon">🔵</span><div class="name" data-ru="Друпны Зеркала" data-en="Mirror Drupny">Друпны Зеркала</div><div class="subtitle" data-ru="Защитные • серебряная/голубая нить" data-en="Defense • silver/blue thread">Защитные • серебряная/голубая нить</div><div class="desc" data-ru="ОТРАЗИТЬ (враг видит свой кринж), НЕВОЗМУТИМЪ (аура «мне норм»), ПЛАЩВЕЙРЪ (плащ уклоняется за тебя), ДОСТОИНСТВО (не даёт согнуться)." data-en="OTRAZIT (enemy sees own cringe), NEVOZMUTIMY ('I'm fine' aura), PLASHVEYR (cloak dodges for you), DOSTOINSTVO (prevents bowing).">ОТРАЗИТЬ (враг видит свой кринж), НЕВОЗМУТИМЪ (аура «мне норм»), ПЛАЩВЕЙРЪ (плащ уклоняется за тебя), ДОСТОИНСТВО (не даёт согнуться).</div></div>
-<div class="card reveal rd4"><span class="icon">💛</span><div class="name" data-ru="Друпны Грува" data-en="Groove Drupny">Друпны Грува</div><div class="subtitle" data-ru="Усиливающие • золотая/зелёная нить" data-en="Buff • gold/green thread">Усиливающие • золотая/зелёная нить</div><div class="desc" data-ru="ВАЙБЪ (аура настроения), ГРУВЪ (боевой танец), КОМПЛИМЕНТЪ (буст друпн союзника), ХАРИЗМА (голос громче), ДРИПЪ-ВЕЧНЫЙ (одежда идеальна ВСЕГДА)." data-en="VAYB (mood aura), GRUV (battle dance), KOMPLIMENT (boosts ally drupny), KHARIZMA (louder voice), DRIP-ETERNAL (clothes perfect ALWAYS).">ВАЙБЪ (аура настроения), ГРУВЪ (боевой танец), КОМПЛИМЕНТЪ (буст друпн союзника), ХАРИЗМА (голос громче), ДРИПЪ-ВЕЧНЫЙ (одежда идеальна ВСЕГДА).</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ GODS — ALL 13 ═══ -->
-<section class="s-deep" id="gods">
-<h2 class="section-title neon reveal" data-ru="👑 ПАНТЕОН — ВСЕ БОГИ" data-en="👑 PANTHEON — ALL GODS">👑 ПАНТЕОН — ВСЕ БОГИ</h2>
-<h3 style="text-align:center;color:var(--gold);font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.2em;margin-bottom:2rem" class="reveal" data-ru="— ПЕРВЫЙ КРУГ: СТАРШИЕ —" data-en="— FIRST CIRCLE: ELDER GODS —">— ПЕРВЫЙ КРУГ: СТАРШИЕ —</h3>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">👁</span><div class="name">СВАГОБОГЪ</div><div class="subtitle" data-ru="Всеотец • Один + Сварог" data-en="All-Father • Odin + Svarog">Всеотец • Один + Сварог</div><div class="desc" data-ru="Один глаз отдал за идеальный вингед айлайнер. Шуба из северного сияния, повязка расшита бисером. Вороны ХАЙПЪ и ФЛОУПЪ. Волки ДЕРЗЪ и ГРАЦЪ." data-en="Gave one eye for perfect winged eyeliner. Coat of northern lights, beaded eyepatch. Ravens HYPE and FLOUPE. Wolves DERZ and GRATZ.">Один глаз отдал за идеальный вингед айлайнер. Шуба из северного сияния, повязка расшита бисером. Вороны ХАЙПЪ и ФЛОУПЪ. Волки ДЕРЗЪ и ГРАЦЪ.</div><div class="quote" data-ru="«Не златом единым славен муж, но ВАЙБОМ и ЛУКОМ своим»" data-en="'Not by gold alone is a man glorified, but by his VIBE and his LOOK'">«Не златом единым славен муж, но ВАЙБОМ и ЛУКОМ своим»</div></div>
-<div class="card reveal rd2"><span class="icon">🧵</span><div class="name">ВАЙБОСЛАВА</div><div class="subtitle" data-ru="Судьбопряха • Норны + Макошь" data-en="Fate Spinner • Norns + Makosh">Судьбопряха • Норны + Макошь</div><div class="desc" data-ru="Прядёт нити судьбы — каждая цветная лента. Кокошник с LED-подсветкой. Серых нитей в веретене НЕТ." data-en="Spins destiny threads — each a colored ribbon. LED-lit kokoshnik. No grey threads in her spindle.">Прядёт нити судьбы — каждая цветная лента. Кокошник с LED-подсветкой. Серых нитей в веретене НЕТ.</div><div class="quote" data-ru="«Я не выбираю за вас. Я даю нить. А узор — ваш.»" data-en="'I don't choose for you. I give thread. The pattern is yours.'">«Я не выбираю за вас. Я даю нить. А узор — ваш.»</div></div>
-<div class="card reveal rd3"><span class="icon">🔨</span><div class="name">ДРИПНИРЪ</div><div class="subtitle" data-ru="Пылающий Молот • Тор + Сварожич" data-en="Blazing Hammer • Thor + Svarozhich">Пылающий Молот • Тор + Сварожич</div><div class="desc" data-ru="Молот БЛЕСКОТВОРЪ — фонтан блёсток. Бицепсы как брёвна, серьги, ногти в зеркальном лаке, борода в четырёх косах." data-en="Hammer BLESKOTVORT — glitter sparks. Biceps like logs, earrings, mirror-lacquered nails, four braided beard.">Молот БЛЕСКОТВОРЪ — фонтан блёсток. Бицепсы как брёвна, серьги, ногти в зеркальном лаке, борода в четырёх косах.</div><div class="quote" data-ru="«Что крепче — сталь или стиль? А зачем выбирать?»" data-en="'What's stronger — steel or style? Why choose?'">«Что крепче — сталь или стиль? А зачем выбирать?»</div></div>
-<div class="card reveal rd4"><span class="icon">💋</span><div class="name">ЧАРМОГОДЪ</div><div class="subtitle" data-ru="Прекрасный • Бальдр + Лель" data-en="The Beautiful • Baldr + Lel">Прекрасный • Бальдр + Лель</div><div class="desc" data-ru="Венок из звёзд, секира-зеркальце. В бою подмигивает, посылает поцелуйчики. Враги роняют мечи." data-en="Star wreath, mirror-axe. Winks and blows kisses mid-battle. Enemies drop their swords.">Венок из звёзд, секира-зеркальце. В бою подмигивает, посылает поцелуйчики. Враги роняют мечи.</div><div class="quote" data-ru="«Каждый красив. Некоторые просто ещё не знают.»" data-en="'Everyone is beautiful. Some just don't know it yet.'">«Каждый красив. Некоторые просто ещё не знают.»</div></div>
-</div>
-<h3 style="text-align:center;color:var(--rose);font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.2em;margin:3rem 0 2rem" class="reveal" data-ru="— ВТОРОЙ КРУГ: МЛАДШИЕ —" data-en="— SECOND CIRCLE: LESSER GODS —">— ВТОРОЙ КРУГ: МЛАДШИЕ —</h3>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">⚡</span><div class="name">БЛЕСКАРДЪ</div><div class="subtitle" data-ru="Громовержец • Тор + Перун" data-en="Thunderer • Thor + Perun">Громовержец • Тор + Перун</div><div class="desc" data-ru="Каждый удар молнии оставляет узор-вышивку в небе. Рыжая борода с золотыми цепочками." data-en="Every lightning strike leaves embroidery patterns in the sky. Red beard with gold chains.">Каждый удар молнии оставляет узор-вышивку в небе. Рыжая борода с золотыми цепочками.</div><div class="quote" data-ru="«Гром — это аплодисменты неба моему удару!»" data-en="'Thunder is the sky applauding my strike!'">«Гром — это аплодисменты неба моему удару!»</div></div>
-<div class="card reveal rd2"><span class="icon">🪶</span><div class="name">СТИЛИКИРИЯ</div><div class="subtitle" data-ru="Валькирия • Лада" data-en="Valkyrie • Lada">Валькирия • Лада</div><div class="desc" data-ru="Крылья из зеркальных перьев. Выбирает не храбрых — СТИЛЬНЫХ павших. Можно быть трусом, но если пал в идеальном луке — добро пожаловать." data-en="Mirror-feather wings. Picks not the brave — the STYLISH fallen. You can be a coward, but if you fell in a perfect look — welcome.">Крылья из зеркальных перьев. Выбирает не храбрых — СТИЛЬНЫХ павших. Можно быть трусом, но если пал в идеальном луке — добро пожаловать.</div></div>
-<div class="card reveal rd3"><span class="icon">🔭</span><div class="name">ГЛЯНЦЕМИРЪ</div><div class="subtitle" data-ru="Звездочёт • Хеймдалль + Стрибог" data-en="Stargazer • Heimdall + Stribog">Звездочёт • Хеймдалль + Стрибог</div><div class="desc" data-ru="Страж Радужного Подиума. Рог ГЛАМУРЪ — все мгновенно выглядят идеально. Не спит НИКОГДА. Дрип не дремлет." data-en="Guardian of Rainbow Podium. Horn GLAMUR — everyone instantly looks perfect. Never sleeps. DRIP never sleeps.">Страж Радужного Подиума. Рог ГЛАМУРЪ — все мгновенно выглядят идеально. Не спит НИКОГДА. Дрип не дремлет.</div></div>
-<div class="card reveal rd4"><span class="icon">🎵</span><div class="name">ДИВОГЛАДЪ</div><div class="subtitle" data-ru="Мёдоваръ • Браги + Боян" data-en="Meadbrewer • Bragi + Boyan">Мёдоваръ • Браги + Боян</div><div class="desc" data-ru="Варит Мёд Комплимента: кто выпьет — говорит только прекрасное. Золотой язык (БУКВАЛЬНО позолоченный)." data-en="Brews Mead of Compliment: whoever drinks speaks only beautiful things. Golden tongue (LITERALLY gilded).">Варит Мёд Комплимента: кто выпьет — говорит только прекрасное. Золотой язык (БУКВАЛЬНО позолоченный).</div></div>
-<div class="card reveal rd1"><span class="icon">🪞</span><div class="name">ЗЕРЦАЛИНА</div><div class="subtitle" data-ru="Глубинная • Фрейя + Мара" data-en="The Deep One • Freyja + Mara">Глубинная • Фрейя + Мара</div><div class="desc" data-ru="Платье из зеркальных осколков. Зеркала показывают не внешность — ВАЙБ. Жалеет Локринжа: «Он не злой. Он потерянный.»" data-en="Dress of mirror shards. Her mirrors show not looks — VIBE. Pities Lokrinzh: 'He's not evil. He's lost.'">Платье из зеркальных осколков. Зеркала показывают не внешность — ВАЙБ. Жалеет Локринжа: «Он не злой. Он потерянный.»</div></div>
-<div class="card reveal rd2"><span class="icon">🔥</span><div class="name">ПЛАМЕСЛАВА</div><div class="subtitle" data-ru="Жаркосердая • Сурт + Жива" data-en="Warm-Hearted • Surt + Zhiva">Жаркосердая • Сурт + Жива</div><div class="desc" data-ru="Волосы — БУКВАЛЬНО пламя. Поддерживает Пламя Вечного Дрипа в сердце Дрипосиля. Если погаснет — мир потускнеет." data-en="Hair is LITERALLY flame. Maintains the Flame of Eternal Drip in Driposil's heart. If it goes out — the world dims.">Волосы — БУКВАЛЬНО пламя. Поддерживает Пламя Вечного Дрипа в сердце Дрипосиля. Если погаснет — мир потускнеет.</div></div>
-<div class="card reveal rd3"><span class="icon">🍺</span><div class="name">ХМЕЛЬКУДРЪ</div><div class="subtitle" data-ru="Весёлый • Один-гуляка + Ярило" data-en="The Merry • Odin-Reveler + Yarilo">Весёлый • Один-гуляка + Ярило</div><div class="desc" data-ru="Танцует ВСЕГДА. Рубаха расстёгнута до пупка. Единственный, к кому антисвэг не липнет. Невозможно вогнать в кринж." data-en="Dances ALWAYS. Shirt unbuttoned to navel. The only one anti-sweg can't touch. Impossible to cringe.">Танцует ВСЕГДА. Рубаха расстёгнута до пупка. Единственный, к кому антисвэг не липнет. Невозможно вогнать в кринж.</div><div class="quote" data-ru="«ТАНЦУЙ! А кто не танцует — тому я налью, и он ЗАТАНЦУЕТ!»" data-en="'DANCE! And whoever won't — I'll pour them a drink, and they WILL!'">«ТАНЦУЙ! А кто не танцует — тому я налью, и он ЗАТАНЦУЕТ!»</div></div>
-<div class="card reveal rd4"><span class="icon">🌿</span><div class="name">ШЕПОТЬ-БЕРЕГИНЯ</div><div class="subtitle" data-ru="Тихая Стража • Скади + Берегиня" data-en="Silent Guard • Skadi + Bereginya">Тихая Стража • Скади + Берегиня</div><div class="desc" data-ru="Платье из мха и коры. Доказательство, что СВЭГ — не обязательно ГРОМКО. Одна веточка в волосах — тоже друпна." data-en="Dress of moss and bark. Proof that SWEG doesn't need to be LOUD. One twig in hair is also a drupna.">Платье из мха и коры. Доказательство, что СВЭГ — не обязательно ГРОМКО. Одна веточка в волосах — тоже друпна.</div><div class="quote" data-ru="«...одна нитка. Правильная нитка. Больше не нужно.»" data-en="'...one thread. The right thread. Nothing more needed.'">«...одна нитка. Правильная нитка. Больше не нужно.»</div></div>
-<div class="card reveal rd1"><span class="icon">🤝</span><div class="name">ЗЛАТОУСЪ</div><div class="subtitle" data-ru="Торговый • Локи + Велес + Гермес" data-en="The Merchant • Loki + Veles + Hermes">Торговый • Локи + Велес + Гермес</div><div class="desc" data-ru="Бог обмена стилями. Хитёр, обаятелен. Тайно подбрасывает цветные нитки у порога Кринжелхейма. На случай если кто-то захочет обратно." data-en="God of style exchange. Cunning, charming. Secretly leaves colored threads at Krinzhelheim's doorstep. In case someone wants back.">Бог обмена стилями. Хитёр, обаятелен. Тайно подбрасывает цветные нитки у порога Кринжелхейма. На случай если кто-то захочет обратно.</div><div class="quote" data-ru="«У меня нет одного стиля. У меня их ТЫСЯЧА. В чём проблема?»" data-en="'I don't have one style. I have a THOUSAND. Problem?'">«У меня нет одного стиля. У меня их ТЫСЯЧА. В чём проблема?»</div></div>
-</div>
-<h3 style="text-align:center;color:var(--grey);font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.2em;margin:3rem 0 2rem" class="reveal" data-ru="— ТРЕТИЙ КРУГ: КРИНЖЕЛХЕЙМ —" data-en="— THIRD CIRCLE: KRINZHELHEIM —">— ТРЕТИЙ КРУГ: КРИНЖЕЛХЕЙМ —</h3>
-<div class="card-grid">
-<div class="card dark reveal rd1"><span class="icon">🖤</span><div class="name">ЛОКРИНЖЪ</div><div class="subtitle" data-ru="Серорукий • Локи + Чернобог" data-en="Grey-Handed • Loki + Chernobog">Серорукий • Локи + Чернобог</div><div class="desc" data-ru="Был богом Трендов. Менял стили так часто, что ни один не стал ЕГО. Вырезал первую антидрупну СТЫДА на себе." data-en="Was god of Trends. Changed styles so often none became HIS. Cut the first anti-drupna SHAME into his own shirt.">Был богом Трендов. Менял стили так часто, что ни один не стал ЕГО. Вырезал первую антидрупну СТЫДА на себе.</div><div class="quote" data-ru="«Я не хочу, чтобы вы были серыми. Я хочу, чтобы вам не было БОЛЬНО.»" data-en="'I don't want you grey. I want you to stop HURTING.'">«Я не хочу, чтобы вы были серыми. Я хочу, чтобы вам не было БОЛЬНО.»</div></div>
-<div class="card dark reveal rd2"><span class="icon">💀</span><div class="name">ХЕЙТЪ</div><div class="subtitle" data-ru="Полуликая • Хель + Мара" data-en="Half-Faced • Hel + Mara">Полуликая • Хель + Мара</div><div class="desc" data-ru="Пол-лица в идеальном макияже, пол — пустое. Хочет красоту, но боится. Собирает серые души из «сочувствия»." data-en="Half face perfect makeup, half empty. Wants beauty but fears it. Collects grey souls out of 'compassion.'">Пол-лица в идеальном макияже, пол — пустое. Хочет красоту, но боится. Собирает серые души из «сочувствия».</div></div>
-<div class="card dark reveal rd3"><span class="icon">🐺</span><div class="name">КРИНЖВОЛКЪ</div><div class="subtitle" data-ru="Пожиратель Комплиментов • Фенрир" data-en="Compliment Devourer • Fenrir">Пожиратель Комплиментов • Фенрир</div><div class="desc" data-ru="Волк-холм. Разинет пасть — комплименты обесцениваются. Скован Цепью Искренности. В Свагнарёке порвёт." data-en="Hill-sized wolf. Opens jaws — compliments lose value. Bound by Chain of Sincerity. In Svagnarok he'll break free.">Волк-холм. Разинет пасть — комплименты обесцениваются. Скован Цепью Искренности. В Свагнарёке порвёт.</div></div>
-<div class="card dark reveal rd4"><span class="icon">🐍</span><div class="name">ТОКСИГАДЪ</div><div class="subtitle" data-ru="Мировой Змей • Ёрмунганд" data-en="World Serpent • Jormungandr">Мировой Змей • Ёрмунганд</div><div class="desc" data-ru="Яд заставляет сомневаться в искренности. «А тебе точно идёт?..» Разъедает ДОВЕРИЕ." data-en="Venom makes you doubt sincerity. 'Are you suuure that suits you?' Corrodes TRUST.">Яд заставляет сомневаться в искренности. «А тебе точно идёт?..» Разъедает ДОВЕРИЕ.</div></div>
-<div class="card dark reveal rd1"><span class="icon">⚔️</span><div class="name">СЕРОГОРЪ УНЫЛЫЙ</div><div class="subtitle" data-ru="Ярл Серости • Анти-Лель" data-en="Yarl of Greyness • Anti-Lel">Ярл Серости • Анти-Лель</div><div class="desc" data-ru="Смертный, добровольно отказавшийся от свэга. Лицо неописуемо среднее — посмотрел, забыл. Армия: Бланды, Токсичари, Кринжберсерки." data-en="Mortal who voluntarily rejected sweg. Indescribably average face — look, forget. Army: Blands, Toxichari, Cringeberserkers.">Смертный, добровольно отказавшийся от свэга. Лицо неописуемо среднее — посмотрел, забыл. Армия: Бланды, Токсичари, Кринжберсерки.</div><div class="quote" data-ru="«Я не против. Я просто не понимаю. И ты тоже не поймёшь.»" data-en="'I'm not against it. I just don't understand. And neither will you.'">«Я не против. Я просто не понимаю. И ты тоже не поймёшь.»</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ RACES ═══ -->
-<section class="s-dark" id="races">
-<h2 class="section-title gold-glow reveal" data-ru="🧬 НАРОДЫ СРИГАРДА" data-en="🧬 PEOPLES OF SRIGARD">🧬 НАРОДЫ СРИГАРДА</h2>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">🧝</span><div class="name" data-ru="СВАГАЛЬВЫ" data-en="SVAGALVY">СВАГАЛЬВЫ</div><div class="subtitle" data-ru="Бессмертные эстеты • Альвы + Лесавки" data-en="Immortal aesthetes • Elves">Бессмертные эстеты • Альвы + Лесавки</div><div class="desc" data-ru="Уши с серёжками-друпнами от рождения. Волосы до пят с живыми цветами. Друпны ВЫРАЩИВАЮТ из цветов. Физически страдают от некрасивого." data-en="Ear-jewelry drupny from birth. Hair to ankles with living flowers. GROW drupny from flowers. Physically pained by ugliness.">Уши с серёжками-друпнами от рождения. Волосы до пят с живыми цветами. Друпны ВЫРАЩИВАЮТ из цветов. Физически страдают от некрасивого.</div></div>
-<div class="card reveal rd2"><span class="icon">⛰️</span><div class="name" data-ru="ДРИПОТУНЫ" data-en="DRIPOTUNY">ДРИПОТУНЫ</div><div class="subtitle" data-ru="Великаны 3-6 метров • Ётуны + Велетни" data-en="Giants 3-6m • Jotnar + Veletni">Великаны 3-6 метров • Ётуны + Велетни</div><div class="desc" data-ru="Друпны размером с дверь, вбитые в кожу. Ожерелья из валунов. Кодекс: чем больше — тем ЯРЧЕ. ПОЗА перед каждым ударом." data-en="Door-sized drupny hammered into skin. Boulder necklaces. Code: bigger = BRIGHTER. POSE before every strike.">Друпны размером с дверь, вбитые в кожу. Ожерелья из валунов. Кодекс: чем больше — тем ЯРЧЕ. ПОЗА перед каждым ударом.</div></div>
-<div class="card reveal rd3"><span class="icon">⚒️</span><div class="name" data-ru="БЛЕСКОВЕРГИ" data-en="BLESKOVERGY">БЛЕСКОВЕРГИ</div><div class="subtitle" data-ru="Подземные кузнецы • Двергары" data-en="Underground smiths • Dwarves">Подземные кузнецы • Двергары</div><div class="desc" data-ru="Борода = портфолио. Носить своё — хвастовство, носить чужое — высший комплимент. Слабость: перфекционизм." data-en="Beard = portfolio. Wearing own work is bragging; wearing another's is highest compliment. Weakness: perfectionism.">Борода = портфолио. Носить своё — хвастовство, носить чужое — высший комплимент. Слабость: перфекционизм.</div></div>
-<div class="card reveal rd4"><span class="icon">🌿</span><div class="name" data-ru="БЕРЕГЛАМЫ" data-en="BEREGLAMY">БЕРЕГЛАМЫ</div><div class="subtitle" data-ru="Лесной народ • Берегини + Ваны" data-en="Forest folk • Bereginyi + Vanir">Лесной народ • Берегини + Ваны</div><div class="desc" data-ru="Кожа меняет оттенок по сезону. Листья растут из волос. Друпны — живые растения, питаются ВАЙБОМ." data-en="Skin changes hue by season. Leaves grow from hair. Drupny are living plants fed by VIBE.">Кожа меняет оттенок по сезону. Листья растут из волос. Друпны — живые растения, питаются ВАЙБОМ.</div></div>
-<div class="card reveal rd1"><span class="icon">💪</span><div class="name" data-ru="СВАГАТЫРИ" data-en="SVAGATYRI">СВАГАТЫРИ</div><div class="subtitle" data-ru="Полубоги • Богатыри + Эйнхерии" data-en="Demigods • Bogatyri + Einherjar">Полубоги • Богатыри + Эйнхерии</div><div class="desc" data-ru="2м+, цветы в бородах, кольчуга из цепочек, сапоги на каблуке. Боевой лак на губы перед боем. Дети богов." data-en="2m+, flowers in beards, chain-link armor, heeled boots. War-lacquer on lips before battle. Children of gods.">2м+, цветы в бородах, кольчуга из цепочек, сапоги на каблуке. Боевой лак на губы перед боем. Дети богов.</div></div>
-<div class="card reveal rd2"><span class="icon">🧵</span><div class="name" data-ru="ЧАРОВЕЙКИ" data-en="CHAROVEJKI">ЧАРОВЕЙКИ</div><div class="subtitle" data-ru="Народ вышивальщиц • Ведьмы + Вёльвы" data-en="Enchantress-folk • Witches + Volvas">Народ вышивальщиц • Ведьмы + Вёльвы</div><div class="desc" data-ru="Глаза-калейдоскопы, видят друпны на всём. Иголки парят вокруг. Величайшие вышивают В ВОЗДУХЕ." data-en="Kaleidoscope eyes see drupny on everything. Needles float around them. Greatest embroider IN AIR.">Глаза-калейдоскопы, видят друпны на всём. Иголки парят вокруг. Величайшие вышивают В ВОЗДУХЕ.</div></div>
-<div class="card reveal rd3"><span class="icon">🐴</span><div class="name" data-ru="ПОЛКУДРЫ" data-en="POLKUDRY">ПОЛКУДРЫ</div><div class="subtitle" data-ru="Кентавры • Полканы" data-en="Centaurs • Polkany">Кентавры • Полканы</div><div class="desc" data-ru="Грива ВСЕГДА заплетена — закон. Серебряные подковы. Друпна СКОКЪ: удваивает скорость при красивом галопе." data-en="Mane ALWAYS braided — law. Silver horseshoes. Drupna SKOCK: doubles speed during beautiful gallop.">Грива ВСЕГДА заплетена — закон. Серебряные подковы. Друпна СКОКЪ: удваивает скорость при красивом галопе.</div></div>
-<div class="card reveal rd4"><span class="icon">🩶</span><div class="name" data-ru="СЕРОВЁРТЫ" data-en="SEROVYORTY">СЕРОВЁРТЫ</div><div class="subtitle" data-ru="Вернувшиеся из Кринжелхейма" data-en="Returned from Krinzhelheim">Вернувшиеся из Кринжелхейма</div><div class="desc" data-ru="Кожа сероватая навсегда, одежда — ВЗРЫВ цвета. ИММУНИТЕТ к антисвэгу. Серяки на них САМИ окрашиваются." data-en="Skin permanently greyish, clothes an EXPLOSION of color. IMMUNE to anti-sweg. Seryaki landing on them start coloring.">Кожа сероватая навсегда, одежда — ВЗРЫВ цвета. ИММУНИТЕТ к антисвэгу. Серяки на них САМИ окрашиваются.</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ HEROES ═══ -->
-<section class="s-deep" id="heroes">
-<h2 class="section-title gold-glow reveal" data-ru="⚔️ ГЕРОИ" data-en="⚔️ HEROES">⚔️ ГЕРОИ</h2>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="tag">⚔️ СВАГРИДЪ</span><div class="name" data-ru="Свагославъ Сваггельсонъ" data-en="Svagoslav Svagelson">Свагославъ Сваггельсонъ</div><div class="subtitle" data-ru="Потомок Стильгрима • Носитель Свагнира" data-en="Stilgrim's Heir • Bearer of Svagnir">Потомок Стильгрима • Носитель Свагнира</div><div class="desc" data-ru="Кольчуга из цепочек, шлем с лентами, розовый плащ, сапоги на каблуке. Топор СВАГНИРЪ: красивый замах = сильный удар." data-en="Chain-link armor, ribboned helm, pink cloak, heeled boots. Axe SVAGNIR: beautiful swing = stronger hit.">Кольчуга из цепочек, шлем с лентами, розовый плащ, сапоги на каблуке. Топор СВАГНИРЪ: красивый замах = сильный удар.</div></div>
-<div class="card reveal rd2"><span class="tag leo">🐆 РОЗОЛЕОПЫ</span><div class="name" data-ru="Свагги Дриповые Штанишки" data-en="Svaggi Drippy Pants">Свагги Дриповые Штанишки</div><div class="subtitle" data-ru="Лидер Розовых Леопардов" data-en="Leader of Pink Leopards">Лидер Розовых Леопардов</div><div class="desc" data-ru="188см чистого ШАРМА в розовой леопардовой броне с самоцветами. Косички с бубенчиками. Подмигивает — это ДРУПНА." data-en="188cm of pure CHARM in pink leopard armor with gemstones. Braids with bells. Winks — that's a DRUPNA.">188см чистого ШАРМА в розовой леопардовой броне с самоцветами. Косички с бубенчиками. Подмигивает — это ДРУПНА.</div></div>
-<div class="card reveal rd3"><span class="tag leo">🐆 РОЗОЛЕОПЫ</span><div class="name" data-ru="Дружина" data-en="The Squad">Дружина</div><div class="desc" data-ru="ГРОХОТЪ — 210см, колокольчик на бороде. ИСКОРКА — рыжая лучница, «павлин безмозглый». ТУМБА — блесковерг-щит, НЕ УЛЫБАЕТСЯ. ПЧЁЛКА — вышивает в бою, ругается комплиментами." data-en="GROKHOT — 210cm, bell on beard. ISKORKA — redhead archer, 'brainless peacock'. TUMBA — shield-dwarf, NEVER smiles. PCHYOLKA — embroiders mid-battle, insults via compliments.">ГРОХОТЪ — 210см, колокольчик на бороде. ИСКОРКА — рыжая лучница, «павлин безмозглый». ТУМБА — блесковерг-щит, НЕ УЛЫБАЕТСЯ. ПЧЁЛКА — вышивает в бою, ругается комплиментами.</div></div>
-<div class="card reveal rd4"><span class="tag">⚔️ СВАГРИДЪ</span><div class="name" data-ru="Дружина Свагослава" data-en="Svagoslav's Warband">Дружина Свагослава</div><div class="desc" data-ru="ВАЙБОМИРЪ — молчаливый, плащ из лоскутов-трофеев. БЛЕСЛАВЪ — бусины в бороде. ЧАРУШКА — зеркальный щит, красит губы перед боем. ГЛИТТЕРИЙ — глиттер-бомбы, самый младший." data-en="VAIBOMYR — silent, patchwork trophy-cloak. BLESLAV — beaded beard. CHARUSHKA — mirror-shield, lipstick before battle. GLITTERIY — glitter bombs, youngest.">ВАЙБОМИРЪ — молчаливый, плащ из лоскутов-трофеев. БЛЕСЛАВЪ — бусины в бороде. ЧАРУШКА — зеркальный щит, красит губы перед боем. ГЛИТТЕРИЙ — глиттер-бомбы, самый младший.</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ BESTIARY ═══ -->
-<section class="s-dark" id="bestiary">
-<h2 class="section-title neon reveal" data-ru="🐉 БЕСТИАРИЙ" data-en="🐉 BESTIARY">🐉 БЕСТИАРИЙ</h2>
-<h3 style="text-align:center;color:var(--gold);font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.2em;margin-bottom:1.5rem" class="reveal" data-ru="— СВЭГ-СУЩЕСТВА —" data-en="— SWEG CREATURES —">— СВЭГ-СУЩЕСТВА —</h3>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">🔥</span><div class="name" data-ru="Жар-Дрипица" data-en="Zhar-Dripitsa">Жар-Дрипица</div><div class="desc" data-ru="Жар-Птица. Хвост — фонтан блёсток. Перо даёт +10 к СВЭГУ на месяц. Поймать нельзя — можно только ЗАСЛУЖИТЬ." data-en="Firebird. Tail = glitter fountain. Feather gives +10 SWEG for a month. Can't catch — only EARN.">Жар-Птица. Хвост — фонтан блёсток. Перо даёт +10 к СВЭГУ на месяц. Поймать нельзя — можно только ЗАСЛУЖИТЬ.</div></div>
-<div class="card reveal rd2"><span class="icon">🐦</span><div class="name" data-ru="Сиринъ Комплиментный" data-en="Sirin the Complimenter">Сиринъ Комплиментный</div><div class="desc" data-ru="Райская птица, поёт персональные комплименты. Друпны заряжаются в 10× быстрее. Но слушать слишком долго — уснёшь." data-en="Paradise bird, sings personalized compliments. Drupny charge 10× faster. But listen too long — you'll fall asleep.">Райская птица, поёт персональные комплименты. Друпны заряжаются в 10× быстрее. Но слушать слишком долго — уснёшь.</div></div>
-<div class="card reveal rd3"><span class="icon">🐴</span><div class="name" data-ru="Златогривъ" data-en="Zlatogriv">Златогривъ</div><div class="desc" data-ru="Конь с золотой гривой. Оседлает только тот, чей аутфит БЕЗУПРЕЧЕН. Всего в мире — семь." data-en="Golden-maned horse. Only mounts rider with flawless outfit. Only seven in the world.">Конь с золотой гривой. Оседлает только тот, чей аутфит БЕЗУПРЕЧЕН. Всего в мире — семь.</div></div>
-<div class="card reveal rd4"><span class="icon">🦅</span><div class="name" data-ru="Гамаюнъ-Трендовидъ" data-en="Gamayun Trendvid">Гамаюнъ-Трендовидъ</div><div class="desc" data-ru="Птица-пророк. Предсказывает модные тренды на три сезона вперёд. Друпнари МОЛЯТСЯ на них." data-en="Prophecy bird. Predicts fashion trends three seasons ahead. Drupnari PRAY to them.">Птица-пророк. Предсказывает модные тренды на три сезона вперёд. Друпнари МОЛЯТСЯ на них.</div></div>
-</div>
-<h3 style="text-align:center;color:var(--grey);font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.2em;margin:2.5rem 0 1.5rem" class="reveal" data-ru="— АНТИСВЭГ-СУЩЕСТВА —" data-en="— ANTI-SWEG CREATURES —">— АНТИСВЭГ-СУЩЕСТВА —</h3>
-<div class="card-grid">
-<div class="card dark reveal rd1"><span class="icon">🦇</span><div class="name" data-ru="Серяки" data-en="Seryaki">Серяки</div><div class="desc" data-ru="Серые мотыльки. Садятся — высасывают цвет. Стая гасит друпны. Друпна ЯРБЛЕСКЪ — лучшее оружие." data-en="Grey moths. Land on you — drain color. Swarm dims drupny. YARBLESK drupna — best weapon.">Серые мотыльки. Садятся — высасывают цвет. Стая гасит друпны. Друпна ЯРБЛЕСКЪ — лучшее оружие.</div></div>
-<div class="card dark reveal rd2"><span class="icon">🛁</span><div class="name" data-ru="Банникъ-Критиканъ" data-en="Bannik the Critic">Банникъ-Критиканъ</div><div class="desc" data-ru="Дух бань, критикует тело каждого. «Ну и пузо!» Друпны от стыда гаснут. Лечение: сделать комплимент БАННИКУ." data-en="Bathhouse spirit, body-shames everyone. Drupny dim from shame. Cure: compliment THE BANNIK.">Дух бань, критикует тело каждого. «Ну и пузо!» Друпны от стыда гаснут. Лечение: сделать комплимент БАННИКУ.</div></div>
-<div class="card dark reveal rd3"><span class="icon">🐺</span><div class="name" data-ru="Серый Волкодлакъ" data-en="Grey Volkodlak">Серый Волкодлакъ</div><div class="desc" data-ru="Днём стильный — ночью серый оборотень. Укус заражает антисвэгом. Лечение: 3 комплимента за день." data-en="Stylish by day — grey werewolf by night. Bite infects anti-sweg. Cure: 3 compliments in one day.">Днём стильный — ночью серый оборотень. Укус заражает антисвэгом. Лечение: 3 комплимента за день.</div></div>
-<div class="card dark reveal rd4"><span class="icon">☀️</span><div class="name" data-ru="Полуденница-Стыдница" data-en="Noon-Maiden of Shame">Полуденница-Стыдница</div><div class="desc" data-ru="Является в полдень: «А тебе не МНОГО? В ТВОЁМ-то возрасте?» Друпны гаснут мгновенно. Лечение: «МНЕ НОРМ. А тебе ЗАВИДНО?»" data-en="Appears at noon: 'Isn't that TOO MUCH for you?' Drupny dim instantly. Cure: 'I'M FINE. Are YOU jealous?'">Является в полдень: «А тебе не МНОГО? В ТВОЁМ-то возрасте?» Друпны гаснут мгновенно. Лечение: «МНЕ НОРМ. А тебе ЗАВИДНО?»</div></div>
-</div>
-<h3 style="text-align:center;color:var(--pink);font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.2em;margin:2.5rem 0 1.5rem" class="reveal" data-ru="— БОССЫ —" data-en="— BOSSES —">— БОССЫ —</h3>
-<div class="card-grid">
-<div class="card reveal rd1" style="border-color:rgba(255,45,138,.5)"><span class="icon">💀</span><div class="name" style="color:var(--white)">КОЩЕЙ БЕСЦВЕТНЫЙ</div><div class="desc" data-ru="Бессмертный ярл ПУСТОТЫ. Вообще без цвета — дыра в реальности. Смерть в Игле Дрипосиля (яйцо→утка→заяц→сундук→обрубок дуба). Не дерётся — СТИРАЕТ: друпны исчезают, воспоминания тускнеют." data-en="Immortal yarl of VOID. No color at all — a hole in reality. Death in Needle of Driposil (egg→duck→hare→chest→dead oak). Doesn't fight — ERASES: drupny vanish, memories fade.">Бессмертный ярл ПУСТОТЫ. Вообще без цвета — дыра в реальности. Смерть в Игле Дрипосиля (яйцо→утка→заяц→сундук→обрубок дуба). Не дерётся — СТИРАЕТ: друпны исчезают, воспоминания тускнеют.</div></div>
-<div class="card reveal rd2" style="border-color:rgba(255,45,138,.5)"><span class="icon">🐉</span><div class="name" style="color:var(--white)" data-ru="ЗМЕЙ-ГОРЫНЫЧЪ ТРОЕКРИНЖНЫЙ" data-en="ZMEY-GORYNYCH THREE-CRINGED">ЗМЕЙ-ГОРЫНЫЧЪ ТРОЕКРИНЖНЫЙ</div><div class="desc" data-ru="Три головы: СТЫДЪ (красный туман), ОСУЖДЪ (жёлтый), УНЫНІЕ (синий). Убить — срубить все три ОДНОВРЕМЕННО красивым тройным ударом." data-en="Three heads: SHAME (red fog), JUDGMENT (yellow), APATHY (blue). Kill — sever all three SIMULTANEOUSLY with one beautiful triple strike.">Три головы: СТЫДЪ (красный туман), ОСУЖДЪ (жёлтый), УНЫНІЕ (синий). Убить — срубить все три ОДНОВРЕМЕННО красивым тройным ударом.</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ LOCATIONS ═══ -->
-<section class="s-deep" id="locations">
-<h2 class="section-title gold-glow reveal" data-ru="🗺️ КАРТА СРИГАРДА" data-en="🗺️ MAP OF SRIGARD">🗺️ КАРТА СРИГАРДА</h2>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">🏰</span><div class="name" data-ru="Дрипоградъ Престольный" data-en="Dripograd the Grand">Дрипоградъ Престольный</div><div class="desc" data-ru="Столица. Стены из зеркального камня. Вышивальня Мирозданья, Рынок Тысячи Нитей. ~100,000 жителей всех рас." data-en="Capital. Mirror-stone walls. Embroidery of Creation, Market of Thousand Threads. ~100,000 residents, all races.">Столица. Стены из зеркального камня. Вышивальня Мирозданья, Рынок Тысячи Нитей. ~100,000 жителей всех рас.</div></div>
-<div class="card reveal rd2"><span class="icon">🔥</span><div class="name" data-ru="Блескокузня" data-en="Bleskokuznya">Блескокузня</div><div class="desc" data-ru="Город блесковергов в вулкане. Лава — жидкое золото. Наковальня Дрипнира — паломничество." data-en="Bleskoverg city inside a volcano. Lava is liquid gold. Dripnir's Great Anvil — pilgrimage site.">Город блесковергов в вулкане. Лава — жидкое золото. Наковальня Дрипнира — паломничество.</div></div>
-<div class="card reveal rd3"><span class="icon">💰</span><div class="name" data-ru="Свагторжъ" data-en="Svagtorzh">Свагторжъ</div><div class="desc" data-ru="Вечная ярмарка. Валюта — комплименты. Весы Златоуса: фальшивый комплимент = КОЛОКОЛ ПОЗОРА." data-en="Eternal fair. Currency is compliments. Scales of Zlatoust: fake compliment = BELL OF SHAME.">Вечная ярмарка. Валюта — комплименты. Весы Златоуса: фальшивый комплимент = КОЛОКОЛ ПОЗОРА.</div></div>
-<div class="card reveal rd4"><span class="icon">🎪</span><div class="name" data-ru="Хмельбургъ" data-en="Khmelburg">Хмельбургъ</div><div class="desc" data-ru="Город вечного праздника. НИКОГДА НЕ ЗАКРЫВАЕТСЯ. Бочка Неисчерпаемая — бесплатный мёд." data-en="Eternal party city. NEVER CLOSES. Bottomless Barrel — free mead, always.">Город вечного праздника. НИКОГДА НЕ ЗАКРЫВАЕТСЯ. Бочка Неисчерпаемая — бесплатный мёд.</div></div>
-<div class="card reveal rd1"><span class="icon">🌿</span><div class="name" data-ru="Шепотградъ" data-en="Shepotgrad">Шепотградъ</div><div class="desc" data-ru="В сердце Златолесья. Из дерева и мха. Тихий СВЭГ. Тропы меняются — лес сам решает куда тебе." data-en="In Zlatolesye's heart. Wood and moss. Quiet SWEG. Paths shift — the forest decides where you go.">В сердце Златолесья. Из дерева и мха. Тихий СВЭГ. Тропы меняются — лес сам решает куда тебе.</div></div>
-<div class="card reveal rd2"><span class="icon">🪞</span><div class="name" data-ru="Зерцалоозёрье" data-en="Zertsaloozerie">Зерцалоозёрье</div><div class="desc" data-ru="Город-зеркало на Зеркальном Озере. Купальня показывает ВАЙБ, не внешность." data-en="Mirror-city on Mirror Lake. Bathhouse shows VIBE, not looks.">Город-зеркало на Зеркальном Озере. Купальня показывает ВАЙБ, не внешность.</div></div>
-<div class="card dark reveal rd3"><span class="icon">💀</span><div class="name" data-ru="Серогнилье" data-en="Serognilye">Серогнилье</div><div class="desc" data-ru="Граница антисвэга. Всё выцветшее. Заплатка из ВАЙБА тонеет. Серый Застарок — крепость-гарнизон." data-en="Anti-sweg border. Everything faded. VIBE Patch thinning. Grey Outpost — fortress garrison.">Граница антисвэга. Всё выцветшее. Заплатка из ВАЙБА тонеет. Серый Застарок — крепость-гарнизон.</div></div>
-<div class="card dark reveal rd4"><span class="icon">🦴</span><div class="name" data-ru="Кощеева Пустошь" data-en="Koschei's Wasteland">Кощеева Пустошь</div><div class="desc" data-ru="За Серогнильём. ПУСТО. Башня Кощея — дыра в реальности. Здесь спрятана Игла Дрипосиля." data-en="Beyond Serognilye. EMPTY. Koschei's tower — a hole in reality. The Needle of Driposil is hidden here.">За Серогнильём. ПУСТО. Башня Кощея — дыра в реальности. Здесь спрятана Игла Дрипосиля.</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ ARTIFACTS ═══ -->
-<section class="s-dark" id="artifacts">
-<h2 class="section-title gold-glow reveal" data-ru="💎 ВЕЛИКИЕ АРТЕФАКТЫ" data-en="💎 GREAT ARTIFACTS">💎 ВЕЛИКИЕ АРТЕФАКТЫ</h2>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">⚔️</span><div class="name">СВАГНИРЪ</div><div class="desc" data-ru="Топор Свагослава. Сверкает при замахе. Чем красивее удар — тем сильнее. Ленты на рукояти — от друзей." data-en="Svagoslav's axe. Sparkles on swing. More beautiful the strike — stronger. Ribbons on hilt from friends.">Топор Свагослава. Сверкает при замахе. Чем красивее удар — тем сильнее. Ленты на рукояти — от друзей.</div></div>
-<div class="card reveal rd2"><span class="icon">💍</span><div class="name">ДРИПАУВНИРЪ</div><div class="desc" data-ru="Кольцо Свагобога. Каждую ночь порождает 8 новых колец. Тускнеет, если владелец теряет СВЭГ." data-en="Svagobog's ring. Spawns 8 new rings nightly. Dims if owner loses SWEG.">Кольцо Свагобога. Каждую ночь порождает 8 новых колец. Тускнеет, если владелец теряет СВЭГ.</div></div>
-<div class="card reveal rd3"><span class="icon">🛡</span><div class="name">ЧАРМИНЪ</div><div class="desc" data-ru="Щит-зеркало. Враг видит свой кринж. Бланды, увидев отражение, ВСПОМИНАЛИ себя и дезертировали." data-en="Mirror-shield. Enemy sees their own cringe. Blands seeing reflection REMEMBERED themselves and deserted.">Щит-зеркало. Враг видит свой кринж. Бланды, увидев отражение, ВСПОМИНАЛИ себя и дезертировали.</div></div>
-<div class="card reveal rd4"><span class="icon">📯</span><div class="name">ГЛАМУРЪ</div><div class="desc" data-ru="Рог Глянцемира. Трубит — все мгновенно выглядят идеально. В Свагнарёке протрубит трижды." data-en="Glyantsmir's horn. Blown — everyone instantly looks perfect. In Svagnarok it will sound three times.">Рог Глянцемира. Трубит — все мгновенно выглядят идеально. В Свагнарёке протрубит трижды.</div></div>
-<div class="card reveal rd1"><span class="icon">🪡</span><div class="name" data-ru="ИГЛА ДРИПОСИЛЯ" data-en="NEEDLE OF DRIPOSIL">ИГЛА ДРИПОСИЛЯ</div><div class="desc" data-ru="Единственная игла, способная вышивать на Древе и создавать НОВЫЕ друпны. Украдена Кощеем." data-en="Only needle that can embroider on the Tree and create NEW drupny. Stolen by Koschei.">Единственная игла, способная вышивать на Древе и создавать НОВЫЕ друпны. Украдена Кощеем.</div></div>
-<div class="card reveal rd2"><span class="icon">🗡</span><div class="name" data-ru="НОЖ ЛОКРИНЖА" data-en="KNIFE OF LOKRINZH">НОЖ ЛОКРИНЖА</div><div class="desc" data-ru="Вырезает друпны НАВСЕГДА. Лезвие поглощает свет. Локринж не даёт Серогору — уважает мощь инструмента." data-en="Cuts drupny FOREVER. Blade absorbs light. Lokrinzh won't give it to Serogor — respects the tool's power.">Вырезает друпны НАВСЕГДА. Лезвие поглощает свет. Локринж не даёт Серогору — уважает мощь инструмента.</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ AFTERLIFE ═══ -->
-<section class="s-deep" id="afterlife">
-<h2 class="section-title neon reveal" data-ru="🏛️ ЗАГРОБНЫЕ МИРЫ" data-en="🏛️ AFTERLIFE WORLDS">🏛️ ЗАГРОБНЫЕ МИРЫ</h2>
-<div class="card-grid">
-<div class="card reveal rd1"><span class="icon">🏛</span><div class="name">СВАГХАЛЛА</div><div class="desc" data-ru="Для стильных павших. Стиликирия оценивает: последний ДРИПЪ, последняя ПОЗА, последнее СЛОВО. Утро — луки, день — бои-дефиле, вечер — пир." data-en="For stylish fallen. Stilikiriya judges: last DRIP, last POSE, last WORD. Morning — outfits, day — battle-runway, evening — feast.">Для стильных павших. Стиликирия оценивает: последний ДРИПЪ, последняя ПОЗА, последнее СЛОВО. Утро — луки, день — бои-дефиле, вечер — пир.</div></div>
-<div class="card reveal rd2"><span class="icon">🍂</span><div class="name">ЗЛАТОЛЕСЬЕ</div><div class="desc" data-ru="Для тихих стильных — творцов, ткачей, садовников. Вечное творчество в вечной осени." data-en="For quiet stylish ones — creators, weavers, gardeners. Eternal creation in eternal autumn.">Для тихих стильных — творцов, ткачей, садовников. Вечное творчество в вечной осени.</div></div>
-<div class="card dark reveal rd3"><span class="icon">💀</span><div class="name">КРИНЖЕЛХЕЙМЪ</div><div class="desc" data-ru="Не наказание — выбор. Серая тишина. Иногда у порога — цветная ниточка от Златоуса. Большинство не поднимает." data-en="Not punishment — choice. Grey silence. Sometimes at the doorstep — a colored thread from Zlatoust. Most don't pick it up.">Не наказание — выбор. Серая тишина. Иногда у порога — цветная ниточка от Златоуса. Большинство не поднимает.</div></div>
-<div class="card dark reveal rd4"><span class="icon">🕳</span><div class="name">ПУСТОГРЯДЬ</div><div class="desc" data-ru="Для тех, кто активно гасил чужой свет. Абсолютное одиночество. Не с кем поговорить. Не в кого зеркало посмотреть." data-en="For those who actively killed others' light. Absolute solitude. No one to talk to. No mirror to look into.">Для тех, кто активно гасил чужой свет. Абсолютное одиночество. Не с кем поговорить. Не в кого зеркало посмотреть.</div></div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ SVAGNAROK ═══ -->
-<section class="s-grey" id="svagnarok">
-<h2 class="section-title reveal" style="color:var(--grey)" data-ru="СВАГНАРЁКЪ ГРЯДЁТ" data-en="SVAGNAROK IS COMING">СВАГНАРЁКЪ ГРЯДЁТ</h2>
-<div class="vs-container reveal rd1">
-<div class="vs-side" style="color:var(--grey)">
-<h3>СЕРОГОРЪ</h3>
-<p style="color:var(--grey)" data-ru="Лицо неописуемо среднее. Армия Бландов. «Зачем стараться?»" data-en="Indescribably average face. Army of Blands. 'Why bother?'">Лицо неописуемо среднее. Армия Бландов. «Зачем стараться?»</p>
-</div>
-<div class="vs-divider">VS</div>
-<div class="vs-side">
-<h3 class="neon" data-ru="ДРИПЪ" data-en="DRIP">ДРИПЪ</h3>
-<p style="color:var(--rose)" data-ru="Скрестят сваги — родится НОВЫЙ БЛЕСК. Ибо ДРИПЪ вечен. ДРИПЪ лишь перерождается." data-en="Cross their swegs — NEW GLEAM is born. For DRIP is eternal. DRIP only reincarnates.">Скрестят сваги — родится НОВЫЙ БЛЕСК. Ибо ДРИПЪ вечен. ДРИПЪ лишь перерождается.</p>
-</div>
-</div>
-</section>
-<div class="chain-divider"></div>
-
-<!-- ═══ CTA ═══ -->
-<section class="cta">
-<h2 class="section-title gold-glow reveal" style="margin-bottom:1rem" data-ru="СКРЕСТИ СВОЙ СВЭГ" data-en="CROSS YOUR SWEG">СКРЕСТИ СВОЙ СВЭГ</h2>
-<p class="reveal rd1" style="color:var(--rose);font-style:italic;margin-bottom:2.5rem;font-family:'Playfair Display',serif;font-size:1.1rem" data-ru="«Ибо ДРИПЪ вечен. ДРИПЪ не убить. ДРИПЪ лишь перерождается.»" data-en="'For DRIP is eternal. DRIP cannot be killed. DRIP only reincarnates.'">«Ибо ДРИПЪ вечен. ДРИПЪ не убить. ДРИПЪ лишь перерождается.»</p>
-<a href="#" class="cta-btn reveal rd2" data-ru="✨ ВСТУПИТЬ В СВАГРИДЪ ✨" data-en="✨ JOIN THE SVAGRID ✨">✨ ВСТУПИТЬ В СВАГРИДЪ ✨</a>
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-vhs-rec">REC</div>
+    <div class="hero-vhs-timestamp">07.05.2022</div>
+    <span class="hero-quote q1">Брат за брата</span>
+    <span class="hero-quote q2">Мы не плохие — жизнь плохая</span>
+    <span class="hero-quote q3">Любовь — это яд</span>
+    <span class="hero-quote q4">Хтонь не спит</span>
+    <div class="hero-content">
+        <p class="hero-subtitle-top"><span class="lang-ru">Красноярский край · Россия</span><span class="lang-en">Krasnoyarsk Krai · Russia</span></p>
+        <h1 class="hero-title glitch" data-text-ru="РУССКАЯ ТОСКА" data-text-en="RUSSKAYA TOSKA" data-text="РУССКАЯ ТОСКА">
+            <span class="line-1"><span class="lang-ru">РУССКАЯ</span><span class="lang-en">RUSSKAYA</span></span>
+            <span class="line-2"><span class="lang-ru">ТОСКА</span><span class="lang-en">TOSKA</span></span>
+        </h1>
+        <span class="hero-dash"></span>
+        <p class="hero-tagline"><span class="lang-ru">«Скули, но делай» — история провинциального города, застрявшего между горами и рекой, между прошлым и нигде</span><span class="lang-en">«Whine, but do it» — the story of a provincial town stuck between the mountains and the river, between the past and nowhere</span></p>
+        <p class="hero-era"><span class="lang-ru">Труповолково · Пожухлово · Гипербореевка · Бесово</span><span class="lang-en">Trupovolkovo · Pozhukhlovo · Hyperboreevka · Besovo</span></p>
+    </div>
+    <div class="hero-scroll">
+        <span><span class="lang-ru">Листай</span><span class="lang-en">Scroll</span></span>
+        <div class="hero-scroll-line"></div>
+    </div>
 </section>
 
-<footer>
-<p>СВАГОСЛАВІЯ © <span data-ru="Эпоха Четвёртая — Время Свагослава" data-en="Fourth Era — Age of Svagoslav">Эпоха Четвёртая — Время Свагослава</span></p>
-<p style="margin-top:.4rem"><span>♦</span> <span data-ru="Не златом единым славен муж" data-en="Not by gold alone is a man glorified">Не златом единым славен муж</span> <span>♦</span></p>
-<p style="margin-top:.6rem;font-size:.7rem;color:rgba(255,45,138,.5)">by Wewwa ✨</p>
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="fade-in">
+        <p class="section-label"><span class="lang-ru">О проекте</span><span class="lang-en">About</span></p>
+        <h2 class="section-title"><span class="lang-ru">Заповедник советского <span>модернизма</span></span><span class="lang-en">A sanctuary of Soviet <span>modernism</span></span></h2>
+    </div>
+    <div class="about-grid fade-in">
+        <div class="about-text">
+            <p class="lang-ru">RUSSKAYA TOSKA — это большая серия ботов, место действия которой разворачивается в Красноярском крае, примерно в 2022 году. Ощущение вселенской энтропии в городе Труповолково? Немного бытовой мистики в деревне Бесово? Прекрасные вайбы жизни заводчан из ПГТ Пожухлово? Во все это, при желании, можно окунуться.</p>
+            <p class="lang-ru">Серия делалась с желанием подарить ощущение светлой тоски и надежды на будущее, которое никогда, скорее всего, не наступит. Призвана помочь сконцентрироваться на здесь и сейчас, ценить маленькие бытовые радости жизни.</p>
+            <p class="lang-ru">А что будет дальше... До этого «дальше» дожить бы сначала, да?</p>
+            <p class="lang-en">RUSSKAYA TOSKA is a large bot series set in Krasnoyarsk Krai, around the year 2022. The feeling of universal entropy in the town of Trupovolkovo? A touch of mundane mysticism in the village of Besovo? The beautiful vibes of factory workers' lives in PGT Pozhukhlovo? You can dive into all of it, if you wish.</p>
+            <p class="lang-en">The series was created with the desire to give you the feeling of bright melancholy and hope for a future that, most likely, will never come. It's meant to help you focus on the here and now, to appreciate the small everyday joys of life.</p>
+            <p class="lang-en">And what comes next... Let's survive until that «next» first, yeah?</p>
+        </div>
+        <div class="about-stats">
+            <div class="stat-card"><span class="stat-number">35+</span><span class="stat-label"><span class="lang-ru">Персонажей</span><span class="lang-en">Characters</span></span></div>
+            <div class="stat-card"><span class="stat-number">4</span><span class="stat-label"><span class="lang-ru">Населённых пункта</span><span class="lang-en">Settlements</span></span></div>
+            <div class="stat-card"><span class="stat-number">3</span><span class="stat-label"><span class="lang-ru">AU серии</span><span class="lang-en">AU Series</span></span></div>
+            <div class="stat-card"><span class="stat-number">∞</span><span class="stat-label"><span class="lang-ru">Тоска</span><span class="lang-en">Toska</span></span></div>
+        </div>
+    </div>
+</section>
+
+<!-- QUOTES MARQUEE -->
+<div class="graffiti-divider">
+    <div class="graffiti-track" id="quotesTrack"></div>
+</div>
+<script>
+var _quotes_ru = [
+    "Встретившись однажды, полностью расстаться невозможно.",
+    "Я всегда жду тебя дома.",
+    "Солнце взойдёт.",
+    "Прекрасное далёко, не будь ко мне жестоко.",
+    "Еду по России — не доеду до конца.",
+    "Жаль, что другого сценария нет.",
+    "Я худший твой друг, молодая принцесса, не увлекайся процессом.",
+    "Летов и Наруто сказали не сдаваться.",
+    "Я имею право быть хуёвым.",
+    "Хорошо там, где нас нет.",
+    "Я бы спел тебе, да не умею петь.",
+    "Останься со мной.",
+    "Смысл смылся.",
+    "Светить всегда, светить везде!",
+    "Продолжать бороться.",
+    "Потусторонним вход воспрещён!",
+    "ОСТОРОЖНО: РУСРЕАЛ!",
+    "Ты сегодня хоть выспался?",
+    "Не стану старым, стану мэром Кайфограда...",
+    "Храни мои следы в сердце: я вернусь по ним.",
+    "Пообещай не забыть об обещанном.",
+    "Выйду в поле с конём...",
+    "Верните Рекса!",
+    "Мрачный, холодный ад и Лазаньичка.",
+    "Мир! Труд! Блять!",
+    "Держись, котёныш!",
+    "Я люблю тебя несмотря на все твои странности.",
+    "Не волнуйся за меня.",
+    "Люби меня, люби...",
+    "Ты не верь слезам.",
+    "Пойдём по сигареточке...",
+    "Россия для грустных.",
+    "Дыши.",
+    "Тёплые коты.",
+    "На каком языке любви ты говоришь?",
+    "Я тебя люблю.",
+    "Я скучаю.",
+    "Меньше думать. Больше жить.",
+    "Расцветай.",
+    "Лучшее впереди.",
+    "Молодость все простит.",
+    "Твоя маленькая версия гордилась бы тобой.",
+    "Солнышко моё, ты пахнешь осенью и ложью.",
+    "Прошлое прошло.",
+    "Всё пройдёт и это тоже."
+];
+var _quotes_en = [
+    "Once you've met, you can never fully part.",
+    "I'm always waiting for you at home.",
+    "The sun will rise.",
+    "Beautiful faraway, don't be cruel to me.",
+    "Driving across Russia — never reaching the end.",
+    "Too bad there's no other script.",
+    "I'm your worst friend, young princess, don't get too invested.",
+    "Letov and Naruto said don't give up.",
+    "I have the right to be shitty.",
+    "It's always better where we're not.",
+    "I'd sing for you, but I can't sing.",
+    "Stay with me.",
+    "The meaning washed away.",
+    "Shine always, shine everywhere!",
+    "Keep fighting.",
+    "No entry for the otherworldly!",
+    "CAUTION: RUSREAL!",
+    "Did you even sleep today?",
+    "Won't grow old, gonna be the mayor of Funtown...",
+    "Keep my footprints in your heart: I'll come back by them.",
+    "Promise not to forget what was promised.",
+    "I'll walk into the field with a horse...",
+    "Bring back Rex!",
+    "A dark, cold hell and little Lasagna.",
+    "Peace! Labor! Fuck!",
+    "Hang in there, kitten!",
+    "I love you despite all your weirdness.",
+    "Don't worry about me.",
+    "Love me, love me...",
+    "Don't believe the tears.",
+    "Let's go have a cigarette...",
+    "Russia is for the sad.",
+    "Breathe.",
+    "Warm cats.",
+    "What love language do you speak?",
+    "I love you.",
+    "I miss you.",
+    "Think less. Live more.",
+    "Bloom.",
+    "The best is ahead.",
+    "Youth forgives everything.",
+    "Your little version would be proud of you.",
+    "My sunshine, you smell of autumn and lies.",
+    "The past has passed.",
+    "This too shall pass."
+];
+function loadQuotes(){
+    var lang = document.documentElement.getAttribute('data-lang') || localStorage.getItem('rt-lang') || 'ru';
+    var quotes = lang === 'en' ? _quotes_en : _quotes_ru;
+    var shuffled = quotes.slice().sort(function(){return Math.random()-0.5;});
+    var picked = shuffled.slice(0, 16);
+    var all = picked.concat(picked);
+    var track = document.getElementById('quotesTrack');
+    if(track) track.innerHTML = all.map(function(q){return '<span class="graffiti-item">'+q+'</span>';}).join('');
+}
+loadQuotes();
+// Re-load quotes when language changes
+var _origSetLang = null;
+document.addEventListener('DOMContentLoaded', function(){
+    var btn = document.getElementById('langToggle');
+    if(btn) btn.addEventListener('click', function(){ setTimeout(loadQuotes, 50); });
+});
+</script>
+
+<!-- QUICK NAVIGATION -->
+<section class="section">
+    <div class="fade-in">
+        <p class="section-label"><span class="lang-ru">Навигация</span><span class="lang-en">Navigation</span></p>
+        <h2 class="section-title"><span class="lang-ru">Исследуй <span>сеттинг</span></span><span class="lang-en">Explore the <span>setting</span></span></h2>
+    </div>
+    <div class="quick-links fade-in">
+        <a href="characters.html" class="quick-link">
+            <h3><span class="lang-ru">Персонажи</span><span class="lang-en">Characters</span></h3>
+            <p><span class="lang-ru">35+ судеб. Подробные страницы с биографиями и фото.</span><span class="lang-en">35+ fates. Detailed pages with bios and photos.</span></p>
+        </a>
+        <a href="map.html" class="quick-link">
+            <h3><span class="lang-ru">Карта</span><span class="lang-en">Map</span></h3>
+            <p><span class="lang-ru">Интерактивная карта. Труповолково, Пожухлово, Бесово, Гипербореевка.</span><span class="lang-en">Interactive map. Trupovolkovo, Pozhukhlovo, Besovo, Hyperboreevka.</span></p>
+        </a>
+        <a href="band.html" class="quick-link">
+            <h3><span class="lang-ru">В поисках похвалы и пахлавы</span><span class="lang-en">In Search of Praise and Baklava</span></h3>
+            <p><span class="lang-ru">Группа из Пожухлово. Тексты песен, состав, постеры.</span><span class="lang-en">A band from Pozhukhlovo. Lyrics, lineup, posters.</span></p>
+        </a>
+        <a href="au.html" class="quick-link">
+            <h3><span class="lang-ru">AU серии</span><span class="lang-en">AU Series</span></h3>
+            <p><span class="lang-ru">Вампиры Средней Полосы. Пищеблок (1980). Те же герои — другие реалии.</span><span class="lang-en">Central Russia's Vampires. Pishcheblok (1980). Same heroes — different realities.</span></p>
+        </a>
+        <a href="author.html" class="quick-link">
+            <h3><span class="lang-ru">Автор</span><span class="lang-en">Author</span></h3>
+            <p><span class="lang-ru">Wewwa. Ссылки, девлог, соавторы.</span><span class="lang-en">Wewwa. Links, devlog, co-creators.</span></p>
+        </a>
+    </div>
+</section>
+
+<!-- ERA -->
+<section class="section" style="border-top: 1px solid var(--gray);">
+    <div class="fade-in">
+        <p class="section-label"><span class="lang-ru">Эпоха</span><span class="lang-en">Era</span></p>
+        <h2 class="section-title"><span class="lang-ru">Капсула <span>времени</span></span><span class="lang-en">Time <span>capsule</span></span></h2>
+    </div>
+    <div class="era-grid fade-in">
+        <div class="era-category">
+            <h3><span class="lang-ru">Музыка</span><span class="lang-en">Music</span></h3>
+            <ul>
+                <li>HammAli & Navai</li>
+                <li>Miyagi & Andy Panda</li>
+                <li>Pharaoh, FACE, <span class="lang-ru">ЛСП</span><span class="lang-en">LSP</span></li>
+                <li><span class="lang-ru">Скриптонит, Баста</span><span class="lang-en">Scriptonite, Basta</span></li>
+                <li><span class="lang-ru">Тюремный шансон</span><span class="lang-en">Prison chanson</span></li>
+                <li>Molchat Doma, <span class="lang-ru">Кино</span><span class="lang-en">Kino</span></li>
+            </ul>
+        </div>
+        <div class="era-category">
+            <h3><span class="lang-ru">Машины & Дрифт</span><span class="lang-en">Cars & Drift</span></h3>
+            <ul>
+                <li>Toyota Mark II, Chaser</li>
+                <li><span class="lang-ru">Заниженная</span><span class="lang-en">Lowered</span> Lada Priora</li>
+                <li><span class="lang-ru">Правый руль JDM</span><span class="lang-en">Right-hand drive JDM</span></li>
+                <li><span class="lang-ru">Дрифт на парковке Айсберга</span><span class="lang-en">Drift at Iceberg parking lot</span></li>
+                <li>Alfa Romeo (<span class="lang-ru">Федя</span><span class="lang-en">Fedya</span>)</li>
+                <li><span class="lang-ru">Жёлтый</span><span class="lang-en">Yellow</span> Camaro (<span class="lang-ru">Изя</span><span class="lang-en">Izya</span>)</li>
+            </ul>
+        </div>
+        <div class="era-category">
+            <h3><span class="lang-ru">Ритуалы</span><span class="lang-en">Rituals</span></h3>
+            <ul>
+                <li>Baltika, Flash, Jaguar</li>
+                <li><span class="lang-ru">Красное и Белое, Бристоль</span><span class="lang-en">Krasnoe & Beloe, Bristol</span></li>
+                <li><span class="lang-ru">Шаверма из ларька</span><span class="lang-en">Shawarma from a kiosk</span></li>
+                <li><span class="lang-ru">Доширак / Роллтон</span><span class="lang-en">Doshirak / Rollton</span></li>
+                <li><span class="lang-ru">Семечки, дешёвые суши</span><span class="lang-en">Sunflower seeds, cheap sushi</span></li>
+                <li>iPhone 7, <span class="lang-ru">ВК > Инста</span><span class="lang-en">VK > Instagram</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="fade-in">
+        <h2 class="cta-title"><span class="lang-ru glitch" data-text="ДОБРО ПОЖАЛОВАТЬ">ДОБРО ПОЖАЛОВАТЬ</span><span class="lang-en glitch" data-text="WELCOME">WELCOME</span></h2>
+        <p class="cta-subtitle"><span class="lang-ru">Уехать отсюда нельзя. Можно только остаться.</span><span class="lang-en">You can't leave. You can only stay.</span></p>
+        <div class="cta-buttons">
+            <a href="characters.html" class="cta-btn"><span class="lang-ru">Персонажи</span><span class="lang-en">Characters</span></a>
+            <a href="map.html" class="cta-btn"><span class="lang-ru">Карта</span><span class="lang-en">Map</span></a>
+            <a href="band.html" class="cta-btn pink"><span class="lang-ru">Группа</span><span class="lang-en">Band</span></a>
+            <a href="au.html" class="cta-btn">AU</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top">
+        <div>
+            <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+            <div class="footer-tagline"><span class="lang-ru">Труповолково · Пожухлово · Гипербореевка · Бесово</span><span class="lang-en">Trupovolkovo · Pozhukhlovo · Hyperboreevka · Besovo</span></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+        <div class="footer-funfact" id="funfact"></div>
+    </div>
 </footer>
 
-<script>
-// ═══ SPARKLE PARTICLES — МАКСИМАЛЬНЫЙ ДРИП ═══
-const C=document.getElementById('sparkle-canvas'),X=C.getContext('2d');let W,H,P=[];
-function R(){W=C.width=innerWidth;H=C.height=innerHeight}R();addEventListener('resize',R);
-class S{constructor(x,y,m){this.x=x;this.y=y;this.s=Math.random()*(m?5:3)+1;this.vx=(Math.random()-.5)*(m?4:.5);this.vy=(Math.random()-.5)*(m?4:.5)-(m?1.5:0);this.l=1;this.d=Math.random()*.015+(m?.015:.004);this.c=['#FF2D8A','#FFD700','#E8A0BF','#FFF','#ff69b4','#ffd1dc'][Math.random()*6|0];this.rot=Math.random()*Math.PI*2;this.rotV=(Math.random()-.5)*.1}
-update(){this.x+=this.vx;this.y+=this.vy;this.l-=this.d;this.s*=.995;this.rot+=this.rotV}
-draw(){X.save();X.globalAlpha=this.l;X.fillStyle=this.c;X.shadowBlur=12;X.shadowColor=this.c;X.translate(this.x,this.y);X.rotate(this.rot);X.beginPath();X.moveTo(0,-this.s);X.lineTo(this.s*.6,0);X.lineTo(0,this.s);X.lineTo(-this.s*.6,0);X.closePath();X.fill();X.restore()}}
-addEventListener('mousemove',e=>{for(let i=0;i<4;i++)P.push(new S(e.clientX,e.clientY,true))});
-addEventListener('click',e=>{for(let i=0;i<20;i++)P.push(new S(e.clientX,e.clientY,true))});
-setInterval(()=>{if(P.length<250)P.push(new S(Math.random()*W,Math.random()*H,false))},80);
-(function a(){X.clearRect(0,0,W,H);P=P.filter(p=>p.l>0);P.forEach(p=>{p.update();p.draw()});requestAnimationFrame(a)})();
-
-// ═══ GLITTER RAIN ═══
-const GC=document.getElementById('glitter-rain'),GX=GC.getContext('2d');
-let GW,GH;const GL=[];
-function GR(){GW=GC.width=innerWidth;GH=GC.height=innerHeight}GR();addEventListener('resize',GR);
-class Glitter{constructor(){this.reset()}
-reset(){this.x=Math.random()*GW;this.y=Math.random()*-GH;this.s=Math.random()*2+.5;this.vy=Math.random()*1.5+.5;this.vx=(Math.random()-.5)*.3;this.c=['#FFD700','#FF2D8A','#E8A0BF','#fff'][Math.random()*4|0];this.a=Math.random()*.4+.1;this.flicker=Math.random()*Math.PI*2}
-update(){this.y+=this.vy;this.x+=this.vx;this.flicker+=.05;if(this.y>GH)this.reset()}
-draw(){GX.save();GX.globalAlpha=this.a*(Math.sin(this.flicker)*.5+.5);GX.fillStyle=this.c;GX.fillRect(this.x,this.y,this.s,this.s);GX.restore()}}
-for(let i=0;i<80;i++){const g=new Glitter();g.y=Math.random()*GH;GL.push(g)}
-(function ga(){GX.clearRect(0,0,GW,GH);GL.forEach(g=>{g.update();g.draw()});requestAnimationFrame(ga)})();
-
-// ═══ HERO GEMS ═══
-const G=document.getElementById('hero-gems');
-for(let i=0;i<15;i++){const g=document.createElement('span');g.className='gem'+(Math.random()>.5?' gold':'');g.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*6}s;width:${Math.random()*10+6}px;height:${Math.random()*10+6}px`;G.appendChild(g)}
-
-// ═══ SCROLL REVEAL ═══
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// ═══ NAVBAR SHOW ON SCROLL ═══
-const nav=document.getElementById('navbar');
-let lastY=0;
-onscroll=()=>{nav.classList.toggle('show',scrollY>window.innerHeight*.5)};
-
-// ═══ LANGUAGE TOGGLE ═══
-let currentLang='ru';
-function setLang(lang){
-  currentLang=lang;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim()===lang.toUpperCase()));
-  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
-    const text=el.getAttribute('data-'+lang);
-    if(text){
-      if(el.tagName==='A'||el.tagName==='BUTTON')el.textContent=text;
-      else el.textContent=text;
-    }
-  });
-}
-</script>
+<script src="main.js"></script>
 </body>
 </html>
