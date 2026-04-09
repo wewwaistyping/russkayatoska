@@ -16,6 +16,13 @@ bestiary-draft.html
 pitch.html
 pitch-ru.html
 
+# Lorebook scripts
+fix_*.js
+build_*.js
+rewrite_*.js
+*_backup_*.html
+*.bak
+
 # Build tools
 compress-photos.js
 *.json
