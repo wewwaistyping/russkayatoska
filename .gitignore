@@ -36,3 +36,7 @@ compress-photos.js
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# More lorebook/transform scripts
+transform_*.js
+trim_*.js
