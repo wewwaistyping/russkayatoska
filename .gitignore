@@ -11,6 +11,11 @@ janitor*
 *janitor*
 *Scripts*
 
+# Drafts
+bestiary-draft.html
+pitch.html
+pitch-ru.html
+
 # Build tools
 compress-photos.js
 *.json
