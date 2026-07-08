@@ -1,0 +1,13 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Tooling
+node_modules/
+.claude/
+
+# Backups & drafts
+*.bak
+*.bak2
+backup*/

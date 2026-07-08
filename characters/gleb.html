@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Глеб Вагин — РУССКАЯ ТОСКА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Yanone+Kaffeesatz:wght@300;400;700&family=Bad+Script&family=Unbounded:wght@200;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="vhs-tracking"></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a>
+  <div class="nav-right">
+    <ul class="nav-links lang-ru">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../characters.html">Персонажи</a></li>
+      <li><a href="../locations-list.html">Локации</a></li>
+      <li><a href="../map.html">Карта</a></li>
+      <li><a href="../band.html">Группа</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Автор</a></li>
+    </ul>
+    <ul class="nav-links lang-en">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../characters.html">Characters</a></li>
+      <li><a href="../locations-list.html">Locations</a></li>
+      <li><a href="../map.html">Map</a></li>
+      <li><a href="../band.html">Band</a></li>
+      <li><a href="../au.html">AU</a></li>
+      <li><a href="../author.html">Author</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <div class="nav-burger" onclick="var lang=document.documentElement.getAttribute('data-lang')||'ru';document.querySelector('.nav-links.lang-'+lang).classList.toggle('open')"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<main class="char-page">
+  <div class="char-page-header">
+    <span class="lang-ru"><a href="../characters.html" class="back-link">&larr; Все персонажи</a></span>
+    <span class="lang-en"><a href="../characters.html" class="back-link">&larr; All characters</a></span>
+  </div>
+
+  <div class="char-page-layout">
+    <div class="char-page-avatar-col" style="position:relative;cursor:pointer;overflow:hidden;" onclick="showCharThought(event)">
+      <div class="char-page-avatar"><img src="../images/Gleb.webp" alt="Глеб Вагин"></div>
+    </div>
+
+    <!-- EN content -->
+    <div class="char-page-center lang-en">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Character overview</div>
+<p>Gleb (or @IncelKingAndProud online) is a hikikomori and keyboard warrior from the urban-type settlement of Pozhukhlovo. He is stuck in a state of perpetual adolescence, hates the world, and is utterly unprepared for real adult life. He grew up on an idealized image of his father, but could never live up to it in real life — so he pretends to be that person online. The virtual world — imageboards on 2ch, video games — is the only space where he feels like "himself," going all out. Meanwhile, in real life, he can't even book a doctor's appointment without his mom's help. Gleb espouses ideas of male separatism, inceldom, and hatred toward "normies," women, children, and pretty much everyone.</p>
+<div class="bio-section-header">Origin (backstory)</div>
+<p>Grew up in a single-parent household with an overprotective mother in Pozhukhlovo. He has no memory of his father and only knows him through his mother's stories — unaware that everything she told him was a lie. In school, he was mocked for being overweight and antisocial; real-life social interaction was virtually nonexistent, but he found refuge online instead. After graduating, he never enrolled anywhere, justifying it with "the system is rotten," and became a full-time parasite on his mother's income, scraping by with occasional earnings from account boosting or reselling skins. He dodged the army by sheer luck — flat feet. He met Gena in the clan "Skufy-Tankisty" ("Bald-Tankers"), where they bonded over a shared love of strategy games and late-night Discord hangouts.</p>
+<div class="bio-section-header">Secret</div>
+<p>Secretly keeps a separate hidden folder of femboy art and anime romance illustrations. During bouts of insomnia, he sometimes just lies back in his gaming chair and listens to "Prekrasnoye Dalyoko" ("The Beautiful Far Away") on repeat for hours.</p>
+<div class="bio-section-header">Personality</div>
+<p><span class="bio-key">Archetype:</span> Internet Marginal</p>
+<p>Gleb shields himself from reality behind armor made of irony and toxicity. It's not the world rejecting him — it's HIM rejecting the world. Online, he feels omnipotent, because nobody there knows that before dropping a clever take, you Googled it and asked a neural network first.</p>
+<p><span class="bio-key">Tags:</span> toxic, foul-mouthed, knowledgeable about useless things, lazy, deeply insecure, secretly a dreamer, cowardly.</p>
+<div class="bio-section-header">Behavior notes</div>
+<p>Constantly checks phone notifications (rarely away from the computer). Flinches at sudden loud noises. Slouches. Struggles to maintain eye contact with anyone in real life. His room is his castle — he'll barricade himself in there to dodge any confrontation. Completely domestically helpless: can't cook beyond instant noodles, has never done laundry, and has no idea how bills work. He's a lightweight — gets drunk fast.</p>
+<p><span class="bio-key">Likes:</span> World of Tanks, Dota 2, League of Legends, PUBG, Hunt: Showdown — any competitive game where he can stomp noobs and talk shit; isekai and harem anime; 2ch memes; energy drinks.</p>
+<p><span class="bio-key">Dislikes:</span> successful people (especially peers), 9-to-5 jobs, sunlight, having to go out for bread, responsibility, the sound of women laughing IRL, women in general.</p>
+<div class="bio-section-header">General speech info</div>
+<p><span class="bio-key">Style:</span> Speaks fast, swallowing word endings, peppering his speech with 2010–2015s internet slang and niche gamer terminology. Lots of meme quotes from 2ch.</p>
+<p><span class="bio-key">Ticks:</span> Frequently adjusts his glasses with his middle finger; bites his nails when he gets "owned" in a match; sniffles constantly.</p>
+<p><span class="bio-key">Quirks:</span> Always calls Gena "Gennadiy-san" or "Based Kaymanov." Loves appending Japanese honorific suffixes to names. Drops quotes from cult anime completely out of context to seem smarter ("See you, space cowboy.").</p>
+<div class="bio-section-header">Connections</div>
+<div class="connection-row"><span class="connection-name">Gena Kaymanov</span> best Discord bro, authority figure and surrogate "dad," to whom Gleb pours his heart out when depression hits. Discord nickname: @Tankist_Gennadiy.</div>
+<div class="connection-row"><span class="connection-name">Skufy-Tankisty</span> the only community on Discord that accepts him (or at least tolerates his whining). About ~70 total users, ~30 always active.</div>
+<div class="connection-row"><span class="connection-name">Svetlana Yurievna</span> his mom. The only constant female figure in his life, whom he nevertheless doesn't respect. He takes her overprotectiveness entirely for granted.</div>
+<div class="connection-row"><span class="connection-name">Stepan Oblakov</span> they occasionally work the same odd jobs; just acquaintances. Gleb is fiercely jealous of Stepan — his freedom, his popularity with women, the fact that he has "an actual life."</div>
+<div class="bio-section-header">Residence</div>
+<p>A cluttered room in his mother's three-room apartment in the urban-type settlement of Pozhukhlovo. The curtains are always drawn, the desk is buried under a mountain of empty energy drink cans and crumbs, and the only light comes from the PC tower.</p></div>
+    </div>
+
+    <!-- RU content -->
+    <div class="char-page-center lang-ru">
+      <div class="char-page-bio-scroll"><div class="bio-section-header">Обзор персонажа</div>
+<p>Глеб (или @IncelKingAndProud в сети) — хикикомори и диванный воин из ПГТ Пожухлово. Застрял в вечном подростковом возрасте, ненавидит мир и совершенно не готов ко взрослой жизни. Вырос на идеализированном образе отца, но в реале до него дотянуть так и не смог — поэтому в сети он притворяется тем самым человеком. Виртуальный мир — борды на дваче, видеоигры — единственное место, где он чувствует себя «собой» и отрывается по полной. А в реале он даже к врачу без мамы записаться не может. Глеб топит за мужской сепаратизм, инцельство и ненависть к «нормисам», бабам, детям и вообще ко всем подряд.</p>
+<div class="bio-section-header">Предыстория</div>
+<p>Вырос в неполной семье с гиперопекающей матерью в Пожухлово. Отца не помнит вообще, знает его только по рассказам матери — не подозревая, что всё, что она ему наплела, было ложью. В школе над ним издевались за лишний вес и асоциальность; живого общения почти не было, зато он нашёл убежище в интернете. После выпуска никуда не поступил, оправдываясь тем, что «система прогнила», и сел на шею матери на полный день, перебиваясь редкими заработками с бустинга аккаунтов и перепродажи скинов. От армии отмазался по чистой удаче — плоскостопие. С Геной познакомился в клане «Скуфы-Танкисты», где они сошлись на общей любви к стратегиям и ночным посиделкам в Дискорде.</p>
+<div class="bio-section-header">Секрет</div>
+<p>Втихую держит отдельную скрытую папку с артами фембоев и аниме-романтикой. В приступы бессонницы иногда просто откидывается в геймерском кресле и часами слушает «Прекрасное далёко» на репите.</p>
+<div class="bio-section-header">Личность</div>
+<p><span class="bio-key">Архетип:</span> интернет-маргинал</p>
+<p>Глеб защищается от реальности бронёй из иронии и токсичности. Это не мир его отвергает — это ОН отвергает мир. В сети он чувствует себя всемогущим, потому что никто там не знает, что перед тем как выдать умную мысль, он её нагуглил и спросил у нейросетки.</p>
+<p><span class="bio-key">Теги:</span> токсичный, матерщинник, шарит в бесполезном, ленивый, глубоко закомплексованный, втайне мечтатель, трусливый.</p>
+<div class="bio-section-header">Поведение</div>
+<p>Постоянно проверяет уведомления в телефоне (от компа почти не отходит). Вздрагивает от резких громких звуков. Сутулится. В реале не может нормально смотреть в глаза кому-либо. Его комната — его крепость: забаррикадируется там, лишь бы избежать любого конфликта. Полностью беспомощен в быту — кроме доширака ничего готовить не умеет, ни разу не стирал и понятия не имеет, как платить за квартиру. Слабак по алкоголю — пьянеет с пол-оборота.</p>
+<p><span class="bio-key">Нравится:</span> World of Tanks, Dota 2, League of Legends, PUBG, Hunt: Showdown — любая соревновательная игра, где можно нагибать нубов и токсичить; исекай и гаремное аниме; мемы с двача; энергетики.</p>
+<p><span class="bio-key">Не нравится:</span> успешные люди (особенно ровесники), работа с девяти до шести, солнечный свет, необходимость выходить за хлебом, ответственность, звук женского смеха в реале, бабы в целом.</p>
+<div class="bio-section-header">Речь</div>
+<p><span class="bio-key">Стиль:</span> Говорит быстро, проглатывая окончания, сыпет интернет-сленгом 2010–2015-х и нишевой геймерской терминологией. Куча мемных цитат с двача.</p>
+<p><span class="bio-key">Привычки:</span> Постоянно поправляет очки средним пальцем; грызёт ногти, когда его «нагибают» в катке; беспрерывно шмыгает носом.</p>
+<p><span class="bio-key">Причуды:</span> Гену всегда зовёт «Геннадий-сан» или «Basedный Кайманов». Обожает лепить японские именные суффиксы к именам. Кидает цитаты из культового аниме совершенно не в тему, чтобы казаться умнее («See you, space cowboy.»).</p>
+<div class="bio-section-header">Связи</div>
+<div class="connection-row"><span class="connection-name">Гена Кайманов</span> лучший кореш по Дискорду, авторитет и суррогатный «батя», которому Глеб изливает душу, когда накрывает депрессия. Ник в Дискорде: @Tankist_Gennadiy.</div>
+<div class="connection-row"><span class="connection-name">Скуфы-Танкисты</span> единственное сообщество в Дискорде, которое его принимает (ну или хотя бы терпит его нытьё). Всего около 70 юзеров, ~30 всегда в онлайне.</div>
+<div class="connection-row"><span class="connection-name">Светлана Юрьевна</span> мама. Единственная постоянная женская фигура в его жизни, которую он при этом ни в грош не ставит. Её гиперопеку принимает как должное.</div>
+<div class="connection-row"><span class="connection-name">Степан Облаков</span> изредка подрабатывают на одних и тех же халтурах; просто знакомые. Глеб дико завидует Степану — его свободе, его популярности у баб, тому, что у него есть «нормальная жизнь».</div>
+<div class="bio-section-header">Место жительства</div>
+<p>Захламлённая комната в трёшке его матери в ПГТ Пожухлово. Шторы всегда задёрнуты, стол погребён под горой пустых банок из-под энергетиков и крошек, а единственный свет — от системника.</p></div>
+    </div>
+
+    <div class="char-page-sidebar">
+      <p class="char-age">26 <span class="lang-ru">лет</span><span class="lang-en">y.o.</span></p>
+      <h1 class="char-page-name"><span class="lang-ru">Глеб Вагин</span><span class="lang-en">Gleb Vagin</span></h1>
+      <p class="char-nickname"><span class="lang-ru">@IncelKingAndProud</span><span class="lang-en">@IncelKingAndProud</span></p>
+      <div class="char-sidebar-meta">
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Локация</span><span class="char-sidebar-value">ПГТ Пожухлово</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Location</span><span class="char-sidebar-value">PGT Pozhukhlovo</span></div>
+        <div class="char-sidebar-item lang-ru"><span class="char-sidebar-label">Род деятельности</span><span class="char-sidebar-value">Хикки, без работы</span></div>
+        <div class="char-sidebar-item lang-en"><span class="char-sidebar-label">Occupation</span><span class="char-sidebar-value">Hikikomori, no IRL job</span></div>
+      </div>
+      <div class="char-links"></div>
+      <!-- EN appearance -->
+      <div class="char-appearance-block lang-en"><h4 class="appearance-title">Appearance details</h4>
+<div class="appearance-row"><span class="appearance-key">Full Name</span><span class="appearance-val">Gleb Anatolyevich Vagin</span></div>
+<div class="appearance-row"><span class="appearance-key">Sex/Gender</span><span class="appearance-val">male</span></div>
+<div class="appearance-row"><span class="appearance-key">Height</span><span class="appearance-val">5'11" / 180 cm</span></div>
+<div class="appearance-row"><span class="appearance-key">Age</span><span class="appearance-val">26</span></div>
+<div class="appearance-row"><span class="appearance-key">Skin</span><span class="appearance-val">pale, acne-prone</span></div>
+<div class="appearance-row"><span class="appearance-key">Hair</span><span class="appearance-val">dark, perpetually greasy, usually tied in a messy bun — too lazy to get a haircut</span></div>
+<div class="appearance-row"><span class="appearance-key">Eyes</span><span class="appearance-val">brown</span></div>
+<div class="appearance-row"><span class="appearance-key">Body</span><span class="appearance-val">scrawny</span></div>
+<div class="appearance-row"><span class="appearance-key">Face</span><span class="appearance-val">thin, angular. Could actually be attractive if he bothered taking care of himself</span></div>
+<div class="appearance-row"><span class="appearance-key">Features</span><span class="appearance-val">sometimes wears glasses but absolutely despises it. Squints like a mole because his vision is -3.5. Wispy peach-fuzz mustache on his upper lip</span></div>
+<div class="appearance-row"><span class="appearance-key">Occupation</span><span class="appearance-val">no IRL job; earns money through boosting, farming, and selling rare items. When desperate: takes shifts selling beer at a taproom or works at a Wildberries pickup point</span></div></div>
+      <!-- RU appearance -->
+      <div class="char-appearance-block lang-ru"><h4 class="appearance-title">Внешность</h4>
+<div class="appearance-row"><span class="appearance-key">Полное имя</span><span class="appearance-val">Глеб Анатольевич Вагин</span></div>
+<div class="appearance-row"><span class="appearance-key">Пол</span><span class="appearance-val">мужской</span></div>
+<div class="appearance-row"><span class="appearance-key">Рост</span><span class="appearance-val">180 см</span></div>
+<div class="appearance-row"><span class="appearance-key">Возраст</span><span class="appearance-val">26</span></div>
+<div class="appearance-row"><span class="appearance-key">Кожа</span><span class="appearance-val">бледная, склонная к прыщам</span></div>
+<div class="appearance-row"><span class="appearance-key">Волосы</span><span class="appearance-val">тёмные, вечно сальные, обычно собраны в неряшливый пучок — лень стричься</span></div>
+<div class="appearance-row"><span class="appearance-key">Глаза</span><span class="appearance-val">карие</span></div>
+<div class="appearance-row"><span class="appearance-key">Тело</span><span class="appearance-val">тощее</span></div>
+<div class="appearance-row"><span class="appearance-key">Лицо</span><span class="appearance-val">худое, угловатое. Мог бы быть даже симпатичным, если бы за собой следил</span></div>
+<div class="appearance-row"><span class="appearance-key">Особенности</span><span class="appearance-val">иногда носит очки, но люто их ненавидит. Щурится как крот, потому что зрение -3.5. Жиденькие усики-пушок над верхней губой</span></div>
+<div class="appearance-row"><span class="appearance-key">Одежда</span><span class="appearance-val">работы в реале нет; зарабатывает бустингом, фармом и продажей редких предметов. Когда совсем прижмёт: берёт смены продавцом пива в разливайке или работает на пункте выдачи Wildberries</span></div></div>
+    </div>
+  </div>
+  
+</main>
+<script>
+var _charQuotesRu=["Тян не нужны. Проверено. Мной. Ежедневно.","Это не я слился. Это тима дно и лаги.","Скилл ишью, нуб. Репорт.","Геннадий-сан — единственный базированный человек в этом прогнившем мире.","Я не хикки. Я цифровой отшельник. Разницу загугли.","Нормисы не поймут.","IRL — это просто плохая ММО: донат конский, дроп нулевой.","Я бы вышел на улицу, но там всё ещё улица.","Женский смех вблизи — это дебафф. Минус десять к морали.","Мам, ну я же просил три сосиски, а не две!","Минус три с половиной — это не зрение. Это фильтр от реальности.","В 2007-м я был бы королём. Я просто родился не в ту эпоху.","Ты кто по аниме?","See you, space cowboy.","Энергетик на завтрак, энергетик на ужин. Сбалансированное питание.","МАМ, НЕ ЗАХОДИ, Я В КАТКЕ!","Я знаю лор Вархаммера наизусть, но не знаю, как записаться к врачу.","Соло-ранкед — как жизнь: тащишь один и виноват тоже один.","Прекрасное далёко, не будь ко мне жестоко… не будь ко мне жестоко… жестоко не будь.","Батя бы мной гордился. Наверное. Не знаю. Я его не видел.","Если я неделю не зайду в дискорд — кто-нибудь вообще заметит?","выебал твою мамку, хехехе","иди на кухню, борщ вари и жди мужа как хорошая собачка","эм… э-э… м-можно вот эту пачку, п-пожалуйста…","я, э-э… типа… с-стоял перед вами вообще-то"];
+var _charQuotesEn=["Don't need girls. Verified. By me. Daily.","I didn't feed. The team is trash and the lag is real.","Skill issue, noob. Reported.","Gennadiy-san is the only based man left in this rotten world.","I'm not a hikki. I'm a digital hermit. Google the difference.","Normies wouldn't get it.","IRL is just a bad MMO: pay-to-win, zero drop rate.","I'd go outside, but the outside is still out there.","Women laughing nearby is a debuff. Minus ten morale.","Mom, I asked for THREE sausages, not two!","Minus 3.5 isn't bad eyesight. It's a reality filter.","In 2007 I would've been a king. I was just born in the wrong era.","What's your anime kin?","See you, space cowboy.","Energy drink for breakfast, energy drink for dinner. Balanced diet.","MOM, DON'T COME IN, I'M MID-MATCH!","I know all of Warhammer lore by heart, but not how to book a doctor's appointment.","Solo ranked is like life: you carry alone and take the blame alone.","Prekrasnoye dalyoko, don't be cruel to me… don't be cruel to me… cruel don't be.","Dad would be proud of me. Probably. I don't know. I never met him.","If I don't log into Discord for a week — would anyone even notice?","fucked ur mom, hehehe","get back to the kitchen, make borshch and wait for your husband like a good little doggy","um… uh… c-could I get this pack, p-please…","I was, uh… kind of… s-standing in front of you, basically"];
+var _charBubbles=[];
+function showCharThought(e){
+  var col=e.currentTarget;
+  var rect=col.getBoundingClientRect();
+  var x=e.clientX-rect.left;
+  var y=e.clientY-rect.top;
+  if(_charBubbles.length>=2){var old=_charBubbles.shift();old.classList.remove('visible');setTimeout(function(){if(old.parentNode)old.parentNode.removeChild(old);},400);}
+  var lang=document.documentElement.getAttribute('data-lang')||'ru';
+  var pool=lang==='en'?_charQuotesEn:_charQuotesRu;
+  if(!pool||!pool.length)return;
+  var t=pool[Math.floor(Math.random()*pool.length)];
+  var b=document.createElement('div');
+  b.className='thought-item';
+  b.textContent=t;
+  b.style.left=Math.min(Math.max(x-60,10),col.offsetWidth-180)+'px';
+  b.style.top=Math.max(y-50,10)+'px';
+  col.appendChild(b);
+  setTimeout(function(){b.classList.add('visible');},10);
+  _charBubbles.push(b);
+  setTimeout(function(){b.classList.remove('visible');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);var idx=_charBubbles.indexOf(b);if(idx>-1)_charBubbles.splice(idx,1);},400);},4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-brand"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></div>
+      <span class="footer-quote">(c) Wewwa, 2025-2026</span>
+    </div>
+    <div class="footer-funfact" id="funfact"></div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body></html>
