@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bad+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="koldovstvorets/intro.css?v=5">
+<link rel="stylesheet" href="koldovstvorets/intro.css?v=6">
 <script>try{if(localStorage.getItem('kold-intro-seen')!=='1')document.documentElement.classList.add('ki-pending')}catch(e){}</script>
 <style>
 /* Колдовстворец – AU для РУССКОЙ ТОСКИ. Путеводный клубочек катится вниз и разматывает нитку от раздела к разделу. */
@@ -30,7 +30,7 @@ button { font: inherit; }
 
 /* первый экран */
 .hero { position: relative; min-height: 100svh; display: grid; place-items: center; text-align: center; overflow: hidden; isolation: isolate; padding: 90px 20px 70px; }
-.hero .bg { position: absolute; inset: 0; z-index: -3; background: url(koldovstvorets/images/_vibe/terem.jpg) center 30% / cover; filter: grayscale(.4) brightness(.5) sepia(.2) hue-rotate(200deg) saturate(1.6); }
+.hero .bg { position: absolute; inset: 0; z-index: -3; background: url(koldovstvorets/images/vibe/terem.jpg) center 30% / cover; filter: grayscale(.4) brightness(.5) sepia(.2) hue-rotate(200deg) saturate(1.6); }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: radial-gradient(60% 45% at 50% 105%, rgba(243,154,60,.5), transparent 70%), linear-gradient(180deg, rgba(11,12,38,.6), rgba(20,21,65,.35) 40%, var(--n1) 98%); }
 .moon { position: absolute; top: 9%; right: 12%; width: clamp(80px, 9vw, 130px); z-index: -1; filter: drop-shadow(0 0 40px rgba(220,210,255,.45)); }
 .fern { width: clamp(200px, 26vw, 320px); margin: 0 auto -10px; overflow: visible; }
@@ -204,7 +204,7 @@ html[data-lang="en"] .lang-ru, html:not([data-lang="en"]) .lang-en { display: no
 </head>
 <body>
 <nav class="snav" id="snav"><a class="sn-logo" href="index.html"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a><a class="sn-back" href="au.html"><span class="lang-ru">&larr; Все AU</span><span class="lang-en">&larr; All AU</span></a><button class="sn-lang" id="langToggle" type="button" aria-label="Language / Язык">EN</button></nav>
-<div class="bgs" id="bgs" aria-hidden="true"><i data-bg="rails" style="background-image:url(koldovstvorets/images/_vibe/rails.jpg)"></i><i data-bg="train" style="background-image:url(koldovstvorets/images/_vibe/train.jpg)"></i><i data-bg="terem" style="background-image:url(koldovstvorets/images/_vibe/terem.jpg)"></i><i class="mal" data-bg="trapeznaya" style="background-image:url(koldovstvorets/images/_vibe/bg-trapeznaya.webp)"></i><i class="mal" data-bg="podzemelye" style="background-image:url(koldovstvorets/images/_vibe/bg-podzemelye.webp)"></i><i class="mal" data-bg="zal" style="background-image:url(koldovstvorets/images/_vibe/bg-zal.webp)"></i></div>
+<div class="bgs" id="bgs" aria-hidden="true"><i data-bg="rails" style="background-image:url(koldovstvorets/images/vibe/rails.jpg)"></i><i data-bg="train" style="background-image:url(koldovstvorets/images/vibe/train.jpg)"></i><i data-bg="terem" style="background-image:url(koldovstvorets/images/vibe/terem.jpg)"></i><i class="mal" data-bg="trapeznaya" style="background-image:url(koldovstvorets/images/vibe/bg-trapeznaya.webp)"></i><i class="mal" data-bg="podzemelye" style="background-image:url(koldovstvorets/images/vibe/bg-podzemelye.webp)"></i><i class="mal" data-bg="zal" style="background-image:url(koldovstvorets/images/vibe/bg-zal.webp)"></i></div>
 <div class="flies" id="flies" aria-hidden="true"></div>
 
 <header class="hero">
@@ -302,8 +302,8 @@ html[data-lang="en"] .lang-ru, html:not([data-lang="en"]) .lang-en { display: no
 <dialog id="trailer" aria-label="Трейлер / Trailer"><div class="tv"><video controls playsinline preload="none" poster="koldovstvorets/video/intro-trailer.jpg"><source src="koldovstvorets/video/intro-trailer.mp4" type="video/mp4"></video></div><div class="tv-bar"><b><span class="lang-ru">Колдовстворец – трейлер</span><span class="lang-en">Koldovstoretz – trailer</span></b><button class="x" type="button" aria-label="Закрыть / Close"></button></div></dialog>
 <dialog id="dlg" aria-label="Просмотр"><figure class="lb"><div class="stage"><img alt=""></div><figcaption><b class="lbn"></b><span class="tabs"></span><a class="get" href="#" download><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="lang-ru">Скачать</span><span class="lang-en">Download</span></a><button class="x" type="button" aria-label="Закрыть"></button></figcaption></figure></dialog>
 
-<script src="koldovstvorets/kold-data.js?v=5"></script>
-<script src="koldovstvorets/kold-data-en.js?v=5"></script>
+<script src="koldovstvorets/kold-data.js?v=6"></script>
+<script src="koldovstvorets/kold-data-en.js?v=6"></script>
 <script>
 (function () {
   var K = window.KOLD || {}, NS = 'http://www.w3.org/2000/svg';
@@ -460,7 +460,7 @@ html[data-lang="en"] .lang-ru, html:not([data-lang="en"]) .lang-en { display: no
     [B('Алконост', 'Alkonost'), B('гранат · декан Марья-искусница', 'garnet · dean Marya the Craftswoman'), 'em-alkonost', B('Видеть светлое, делать руками.', 'Seeing the bright side, making with your hands.'), 'rgba(220,70,90,.55)'],
     [B('Стратим', 'Stratim'), B('малахит · декан Илья Муромец', 'malachite · dean Ilya Muromets'), 'em-stratim', B('Держать и защищать своих.', 'Holding on and protecting your own.'), 'rgba(47,184,127,.55)']];
   document.getElementById('wreaths').innerHTML = H.map(function (h, i) {
-    return '<div class="wr"><div class="ring">' + wreath(i) + '<div class="em" style="--g:' + h[4] + '"><img src="koldovstvorets/images/_vibe/' + h[2] + '.jpg" alt=""></div></div><b>' + h[0] + '</b><span>' + h[1] + '</span><p>' + h[3] + '</p></div>';
+    return '<div class="wr"><div class="ring">' + wreath(i) + '<div class="em" style="--g:' + h[4] + '"><img src="koldovstvorets/images/vibe/' + h[2] + '.jpg" alt=""></div></div><b>' + h[0] + '</b><span>' + h[1] + '</span><p>' + h[3] + '</p></div>';
   }).join('');
 
   /* ---------- люди ---------- */
@@ -692,6 +692,6 @@ html[data-lang="en"] .lang-ru, html:not([data-lang="en"]) .lang-en { display: no
   layout();
 })();
 </script>
-<script src="koldovstvorets/intro.js?v=5"></script>
+<script src="koldovstvorets/intro.js?v=6"></script>
 </body>
 </html>
