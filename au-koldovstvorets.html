@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Колдовстворец – РУССКАЯ ТОСКА</title>
+<script>(function(){var l='ru';try{l=localStorage.getItem('rt-lang')||'ru'}catch(e){}var h=document.documentElement;h.setAttribute('data-lang',l);h.lang=l;if(l==='en')document.title='Koldovstoretz – RUSSKAYA TOSKA'})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bad+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="koldovstvorets/intro.css?v=5">
+<script>try{if(localStorage.getItem('kold-intro-seen')!=='1')document.documentElement.classList.add('ki-pending')}catch(e){}</script>
+<style>
+/* Колдовстворец – AU для РУССКОЙ ТОСКИ. Путеводный клубочек катится вниз и разматывает нитку от раздела к разделу. */
+:root { --n0: #0b0c26; --n1: #141541; --n2: #1d1d57; --fire: #f39a3c; --ember: #d2552e; --flower: #ffd27a; --moon: #ece7ff; --soft: #b9b4dc; --thread: #e0483a; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--moon); font: 18px/1.65 'Lora', serif; overflow-x: hidden; background: linear-gradient(180deg, var(--n0), var(--n1) 30%, var(--n2) 70%, #2a1838); }
+img { display: block; max-width: 100%; }
+button { font: inherit; }
+::selection { background: var(--fire); color: var(--n0); }
+:focus-visible { outline: 2px solid var(--flower); outline-offset: 4px; }
+
+/* светлячки */
+.flies { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
+.flies i { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #ffe08a; box-shadow: 0 0 10px 3px rgba(255,214,110,.7); animation: fly var(--d, 9s) ease-in-out infinite alternate, blink var(--b, 2.4s) ease-in-out infinite; }
+@keyframes fly { to { transform: translate(var(--x, 40px), var(--y, -60px)); } }
+@keyframes blink { 0%, 100% { opacity: .15; } 50% { opacity: 1; } }
+
+/* первый экран */
+.hero { position: relative; min-height: 100svh; display: grid; place-items: center; text-align: center; overflow: hidden; isolation: isolate; padding: 90px 20px 70px; }
+.hero .bg { position: absolute; inset: 0; z-index: -3; background: url(koldovstvorets/images/_vibe/terem.jpg) center 30% / cover; filter: grayscale(.4) brightness(.5) sepia(.2) hue-rotate(200deg) saturate(1.6); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: radial-gradient(60% 45% at 50% 105%, rgba(243,154,60,.5), transparent 70%), linear-gradient(180deg, rgba(11,12,38,.6), rgba(20,21,65,.35) 40%, var(--n1) 98%); }
+.moon { position: absolute; top: 9%; right: 12%; width: clamp(80px, 9vw, 130px); z-index: -1; filter: drop-shadow(0 0 40px rgba(220,210,255,.45)); }
+.fern { width: clamp(200px, 26vw, 320px); margin: 0 auto -10px; overflow: visible; }
+.fern .rays { transform-origin: 0 0; animation: spin 80s linear infinite; }
+.fern .bloom { transform-origin: 0 0; animation: breathe 4.5s ease-in-out infinite alternate; }
+.fern .tw { transform-box: fill-box; transform-origin: center; animation: tw 2.6s ease-in-out infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes breathe { to { transform: scale(1.04); } }
+@keyframes tw { 0%, 100% { opacity: .15; transform: scale(.5); } 50% { opacity: 1; transform: scale(1); } }
+.hero h1 { font: 400 clamp(2.6rem, 8.6vw, 7.4rem)/1 'Yeseva One', serif; margin: 0; color: #fff3dc; text-shadow: 0 0 30px rgba(243,154,60,.5), 0 4px 0 rgba(0,0,0,.35); }
+.hero p { font-size: clamp(1.1rem, 1rem + .6vw, 1.45rem); font-style: italic; color: #e8e2ff; max-width: 42ch; margin: 18px auto 30px; }
+.btn { display: inline-block; font: 400 18px/1 'Yeseva One', serif; color: var(--n0); text-decoration: none; padding: 17px 32px; border: 0; border-radius: 999px; background: var(--flower); box-shadow: 0 0 30px rgba(255,210,122,.5); cursor: pointer; transition: transform .2s, box-shadow .3s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(255,210,122,.8); }
+.btn.ghost { background: transparent; color: var(--flower); box-shadow: inset 0 0 0 1.5px var(--flower); }
+
+/* путь и нитка */
+.path { position: relative; max-width: 1160px; margin: 0 auto; padding: 40px 24px 80px; z-index: 2; }
+.thread { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: -1; }
+.thread .line { fill: none; stroke: var(--thread); stroke-width: 2.6; stroke-linecap: round; filter: drop-shadow(0 0 5px rgba(255,110,80,.75)); }
+.thread .ghostline { fill: none; stroke: rgba(224,72,58,.16); stroke-width: 2; stroke-dasharray: 3 9; stroke-linecap: round; }
+.thread .node { fill: #3a2f7a; stroke: rgba(255,210,122,.4); stroke-width: 2; transition: fill .5s, filter .5s; }
+.thread .node.lit { fill: var(--flower); filter: drop-shadow(0 0 10px rgba(255,190,90,.95)); }
+.stop { position: relative; width: calc(50% - 90px); margin-bottom: 110px; }
+.stop.l { margin-right: auto; } .stop.r { margin-left: auto; }
+.full { width: 100%; margin-bottom: 110px; padding-top: 40px; }
+h2 { font: 400 clamp(2rem, 3.8vw, 3rem)/1.05 'Yeseva One', serif; color: var(--flower); margin: 0 0 14px; text-shadow: 0 0 20px rgba(243,154,60,.35); }
+.full > h2, .full > .sub { text-align: center; }
+.sub { color: var(--soft); font-style: italic; margin: -4px auto 30px; max-width: 54ch; }
+.glass { background: rgba(29,29,87,.55); border: 1px solid rgba(236,231,255,.14); border-radius: 22px; padding: 30px 32px; backdrop-filter: blur(6px); box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+.glass p { margin: 0 0 12px; }
+.glass b { color: var(--flower); font-weight: 600; }
+.facts { list-style: none; margin: 0; padding: 0; }
+.facts li { padding: 10px 0; }
+.facts li + li { border-top: 1px solid rgba(236,231,255,.1); }
+.facts b { font: 400 20px/1.2 'Yeseva One', serif; display: block; color: var(--flower); font-weight: 400; }
+.year { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; margin: 0; }
+.year dt { font: 400 20px/1.3 'Yeseva One', serif; color: var(--flower); }
+.year dd { margin: 0 0 8px; }
+
+/* венки на воде */
+.wreaths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; text-align: center; }
+.wr .ring { position: relative; width: min(210px, 100%); aspect-ratio: 220 / 250; margin: 0 auto 8px; }
+.wr .ring svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.wr .ring .em { position: absolute; left: 20.9%; width: 58.2%; top: 18.4%; height: 51.2%; border-radius: 50%; overflow: hidden; box-shadow: 0 0 30px var(--g), inset 0 0 0 2px rgba(0,0,0,.35); }
+.wr .ring .em img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 47%; transform: scale(1.5); }
+.wr .ring .fl { transform-box: fill-box; transform-origin: 50% 100%; animation: flick 1s ease-in-out infinite alternate; }
+@keyframes flick { 0% { transform: scale(1); } 45% { transform: scale(.88, 1.12) rotate(-4deg); } 100% { transform: scale(1.05, .95) rotate(3deg); } }
+.wr { animation: float 6s ease-in-out infinite alternate; }
+.wr:nth-child(2) { animation-delay: -1.5s; } .wr:nth-child(3) { animation-delay: -3s; } .wr:nth-child(4) { animation-delay: -4.5s; }
+@keyframes float { to { transform: translateY(-8px) rotate(1.5deg); } }
+.wr b { font: 400 24px/1 'Yeseva One', serif; color: #fff3dc; font-weight: 400; }
+.wr span { display: block; font-style: italic; color: var(--soft); font-size: 15.5px; margin-top: 6px; }
+.wr p { font-size: 15.5px; margin: 8px 0 0; color: #ddd8f5; }
+
+/* карточки людей: высокие портреты, имя на отсвете костра */
+.people { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.pc { position: relative; display: block; width: 100%; aspect-ratio: 3 / 4; padding: 0; border: 0; border-radius: 18px; overflow: hidden; cursor: pointer; background: var(--n2); text-align: left; color: inherit;
+  box-shadow: 0 18px 36px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,210,122,.16); transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s; }
+.pc img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.pc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(11,12,38,.6) 72%, rgba(11,12,38,.95)); pointer-events: none; }
+.pc .stripe { position: absolute; left: 0; right: 0; top: 0; height: 4px; z-index: 1; background: var(--hc, var(--flower)); }
+.pc .cap { position: absolute; left: 14px; right: 14px; bottom: 12px; z-index: 1; }
+.pc .cap b { display: block; font: 400 19px/1.15 'Yeseva One', serif; color: #fff3dc; }
+.pc .cap span { display: block; font-size: 14px; font-style: italic; color: #d7d1f2; margin-top: 2px; }
+.pc:hover { transform: translateY(-5px); box-shadow: 0 24px 46px rgba(0,0,0,.5), 0 0 34px rgba(255,170,80,.25), inset 0 0 0 1px rgba(255,210,122,.55); }
+.pc:hover img { transform: scale(1.04); }
+.pc.on { box-shadow: 0 0 0 2px var(--flower), 0 0 40px rgba(255,190,90,.4); }
+.pc[hidden] { display: none; }
+/* панель под рядом */
+.pnl { grid-column: 1 / -1; position: relative; display: grid; grid-template-columns: 300px 1fr; gap: 30px; padding: 26px; border-radius: 22px;
+  background: radial-gradient(90% 80% at 0% 0%, rgba(255,190,90,.12), transparent 60%), #1a1b52; box-shadow: 0 30px 60px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,210,122,.25); animation: pnl .45s cubic-bezier(.2,.7,.2,1); }
+@keyframes pnl { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+.pnl::before { content: ""; position: absolute; top: -9px; left: var(--caret, 50%); width: 18px; height: 18px; background: #1a1b52; transform: rotate(45deg); box-shadow: -1px -1px 0 rgba(255,210,122,.25); }
+.pnl .pic { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: 16px; overflow: hidden; aspect-ratio: 3 / 4; align-self: start; cursor: zoom-in; background: var(--n2); }
+.pnl .pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; transition: transform .5s; }
+.pnl .pic:hover img { transform: scale(1.03); }
+.zm { position: absolute; right: 10px; bottom: 10px; display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: rgba(11,12,38,.75); color: var(--flower); font-size: 13.5px; line-height: 1; backdrop-filter: blur(4px); }
+.zm svg { width: 15px; height: 15px; }
+.pnl .who { padding-right: 44px; }
+.pnl .nm { display: block; font: 400 clamp(1.7rem, 3vw, 2.4rem)/1.05 'Yeseva One', serif; color: var(--flower); }
+.pnl .meta { font-style: italic; color: var(--soft); margin: 6px 0 14px; }
+.pnl .meta i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--hc, var(--flower)); margin-right: 8px; }
+.pnl p { margin: 0 0 10px; }
+.pnl .look { color: var(--soft); font-style: italic; }
+.pnl .refb { position: relative; display: block; width: 100%; max-width: 480px; margin-top: 14px; padding: 0; border: 0; border-radius: 14px; overflow: hidden; cursor: zoom-in; background: #0b0c26; box-shadow: inset 0 0 0 1px rgba(255,210,122,.3); }
+.pnl .refb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .5s; }
+.pnl .refb:hover img { transform: scale(1.03); }
+.pnl .refb .zm { left: 10px; right: auto; background: var(--flower); color: var(--n0); }
+.pnl .x { position: absolute; top: 14px; right: 14px; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(11,12,38,.7); cursor: pointer; }
+.pnl .x::before, .pnl .x::after, .lb .x::before, .lb .x::after { content: ""; position: absolute; left: 12px; top: 20px; width: 18px; height: 2px; background: #fff; transform: rotate(45deg); }
+.pnl .x::after, .lb .x::after { transform: rotate(-45deg); }
+.h-sirin { --hc: #5b7fe0; } .h-gamayun { --hc: #a373e0; } .h-alkonost { --hc: #e05a6e; } .h-stratim { --hc: #3fbf8a; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 0 26px; }
+.chips button { border: 0; border-radius: 999px; padding: 10px 18px; background: rgba(236,231,255,.08); color: var(--moon); cursor: pointer; font-size: 15px; transition: background-color .2s, color .2s; }
+.chips button[aria-pressed="true"] { background: var(--flower); color: var(--n0); }
+.more { text-align: center; margin-top: 30px; }
+.pc[hidden] { display: none; }
+
+/* просмотр крупно: портрет или рефы, со скачиванием */
+dialog { width: min(1180px, calc(100% - 24px)); max-height: calc(100svh - 24px); padding: 0; border: 0; border-radius: 20px; background: #0b0c26; color: var(--moon); box-shadow: 0 40px 80px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,210,122,.25); overflow: hidden; }
+dialog::backdrop { background: rgba(8,8,26,.85); backdrop-filter: blur(4px); }
+.lb { margin: 0; display: flex; flex-direction: column; max-height: calc(100svh - 24px); }
+.lb .stage { flex: 1; min-height: 0; display: grid; place-items: center; background: #070818; }
+.lb .stage img { max-width: 100%; max-height: calc(100svh - 110px); object-fit: contain; }
+.lb figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 12px 16px; }
+.lb .lbn { font: 400 20px/1.1 'Yeseva One', serif; color: var(--flower); margin-right: auto; }
+.lb .tabs { display: flex; gap: 6px; }
+.lb .tabs button { border: 0; border-radius: 999px; padding: 8px 14px; background: rgba(236,231,255,.08); color: var(--moon); cursor: pointer; font-size: 14px; }
+.lb .tabs button[aria-pressed="true"] { background: rgba(255,210,122,.2); color: var(--flower); }
+.lb .get { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: var(--flower); color: var(--n0); text-decoration: none; font-size: 15px; line-height: 1; }
+.lb .get svg { width: 16px; height: 16px; }
+.lb .x { position: relative; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(236,231,255,.1); cursor: pointer; }
+
+.end { position: relative; z-index: 2; text-align: center; padding: 20px 24px 120px; }
+.end .w { font: 400 clamp(2rem, 6vw, 4.4rem)/1 'Yeseva One', serif; color: #fff3dc; text-shadow: 0 0 30px rgba(243,154,60,.5); }
+.end p { color: var(--soft); font-style: italic; }
+
+@media (max-width: 960px) { .people { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 860px) {
+  .path { padding-left: 54px; padding-right: 18px; }
+  .stop, .stop.l, .stop.r { width: auto; margin-left: 0; margin-right: 0; }
+  .wreaths { grid-template-columns: 1fr 1fr; }
+  .people { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .pc .cap b { font-size: 16px; } .pc .cap span { font-size: 13px; }
+  .pnl { grid-template-columns: 1fr; padding: 18px; gap: 18px; } .pnl .pic { max-width: 240px; } .pnl .who { padding-right: 0; }
+  .glass { padding: 22px; }
+  .dl { grid-template-columns: 1fr; } .dl .ph img { max-height: 46svh; }
+}
+@media (prefers-reduced-motion: reduce) { .flies, .fern .rays, .fern .bloom, .wr { animation: none !important; } .flies { display: none; } html { scroll-behavior: auto; } }
+/* интро: письмо, ролик, музыка (intro.css / intro.js) */
+html.ki-pending .snav, html.ki-pending .hero, html.ki-pending .path, html.ki-pending .end, html.ki-pending .flies { visibility: hidden; }
+
+/* картины на заднем плане вдоль тропы */
+.bgs { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.bgs i { position: absolute; inset: -4%; background: center / cover no-repeat; opacity: 0; transform: scale(1.06);
+  filter: grayscale(.35) brightness(.5) sepia(.25) hue-rotate(200deg) saturate(1.55); transition: opacity 1.4s ease, transform 8s ease-out; }
+.bgs i.on { opacity: .42; transform: scale(1); }
+/* залы внутри горы оставляем малахитовыми – только приглушаем */
+.bgs i.mal { filter: brightness(.6) saturate(1.05) contrast(1.05); }
+.bgs i.mal.on { opacity: .6; }
+.bgs::after { content: ""; position: absolute; inset: 0; background:
+  radial-gradient(75% 65% at 50% 50%, transparent 30%, rgba(11,12,38,.75) 100%),
+  linear-gradient(180deg, rgba(11,12,38,.55), transparent 25%, transparent 75%, rgba(11,12,38,.6)); }
+@media (prefers-reduced-motion: reduce) { .bgs i { transition: opacity .6s ease; transform: none !important; } }
+
+/* языки – как на основном сайте: rt-lang + data-lang */
+html[data-lang="en"] .lang-ru, html:not([data-lang="en"]) .lang-en { display: none !important; }
+/* шапка сайта */
+.snav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; gap: 18px; padding: 12px clamp(14px, 3vw, 28px); background: linear-gradient(180deg, rgba(11,12,38,.9), rgba(11,12,38,0)); transition: background-color .3s; }
+.snav.solid { background: rgba(11,12,38,.88); backdrop-filter: blur(8px); }
+.snav .sn-logo { font: 400 18px/1 'Yeseva One', serif; color: var(--flower); text-decoration: none; letter-spacing: .04em; }
+.snav .sn-back { color: var(--soft); text-decoration: none; font-size: 15px; margin-right: auto; }
+.snav .sn-back:hover, .snav .sn-logo:hover { color: #fff3dc; }
+.snav .sn-lang { border: 1px solid rgba(255,210,122,.6); background: transparent; color: var(--flower); border-radius: 999px; padding: 7px 14px; font: 600 13px/1 'Lora', serif; letter-spacing: .08em; cursor: pointer; transition: background-color .2s, color .2s; }
+.snav .sn-lang:hover { background: var(--flower); color: var(--n0); }
+.end .cr { margin-top: 18px; font-size: 14px; color: var(--soft); font-style: normal; opacity: .85; max-width: 60ch; margin-left: auto; margin-right: auto; }
+@media (max-width: 560px) { .snav { gap: 12px; } .snav .sn-logo { font-size: 15px; } .snav .sn-back { font-size: 13.5px; } }
+
+/* трейлер в конце страницы */
+.end .watch { display: inline-flex; align-items: center; gap: 10px; margin: 26px 0 6px; }
+.end .watch svg { width: 18px; height: 18px; }
+#trailer { width: min(1100px, calc(100% - 24px)); }
+#trailer .tv { position: relative; background: #000; }
+#trailer video { display: block; width: 100%; max-height: calc(100svh - 120px); background: #000; }
+#trailer .tv-bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; }
+#trailer .tv-bar b { font: 400 20px/1.1 'Yeseva One', serif; color: var(--flower); margin-right: auto; }
+#trailer .tv-bar .x { position: relative; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(236,231,255,.1); cursor: pointer; }
+#trailer .tv-bar .x::before, #trailer .tv-bar .x::after { content: ""; position: absolute; left: 12px; top: 20px; width: 18px; height: 2px; background: #fff; transform: rotate(45deg); }
+#trailer .tv-bar .x::after { transform: rotate(-45deg); }
+</style>
+</head>
+<body>
+<nav class="snav" id="snav"><a class="sn-logo" href="index.html"><span class="lang-ru">РУССКАЯ ТОСКА</span><span class="lang-en">RUSSKAYA TOSKA</span></a><a class="sn-back" href="au.html"><span class="lang-ru">&larr; Все AU</span><span class="lang-en">&larr; All AU</span></a><button class="sn-lang" id="langToggle" type="button" aria-label="Language / Язык">EN</button></nav>
+<div class="bgs" id="bgs" aria-hidden="true"><i data-bg="rails" style="background-image:url(koldovstvorets/images/_vibe/rails.jpg)"></i><i data-bg="train" style="background-image:url(koldovstvorets/images/_vibe/train.jpg)"></i><i data-bg="terem" style="background-image:url(koldovstvorets/images/_vibe/terem.jpg)"></i><i class="mal" data-bg="trapeznaya" style="background-image:url(koldovstvorets/images/_vibe/bg-trapeznaya.webp)"></i><i class="mal" data-bg="podzemelye" style="background-image:url(koldovstvorets/images/_vibe/bg-podzemelye.webp)"></i><i class="mal" data-bg="zal" style="background-image:url(koldovstvorets/images/_vibe/bg-zal.webp)"></i></div>
+<div class="flies" id="flies" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="bg" role="img" aria-label="Малахитовый терем ночью"></div>
+  <svg class="moon" viewBox="-50 -50 100 100" aria-hidden="true">
+    <defs>
+      <radialGradient id="mg" cx="30%" cy="40%" r="75%"><stop offset="0" stop-color="#fffdf6"/><stop offset=".6" stop-color="#ebe5ff"/><stop offset="1" stop-color="#b9aef0"/></radialGradient>
+      <mask id="mc"><rect x="-50" y="-50" width="100" height="100" fill="#fff"/><circle cx="17" cy="-9" r="38" fill="#000"/></mask>
+    </defs>
+    <g transform="rotate(-18)" mask="url(#mc)">
+      <circle r="44" fill="url(#mg)"/>
+      <g fill="#9d92d8" opacity=".3"><circle cx="-26" cy="-6" r="5"/><circle cx="-20" cy="16" r="3.5"/><circle cx="-12" cy="30" r="2.5"/><circle cx="-30" cy="8" r="2"/></g>
+      <circle r="44" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="1"/>
+    </g>
+  </svg>
+  <div>
+    <svg class="fern" id="fern" viewBox="-130 -130 260 260" aria-hidden="true"></svg>
+    <h1><span class="lang-ru">Колдовстворец</span><span class="lang-en">Koldovstoretz</span></h1>
+    <p><span class="lang-ru">Школа волшбы в Медной горе. Учат двенадцать лет, а провожают в Купальскую ночь – когда цветёт папоротник.</span><span class="lang-en">A school of magic inside the Copper Mountain. Twelve years of lessons, and you graduate on Kupala Night – when the fern flowers.</span></p>
+    <a class="btn" href="#tropa"><span class="lang-ru">За клубочком</span><span class="lang-en">Follow the yarn ball</span></a>
+  </div>
+</header>
+
+<main class="path" id="tropa">
+  <svg class="thread" id="thread" aria-hidden="true">
+    <defs>
+      <radialGradient id="yg" cx="35%" cy="32%" r="75%"><stop offset="0" stop-color="#f0705a"/><stop offset=".55" stop-color="#c2352a"/><stop offset="1" stop-color="#6e1a14"/></radialGradient>
+      <clipPath id="yc"><circle r="22"/></clipPath>
+    </defs>
+    <path class="ghostline" id="tg"/>
+    <path class="line" id="tl"/>
+    <g id="nodes"></g>
+    <g id="ball"><g id="ballSpin"><circle r="22" fill="url(#yg)"/><g clip-path="url(#yc)" id="strands" fill="none" stroke-linecap="round"></g><circle r="22" fill="none" stroke="#5a1410" stroke-width="1.4"/></g><ellipse cx="-8" cy="-9" rx="8" ry="5" fill="#fff" opacity=".2"/></g>
+  </svg>
+
+  <section class="stop l" data-node data-bg="rails">
+    <h2><span class="lang-ru">Как у нас заведено</span><span class="lang-en">How Things Work Here</span></h2>
+    <div class="glass"><ul class="facts">
+      <li><span class="lang-ru"><b>Завеса</b>Магл, увидев лишнее, к утру сам себе всё объяснит и забудет.</span><span class="lang-en"><b>The Veil</b>A Muggle who sees too much will have explained it all away by morning – and forgotten.</span></li>
+      <li><span class="lang-ru"><b>Сороки</b>Птице называют человека – она его находит. Блестящего не передавать.</span><span class="lang-en"><b>Magpies</b>Tell the bird a name – it will find the person. Nothing shiny, please.</span></li>
+      <li><span class="lang-ru"><b>Домовой</b>Волшебный ребёнок будит домового, и тот сообщает куда надо.</span><span class="lang-en"><b>The Domovoi</b>A magical child wakes the house spirit, and the domovoi reports where it should.</span></li>
+      <li><span class="lang-ru"><b>Зло</b>Спит. Или делает вид, что спит.</span><span class="lang-en"><b>Evil</b>Asleep. Or pretending to be.</span></li>
+    </ul></div>
+  </section>
+
+  <section class="stop r" data-node data-bg="train">
+    <h2><span class="lang-ru">Год по народному календарю</span><span class="lang-en">The Year by the Folk Calendar</span></h2>
+    <div class="glass"><dl class="year">
+      <dt><span class="lang-ru">1 сентября</span><span class="lang-en">1 September</span></dt><dd><span class="lang-ru">Вещие птицы на жёрдочках выбирают первоклассников.</span><span class="lang-en">The prophetic birds on their perches choose the first-years.</span></dd>
+      <dt><span class="lang-ru">Покров</span><span class="lang-en">Pokrov</span></dt><dd><span class="lang-ru">Осенние каникулы.</span><span class="lang-en">Autumn holidays.</span></dd>
+      <dt><span class="lang-ru">Святки</span><span class="lang-en">Svyatki</span></dt><dd><span class="lang-ru">Зимние каникулы.</span><span class="lang-en">Winter holidays.</span></dd>
+      <dt><span class="lang-ru">Масленица</span><span class="lang-en">Maslenitsa</span></dt><dd><span class="lang-ru">Весенние каникулы, блины всю неделю.</span><span class="lang-en">Spring holidays, pancakes all week long.</span></dd>
+      <dt><span class="lang-ru">Купала</span><span class="lang-en">Kupala</span></dt><dd><span class="lang-ru">6–7 июля, выпускной. Кто остаётся на лето – для них лагерь до конца августа.</span><span class="lang-en">6–7 July, graduation. Those who stay for the summer get a camp until the end of August.</span></dd>
+    </dl></div>
+  </section>
+
+  <section class="full" data-node data-bg="zal">
+    <h2><span class="lang-ru">Четыре вещие птицы</span><span class="lang-en">Four Prophetic Birds</span></h2>
+    <p class="sub"><span class="lang-ru">Первого сентября птица тычется в ладонь тому, чей дом ему по нутру, и дарит перо.</span><span class="lang-en">On the first of September a bird nudges the palm of the child whose house suits them – and gives a feather.</span></p>
+    <div class="wreaths" id="wreaths"></div>
+  </section>
+
+  <section class="stop l" data-node data-bg="podzemelye">
+    <h2><span class="lang-ru">История горы</span><span class="lang-en">History of the Mountain</span></h2>
+    <div class="glass">
+      <p><span class="lang-ru"><b>до 1702.</b> В горе жили до русских. Терем построен поверх чужого дома.</span><span class="lang-en"><b>Before 1702.</b> Someone lived in the mountain before the Russians. The terem was built over another’s home.</span></p>
+      <p><span class="lang-ru"><b>XVII век.</b> Волшебники, бежавшие за Камень от ведовских процессов, попросились к горе – их пустили.</span><span class="lang-en"><b>17th century.</b> Wizards fleeing the witch trials crossed the Stone Belt and asked the mountain to take them in – it did.</span></p>
+      <p><span class="lang-ru"><b>1930-е.</b> Школу закрыли как пережиток.</span><span class="lang-en"><b>1930s.</b> The school was closed as a relic of the past.</span></p>
+      <p><span class="lang-ru"><b>1984.</b> Хозяйка снова принимает учеников.</span><span class="lang-en"><b>1984.</b> The Mistress takes in students again.</span></p>
+      <p><span class="lang-ru"><b>2000.</b> Шестнадцатый год работы. Этой осенью – Магическая Олимпиада.</span><span class="lang-en"><b>2000.</b> The sixteenth year since reopening. This autumn – the Magical Olympiad.</span></p>
+    </div>
+  </section>
+
+  <section class="full" data-node data-bg="trapeznaya">
+    <h2><span class="lang-ru">Учительская</span><span class="lang-en">The Staff Room</span></h2>
+    <p class="sub"><span class="lang-ru">Двадцать учителей, у каждого своя сказка. Нажми на портрет – откроется карточка.</span><span class="lang-en">Twenty teachers, each with a fairy tale of their own. Tap a portrait to open the card.</span></p>
+    <div class="people" id="teachers"></div>
+    <div class="more"><button class="btn ghost" id="tMore" type="button"><span class="lang-ru">Вся учительская</span><span class="lang-en">All teachers</span></button></div>
+  </section>
+
+  <section class="full" data-node data-bg="terem">
+    <h2><span class="lang-ru">Кто учится</span><span class="lang-en">Students</span></h2>
+    <p class="sub"><span class="lang-ru">Старшие классы. Половина – из Труповолкова и Пожухлова, Красноярский край. Пятеро играют в группе «В поисках похвалы и пахлавы», четверо зовут себя «Енотами».</span><span class="lang-en">The senior years. Half of them come from Trupovolkovo and Pozhukhlovo, Krasnoyarsk Krai. Five play in the band «In Search of Praise and Pakhlava», four call themselves «The Raccoons».</span></p>
+    <div class="chips" id="chips" role="group" aria-label="Фильтр учеников">
+      <button data-f="all" aria-pressed="true"><span class="lang-ru">Все</span><span class="lang-en">All</span></button><button data-f="sirin" aria-pressed="false"><span class="lang-ru">Сирин</span><span class="lang-en">Sirin</span></button><button data-f="gamayun" aria-pressed="false"><span class="lang-ru">Гамаюн</span><span class="lang-en">Gamayun</span></button><button data-f="alkonost" aria-pressed="false"><span class="lang-ru">Алконост</span><span class="lang-en">Alkonost</span></button><button data-f="stratim" aria-pressed="false"><span class="lang-ru">Стратим</span><span class="lang-en">Stratim</span></button><button data-f="ext" aria-pressed="false"><span class="lang-ru">Расширенный состав</span><span class="lang-en">Extended cast</span></button>
+    </div>
+    <div class="people" id="students"></div>
+    <div class="more"><button class="btn ghost" id="sMore" type="button"><span class="lang-ru">Показать всех</span><span class="lang-en">Show all</span></button></div>
+  </section>
+</main>
+
+<footer class="end"><div class="w"><span class="lang-ru">Колдовстворец</span><span class="lang-en">Koldovstoretz</span></div><p><span class="lang-ru">Мы ожидаем вашу сороку не позднее 31 июля.</span><span class="lang-en">We await your magpie no later than 31 July.</span></p><button class="btn watch" type="button" id="watchTrailer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg> <span class="lang-ru">Посмотреть трейлер</span><span class="lang-en">Watch the trailer</span></button>
+<p class="cr"><span class="lang-ru">(c) Wewwa, 2025–2026. Основано на цикле J.K. Rowling «Harry Potter». Все персонажи принадлежат авторам.</span><span class="lang-en">(c) Wewwa, 2025–2026. Based on J.K. Rowling’s “Harry Potter” series. All characters belong to their respective authors.</span></p></footer>
+
+<dialog id="trailer" aria-label="Трейлер / Trailer"><div class="tv"><video controls playsinline preload="none" poster="koldovstvorets/video/intro-trailer.jpg"><source src="koldovstvorets/video/intro-trailer.mp4" type="video/mp4"></video></div><div class="tv-bar"><b><span class="lang-ru">Колдовстворец – трейлер</span><span class="lang-en">Koldovstoretz – trailer</span></b><button class="x" type="button" aria-label="Закрыть / Close"></button></div></dialog>
+<dialog id="dlg" aria-label="Просмотр"><figure class="lb"><div class="stage"><img alt=""></div><figcaption><b class="lbn"></b><span class="tabs"></span><a class="get" href="#" download><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="lang-ru">Скачать</span><span class="lang-en">Download</span></a><button class="x" type="button" aria-label="Закрыть"></button></figcaption></figure></dialog>
+
+<script src="koldovstvorets/kold-data.js?v=5"></script>
+<script src="koldovstvorets/kold-data-en.js?v=5"></script>
+<script>
+(function () {
+  var K = window.KOLD || {}, NS = 'http://www.w3.org/2000/svg';
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seed = 5; function r() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+
+  /* ---------- светлячки ---------- */
+  if (!reduce) {
+    var fl = document.getElementById('flies');
+    for (var i = 0; i < 28; i++) {
+      var f = document.createElement('i');
+      f.style.left = (Math.random() * 100) + '%'; f.style.top = (Math.random() * 100) + '%';
+      f.style.setProperty('--x', (Math.random() * 120 - 60) + 'px'); f.style.setProperty('--y', (Math.random() * 120 - 60) + 'px');
+      f.style.setProperty('--d', (6 + Math.random() * 8) + 's'); f.style.setProperty('--b', (1.6 + Math.random() * 2.4) + 's');
+      f.style.animationDelay = (-Math.random() * 8) + 's, ' + (-Math.random() * 3) + 's';
+      fl.appendChild(f);
+    }
+  }
+
+  /* ---------- цветок папоротника ---------- */
+  (function () {
+    var f2 = function (n) { return n.toFixed(1); };
+    // лепесток-язык пламени: асимметричный, с двумя кончиками
+    function flame(L, w) {
+      return 'M0 0 C' + f2(-w) + ' ' + f2(-L * .26) + ' ' + f2(-w * 1.15) + ' ' + f2(-L * .64) + ' ' + f2(-w * .22) + ' ' + f2(-L) +
+        ' C' + f2(-w * .02) + ' ' + f2(-L * .83) + ' ' + f2(w * .3) + ' ' + f2(-L * .76) + ' ' + f2(w * .36) + ' ' + f2(-L * .64) +
+        ' C' + f2(w * .62) + ' ' + f2(-L * .74) + ' ' + f2(w * .7) + ' ' + f2(-L * .84) + ' ' + f2(w * .86) + ' ' + f2(-L * .88) +
+        ' C' + f2(w * 1.2) + ' ' + f2(-L * .56) + ' ' + f2(w * .95) + ' ' + f2(-L * .22) + ' 0 0Z';
+    }
+    function round(L, w) { return 'M0 0 C' + f2(-w) + ' ' + f2(-L * .3) + ' ' + f2(-w * .8) + ' ' + f2(-L * .85) + ' 0 ' + f2(-L) + ' C' + f2(w * .8) + ' ' + f2(-L * .85) + ' ' + f2(w) + ' ' + f2(-L * .3) + ' 0 0Z'; }
+    // перо папоротника с зубчатыми долями
+    function pinna(L, w) {
+      var n = 4, d = 'M0 0', i, x, y;
+      for (i = 1; i <= n; i++) { x = L * i / n; y = -w * (1 - (i - 1) / n * .55); d += ' Q' + f2(x - L / n * .55) + ' ' + f2(y * 1.15) + ' ' + f2(x) + ' ' + f2(y * .55); }
+      d += ' L' + f2(L * 1.05) + ' 0';
+      for (i = n; i >= 1; i--) { x = L * i / n; y = w * (1 - (i - 1) / n * .55); d += ' Q' + f2(x - L / n * .45) + ' ' + f2(y * 1.15) + ' ' + f2(x - L / n) + ' ' + f2(y * .5); }
+      return d + 'Z';
+    }
+    var s = '<defs>' +
+      '<filter id="fglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>' +
+      '<filter id="fsoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter>' +
+      '<radialGradient id="fh"><stop offset="0" stop-color="#ffcf6a" stop-opacity=".6"/><stop offset=".4" stop-color="#f3842e" stop-opacity=".2"/><stop offset="1" stop-color="#f3842e" stop-opacity="0"/></radialGradient>' +
+      '<linearGradient id="pb" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffb347"/><stop offset=".55" stop-color="#e2541f"/><stop offset="1" stop-color="#8f1f12"/></linearGradient>' +
+      '<linearGradient id="pm" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff3c4"/><stop offset=".4" stop-color="#ffbe55"/><stop offset="1" stop-color="#f06a24"/></linearGradient>' +
+      '<linearGradient id="pf" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fffdf2"/><stop offset="1" stop-color="#ffd877"/></linearGradient>' +
+      '<radialGradient id="pc0"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#fff0b8"/><stop offset="1" stop-color="#ffc35a"/></radialGradient>' +
+      '<linearGradient id="lfa" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d5e46"/><stop offset="1" stop-color="#4fb184"/></linearGradient>' +
+      '</defs>';
+    s += '<circle r="128" fill="url(#fh)"/>';
+    // тонкие лучи
+    s += '<g class="rays" stroke="#ffe4a0" stroke-linecap="round">';
+    for (var a = 0; a < 360; a += 7.5) { var k = Math.round(a / 7.5) % 3; s += '<line x1="0" y1="-' + (k ? 92 : 88) + '" x2="0" y2="-' + (k === 0 ? 124 : k === 1 ? 104 : 98) + '" stroke-width="' + (k ? .7 : 1.3) + '" opacity="' + (k ? .3 : .6) + '" transform="rotate(' + a + ')"/>'; }
+    s += '</g>';
+    // папоротник: два листа снизу, перья по стеблю
+    function frond(side) {
+      var P0 = [6, 30], C = [70, 82], P1 = [136, 6];
+      var B = function (t) { var u = 1 - t; return [u * u * P0[0] + 2 * u * t * C[0] + t * t * P1[0], u * u * P0[1] + 2 * u * t * C[1] + t * t * P1[1]]; };
+      var D = function (t) { return [2 * (1 - t) * (C[0] - P0[0]) + 2 * t * (P1[0] - C[0]), 2 * (1 - t) * (C[1] - P0[1]) + 2 * t * (P1[1] - C[1])]; };
+      var g = '<g transform="scale(' + side + ',1)"><path d="M' + P0 + ' Q' + C + ' ' + P1 + '" fill="none" stroke="#2a7656" stroke-width="2.4" stroke-linecap="round"/>';
+      for (var i = 0; i < 14; i++) {
+        var t = .05 + i * .066, b = B(t), d = D(t), ang = Math.atan2(d[1], d[0]) * 180 / Math.PI, L = 32 * (1 - t * .75), w = L * .2;
+        [-62, 62].forEach(function (off) {
+          g += '<g transform="translate(' + f2(b[0]) + ' ' + f2(b[1]) + ') rotate(' + f2(ang + off) + ')"><path d="' + pinna(L, w) + '" fill="url(#lfa)" stroke="#123f2e" stroke-width=".5"/><path d="M1 0 H' + f2(L * .95) + '" stroke="#a9ecc9" stroke-opacity=".45" stroke-width=".6"/></g>';
+        });
+      }
+      return g + '</g>';
+    }
+    s += frond(1) + frond(-1);
+    // искорки
+    for (var i = 0; i < 16; i++) {
+      var an = i / 16 * Math.PI * 2 + (i % 2) * .2, rr = 96 + (i * 37 % 26), x = Math.cos(an) * rr, y = Math.sin(an) * rr * .92 - 6, z = 2.5 + (i % 3);
+      s += '<path class="tw" style="animation-delay:' + (-(i * .37) % 2.6).toFixed(2) + 's" d="M' + f2(x) + ' ' + f2(y - z * 2) + ' L' + f2(x + z * .5) + ' ' + f2(y - z * .5) + ' L' + f2(x + z * 2) + ' ' + f2(y) + ' L' + f2(x + z * .5) + ' ' + f2(y + z * .5) + ' L' + f2(x) + ' ' + f2(y + z * 2) + ' L' + f2(x - z * .5) + ' ' + f2(y + z * .5) + ' L' + f2(x - z * 2) + ' ' + f2(y) + ' L' + f2(x - z * .5) + ' ' + f2(y - z * .5) + 'Z" fill="#fff4c8"/>';
+    }
+    // цветок
+    s += '<g class="bloom">';
+    s += '<g filter="url(#fglow)" opacity=".6">';
+    for (a = 18; a < 360; a += 36) s += '<path d="' + flame(96, 22) + '" fill="#f06a24" transform="rotate(' + a + ')"/>';
+    s += '</g>';
+    for (a = 18; a < 360; a += 36) s += '<g transform="rotate(' + a + ')"><path d="' + flame(92, 21) + '" fill="url(#pb)"/><path d="M0 -6 Q4 -46 -3 -86" fill="none" stroke="#ffcf8a" stroke-opacity=".35" stroke-width="1"/></g>';
+    for (a = 0; a < 360; a += 36) s += '<g transform="rotate(' + a + ')"><path d="' + flame(76, 18) + '" fill="url(#pm)"/><path d="M0 -6 Q3 -38 -2 -70" fill="none" stroke="#fff6d8" stroke-opacity=".6" stroke-width="1"/><path d="M-4 -14 Q-9 -36 -6 -56" fill="none" stroke="#fff6d8" stroke-opacity=".25" stroke-width=".8"/></g>';
+    for (a = 36; a < 360; a += 72) s += '<path d="' + round(52, 15) + '" fill="url(#pf)" stroke="#fff8e2" stroke-width=".8" transform="rotate(' + a + ')"/>';
+    for (a = 0; a < 360; a += 24) s += '<g transform="rotate(' + a + ')"><path d="M0 -8 Q' + (a % 48 ? 4 : -4) + ' -18 0 -27" fill="none" stroke="#fff1c2" stroke-width="1"/><circle cy="-28" r="2.3" fill="#fffbe8"/></g>';
+    s += '<circle r="24" fill="#fff6d0" filter="url(#fsoft)" opacity=".8"/><circle r="12" fill="url(#pc0)"/></g>';
+    document.getElementById('fern').innerHTML = s;
+  })();
+
+  /* ---------- венки ---------- */
+  function wreath(id) {
+    var f2 = function (n) { return n.toFixed(1); }, CX = 110, CY = 110, R = 84;
+    var s = '<svg viewBox="0 0 220 250" aria-hidden="true"><defs>' +
+      '<linearGradient id="l1' + id + '" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1f5a33"/><stop offset="1" stop-color="#5fa35c"/></linearGradient>' +
+      '<linearGradient id="l2' + id + '" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2d6b3a"/><stop offset="1" stop-color="#8cc070"/></linearGradient>' +
+      '<linearGradient id="l3' + id + '" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#3f5f2a"/><stop offset="1" stop-color="#a7b85a"/></linearGradient>' +
+      '<radialGradient id="cg' + id + '"><stop offset="0" stop-color="#ffd27a" stop-opacity=".7"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>' +
+      '<linearGradient id="cf' + id + '" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a1a"/><stop offset=".6" stop-color="#ffd27a"/><stop offset="1" stop-color="#fff6cf"/></linearGradient>' +
+      '<linearGradient id="cw' + id + '" x1="0" x2="1"><stop offset="0" stop-color="#d8c8a0"/><stop offset=".5" stop-color="#f6ecd0"/><stop offset="1" stop-color="#c7b58a"/></linearGradient>' +
+      '</defs>';
+    // вода
+    s += '<g fill="none" stroke="#b9c6ff" stroke-linecap="round">' +
+      '<ellipse cx="110" cy="214" rx="92" ry="11" stroke-opacity=".18" stroke-width="1.5"/><ellipse cx="110" cy="214" rx="66" ry="7" stroke-opacity=".28" stroke-width="1.2"/><ellipse cx="110" cy="214" rx="38" ry="4" stroke-opacity=".4" stroke-width="1"/></g>';
+    // ленты
+    s += '<path d="M98 186 C92 200 104 212 96 226 C92 234 96 240 100 246 L106 244 C102 236 100 232 104 226 C110 212 100 202 106 188Z" fill="#c8322c"/>' +
+      '<path d="M118 186 C126 202 114 214 124 228 C128 236 124 242 120 248 L114 246 C118 238 120 234 116 228 C108 214 118 202 112 188Z" fill="#e0a83a"/>';
+    // основа из прутьев
+    s += '<circle cx="110" cy="110" r="' + R + '" fill="none" stroke="#4a3420" stroke-width="9"/><circle cx="110" cy="110" r="' + (R + 2) + '" fill="none" stroke="#7a5a36" stroke-width="1.5" stroke-dasharray="14 6"/>';
+    function leaf(ang, rad, L, w, tilt, grad, rib) {
+      var x = CX + rad * Math.cos(ang), y = CY + rad * Math.sin(ang), deg = ang * 180 / Math.PI + 90 + tilt;
+      return '<g transform="translate(' + f2(x) + ' ' + f2(y) + ') rotate(' + f2(deg) + ')"><path d="M0 ' + f2(L * .5) + ' C' + f2(-w) + ' ' + f2(L * .28) + ' ' + f2(-w * 1.05) + ' ' + f2(-L * .18) + ' 0 ' + f2(-L * .5) + ' C' + f2(w * 1.05) + ' ' + f2(-L * .18) + ' ' + f2(w) + ' ' + f2(L * .28) + ' 0 ' + f2(L * .5) + 'Z" fill="url(#' + grad + id + ')" stroke="#163d22" stroke-width=".6"/>' +
+        (rib ? '<path d="M0 ' + f2(L * .45) + ' V' + f2(-L * .42) + '" stroke="#d5f0b8" stroke-opacity=".5" stroke-width=".7"/>' : '') + '</g>';
+    }
+    var n = 30, k, a;
+    for (k = 0; k < n; k++) { a = k / n * Math.PI * 2; s += leaf(a, R + (k % 2 ? 9 : 3), 24 + (k * 7 % 6), 6.4, k % 2 ? 42 : -40, k % 3 === 0 ? 'l1' : 'l2', 1); }
+    for (k = 0; k < n; k++) { a = (k + .5) / n * Math.PI * 2; s += leaf(a, R - 7, 17 + (k * 5 % 4), 4.6, k % 2 ? -55 : 55, k % 4 ? 'l2' : 'l3', 1); }
+    // цветы: ромашка, василёк, клевер
+    function chamomile(x, y, r0) {
+      var g = '<g transform="translate(' + f2(x) + ' ' + f2(y) + ')">';
+      for (var i = 0; i < 16; i++) g += '<ellipse cx="0" cy="' + f2(-r0 * .62) + '" rx="' + f2(r0 * .2) + '" ry="' + f2(r0 * .48) + '" fill="#fbfaf2" stroke="#d9d4c4" stroke-width=".4" transform="rotate(' + (i * 22.5) + ')"/>';
+      g += '<circle r="' + f2(r0 * .36) + '" fill="#f2c43a"/><circle r="' + f2(r0 * .36) + '" fill="none" stroke="#c8901c" stroke-width=".8"/>';
+      for (i = 0; i < 6; i++) g += '<circle cx="' + f2(Math.cos(i) * r0 * .16) + '" cy="' + f2(Math.sin(i) * r0 * .16) + '" r=".9" fill="#b0780e"/>';
+      return g + '</g>';
+    }
+    function cornflower(x, y, r0) {
+      var g = '<g transform="translate(' + f2(x) + ' ' + f2(y) + ')">';
+      for (var i = 0; i < 9; i++) g += '<path d="M0 0 L' + f2(-r0 * .28) + ' ' + f2(-r0 * .7) + ' L' + f2(-r0 * .14) + ' ' + f2(-r0 * .62) + ' L0 ' + f2(-r0) + ' L' + f2(r0 * .14) + ' ' + f2(-r0 * .62) + ' L' + f2(r0 * .28) + ' ' + f2(-r0 * .7) + 'Z" fill="' + (i % 2 ? '#4e6fe0' : '#6d8cf0') + '" transform="rotate(' + (i * 40) + ')"/>';
+      return g + '<circle r="' + f2(r0 * .22) + '" fill="#262a78"/></g>';
+    }
+    function clover(x, y, r0) {
+      var g = '<g transform="translate(' + f2(x) + ' ' + f2(y) + ')"><circle r="' + f2(r0) + '" fill="#d86a9a"/>';
+      for (var i = 0; i < 10; i++) g += '<circle cx="' + f2(Math.cos(i * .63) * r0 * .55) + '" cy="' + f2(Math.sin(i * .63) * r0 * .55) + '" r="' + f2(r0 * .3) + '" fill="#f0a0c4"/>';
+      return g + '</g>';
+    }
+    var kinds = [chamomile, cornflower, chamomile, clover, chamomile, cornflower, clover, chamomile, cornflower, chamomile];
+    for (k = 0; k < kinds.length; k++) {
+      a = k / kinds.length * Math.PI * 2 + .35;
+      if (Math.abs(a - Math.PI * 1.5) < .3) continue; // верх – под свечку
+      s += kinds[k](CX + (R + 4) * Math.cos(a), CY + (R + 4) * Math.sin(a), k % 2 ? 9 : 11);
+    }
+    // рябина
+    for (k = 0; k < 5; k++) {
+      a = k / 5 * Math.PI * 2 + 1.1; var bx = CX + (R - 10) * Math.cos(a), by = CY + (R - 10) * Math.sin(a);
+      [[0, 0], [4.5, 2], [1.5, 5], [-3.5, 3.5]].forEach(function (o) { s += '<circle cx="' + f2(bx + o[0]) + '" cy="' + f2(by + o[1]) + '" r="2.8" fill="#d63a35"/><circle cx="' + f2(bx + o[0] - .9) + '" cy="' + f2(by + o[1] - .9) + '" r=".8" fill="#ffd0c8"/>'; });
+    }
+    // свечка на венке
+    s += '<circle cx="110" cy="12" r="26" fill="url(#cg' + id + ')"/>' +
+      '<g class="fl"><path d="M110 18 C104 10 105 3 110 -6 C115 3 116 10 110 18Z" fill="url(#cf' + id + ')"/><path d="M110 17 C107 12 108 8 110 3 C112 8 113 12 110 17Z" fill="#fff6cf"/></g>' +
+      '<path d="M110 17 V21" stroke="#2a1a0e" stroke-width="1.2"/><rect x="104" y="21" width="12" height="22" rx="1.5" fill="url(#cw' + id + ')"/><ellipse cx="110" cy="21" rx="6" ry="2" fill="#f8eed4"/>';
+    return s + '</svg>';
+  }
+  function B(r, e) { return '<span class="lang-ru">' + r + '</span><span class="lang-en">' + e + '</span>'; }
+  var H = [
+    [B('Сирин', 'Sirin'), B('сапфир · декан Солоха', 'sapphire · dean Solokha'), 'em-sirin', B('Речь, хитрость, быстрый язык.', 'Speech, cunning, a quick tongue.'), 'rgba(70,110,230,.6)'],
+    [B('Гамаюн', 'Gamayun'), B('аметист · декан Василиса Премудрая', 'amethyst · dean Vasilisa the Wise'), 'em-gamayun', B('Знать, а не казаться.', 'To know, not to seem.'), 'rgba(160,100,230,.6)'],
+    [B('Алконост', 'Alkonost'), B('гранат · декан Марья-искусница', 'garnet · dean Marya the Craftswoman'), 'em-alkonost', B('Видеть светлое, делать руками.', 'Seeing the bright side, making with your hands.'), 'rgba(220,70,90,.55)'],
+    [B('Стратим', 'Stratim'), B('малахит · декан Илья Муромец', 'malachite · dean Ilya Muromets'), 'em-stratim', B('Держать и защищать своих.', 'Holding on and protecting your own.'), 'rgba(47,184,127,.55)']];
+  document.getElementById('wreaths').innerHTML = H.map(function (h, i) {
+    return '<div class="wr"><div class="ring">' + wreath(i) + '<div class="em" style="--g:' + h[4] + '"><img src="koldovstvorets/images/_vibe/' + h[2] + '.jpg" alt=""></div></div><b>' + h[0] + '</b><span>' + h[1] + '</span><p>' + h[3] + '</p></div>';
+  }).join('');
+
+  /* ---------- люди ---------- */
+  var EN = window.KOLD_EN || {};
+  function isEn() { return document.documentElement.getAttribute('data-lang') === 'en'; }
+  function tr(r, e) { return isEn() ? e : r; }
+  var HOUSE_RU = { sirin: 'Сирин', gamayun: 'Гамаюн', alkonost: 'Алконост', stratim: 'Стратим' }, HOUSE_EN = { sirin: 'Sirin', gamayun: 'Gamayun', alkonost: 'Alkonost', stratim: 'Stratim' };
+  function house(h) { return (isEn() ? HOUSE_EN : HOUSE_RU)[h]; }
+  function grade(n) { return isEn() ? 'Year ' + n : n + ' класс'; }
+  // английские поля из kold-data-en.js, по тому же индексу
+  function L(p) { var src = EN[p._g], e = isEn() && src && src[p._i] ? src[p._i] : {}; return Object.assign({}, p, e); }
+  var T = (K.teachers || []).map(function (t, i) { return Object.assign({ _g: 'teachers', _i: i }, t); }).filter(function (t) { return t.img; });
+  var S = (K.students || []).map(function (p, i) { return Object.assign({ ext: false, _g: 'students', _i: i }, p); })
+    .concat((K.extended || []).map(function (p, i) { return Object.assign({}, p, { ext: true, _g: 'extended', _i: i }); }));
+  var tAll = false;
+  function tCard(p0, i) {
+    var p = L(p0);
+    return '<button type="button" class="pc" data-g="t" data-i="' + i + '"' + (i >= 8 && !tAll ? ' hidden' : '') + ' aria-label="' + esc(p.name) + '"><img src="' + esc(p.img) + '" alt="" loading="lazy"><span class="cap"><b>' + esc(p.name) + '</b><span>' + esc(p.role) + '</span></span></button>';
+  }
+  function sCard(p0, i) {
+    var p = L(p0);
+    return '<button type="button" class="pc h-' + p.house + '" data-g="s" data-i="' + i + '" data-house="' + p.house + '" data-ext="' + (p.ext ? 1 : 0) + '" aria-label="' + esc(p.name) + '"><i class="stripe"></i>' +
+      (p.img ? '<img src="' + esc(p.img) + '" alt="" loading="lazy">' : '') + '<span class="cap"><b>' + esc(p.name) + '</b><span>' + grade(p.grade) + ' · ' + house(p.house) + '</span></span></button>';
+  }
+  var tEl = document.getElementById('teachers'), sEl = document.getElementById('students');
+  function renderPeople() { closePanel(tEl); closePanel(sEl); tEl.innerHTML = T.map(tCard).join(''); sEl.innerHTML = S.map(sCard).join(''); }
+  renderPeople();
+  document.getElementById('tMore').addEventListener('click', function () { tAll = true; closePanel(tEl); tEl.querySelectorAll('.pc[hidden]').forEach(function (c) { c.hidden = false; }); this.parentNode.remove(); layout(); });
+
+  var filt = 'all', showAll = false;
+  function applyS() {
+    closePanel(sEl);
+    var shown = 0;
+    sEl.querySelectorAll('.pc').forEach(function (c) {
+      var ok = filt === 'all' ? c.dataset.ext === '0' : filt === 'ext' ? c.dataset.ext === '1' : c.dataset.house === filt;
+      if (ok && !showAll && shown >= 8) ok = false;
+      if (ok) shown++;
+      c.hidden = !ok;
+    });
+    layout();
+  }
+  document.getElementById('chips').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    filt = b.dataset.f; this.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); applyS();
+  });
+  document.getElementById('sMore').addEventListener('click', function () { showAll = !showAll; this.innerHTML = showAll ? B('Свернуть', 'Show fewer') : B('Показать всех', 'Show all'); applyS(); });
+  applyS();
+
+  // карточка раскрывается панелью под своим рядом; портрет и рефы открываются крупно со скачиванием
+  function person(g, i) { return L(g === 't' ? T[i] : S[i]); }
+  function metaOf(p, g) { return g === 't' ? p.role : grade(p.grade) + ' · ' + house(p.house) + (p.ext ? tr(' · расширенный состав', ' · extended cast') : ''); }
+  function closePanel(grid) {
+    if (!grid) return;
+    var pn = grid.querySelector('.pnl'); if (pn) pn.remove();
+    grid.querySelectorAll('.pc.on').forEach(function (t) { t.classList.remove('on'); t.setAttribute('aria-expanded', 'false'); });
+  }
+  function openPanel(t) {
+    var grid = t.parentNode, g = t.dataset.g, i = +t.dataset.i, p = person(g, i);
+    var was = t.classList.contains('on');
+    closePanel(grid);
+    if (was) { setTimeout(layout, 30); return; }
+    t.classList.add('on'); t.setAttribute('aria-expanded', 'true');
+    var last = t;
+    grid.querySelectorAll('.pc:not([hidden])').forEach(function (x) { if (x.offsetTop === t.offsetTop) last = x; });
+    var pn = document.createElement('div');
+    pn.className = 'pnl' + (p.house ? ' h-' + p.house : '');
+    pn.dataset.g = g; pn.dataset.i = i;
+    pn.style.setProperty('--caret', (t.offsetLeft + t.offsetWidth / 2 - 9) + 'px');
+    pn.innerHTML = '<button type="button" class="pic" data-zoom="portrait" aria-label="Увеличить портрет"><img src="' + esc(p.full || p.img) + '" alt="' + esc(p.name) + '"><span class="zm"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> ' + tr('увеличить', 'enlarge') + '</span></button>' +
+      '<div class="who"><b class="nm">' + esc(p.name) + '</b><div class="meta">' + (p.house ? '<i></i>' : '') + esc(metaOf(p, g)) + (p.pat ? ' · ' + tr('патронус', 'patronus') + ' – ' + esc(p.pat) : '') + '</div>' +
+      '<p>' + esc(p.text) + '</p>' + (p.look ? '<p class="look">' + esc(p.look) + '</p>' : '') +
+      (p.ref ? '<button type="button" class="refb" data-zoom="ref" aria-label="Увеличить рефы"><img src="' + esc(p.ref) + '" alt="" loading="lazy"><span class="zm"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> ' + tr('рефы для генераций', 'generation refs') + '</span></button>' : '') +
+      '</div><button type="button" class="x" aria-label="Закрыть карточку"></button>';
+    last.after(pn);
+    setTimeout(function () {
+      layout();
+      var r = pn.getBoundingClientRect();
+      if (r.bottom > innerHeight || r.top < 60) pn.scrollIntoView({ block: r.height > innerHeight - 80 ? 'start' : 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    }, 30);
+  }
+
+  var dlg = document.getElementById('dlg'), lbItems = [], lbName = '';
+  function slug(n) { return n.replace(/[^\wа-яё -]+/gi, '').trim().replace(/\s+/g, '-'); }
+  function lbShow(k) {
+    var it = lbItems[k], img = dlg.querySelector('.stage img'), a = dlg.querySelector('.get');
+    img.src = it.src; img.alt = lbName + ' – ' + it.label;
+    a.href = it.src; a.setAttribute('download', slug(lbName) + '-' + it.label + (it.src.match(/\.\w+$/) || ['.webp'])[0]);
+    dlg.querySelectorAll('.tabs button').forEach(function (b, j) { b.setAttribute('aria-pressed', String(j === k)); });
+  }
+  function lbOpen(p, what) {
+    lbName = p.name;
+    lbItems = [{ src: p.full || p.img, label: tr('портрет', 'portrait') }];
+    if (p.ref) lbItems.push({ src: p.refFull || p.ref, label: tr('рефы', 'refs') });
+    dlg.querySelector('.lbn').textContent = p.name;
+    dlg.querySelector('.tabs').innerHTML = lbItems.length > 1 ? lbItems.map(function (it, j) { return '<button type="button" data-k="' + j + '">' + it.label + '</button>'; }).join('') : '';
+    lbShow(what === 'ref' && lbItems[1] ? 1 : 0);
+    dlg.showModal();
+  }
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg || e.target.closest('.lb .x')) { dlg.close(); return; }
+    var b = e.target.closest('.tabs button'); if (b) lbShow(+b.dataset.k);
+  });
+  document.addEventListener('click', function (e) {
+    var z = e.target.closest('[data-zoom]');
+    if (z) { var pn = z.closest('.pnl'); lbOpen(person(pn.dataset.g, +pn.dataset.i), z.dataset.zoom); return; }
+    var x = e.target.closest('.pnl .x'); if (x) { var gr = x.closest('.people'); closePanel(gr); setTimeout(layout, 30); return; }
+    var t = e.target.closest('.pc'); if (t) openPanel(t);
+  });
+  addEventListener('resize', function () {
+    document.querySelectorAll('.pc.on').forEach(function (t) { closePanel(t.parentNode); openPanel(t); });
+  });
+
+
+  /* ---------- трейлер со звуком: 50% по умолчанию, фоновая музыка на паузе ---------- */
+  (function () {
+    var dlgT = document.getElementById('trailer'), v = dlgT.querySelector('video'), musicWas = false;
+    function music() { return window.KI && KI.audio ? KI.audio() : null; }
+    document.getElementById('watchTrailer').addEventListener('click', function () {
+      var m = music(); musicWas = !!(m && !m.paused);
+      if (m) m.pause();
+      v.muted = false; v.volume = 0.5; v.currentTime = 0;
+      dlgT.showModal();
+      var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+    });
+    // музыку возвращаем сразу при закрытии (крестик, клик мимо, Esc), один раз
+    function resume() {
+      v.pause();
+      var m = music(); if (musicWas && m) { musicWas = false; var pr = m.play(); if (pr && pr.catch) pr.catch(function () {}); }
+    }
+    function shut() { resume(); if (dlgT.open) dlgT.close(); }
+    dlgT.querySelector('.x').addEventListener('click', shut);
+    dlgT.addEventListener('click', function (e) { if (e.target === dlgT) shut(); });
+    dlgT.addEventListener('cancel', resume);
+    dlgT.addEventListener('close', resume);
+  })();
+
+  /* ---------- язык RU/EN – общий с основным сайтом (rt-lang) ---------- */
+  (function () {
+    var btn = document.getElementById('langToggle'), h = document.documentElement;
+    function sync() { var en = isEn(); btn.textContent = en ? 'RU' : 'EN'; h.lang = en ? 'en' : 'ru'; document.title = en ? 'Koldovstoretz – RUSSKAYA TOSKA' : 'Колдовстворец – РУССКАЯ ТОСКА'; }
+    btn.addEventListener('click', function () {
+      var next = isEn() ? 'ru' : 'en';
+      h.setAttribute('data-lang', next);
+      try { localStorage.setItem('rt-lang', next); } catch (e) {}
+      sync();
+      h.dispatchEvent(new Event('rt-lang'));
+      renderPeople(); applyS();
+    });
+    sync();
+    var nav = document.getElementById('snav');
+    addEventListener('scroll', function () { nav.classList.toggle('solid', scrollY > 60); }, { passive: true });
+  })();
+
+  /* ---------- картины на заднем плане ---------- */
+  (function () {
+    var layers = {}; document.querySelectorAll('#bgs i').forEach(function (l) { layers[l.dataset.bg] = l; });
+    var secs = [].slice.call(document.querySelectorAll('section[data-bg]')), cur = null;
+    function pick() {
+      var mid = innerHeight * .5, hit = null;
+      secs.forEach(function (sec) { var r = sec.getBoundingClientRect(); if (r.top < mid && r.bottom > mid * .4) hit = sec.dataset.bg; });
+      if (hit === cur) return; cur = hit;
+      Object.keys(layers).forEach(function (k) { layers[k].classList.toggle('on', k === hit); });
+    }
+    var raf2 = 0;
+    addEventListener('scroll', function () { if (!raf2) raf2 = requestAnimationFrame(function () { raf2 = 0; pick(); }); }, { passive: true });
+    addEventListener('resize', pick); pick();
+  })();
+
+  /* ---------- путеводный клубочек ---------- */
+  var path = document.getElementById('tropa'), svg = document.getElementById('thread'), tl = document.getElementById('tl'), tg = document.getElementById('tg');
+  var nodesG = document.getElementById('nodes'), ball = document.getElementById('ball'), spin = document.getElementById('ballSpin');
+  // клубок: витки ниток под разными углами + лёгкая «шерстяная» дрожь краёв
+  (function () {
+    var defs = svg.querySelector('defs');
+    defs.insertAdjacentHTML('beforeend', '<filter id="wool" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter>' +
+      '<radialGradient id="ysh" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>');
+    var st = document.getElementById('strands'), h = '<g filter="url(#wool)">';
+    [[0, 20], [30, 14], [62, 18], [95, 12], [128, 17], [160, 13]].forEach(function (g, gi) {
+      h += '<g transform="rotate(' + g[0] + ')">';
+      for (var k = -3; k <= 3; k++) h += '<ellipse cx="0" cy="' + (k * 3.4) + '" rx="23" ry="' + (g[1] - Math.abs(k) * 1.5) + '" stroke="' + ((k + gi) % 2 ? '#f07a62' : '#9c2a20') + '" stroke-width="' + (gi % 2 ? 1.1 : 1.5) + '" opacity=".8"/>';
+      h += '</g>';
+    });
+    st.innerHTML = h + '</g><circle r="22" fill="url(#ysh)"/>';
+  })();
+  var total = 0, pts = [];
+  function layout() {
+    if (!path || !tl) return;
+    var W = path.clientWidth, Hh = path.clientHeight, mobile = innerWidth <= 860;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + Hh);
+    var cx = mobile ? 26 : W / 2, swing = mobile ? 14 : 110;
+    pts = [[cx, 10]];
+    var gx = mobile ? cx : 6;
+    path.querySelectorAll('[data-node]').forEach(function (s) {
+      var full = s.classList.contains('full'), y = s.offsetTop + (full ? 14 : 26);
+      var x = mobile ? cx : (s.classList.contains('l') ? cx - 22 : s.classList.contains('r') ? cx + 22 : cx);
+      pts.push([x, y, 1]);
+      // широкие разделы нитка обходит по левому полю, чтобы не резать текст
+      if (full && !mobile) { pts.push([gx, y + 90]); pts.push([gx, s.offsetTop + s.offsetHeight - 30]); }
+    });
+    pts.push([cx, Hh - 30]);
+    var d = 'M' + pts[0][0] + ' ' + pts[0][1];
+    for (var i = 1; i < pts.length; i++) {
+      var a = pts[i - 1], b = pts[i], dy = b[1] - a[1], sw = (a[0] === b[0] && a[0] === gx && !mobile) ? 0 : (i % 2 ? 1 : -1) * swing;
+      d += ' C' + (a[0] + sw).toFixed(1) + ' ' + (a[1] + dy * .35).toFixed(1) + ' ' + (b[0] - sw).toFixed(1) + ' ' + (b[1] - dy * .35).toFixed(1) + ' ' + b[0].toFixed(1) + ' ' + b[1].toFixed(1);
+    }
+    tl.setAttribute('d', d); tg.setAttribute('d', d);
+    total = tl.getTotalLength();
+    tl.style.strokeDasharray = total + ' ' + total;
+    nodesG.innerHTML = pts.filter(function (p) { return p[2]; }).map(function (p) { return '<circle class="node" cx="' + p[0] + '" cy="' + p[1] + '" r="' + (mobile ? 7 : 10) + '"/>'; }).join('');
+    tick();
+  }
+  function tick() {
+    if (!total) return;
+    var rect = path.getBoundingClientRect(), H2 = path.clientHeight;
+    var prog = reduce ? 1 : Math.max(0, Math.min(1, (innerHeight * .62 - rect.top) / H2));
+    var len = total * prog;
+    tl.style.strokeDashoffset = (total - len).toFixed(1);
+    var p = tl.getPointAtLength(len);
+    var sc = 1 - prog * .35;
+    ball.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1) + ') scale(' + sc.toFixed(3) + ')');
+    spin.setAttribute('transform', 'rotate(' + (len * 1.6 % 360).toFixed(1) + ')');
+    var cy = p.y;
+    nodesG.querySelectorAll('.node').forEach(function (n) { n.classList.toggle('lit', +n.getAttribute('cy') <= cy + 2); });
+  }
+  var raf = 0;
+  addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; tick(); }); }, { passive: true });
+  addEventListener('resize', layout);
+  addEventListener('load', layout);
+  layout();
+})();
+</script>
+<script src="koldovstvorets/intro.js?v=5"></script>
+</body>
+</html>

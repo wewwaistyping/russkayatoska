@@ -1,0 +1,255 @@
+/* =====================================================================
+   КОЛДОВСТВОРЕЦ — интро «письмо», эмбиент, свечи
+   Подключается к любой версии страницы: intro.css в <head>, intro.js в конце <body>.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap');
+
+:root {
+  --ki-kold: #2fb87f; --ki-deep: #0f6a47; --ki-mint: #8fe3b5; --ki-gold: #d9b24a;
+  --ki-paper: #e6d9bd; --ki-paper-dark: #c9b68f; --ki-ink: #2b2118; --ki-wax: #0f6a47;
+  --ki-night: #041c15;
+}
+
+/* до первого показа письма прячем страницу, чтобы не мигала */
+html.ki-pending { background: var(--ki-night); }
+html.ki-pending .nav, html.ki-pending .page-content, html.ki-pending .footer, html.ki-pending .vhs-tracking { visibility: hidden; }
+
+/* ---------- оверлей ---------- */
+.ki-overlay {
+  position: fixed; inset: 0; z-index: 10000; overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 45%, rgba(15,106,71,.35), transparent 70%),
+    radial-gradient(ellipse 120% 90% at 50% 120%, rgba(0,0,0,.6), transparent 60%),
+    var(--ki-night);
+  color: var(--white, #e8e4df);
+  font-family: var(--font-body, 'PT Serif', serif);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 1; transition: opacity .9s ease;
+}
+.ki-overlay.ki-out { opacity: 0; pointer-events: none; }
+.ki-overlay::before { /* каменная фактура */
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .06 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");
+}
+.ki-overlay::after { /* виньетка */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 65% at 50% 50%, transparent 40%, rgba(0,0,0,.75) 100%);
+}
+
+/* искры фона и шлейфа */
+.ki-sparks { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: visible; }
+.ki-spark { transform-box: fill-box; transform-origin: center; animation: ki-twinkle var(--d, 3s) ease-in-out var(--dl, 0s) infinite alternate; opacity: 0; }
+@keyframes ki-twinkle {
+  0%   { opacity: 0; transform: scale(.3) rotate(0deg); }
+  50%  { opacity: var(--o, .8); transform: scale(1) rotate(25deg); }
+  100% { opacity: .1; transform: scale(.5) rotate(50deg); }
+}
+.ki-trail { animation: ki-trail 1.1s ease-out forwards; transform-box: fill-box; transform-origin: center; }
+@keyframes ki-trail {
+  0%   { opacity: 1; transform: translate(0,0) scale(1) rotate(0deg); }
+  100% { opacity: 0; transform: translate(var(--tx, 0px), var(--ty, 30px)) scale(.1) rotate(120deg); }
+}
+.ki-burst { animation: ki-burst .9s cubic-bezier(.2,.7,.3,1) forwards; transform-box: fill-box; transform-origin: center; }
+@keyframes ki-burst {
+  0%   { opacity: 1; transform: translate(0,0) scale(.4); }
+  100% { opacity: 0; transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(1.2) rotate(90deg); }
+}
+
+/* ---------- кадр ожидания ---------- */
+.ki-idle { position: relative; z-index: 3; text-align: center; transition: opacity .6s ease, transform .6s ease; }
+.ki-idle.ki-hide { opacity: 0; transform: scale(.9); pointer-events: none; }
+.ki-idle .ki-crest { width: 150px; height: 150px; margin: 0 auto 18px; filter: drop-shadow(0 0 24px rgba(47,184,127,.45)); animation: ki-breathe 4s ease-in-out infinite; }
+@keyframes ki-breathe { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+.ki-idle .ki-wordmark { font-family: 'Ruslan Display', var(--font-display, 'Dela Gothic One'), serif; font-size: clamp(34px, 7.5vw, 68px); color: var(--ki-gold); text-shadow: 0 3px 0 rgba(0,0,0,.6), 0 0 30px rgba(217,178,74,.25); line-height: 1; margin-bottom: 26px; letter-spacing: 1px; }
+.ki-btn {
+  font-family: 'Ruslan Display', serif; font-size: 18px; line-height: 1;
+  padding: 15px 30px 14px; border: 1px solid var(--ki-kold); background: rgba(47,184,127,.08); color: var(--ki-mint); cursor: pointer;
+  transition: background-color .3s, color .3s, box-shadow .3s; position: relative;
+}
+.ki-btn:hover { background: var(--ki-kold); color: #061b13; box-shadow: 0 0 30px rgba(47,184,127,.45); }
+.ki-btn.ki-pulse { animation: ki-pulse 2.4s ease-in-out infinite; }
+@keyframes ki-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(47,184,127,.0) } 50% { box-shadow: 0 0 0 10px rgba(47,184,127,.12), 0 0 30px rgba(47,184,127,.25) } }
+.ki-idle .ki-note { margin-top: 14px; font-size: 15px; color: var(--gray-light, #888); letter-spacing: .5px; }
+
+/* ---------- письмо в полёте и на столе ---------- */
+.ki-stage { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; perspective: 1400px; pointer-events: none; }
+.ki-flyer { --w: min(78vw, 620px, 115vh); width: var(--w); height: calc(var(--w) * 2 / 3); position: relative; transform-style: preserve-3d; opacity: 0; }
+.ki-overlay.s-fly .ki-flyer,
+.ki-overlay.s-land .ki-flyer,
+.ki-overlay.s-flip .ki-flyer,
+.ki-overlay.s-seal .ki-flyer,
+.ki-overlay.s-open .ki-flyer,
+.ki-overlay.s-rise .ki-flyer { opacity: 1; }
+.ki-overlay.s-fly .ki-flyer { animation: ki-fly 3.4s linear forwards; }
+@keyframes ki-fly {
+  0% { transform: translate(-70.00vw, -40.00vh) scale(0.050) rotate(-38.00deg); opacity: 0.00; }
+  4% { transform: translate(-63.19vw, -19.27vh) scale(0.087) rotate(-26.06deg); opacity: 0.50; }
+  8% { transform: translate(-53.20vw, -7.72vh) scale(0.149) rotate(-18.96deg); opacity: 1.00; }
+  12% { transform: translate(-42.08vw, -2.13vh) scale(0.221) rotate(-15.80deg); opacity: 1.00; }
+  16% { transform: translate(-31.21vw, -0.22vh) scale(0.297) rotate(-14.93deg); opacity: 1.00; }
+  20% { transform: translate(-21.41vw, -0.37vh) scale(0.374) rotate(-14.90deg); opacity: 1.00; }
+  24% { transform: translate(-13.13vw, -1.48vh) scale(0.449) rotate(-14.80deg); opacity: 1.00; }
+  28% { transform: translate(-6.52vw, -2.85vh) scale(0.521) rotate(-14.23deg); opacity: 1.00; }
+  32% { transform: translate(-1.56vw, -4.08vh) scale(0.589) rotate(-13.14deg); opacity: 1.00; }
+  36% { transform: translate(1.90vw, -4.97vh) scale(0.652) rotate(-11.69deg); opacity: 1.00; }
+  40% { transform: translate(4.08vw, -5.43vh) scale(0.709) rotate(-10.03deg); opacity: 1.00; }
+  44% { transform: translate(5.22vw, -5.50vh) scale(0.761) rotate(-8.35deg); opacity: 1.00; }
+  48% { transform: translate(5.57vw, -5.23vh) scale(0.807) rotate(-6.75deg); opacity: 1.00; }
+  52% { transform: translate(5.36vw, -4.72vh) scale(0.847) rotate(-5.31deg); opacity: 1.00; }
+  56% { transform: translate(4.79vw, -4.05vh) scale(0.881) rotate(-4.06deg); opacity: 1.00; }
+  60% { transform: translate(4.02vw, -3.32vh) scale(0.910) rotate(-3.02deg); opacity: 1.00; }
+  64% { transform: translate(3.19vw, -2.59vh) scale(0.934) rotate(-2.18deg); opacity: 1.00; }
+  68% { transform: translate(2.39vw, -1.92vh) scale(0.954) rotate(-1.51deg); opacity: 1.00; }
+  72% { transform: translate(1.68vw, -1.34vh) scale(0.969) rotate(-0.99deg); opacity: 1.00; }
+  76% { transform: translate(1.10vw, -0.87vh) scale(0.980) rotate(-0.62deg); opacity: 1.00; }
+  80% { transform: translate(0.65vw, -0.51vh) scale(0.989) rotate(-0.35deg); opacity: 1.00; }
+  84% { transform: translate(0.34vw, -0.27vh) scale(0.994) rotate(-0.18deg); opacity: 1.00; }
+  88% { transform: translate(0.14vw, -0.11vh) scale(0.998) rotate(-0.07deg); opacity: 1.00; }
+  92% { transform: translate(0.04vw, -0.03vh) scale(0.999) rotate(-0.02deg); opacity: 1.00; }
+  96% { transform: translate(0.01vw, -0.00vh) scale(1.000) rotate(-0.00deg); opacity: 1.00; }
+  100% { transform: translate(0.00vw, 0.00vh) scale(1.000) rotate(-0.00deg); opacity: 1.00; }
+}
+.ki-overlay.s-land .ki-flyer { animation: ki-settle 1s cubic-bezier(.3,.6,.3,1) forwards; }
+@keyframes ki-settle { 0% { transform: scale(1) } 45% { transform: scale(1.012) rotate(.3deg) } 100% { transform: scale(1) } }
+
+.ki-env { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 1s cubic-bezier(.6,0,.3,1); }
+.ki-overlay.s-flip .ki-env, .ki-overlay.s-seal .ki-env, .ki-overlay.s-open .ki-env, .ki-overlay.s-rise .ki-env { transform: rotateY(180deg); }
+.ki-overlay.s-read .ki-flyer { opacity: 0; transition: opacity .7s ease; transform: scale(1.12); }
+.ki-overlay.s-read .ki-env { transform: rotateY(180deg); }
+
+.ki-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.ki-front > svg, .ki-back > .ki-body, .ki-back > .ki-pockets, .ki-flap-wrap > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.ki-front { filter: drop-shadow(0 30px 40px rgba(0,0,0,.6)); }
+.ki-back { transform: rotateY(180deg); filter: drop-shadow(0 30px 40px rgba(0,0,0,.6)); }
+
+/* слои задней стороны: тело → маленькое письмо → карманы → клапан → печать */
+.ki-back .ki-body { z-index: 1; }
+.ki-back .ki-pockets { z-index: 3; pointer-events: none; }
+.ki-flap-wrap { position: absolute; inset: 0; z-index: 4; perspective: 900px; pointer-events: none; }
+.ki-flap { transform-origin: 50% 0; transition: transform .9s cubic-bezier(.6,0,.2,1); overflow: visible; }
+.ki-overlay.s-open .ki-flap, .ki-overlay.s-rise .ki-flap, .ki-overlay.s-read .ki-flap { transform: rotateX(178deg); }
+/* когда клапан уже откинут, письмо должно выходить поверх него */
+.ki-overlay.s-rise .ki-flap-wrap, .ki-overlay.s-read .ki-flap-wrap { z-index: 1; }
+.ki-seal { position: absolute; z-index: 5; left: 50%; top: 56%; width: 19%; aspect-ratio: 1; transform: translate(-50%, -50%); transform-origin: center; transition: transform .5s ease, opacity .5s ease, filter .5s ease; }
+.ki-overlay.s-seal .ki-seal { animation: ki-sealglow 1.1s ease-in-out forwards; }
+@keyframes ki-sealglow {
+  0%   { filter: drop-shadow(0 0 0 rgba(143,227,181,0)); }
+  60%  { filter: drop-shadow(0 0 18px rgba(143,227,181,.9)) brightness(1.4); transform: translate(-50%, -50%) scale(1.08); }
+  100% { filter: drop-shadow(0 0 30px rgba(143,227,181,1)) brightness(2); transform: translate(-50%, -50%) scale(1.15); opacity: 0; }
+}
+.ki-overlay.s-open .ki-seal, .ki-overlay.s-rise .ki-seal, .ki-overlay.s-read .ki-seal { opacity: 0; }
+
+.ki-letter-sm {
+  position: absolute; z-index: 2; left: 7%; width: 86%; top: 10%; height: 84%;
+  background: #ecdfc0 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='900'><filter id='p' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='.06 .09' numOctaves='4' seed='3' result='f'/><feDiffuseLighting in='f' lighting-color='%23fffaf0' surfaceScale='.55' diffuseConstant='1' result='l'><feDistantLight azimuth='40' elevation='58'/></feDiffuseLighting><feComposite in='l' in2='SourceGraphic' operator='arithmetic' k1='1' k2='0' k3='0' k4='0' result='s'/><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='11' result='g'/><feColorMatrix in='g' values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .07 0' result='ga'/><feBlend in='s' in2='ga' mode='multiply'/></filter><rect width='700' height='900' fill='%23ecdfc0' filter='url(%23p)'/></svg>") center / cover; border-radius: 2px;
+  box-shadow: 0 -4px 18px rgba(0,0,0,.25), 0 0 0 1px rgba(122,95,54,.4);
+  transition: transform 1.1s cubic-bezier(.5,0,.2,1);
+  display: flex; flex-direction: column; align-items: center; padding-top: 7%; gap: 6px;
+}
+.ki-letter-sm svg { width: 20%; height: auto; }
+.ki-letter-sm .ki-lsm-crest { width: 24%; height: auto; mix-blend-mode: multiply; }
+.ki-letter-sm .ki-lsm-t { font-family: 'Ruslan Display', serif; font-size: calc(var(--w) * .046); color: #1f3a2c; letter-spacing: 1px; }
+.ki-letter-sm .ki-lsm-lines { width: 70%; display: flex; flex-direction: column; gap: 7%; margin-top: 4%; }
+.ki-letter-sm .ki-lsm-lines i { display: block; height: 2px; background: rgba(43,33,24,.22); border-radius: 2px; }
+.ki-overlay.s-rise .ki-letter-sm { transform: translateY(-62%); }
+.ki-overlay.s-read .ki-letter-sm { transform: translateY(-62%); }
+
+/* ---------- раскрытое письмо ---------- */
+.ki-sheet-wrap {
+  position: absolute; inset: 0; z-index: 4; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px;
+  opacity: 0; pointer-events: none; transform: scale(.62) translateY(6vh); transition: opacity .8s ease .15s, transform .9s cubic-bezier(.3,.7,.2,1) .15s;
+  padding: 72px 16px 24px;
+}
+.ki-overlay.s-read .ki-sheet-wrap { opacity: 1; pointer-events: auto; transform: scale(1) translateY(0); }
+.ki-sheet {
+  width: min(92vw, 640px); max-height: min(74vh, 780px); overflow: auto; position: relative;
+  background: #ecdfc0 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='900'><filter id='p' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='.06 .09' numOctaves='4' seed='3' result='f'/><feDiffuseLighting in='f' lighting-color='%23fffaf0' surfaceScale='.55' diffuseConstant='1' result='l'><feDistantLight azimuth='40' elevation='58'/></feDiffuseLighting><feComposite in='l' in2='SourceGraphic' operator='arithmetic' k1='1' k2='0' k3='0' k4='0' result='s'/><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='11' result='g'/><feColorMatrix in='g' values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .07 0' result='ga'/><feBlend in='s' in2='ga' mode='multiply'/></filter><rect width='700' height='900' fill='%23ecdfc0' filter='url(%23p)'/></svg>") center / cover; color: #1f3a2c; padding: 38px 48px 44px;
+  box-shadow: 0 40px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(122,95,54,.5), inset 0 0 70px rgba(120,90,40,.16);
+  scrollbar-width: thin; scrollbar-color: #c9b68f transparent;
+}
+.ki-sheet::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 90% 85% at 50% 50%, transparent 65%, rgba(90,60,20,.18) 100%); }
+.ki-sheet > * { position: relative; z-index: 1; }
+.ki-sheet .ki-head { display: flex; align-items: center; gap: 18px; }
+.ki-sheet .ki-head svg { width: 84px; height: 84px; flex: none; }
+.ki-sheet .ki-head .ki-crest-img { width: 104px; height: 104px; flex: none; mix-blend-mode: multiply; filter: sepia(.15) contrast(1.05); }
+@media (max-width: 640px) { .ki-sheet .ki-head .ki-crest-img { width: 78px; height: 78px; } }
+.ki-sheet .ki-head-t { font-family: 'Ruslan Display', serif; font-size: clamp(20px, 5vw, 30px); color: #1f3a2c; line-height: 1.05; overflow-wrap: anywhere; }
+.ki-sheet .ki-head-s { font-family: 'PT Serif', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #1f3a2c; opacity: .8; margin-top: 6px; }
+.ki-sheet .ki-head-d { font-family: 'PT Serif', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #1f3a2c; opacity: .55; margin-top: 4px; }
+.ki-sheet .ki-orn { height: 12px; margin: 16px 0 22px; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'><path d='M0 6 H15 M33 6 H48' stroke='%231f3a2c' stroke-width='1' stroke-opacity='.6'/><path d='M24 1 C26.5 3.5 29 4.5 29 6 C29 7.5 26.5 8.5 24 11 C21.5 8.5 19 7.5 19 6 C19 4.5 21.5 3.5 24 1Z' fill='%23b7742f'/><circle cx='8' cy='6' r='1.1' fill='%231f3a2c'/><circle cx='40' cy='6' r='1.1' fill='%231f3a2c'/></svg>") repeat-x center; }
+.ki-sheet p { font-family: 'PT Serif', serif; font-size: 17px; line-height: 1.6; margin: 0 0 14px; color: #2a2419; }
+.ki-sheet p.ki-salut { font-size: 18px; margin-bottom: 16px; }
+.ki-sheet .ki-hand { font-family: 'Bad Script', cursive; color: #1f3a2c; }
+.ki-sheet p .ki-hand { font-size: 23px; line-height: 1; }
+.ki-sheet .ki-sign { position: relative; margin-top: 30px; padding-right: 120px; text-align: right; font-size: 21px; line-height: 1.35; min-height: 110px; }
+.ki-sheet .ki-sign-name { font-size: 26px; }
+.ki-sheet .ki-sign-title { font-family: 'PT Serif', serif; font-size: 13px; color: #2a2419; opacity: .8; margin-top: 4px; }
+.ki-sheet .ki-stamp-ink { position: absolute; right: -6px; top: -6px; width: 118px; height: 118px; opacity: .7; transform: rotate(-11deg); mix-blend-mode: multiply; }
+.ki-sheet-wrap .ki-btn { pointer-events: auto; }
+
+/* ---------- ролик в начале: на весь экран, без звука, по кругу; по нажатию – письмо ---------- */
+.ki-film { position: absolute; inset: 0; z-index: 8; opacity: 0; pointer-events: none; background: #000; cursor: pointer; transition: opacity .9s ease; }
+.ki-overlay.s-film .ki-film { opacity: 1; pointer-events: auto; }
+.ki-film video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ki-film::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 62%, rgba(0,0,0,.7)); }
+.ki-tap { position: absolute; left: 50%; bottom: 7vh; z-index: 9; transform: translateX(-50%); white-space: nowrap;
+  font: 400 18px/1 'Ruslan Display', serif; letter-spacing: .06em; color: var(--ki-gold); background: rgba(4,28,21,.55); border: 1px solid rgba(217,178,74,.55);
+  padding: 16px 30px 14px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .8s ease, background-color .3s; backdrop-filter: blur(4px); }
+.ki-tap:hover { background: rgba(4,28,21,.8); }
+.ki-overlay.s-film .ki-tap { opacity: 1; pointer-events: auto; transition-delay: 1.8s, 0s; animation: ki-tap 2.4s ease-in-out 2.6s infinite; }
+@keyframes ki-tap { 50% { box-shadow: 0 0 34px rgba(217,178,74,.45); } }
+.ki-overlay.s-film .ki-idle, .ki-overlay.s-film .ki-skip { opacity: 0; pointer-events: none; }
+@media (max-width: 640px) { .ki-tap { font-size: 15px; padding: 14px 22px 12px; bottom: 12vh; } }
+
+/* пропустить */
+.ki-skip { position: absolute; left: 20px; bottom: 18px; z-index: 6; font-family: var(--font-body, 'PT Serif', serif); font-style: italic; font-size: 15px; color: var(--gray-light, #9a9a9a); background: none; border: 0; cursor: pointer; padding: 10px; opacity: 0; transition: opacity .5s, color .3s; }
+.ki-overlay.s-fly .ki-skip, .ki-overlay.s-land .ki-skip, .ki-overlay.s-flip .ki-skip, .ki-overlay.s-seal .ki-skip, .ki-overlay.s-open .ki-skip, .ki-overlay.s-rise .ki-skip { opacity: .8; }
+.ki-skip:hover { color: var(--ki-mint); }
+
+/* ---------- панель звука / переиграть ---------- */
+.ki-dock { position: fixed; right: 18px; bottom: 18px; z-index: 10050; display: flex; gap: 8px; }
+.ki-dock button {
+  width: 42px; height: 42px; border: 1px solid rgba(47,184,127,.55); background: rgba(4,28,21,.85); color: var(--ki-mint);
+  cursor: pointer; display: grid; place-items: center; padding: 0; transition: background-color .3s, color .3s, box-shadow .3s; position: relative;
+}
+.ki-dock button:hover { background: var(--ki-kold); color: #061b13; box-shadow: 0 0 20px rgba(47,184,127,.4); }
+.ki-dock button svg { width: 20px; height: 20px; }
+.ki-dock button[hidden] { display: none; }
+.ki-dock .ki-off .ki-on-ico, .ki-dock .ki-on .ki-off-ico { display: none; }
+.ki-dock button::after { content: attr(data-tip); position: absolute; right: 0; bottom: calc(100% + 8px); white-space: nowrap; font-family: var(--font-body); font-size: 14px; letter-spacing: .5px; color: var(--ki-mint); background: rgba(4,28,21,.95); border: 1px solid rgba(47,184,127,.35); padding: 4px 10px; opacity: 0; pointer-events: none; transition: opacity .25s; }
+.ki-dock button:hover::after { opacity: 1; }
+.ki-dock .ki-eq { display: flex; gap: 2px; align-items: flex-end; height: 14px; }
+.ki-dock .ki-eq i { width: 3px; background: currentColor; animation: ki-eq .9s ease-in-out infinite alternate; }
+.ki-dock .ki-eq i:nth-child(2) { animation-delay: .2s } .ki-dock .ki-eq i:nth-child(3) { animation-delay: .4s } .ki-dock .ki-eq i:nth-child(4) { animation-delay: .1s }
+@keyframes ki-eq { from { height: 3px } to { height: 14px } }
+.ki-dock .ki-off .ki-eq i { animation: none; height: 3px; }
+
+/* ---------- свечи по углам ---------- */
+.ki-candles { position: fixed; inset: 0; pointer-events: none; z-index: 900; opacity: 0; transition: opacity 1.5s ease; }
+html.ki-lit .ki-candles { opacity: 1; }
+.ki-candle { position: absolute; width: var(--cw, 44px); animation: ki-float var(--fd, 5s) ease-in-out var(--fdl, 0s) infinite alternate; }
+.ki-candle svg { width: 100%; height: auto; display: block; overflow: visible; }
+@keyframes ki-float { from { transform: translateY(0) rotate(-1deg) } to { transform: translateY(-14px) rotate(1.2deg) } }
+.ki-flame { transform-box: fill-box; transform-origin: 50% 100%; animation: ki-flame var(--fl, .9s) ease-in-out infinite alternate; }
+@keyframes ki-flame {
+  0%   { transform: scale(1, 1) rotate(0deg); }
+  35%  { transform: scale(.9, 1.1) rotate(-4deg); }
+  70%  { transform: scale(1.06, .94) rotate(3deg); }
+  100% { transform: scale(.95, 1.05) rotate(-2deg); }
+}
+.ki-glow { animation: ki-glow var(--gl, 1.6s) ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+@keyframes ki-glow { from { opacity: .25; transform: scale(.9) } to { opacity: .45; transform: scale(1.1) } }
+/* свечи живут в полях: где поля узкие (меньше ~170px), они наезжают на текст – прячем */
+@media (max-width: 1279px) { .ki-candles { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ki-spark, .ki-flame, .ki-glow, .ki-candle, .ki-idle .ki-crest, .ki-btn.ki-pulse { animation: none !important; }
+}
+@media (max-width: 640px) {
+  .ki-sheet-wrap { padding: 24px 12px 76px; }
+  .ki-sheet { padding: 24px 22px 28px; max-height: 68vh; }
+  .ki-sheet p { font-size: 15.5px; }
+  .ki-sheet .ki-sign { padding-right: 0; padding-top: 90px; } .ki-sheet .ki-stamp-ink { right: 0; top: -8px; width: 96px; height: 96px; }
+  .ki-dock { right: 12px; bottom: 12px; }
+}
