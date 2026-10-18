@@ -466,7 +466,7 @@
       '<p class="ki-salut">' + ru('Уважаемый(-ая)', 'Dear') + ' <span class="ki-hand">{{user}}</span>,</p>' +
       '<p>' + ru('Рады сообщить, что Вы зачислены в Школу чародейства «Колдовстворец».', 'We are pleased to inform you that you have been accepted at Koldovstoretz School of Witchcraft.') + '</p>' +
       '<p>' + ru('Занятия начинаются 1 сентября 2000 года. Список необходимых книг и предметов прилагается.', 'Classes begin on 1 September 2000. Please find enclosed a list of all necessary books and equipment.') + '</p>' +
-      '<p>' + ru('Учебный год начинается 1 сентября. Мы ожидаем вашу сороку не позднее 31 июля.', 'The school year begins on 1 September. We await your magpie no later than 31 July.') + '</p>' +
+      '<p>' + ru('Мы ожидаем вашу сороку не позднее 31 июля.', 'We await your magpie no later than 31 July.') + '</p>' +
       '<div class="ki-sign"><div class="ki-hand">' + ru('Искренне ваша,', 'Yours sincerely,') + '</div>' +
       '<div class="ki-hand ki-sign-name">' + ru('Медянникова Марья Полозовна,', 'Marya Polozovna Medyannikova,') + '</div>' +
       '<div class="ki-sign-title">' + ru('Директор Колдовстворца и Медной горы Хозяйка.', 'Headmistress of Koldovstoretz and Mistress of the Copper Mountain.') + '</div>' +
